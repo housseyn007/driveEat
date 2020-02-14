@@ -36,18 +36,13 @@ body {
 	 text-align: center;
 	 color: #fff;
 }
- .home .center h1 {
- 	 margin-top:-150px;
-	 font-family: 'Alex Brush', cursive !important;
-	 color: #be8040;
-	 font-size: 14em;
-	 text-shadow: 3px 5px 2px #272727;
+.logoHome {
+   width:600px
 }
  .home .center h2 {
 	 text-transform: uppercase;
 	 letter-spacing: 5px;
-	 font-size: 4em;
-	 margin-top: -40px;
+	 font-size: 4em;	
 	 font-family: 'Itim', cursive;
 	 text-shadow: 3px 5px 2px #272727;
 }
@@ -61,6 +56,7 @@ body {
 	 font-family: 'Itim', cursive;
 	 text-shadow: 3px 5px 2px #272727;
 }
+
 
 .logo_app{
 	margin-top: 50px;
@@ -102,12 +98,11 @@ body {
 
 @media screen and (max-width: 860px) {
 
-	.home .center h1 {
-		 font-size: 8em;		 
-	}
+	.logoHome {
+   width:450px
+}
 	 .home .center h2 {
 		 font-size: 3em;
-		 margin-top: -20px;
 	}
 	
 	 .home .center p {
@@ -117,12 +112,12 @@ body {
 
 @media screen and (max-width: 500px) {
 
-	.home .center h1 {
-		 font-size: 5em;		 
-	}
+	.logoHome {
+   width:300px
+}
 	 .home .center h2 {
 		 font-size: 2em;
-		 margin-top: -10px;
+	
 	}
 	
 	 .home .center p {
