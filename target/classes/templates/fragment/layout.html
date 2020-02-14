@@ -8,6 +8,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/layout_style.css">
 
 </head>
 
@@ -24,13 +25,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="logo.png" alt="logo drive eat" class="photoLogo"></a>
+					<a class="navbar-brand" href="/"><img src="images/logo/logoDriveEat.png" alt="logo drive eat" class="photoLogo"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#">Acceuil</a></li>
+						<li class="active"><a href="/">Acceuil</a></li>
 						<li><a href="#">A propos</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b
@@ -53,7 +54,65 @@
 	</header>
 
 	<footer th:fragment="bottom">
-		
+		<div class="footer-section">
+			<div class="footer">
+				<div class="container">
+					<div class=" footer-one col-lg-4 col-sm-6 col-xm-12">
+						<div class="block-footer">
+							<h5>A propos </h5>
+							<p>Cras sociis natoque penatibus et magnis dis parturient montes, ridiculus mus.</p>
+							<div class="social-icons">
+								<a href="https://www.facebook.com/"><i id="social-fb"
+										class="fa fa-facebook-square fa-3x social"></i></a>
+								<a href="https://twitter.com/"><i id="social-tw"
+										class="fa fa-twitter-square fa-3x social"></i></a>
+								<a href="https://plus.google.com/"><i id="social-in"
+										class="fa fa fa-instagram fa-3x social"></i></a>
+								<a href="mailto:bootsnipp@gmail.com"><i id="social-em"
+										class="fa fa-envelope-square fa-3x social"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class=" footer-two col-lg-2 col-sm-6 col-xm-12 ">
+						<div class="block-footer">
+							<h5>Navigation </h5>
+							<ul>
+								<li><a href="maintenance.html">Acceuil</a></li>
+								<li><a href="contact.html">A propos</a></li>
+								<li><a href="contact.html">Services</a></li>
+								<li><a href="about.html">Contact</a></li>
+								<li><a href="about.html">Partenaires</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="footer-three col-lg-4 col-sm-6 col-xm-12">
+						<div class="block-footer">
+							<h5>Coordonnées </h5>
+							<ul>
+								<li>+33 6 66 22 65 03</li>
+								<li>contact@drive-eat.fr</li>
+								<li>1 Avenue du Champ de Mars-CS 30019 </li>
+								<li class="address"> 45074 Orléans Cedex 2 </li>
+							</ul>
+						</div>
+					</div>
+
+					<div class=" footer-four col-lg-2 col-sm-6 col-xm-12 ">
+						<div class="block-footer">
+							<h5>Mentions legales </h5>
+							<ul>
+								<li><a href="about.html">Mentions legales</a></li>
+								<li><a href="about.html">Politique de confidentialité</a></li>
+								<li><a href="about.html">Cookies</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
 	</footer>
 	<script>
 		$(function () {
