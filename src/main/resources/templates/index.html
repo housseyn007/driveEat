@@ -10,15 +10,16 @@
 	<link rel="stylesheet" th:href="@{css/index_style.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet"> 
-	
+	<title>DriveEat</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<title>DriveEat</title>
+	<link rel="stylesheet" href="css/layout_style.css">
 
 </head>
 <body>
-<!-- <header th:replace="layout.html :: top"></header> -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+ <header th:replace="fragment/layout.html :: top"></header> 
 
 
 
@@ -44,6 +45,6 @@
 	
 
 
-<!-- 	<footer class="footer" th:replace="layout.html :: bottom"></footer> -->
+	<footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
 </body>
 </html>
