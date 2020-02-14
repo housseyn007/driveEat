@@ -1,85 +1,89 @@
 @import url('https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700');
- @import url('https://fonts.googleapis.com/css?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Itim&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
- }
- 
-/* -------------------------------------------home Section-------------------------------------------*/ 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+/* -------------------------------------------home Section-------------------------------------------*/
 
 
 body {
-	 overflow-x: hidden;
+	overflow-x: hidden;
 }
+
 /* GLOBAL */
- h2 {
-	 margin-top: 0;
+h2 {
+	margin-top: 0;
 }
 
 /* HEADER */
- .home {
-	 min-height: 100vh;
-	 background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent), url(/images/background/background_home3.jpg) no-repeat center center;
-	 background-size: cover;
-	 background-attachment: fixed;
-	 display: flex;
-	 flex-direction: column;
+.home {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent), url(/images/background/background_home3.jpg) no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	padding: 150px 0;
 	/* CENTER HEADER TEXT */
 }
 
- .home .center {
-	 line-height: 0;
-	 margin: auto;
-	 text-align: center;
-	 color: #fff;
+.home .center {
+	line-height: 0;
+	margin: auto;
+	text-align: center;
+	color: #fff;
 }
+
 .logoHome {
-   width:600px
-}
- .home .center h2 {
-	 text-transform: uppercase;
-	 letter-spacing: 5px;
-	 font-size: 4em;	
-	 font-family: 'Itim', cursive;
-	 text-shadow: 3px 5px 2px #272727;
+	width: 600px
 }
 
- .home .center p {
-	 text-transform: uppercase;
-	 margin-top: 20px;
-	 font-size: 2em;
-	 font-weight: bold;
-	 letter-spacing: 3px;
-	 font-family: 'Itim', cursive;
-	 text-shadow: 3px 5px 2px #272727;
+.home .center h2 {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 4em;
+	font-family: 'Itim', cursive;
+	text-shadow: 3px 5px 2px #272727;
+}
+
+.home .center p {
+	text-transform: uppercase;
+	margin-top: 20px;
+	font-size: 2em;
+	font-weight: bold;
+	letter-spacing: 3px;
+	font-family: 'Itim', cursive;
+	text-shadow: 3px 5px 2px #272727;
 }
 
 
-.logo_app{
+.logo_app {
 	margin-top: 50px;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
 }
 
-.apple_google{
+.apple_google {
 	width: 390px;
 	display: flex;
 	justify-content: space-between;
 }
 
-.logo_app img{
+.logo_app img {
 	width: 130px;
 }
 
 
-.apple_logo, .google_logo{
+.apple_logo,
+.google_logo {
 	width: 170px;
-	height:52px;
-	background: rgba(33,33,33 ,.7);
+	height: 52px;
+	background: rgba(33, 33, 33, .7);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -87,9 +91,10 @@ body {
 	border: 1px solid #000;
 }
 
-.apple_logo:hover, .google_logo:hover{
+.apple_logo:hover,
+.google_logo:hover {
 	width: 175px;
-	height:56px;
+	height: 56px;
 	cursor: pointer;
 }
 
@@ -99,113 +104,129 @@ body {
 @media screen and (max-width: 860px) {
 
 	.logoHome {
-   width:450px
-}
-	 .home .center h2 {
-		 font-size: 3em;
+		width: 450px
 	}
-	
-	 .home .center p {
-		 font-size: 1.5em;
+
+	.home .center h2 {
+		font-size: 3em;
+	}
+
+	.home .center p {
+		font-size: 1.5em;
 	}
 }
 
 @media screen and (max-width: 500px) {
 
 	.logoHome {
-   width:300px
-}
-	 .home .center h2 {
-		 font-size: 2em;
-	
+		width: 300px
 	}
-	
-	 .home .center p {
-		 font-size: 1em;
-	}
-	
-	.apple_google{
-	width: 280px;
-}
 
-	.logo_app img{
+	.home .center h2 {
+		font-size: 2em;
+
+	}
+
+	.home .center p {
+		font-size: 1em;
+	}
+
+	.apple_google {
+		width: 280px;
+	}
+
+	.logo_app img {
 		width: 100px;
 	}
-	
-	
-	.apple_logo, .google_logo{
+
+
+	.apple_logo,
+	.google_logo {
 		width: 130px;
-		height:40px;
+		height: 40px;
 		border-radius: 10px;
 	}
-	
-	.apple_logo:hover, .google_logo:hover{
+
+	.apple_logo:hover,
+	.google_logo:hover {
 		width: 135px;
-		height:46px;
+		height: 46px;
 	}
 }
 
 /* ANIMATIONS */
 
- .center p {
-	 transform: translateY(-40px);
-	 opacity: 0;
-	 animation: fadeDown 0.9s forwards;
-	 animation-delay: 1.3s;
+.center p {
+	transform: translateY(-40px);
+	opacity: 0;
+	animation: fadeDown 0.9s forwards;
+	animation-delay: 1.3s;
 }
- .center h2,.apple_logo, .google_logo {
-	 transform: scale(2);
-	 opacity: 0;
-	 animation: fade 0.5s forwards;
+
+.center h2,
+.apple_logo,
+.google_logo {
+	transform: scale(2);
+	opacity: 0;
+	animation: fade 0.5s forwards;
 }
- .center h1 {
-	 transform: translateY(40px);
-	 opacity: 0;
-	 animation: fadeUp 0.5s forwards;
-	 animation-delay: 0.3s;
+
+.center h1 {
+	transform: translateY(40px);
+	opacity: 0;
+	animation: fadeUp 0.5s forwards;
+	animation-delay: 0.3s;
 }
 
 
- @keyframes fadeUp {
-	 0% {
-		 opacity: 0;
-		 transform: translateY(40px);
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
 	}
-	 100% {
-		 opacity: 1;
-		 transform: translateY(0);
-	}
-}
- @keyframes fade {
-	 0% {
-		 transform: scale(2);
-		 opacity: 0;
-	}
-	 100% {
-		 transform: scale(1);
-		 opacity: 1;
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
- @keyframes fadeDown {
-	 0% {
-		 opacity: 0;
-		 transform: translateY(-40px);
+
+@keyframes fade {
+	0% {
+		transform: scale(2);
+		opacity: 0;
 	}
-	 100% {
-		 opacity: 1;
-		 transform: translateY(0);
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
 	}
 }
- @keyframes grow {
-	 0% {
-		 opacity: 0;
-		 width: 0%;
+
+@keyframes fadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-40px);
 	}
-	 50% {
-		 opacity: 0.5;
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
-	 100% {
-		 opacity: 1;
-		 width: 40%;
+}
+
+@keyframes grow {
+	0% {
+		opacity: 0;
+		width: 0%;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+		width: 40%;
 	}
 }
