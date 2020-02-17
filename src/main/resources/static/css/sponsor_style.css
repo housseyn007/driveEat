@@ -23,24 +23,25 @@ h2 {
  .homesponsor {
 	 background: linear-gradient(to bottom, rgba(0, 0, 0, .1), transparent), url(/images/fondecransponsor.jpg) no-repeat center center;
 	 background-size: cover;
-	 background-attachment: fixed;
 	 display: flex;
 	 flex-direction: column;
+	 padding-top:90px;
+	 padding-bottom: 90px;
 }
 
- .homesponsor .center {
-	 line-height: 0;
-	 margin: auto;
-	 text-align: center;
-	 color: #fff;
-}
- .homesponsor .center h1 {
-	font-family: 'Alex Brush', cursive !important;
+ .homesponsor .center  {
+	line-height: 0;
+	margin: auto;
+	text-align: center;
 	color: #fff;
-	font-size: 7em;
-	text-shadow: 3px 5px 2px #272727;
-	
-}
+	position: relative;
+	top: 45px;
+	}
+ .homesponsor .center h1 {
+	font-family: 'Mansalva', cursive;
+	font-size: 6em;
+	color: white;
+	}
 
 .homesponsor .center h2 {
 	 text-transform: uppercase;
@@ -94,8 +95,8 @@ h2 {
 
  .imagecarousel1{
 	width: 636px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -107,8 +108,8 @@ h2 {
  
   .imagecarousel2{
 	width: 635px;
-	height: 500px;
-	background:rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent;
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -120,8 +121,8 @@ h2 {
  
   .imagecarousel3{
 	width: 636px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent;
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -133,8 +134,8 @@ h2 {
  
  .imagecarousel4{
 	width: 636px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -146,8 +147,8 @@ h2 {
  
  .imagecarousel5{
 	width: 635px;
-	height: 500px;
-	background: rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -159,8 +160,8 @@ h2 {
  
  .imagecarousel6{
 	width: 636px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -171,37 +172,59 @@ h2 {
  }
  
  .imgcarouselsponsor{ 
-	height: 130px;
+
     margin-left: auto;
     margin-right: auto;
-    width: 23%;
-    position: relative;
-    bottom: 90px;
-    display: flex;
-    margin-top: 60px;
-	
+    width: 150px;
+    display: flex;	
  }
  
- .textecarousel {
+ .textecarousel  {
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color: #3f4040;
+	font-size: 20px;
 	text-align: center;
-	font-size: 25px;
-	color: white;
 	}
  
- .hrcarousel{
- 	display: block;
-	border-top: 5px solid #ffffff;
-	margin: 0;
-	padding: 0;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
+ .uk-slidenav{
+ 
+ color:#ad6f23 !important;
+ 
+ }
+ 
+ .hrentresections1{
+ 
+ border: 1px solid #ad6f23;
+ margin-top: 0px;
+ 
+ }
+ 
+ .hrentresections2{
+ 
+ border: 1px solid #ad6f23;
+ margin: 0px;
+ 
+ }
+ 
+  .hrentresections3{
+ 
+ border: 1px solid #ad6f23;
+ margin-bottom: 0px;
+ 
  }
  
  .uk-dotnav > .uk-active > *{
  
  background-color: black;
 
+ 
+ }
+ 
+ #uk-center{
+ 
+ max-width: 60%;
+ height: 200px;
  
  }
  
@@ -216,12 +239,13 @@ h2 {
 	padding: 40px;
 }
 
-p{
+#texth2 {
+	font-family: 'Mansalva', cursive;
+	font-size: 3.5em;
+	color: #ad6f23;
 	text-align: center;
-	letter-spacing: 1px;
-	font-size: 45px;
-	margin-bottom: 20px;
-}
+	padding-top: 70px;
+	}
 
 .input, .commentaires .area {
 	
@@ -255,7 +279,7 @@ p{
 
 .input:focus, .commentaires .area:focus{
 	
-	border: 2px solid #ee8514;
+	border: 2px solid #bd833d;
 }
 
 .envoyer{
@@ -266,7 +290,7 @@ p{
 
 .envoyer .boutonformulaire{
 	
-	background: rgb(242, 139, 29);
+	background: #bd833d;
 	padding: 12px 85px;
 	font-size: 19px;
 	text-decoration: none;
@@ -287,7 +311,7 @@ p{
 @media screen and (max-width: 1030px) {
 
 	.homesponsor .center h1 {
-		 font-size: 5em;		 
+		 font-size: 4em;		 
 	}
 	 .homesponsor .center h2 {
 		 font-size: 3em;
@@ -317,8 +341,8 @@ p{
 	
 	.imagecarousel1{
 	width: 1030px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -330,8 +354,8 @@ p{
  
   .imagecarousel2{
 	width: 1030px;
-	height: 500px;
-	background:rgb(144, 144, 144); 
+	height: 400px;
+	background:transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -343,8 +367,8 @@ p{
  
   .imagecarousel3{
 	width: 1030px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -356,8 +380,8 @@ p{
  
  .imagecarousel4{
 	width: 1030px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -369,8 +393,8 @@ p{
  
  .imagecarousel5{
 	width: 1030px;
-	height: 500px;
-	background: rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -382,8 +406,8 @@ p{
  
  .imagecarousel6{
 	width: 1030px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -391,16 +415,26 @@ p{
 /* 	border-bottom-right-radius: 20px 20px; */
 /* 	border-top-left-radius: 20px 20px; */
  
+ }	
+  .hrentresections1{
+ 
+ border: 1px solid #ad6f23;
+ margin-top: 0px;
+ 
  }
-
-	
-	
+ 
+ .hrentresections2{
+ 
+ border: 1px solid #ad6f23;
+ margin: 0px;
+ 
+ }
 }
 
 @media screen and (max-width: 850px) {
 
 	.homesponsor .center h1 {
-		 font-size: 4em;		 
+		 font-size: 3em;		 
 	}
 	 .homesponsor .center h2 {
 		 font-size: 2em;
@@ -430,8 +464,8 @@ p{
 	
 	.imagecarousel1{
 	width: 840px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -443,8 +477,8 @@ p{
  
   .imagecarousel2{
 	width: 840px;
-	height: 500px;
-	background:rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -456,8 +490,8 @@ p{
  
   .imagecarousel3{
 	width: 840px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -469,8 +503,8 @@ p{
  
  .imagecarousel4{
 	width: 840px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -482,8 +516,8 @@ p{
  
  .imagecarousel5{
 	width: 840px;
-	height: 500px;
-	background: rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -495,8 +529,8 @@ p{
  
  .imagecarousel6{
 	width: 840px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -505,15 +539,26 @@ p{
 /* 	border-top-left-radius: 20px 20px; */
  
  }
-
-	
-	
+ 
+  .hrentresections1{
+ 
+ border: 1px solid #ad6f23;
+ margin-top: 0px;
+ 
+ }
+ 
+ .hrentresections2{
+ 
+ border: 1px solid #ad6f23;
+ margin: 0px;
+ 
+ }
 }
 
 @media screen and (max-width: 640px) {
 
 	.homesponsor .center h1 {
-		 font-size: 4em;		 
+		 font-size: 3em;		 
 	}
 	 .homesponsor .center h2 {
 		 font-size: 1em;
@@ -527,8 +572,8 @@ p{
 	
 	.imagecarousel1{
 	width: 640px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -540,8 +585,8 @@ p{
  
   .imagecarousel2{
 	width: 640px;
-	height: 500px;
-	background:rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; ; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -553,8 +598,8 @@ p{
  
   .imagecarousel3{
 	width: 640px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent;
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -566,8 +611,8 @@ p{
  
  .imagecarousel4{
 	width: 640px;
-	height: 500px;
-	background: rgb(212, 212, 212); 
+	height: 400px;
+	background: transparent;  
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -579,8 +624,8 @@ p{
  
  .imagecarousel5{
 	width: 640px;
-	height: 500px;
-	background: rgb(144, 144, 144); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -592,8 +637,8 @@ p{
  
  .imagecarousel6{
 	width: 640px;
-	height: 500px;
-	background: rgb(0, 0, 0); 
+	height: 400px;
+	background: transparent; 
 /* 	margin-left: 35px; */
 /* 	margin-right: 35px; */
 /* 	border-bottom-left-radius: 20px 20px; */
@@ -637,7 +682,29 @@ width: 100%;
 margin-right: 10px;
 width: 100%;
 }
-	
+
+#texth2{
+	font-family: 'Mansalva', cursive;
+	font-size: 3em;
+	color:
+	#ad6f23;
+	text-align: center;
+	padding-top: 70px;
+ }
+ 
+  .hrentresections1{
+ 
+ border: 1px solid #ad6f23;
+ margin-top: 0px;
+ 
+ }
+ 
+ .hrentresections2{
+ 
+ border: 1px solid #ad6f23;
+ margin: 0px;
+ 
+ }
 	
 }
 
