@@ -6,93 +6,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  <link rel="stylesheet" th:href="@{css/index_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
 
 <!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
 <link rel="stylesheet" th:href="@{css/layout_style.css}" />
 <link rel="stylesheet" th:href="@{css/sponsor_style.css}" />
-<link rel="stylesheet" href="/css/sponsor.css" />
+
 
 <!-- UIkit CSS -->
 
-<!-- bootstrap -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/layout_style.css">
-<!-- booststrap -->
+
 
 <title>DriveEat</title>
 
 </head>
 <body>
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	 <header th:replace="fragment/layout.html :: top"></header> 
+  <header th:replace="fragment/layout.html :: top"></header>
+
 	<section class="homesponsor">
 		<div class="center">
-			<h1 class="alex-brush">Devenir partenaire</h1>
-			<h2>BOOSTER VOTRE COMMERCE</h2>
+			<div class="bordercercle">
+				<div class="cercledevenezpartenaire">
+					<h1 class="alex-brush">Devenir partenaire</h1>
+				</div>
+			</div>
 		</div>
 	</section>
-<section>
-	<h1 class="titrecarousel">Avec drive eat</h1>
-</section>
+<!-- 	<hr class="hrentresections1"> -->
+	<section class="boostezcommerce">
+		<p id="texth2">Avec Drive Eat Boostez Votre Commerce</p>
+	</section>
+	
 	<section>
-		<div uk-slider="center:true; sets:true; autoplay: true; autoplay-interval:4000;">
+		<div uk-slider="center:true; sets:true; autoplay: true; autoplay-interval:7000;">
 
 			<div class="uk-position-relative">
 
 				<div id="slidercontainer" class="uk-slider-container uk-light">
 					<ul
 						class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
-						<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/sms.png">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel1">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt="" src="images/logo_sponsor1.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">1.</span> Rendre votre offre accessible et visible 24/7</p>	
 							</div>
 						</li>
-							<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/logopeoplesponsor.svg">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel5">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt=""
+									src="images/logo_sponsor5.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">2.</span> Accroître le chiffre d'affaires de votre commerce (Hausse du panier moyen de 25%)</p>
 							</div>
 						</li>
-							<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/logopeoplesponsor.svg">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel3">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt=""
+									src="images/logo_sponsor3.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">3.</span> Mieux connaître vos clients, leurs goûts et leurs habitudes</p>
 							</div>
 						</li>
-							<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/logopeoplesponsor.svg">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel4">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt=""
+									src="images/logo_sponsor4.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">4.</span> Attirer une nouvelle clientèle</p>
 							</div>
 						</li>
-							<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/logopeoplesponsor.svg">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel2">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt=""
+									src="images/logo_sponsor2.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">5.</span> Garantir à vos clients la disponibilité de vos produits et maîtriser vos stocks</p>
 							</div>
 						</li>
-							<li class="imagecarousel">
-							<div class="uk-position-center uk-panel">
-							<img class="imgcarouselsponsor" alt="" src="images/logopeoplesponsor.svg">
-								<p class="textecarousel">Attirer une nouvelle clientèle</p>
-								<div class="hrcarousel"><hr></div>
-								<p class="textecarousel">Offre diversifiée pour une clientèle connectée</p>
+						<li class="imagecarousel6">
+							<div id="uk-center" class="uk-position-center uk-panel">
+								<img class="imgcarouselsponsor" alt=""
+									src="images/logo_sponsor6.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">6.</span> Améliorer la fluidité et l'organisation de votre surface de vente</p>
 							</div>
 						</li>
 
@@ -108,10 +116,8 @@
 				</div>
 
 				<div class="uk-visible@s">
-					<a class="uk-position-center-left-out uk-position-small" href="#"
-						uk-slidenav-previous uk-slider-item="previous"></a> <a
-						class="uk-position-center-right-out uk-position-small" href="#"
-						uk-slidenav-next uk-slider-item="next"></a>
+					<a class="uk-position-center-left-out uk-position-large" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+					<a class="uk-position-center-right-out uk-position-large" href="#" uk-slidenav-next uk-slider-item="next"></a>
 				</div>
 
 			</div>
@@ -119,7 +125,48 @@
 			<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
 
 		</div>
-</section>
-	<footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+	</section>
+	<section class="formulaire">
+		<p id="texth2">Nous Contacter</p>
+
+		<div class="identite">
+			<input type="text" name="Nom" placeholder="Nom" class="input">
+			<input type="text" name="Prénom" placeholder="Prénom" class="input">
+		</div>
+
+		<div class="contact">
+			<input type="text" name="E-mail" placeholder="E-mail" class="input">
+			<input type="text" name="Numéro" placeholder="Numéro" class="input">
+		</div>
+
+		<div class="localisation">
+			<input type="text" name="Restaurant" placeholder="Votre restaurant" class="input">
+			<input type="text" name="Adresse" placeholder="Adresse de votre restaurant" class="input">
+		</div>
+		
+		<div class="commentaires">
+			<textarea class="area" placeholder="Laissez votre message"></textarea>
+		</div>
+		
+		<div class="envoyer">
+			<a href="#" class="boutonformulaire" >Envoyer</a>
+		</div>
+
+
+
+ 
+	</section>
+<hr class="hrentresections3">
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+   <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('.card').delay(1800).queue(function(next) {
+        $(this).removeClass('hover');
+        $('a.hover').removeClass('hover');
+        next();
+      });
+    });
+  </script>
 </body>
 </html>
