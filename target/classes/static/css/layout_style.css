@@ -169,6 +169,33 @@ a.navbar-brand {
 	color: #fff;
 }
 
+.col-lg-offset-3 , .col-xs-12 {
+    margin: 15px 0;
+    
+}
+
+.photoLogoFooter{
+	display: flex;
+	justify-content: center;
+}
+.photoLogoFooter img{
+	width: 220px;
+}
+.photoAppFooter {
+	margin:15px 0;
+	display: flex;
+	justify-content: center;
+   
+}
+.photoAppFooter img{
+	width: 150px ;
+	padding: 5px;
+}
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
+
 #social-fb:hover {
 	color: #3B5998;
 	transition: all .25s;
@@ -195,7 +222,15 @@ a.navbar-brand {
 }
 
 /* -----------------------------------Media------------------------------------- */
-
+@media ( max-width : 1198px) {
+.footer{
+	padding: 5px 0;
+}
+.col-sm-12 {
+    margin-bottom: 30px;
+}
+	
+}
 @media ( max-width : 1112px) {
 	.navbar-default {
 		letter-spacing: 0px;
