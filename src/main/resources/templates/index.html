@@ -16,13 +16,16 @@
 
   <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
 
@@ -32,25 +35,32 @@
 
   <header th:replace="fragment/layout.html :: top"></header>
 
+    <!-- ============================================================== -->
+    <!-- Home Section -->
+    <!-- ============================================================== -->
   <section class="home">
-    <div class="center">
-
-      <div class="alex-brush ">
-        <img class="logoHome" src="images/logo/logoHome.png" alt="Drive eat">
-      </div>
-
+	<div class="center">
+		<div data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+	      <div class="alex-brush "> 
+	        <img class="logoHome" src="images/logo/logoHome.png" alt="Drive eat">
+	      </div>
+		</div>
       <h2>La solution</h2>
       <p>coupe-file</p>
 
       <div class="logo_app">
         <div class="apple_google">
-          <a href="#" class="apple_logo" type="button"><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
+          <a href="#" class="apple_logo" ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
           <a href="#" class="google_logo"><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
         </div>
       </div>
 
     </div>
   </section>
+  
+    <!-- ============================================================== -->
+    <!-- With Us -->
+    <!-- ============================================================== -->
 
   <section class="withUs">
 
@@ -58,35 +68,43 @@
 
       <div class="container inner">
 
-        <h2 id="steps_h2" class="text-center"> Avec Drive-Eat</h2>
-        <h3 id="steps_h3" class="text-center">Vos plats préférés, Commandés en quelques clics!</h3>
+        <h2 class="steps_h2 text-center" > Avec Drive-Eat</h2>
+        <h3 class="steps_h3 text-center">Vos plats préférés, Commandés en quelques clics!</h3>
 
         <div class="col-xs-12">
 
           <div class="row text-center story">
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div> <img class="steps" src="images/logo/locationLogo.png" alt=""> </div>
-              <h4 class="steps_h4">Je trouve mon restaurant</h4>
-              <p id="steps_p">Sélectionner le restaurant et choisissez votre menu </p>
+              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="images/logo/locationLogo.png" alt="logo d'adresse"> </div>
+              <div data-aos="zoom-in">
+	              <h4 class="steps_h4">Je trouve mon restaurant</h4>
+	              <p class="steps_p">Sélectionner le restaurant et choisissez votre menu </p>
+              </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div> <img class="steps" src="images/logo/payeLogo.png" alt=""> </div>
-              <h4 class="steps_h4">Je régle ma commande</h4>
-              <p id="steps_p">Le payement s'éffectue via l'application ou sur place </p>
+              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="images/logo/payeLogo.png" alt="logo pour reglement"> </div>
+             <div data-aos="zoom-in"> 
+	             <h4 class="steps_h4">Je régle ma commande</h4>
+	             <p class="steps_p">Le payement s'éffectue via l'application ou sur place </p>
+             </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div> <img class="steps" src="images/logo/commandLogo.png" alt=""> </div>
-              <h4 class="steps_h4">Préparation de la commande</h4>
-              <p id="steps_p">Le restaurant prépare votre commande dans les délais indiqués</p>
+              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="images/logo/commandLogo.png" alt="logo de préparation de commande"> </div>
+              <div data-aos="zoom-in"> 
+	              <h4 class="steps_h4">Préparation de la commande</h4>
+	              <p class="steps_p">Le restaurant prépare votre commande dans les délais indiqués</p>
+              </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div> <img class="steps" src="images/logo/retraitLogo4.png" alt=""></div>
-              <h4 class="steps_h4">Je retire ma commande</h4>
-              <p id="steps_p">Récupérer votre commande à la borne Drive Eat "coupe-file !"</p>
+              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="images/logo/retraitLogo4.png" alt="logo de retrait de commande"></div>
+              <div data-aos="zoom-in"> 
+	              <h4 class="steps_h4">Je retire ma commande</h4>
+	              <p class="steps_p">Récupérer votre commande à la borne Drive Eat "coupe-file !"</p>
+              </div>
             </div>
 
           </div>
@@ -97,13 +115,17 @@
     </div><!-- #story -->
 
   </section>
+  
+    <!-- ============================================================== -->
+    <!-- specialities section -->
+    <!-- ============================================================== -->
 
   <section class="specialities_section">
     <h1>Nos Spécialités</h1>
     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true;autoplay-interval:2000">
 
       <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
               <div class="overlay">
@@ -119,7 +141,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://www.indian-by-nature.com/wp-content/uploads/2018/06/862638.jpg);">
               <div class="overlay">
@@ -135,7 +157,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
               <div class="overlay">
@@ -151,7 +173,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1535923054316-5f75572def8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
               <div class="overlay">
@@ -167,7 +189,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://recetasycocina.es/wp-content/uploads/2019/02/Tajine-de-pollo-con-higos-696x474.jpg);">
               <div class="overlay">
@@ -183,7 +205,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://www.hardens.com/wp-content/uploads/2019/11/image-35.png);">
               <div class="overlay">
@@ -199,7 +221,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://travelandleisureindia.in/wp-content/uploads/2019/03/Feature-image-Paella-Seafood.jpg);">
               <div class="overlay">
@@ -215,7 +237,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://vibrantwestafricancuisine.com/wp-content/uploads/2019/04/IMG_0547.jpg);">
               <div class="overlay">
@@ -231,7 +253,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://www.shouldivisit.com/wp-content/uploads/2018/07/thai-som-tum.jpg.jpg);">
               <div class="overlay">
@@ -247,7 +269,7 @@
             </div>
           </div>
         </li>
-        <li id="liphoto">
+        <li class="liphoto">
           <div class="card">
             <div class="card-img" style="background-image:url(https://ak3.picdn.net/shutterstock/videos/17332423/thumb/11.jpg);">
               <div class="overlay">
@@ -272,43 +294,52 @@
 
   </section>
 
-
+    <!-- ============================================================== -->
+    <!-- Customer_benefit -->
+    <!-- ============================================================== -->
+    
   <section class="customer_benefit">
 
     <div class="benefit_div">
-      <img alt="" src="/images/logo/client_benefit.png">
+      <img src="/images/logo/client_benefit.png"  alt="logo des avantages clients">
       <div class="benefit_p">
+       <div data-aos="zoom-in-up" data-aos-duration="2000">
         <h1>Nos avantages clients</h1>
         <p><span> &#10004; </span> Eviter la file d'attente et le stress aux heures de pointe</p>
         <p><span> &#10004; </span> Accéder à une Offre diversifiée de restaurants</p>
         <p><span> &#10004; </span> Ne perdez plus votre temps : choisissez l'heure de retrait</p>
         <p><span> &#10004; </span> Commandez n'importe où dans les meilleures conditions</p>
+       </div>
       </div>
     </div>
 
   </section>
 
+    <!-- ============================================================== -->
+    <!-- Sponsor_section -->
+    <!-- ============================================================== -->
+    
   <section class="sponsor_section">
     <h1>Nos Partenaires</h1>
     <div class="div_map_total">
-
+	<div data-aos="zoom-in-up" data-aos-duration="2000">
       <div class="div_map">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1LxsId7CdaZH1_rMxnJr3_AtA9Tn5dT1w" frameborder="0" style="border:0"></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1LxsId7CdaZH1_rMxnJr3_AtA9Tn5dT1w" style="border:0"></iframe>
       </div>
-
+	</div>
       <div class="div_text">
-        <p>+ de 40 partenaires nous font confiance</p>
+        <p>+ de 40 partenaires nous font confiance, tentez l’expérience en téléchargent notre application </p>
       </div>
 
-
-      <img class="phone-gif" src="images/phone-gif.gif" alt="">
+	<div data-aos="zoom-in-up" data-aos-duration="2000">
+      <img class="phone-gif" src="images/phone-gif.gif" alt="smartphone gif">
     </div>
-
+  </div>
   </section>
 
   <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
 
-  <script type="text/javascript">
+  <script>
     $(document).ready(function() {
 
       $('.card').delay(1800).queue(function(next) {
@@ -317,6 +348,9 @@
         next();
       });
     });
+    
+    <!-- Effets JS AOS -->   
+    AOS.init({    });
   </script>
 
 </body>
