@@ -381,6 +381,12 @@ h2 {
 	width: 380px;
 }
 
+.div_text{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
 .div_text p {
 	text-align:center;
 	padding-top:100px;
@@ -391,6 +397,30 @@ h2 {
 	font-size: 19px;
 	max-width: 370px;
 }
+
+
+.apple-google {
+	width: 390px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 50px;
+}
+
+.apple-google img {
+	width: 130px;
+}
+
+.apple-logo, .google-logo {
+	width: 170px;
+	height: 52px;
+	background: rgba(33, 33, 33, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+	border: 1px solid #000;
+}
+
 
 /* -----------------------------------Media------------------------------------- */
 @media screen and (max-width: 860px) {
@@ -443,6 +473,22 @@ h2 {
 	.div_map_total {
 		margin-left: 30px;
 		margin-right: 30px;
+	}
+	.apple-google{
+		width: 300px
+	}
+	
+	.apple-logo, .google-logo {
+    width: 140px;
+    height: 40px;
+	}
+	
+	.apple-google img {
+	width: 100px;
+	}
+	
+	.div_text p {
+	max-width: 340px;
 	}
 }
 
@@ -511,7 +557,19 @@ h2 {
 	}
 }
 
+/*--------sponsor section----------- */
 
+@media screen and (max-width: 1069px) {
+	.div_map {
+		padding-bottom: 0px
+	}
+	
+	.div_text p {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    }
+}
 /* -----------------------------------Animation------------------------------------- */
 .center p {
   transform: translateY(-40px);

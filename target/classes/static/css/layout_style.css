@@ -108,9 +108,12 @@ a.navbar-brand {
 
 /* -----------------------------------Footer------------------------------------- */
 
+.footer{
+	background-color: #3f4040;
+}
+
 .footer {
 	position: relative;
-	background-color: #3f4040;
 	color: #fff;
 	padding: 55px 0 40px;
 }
