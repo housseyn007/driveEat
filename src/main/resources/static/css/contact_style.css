@@ -1,0 +1,227 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.contact_container {
+	width: 100vw;
+	padding-top: 150px;
+	background: url(/images/background/background_contact.jpg) no-repeat
+		center center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 50px;
+}
+
+.section-header {
+	margin: 0;
+	padding: 20px;
+	width: 55vw;
+	text-align: center;
+	font-family: 'Mansalva', cursive;
+	font-size: 3.5em;
+	background: rgba(33, 33, 33, 0.9);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	color: #fff;
+}
+
+.contact-wrapper {
+	padding: 50px;
+	width: 55vw;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background: rgba(33, 33, 33, 0.5);
+}
+
+/* -----------------------------------left Contact Page------------------------------------- */
+
+.form-horizontal {
+	padding: 10px;
+	max-width: 340px;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 30px;
+}
+
+.form-control, textarea {
+	max-width: 340px;
+	background-color: #f9f8f8;
+	color: #000;
+	letter-spacing: 1px;
+}
+
+.form-button {
+	margin-top: 30px;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.send-button {
+	margin-top: 15px;
+	height: 45px;
+	width: 340px;
+	overflow: hidden;
+	background: #000000;
+	border-radius: 7px;
+	transition: all .2s ease-in-out;
+}
+
+.button {
+	width: 340px;
+	height: 45px;
+	transition: all .2s ease-in-out;
+}
+
+.fa-paper-plane {
+	margin-top: 7px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.send-text {
+	display: block;
+	margin-top: 5px;
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color: #ecf0f1;
+	font-size: 20px;
+}
+
+.button:hover {
+	transform: translate3d(0px, -31px, 0px);
+}
+
+/* -----------------------------------Right Contact Page------------------------------------- */
+
+.direct-contact-container {
+	padding: 10px;
+	text-align: center;
+	max-width: 340px;
+	margin-top: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* -----------------------------------Location, Phone, Email Section------------------------------------- */
+
+.contact-list {
+	list-style-type: none;
+}
+
+.list-item {
+	line-height: 4;
+	color: #fff;
+}
+
+.contact-text {
+	margin-top: 20px !important;
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color: #ecf0f1;
+	font-size: 19px;
+}
+
+.place {
+	margin-left: 30px;
+}
+
+.phone {
+	margin-left: 30px;
+}
+
+.gmail {
+	margin-left: 30px;
+}
+
+/* -----------------------------------Social Media Icons------------------------------------- */
+
+.social-media-list {
+	position: relative;
+	font-size: 2.3rem;
+	width: 100%;
+}
+
+.social-media-list li a {
+	color: #fff;
+}
+
+.social-media-list li {
+	position: relative;
+	display: inline-block;
+	height: 70px;
+	width: 70px;
+	margin: 10px auto;
+	line-height: 70px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: rgb(27, 27, 27);
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	border-radius: 50%;
+	opacity: 0;
+	box-shadow: 0 0 0 1px #fff;
+	transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+	background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+	opacity: 1;
+	transform: scale(1.12);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+	color: #111;
+}
+
+hr {
+	border-color: rgba(255, 255, 255, .8);
+}
+
+/* -----------------------------------Media------------------------------------- */
+
+@media screen and (max-width: 1399px) {
+	.direct-contact-container {
+		display: none;
+	}
+	.form-horizontal {
+		padding: 0px;
+		margin-top: 20px;
+	}
+	.section-header, .contact-wrapper {
+		width: 60vw;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.section-header, .contact-wrapper {
+		width: 90vw;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.form-horizontal, .form-control, textarea, .send-button, .button{
+		max-width: 280px;
+	}
+
+}
