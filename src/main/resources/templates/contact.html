@@ -15,9 +15,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
-
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -29,6 +27,91 @@
   <header th:replace="fragment/layout.html :: top"></header>
 
 
+  <section class="contact_section">
+
+    <div class="contact_container">
+
+      <h1 class="section-header">CONTACT</h1>
+      <div class="contact-wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Left contact page -->
+        <!-- ============================================================== -->
+
+        <form class="form-horizontal" method="post" action="contact.php">
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nom" name="firstName">
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Prénom" name="lastName">
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="E-mail" name="email">
+          </div>
+
+          <div class="form-group">
+            <input type="tel" class="form-control" placeholder="Téléphone" name="phone">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="6" placeholder="Message" name="message"></textarea>
+          </div>
+          <div class="form-button">
+            <button class="send-button" type="submit">
+              <div class="button">
+                <i class="fa fa-paper-plane"></i><span class="send-text">Envoyer</span>
+              </div>
+
+            </button>
+          </div>
+        </form>
+
+        <!-- ============================================================== -->
+        <!-- Right contact page -->
+        <!-- ============================================================== -->
+
+        <div class="direct-contact-container">
+
+          <ul class="contact-list">
+            <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">1 Avenue du Champ de Mars<br>CS 30019 - 45074 Orléans Cedex 2</span></i></li>
+
+            <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone">+33 6 66 22 65 03</span></i></li>
+
+            <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail">contact@drive-eat.fr</span></i></li>
+
+          </ul>
+
+          <!-- ============================================================== -->
+          <!-- Social Media Icons -->
+          <!-- ============================================================== -->
+
+          <hr>
+          <ul class="social-media-list">
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+          <hr>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
 
   <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
 

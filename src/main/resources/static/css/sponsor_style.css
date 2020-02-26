@@ -13,7 +13,7 @@ body {
 /*      						HomeSponsor css  */
 /*   ============================================================== */
  .homesponsor {
- 	background: linear-gradient(to bottom, rgba(0, 0, 0, .1), transparent), url(/images/fond_ecran_sponsor.jpg) no-repeat center center;
+ 	background: linear-gradient(to bottom, rgba(0, 0, 0, .1), transparent), url(/images/background/background_sponsor.jpg) no-repeat center center;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
