@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  <link rel="stylesheet" th:href="@{css/legal_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+  <header th:replace="fragment/layout.html :: top"></header>
+	<section>
+		
+	
+	</section>
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+  
+    <script>
+    $(document).ready(function() {
+
+      $('.card').delay(1800).queue(function(next) {
+        $(this).removeClass('hover');
+        $('a.hover').removeClass('hover');
+        next();
+      });
+    });
+    
+    </script>
+
+
+ 
+</body>
+
+</html>
