@@ -6,18 +6,9 @@
 	box-sizing: border-box;
 	list-style: none;
  }
- 
-/* -------------------------------------------home Section-------------------------------------------*/ 
-
-
 body {
 	overflow-x: hidden;
 }
-/* GLOBAL */
-h2 {
-	margin-top: 0;
-}
-
 /* 	 ==============================================================  */
 /*      						HomeSponsor css  */
 /*   ============================================================== */
@@ -147,7 +138,7 @@ h2 {
 	font-family: 'Andika', sans-serif;
 	font-weight: bolder;
 	color: #3f4040;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	}
  
@@ -179,6 +170,69 @@ h2 {
  	height: 200px;
  }
  
+/* 	 ==============================================================  */
+/*      						Outils css  */
+/*   ============================================================== */
+.device_section{
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.texth2{
+
+}
+.sectionoutils{
+	width: 50vw;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 25px;
+	
+}
+.texteoutils{
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color:#3f4040;
+	font-size: 20px;
+	margin: 15px;
+}
+.textecheck{
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color:#3f4040;
+	font-size: 20px;
+
+}
+.imgscanner{
+	width: 500px;
+}
+.divcheck{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 20px;
+}
+.textecheck span {
+	color: #ad6f23;
+}
+.divservicesoutils{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.outil1, .outil2, .outil3{
+	display: flex;
+	align-items: center;
+}
+.servicesoutils{
+	width: 55px;
+}
+
+
+ 
  /* 	 ==============================================================  */
 /*      						Formulaire css  */
 /*   ============================================================== */
@@ -199,13 +253,13 @@ h2 {
 	color: #ad6f23;
 	text-align: center;
 	padding-top: 45px;
-margin-bottom: 45px;
+	margin-bottom: 45px;
 	}
 
 .input, .commentaires .area {
 	width: 100%;
 	padding: 20px;
-	box-sizing: border-box;;
+	box-sizing: border-box;
 	margin-bottom: 25px;
 	border: 2px solid rgba(55, 59, 77, 1);
 	font-size: 14px;
@@ -270,6 +324,12 @@ margin-bottom: 45px;
 }
 
 /* MEDIA */
+
+@media screen and (max-width: 1086px) {
+.divservicesoutils{
+	margin-top: 30px;
+}
+}
 
 @media screen and (max-width: 1030px) {
 
@@ -338,13 +398,13 @@ margin-bottom: 45px;
 	background: transparent;
  }	
   .hrentresections1{
- border: 1px solid #ad6f23;
- margin-top: 0px;
+ 	border: 1px solid #ad6f23;
+	margin-top: 0px;
  }
  
  .hrentresections2{
- border: 1px solid #ad6f23;
- margin: 0px;
+ 	border: 1px solid #ad6f23;
+	margin: 0px;
  }
 }
 
@@ -410,7 +470,7 @@ margin-bottom: 45px;
 .imagecarousel6{
 	width: 840px;
 	height: 400px;
-	background: transparent; ;  
+	background: transparent;
  }
  
 .hrentresections1{
@@ -442,13 +502,13 @@ margin-bottom: 45px;
 	.imagecarousel1{
 	width: 640px;
 	height: 300px;
-	background: transparent; ; 
+	background: transparent;
  }
  
   .imagecarousel2{
 	width: 640px;
 	height: 300px;
-	background: transparent; ; 
+	background: transparent;
  }
  
   .imagecarousel3{
@@ -514,7 +574,7 @@ margin-bottom: 45px;
 	color:
 	#ad6f23;
 	text-align: center;
-	padding-top: 35px;
+	padding: 25px;
  }
  
   .hrentresections1{
@@ -539,6 +599,35 @@ margin-bottom: 45px;
 	font-size: 1.2em;
 	text-align: center;
 }
+
+.divimgscanner{
+	padding: 15px;
+}
+
+.outil1, .outil2, .outil3{
+	margin: 5px;
+}
+.servicesoutils{
+	width: 55px;
+	
+}
+.textecheck{
+	font-size: 17px;
+}
+.sectionoutils{
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 25px;
+	}
+.texteoutils{
+	font-family: 'Andika', sans-serif;
+	font-weight: bolder;
+	color:#3f4040;
+	font-size: 18px;
+	margin: 6px;
+}
 	
 .formulaire{	
 	max-width: 800px;
@@ -553,7 +642,7 @@ margin-bottom: 45px;
 .input, .commentaires .area {
 	width: 100%;
 	padding: 12px;
-	box-sizing: border-box;;
+	box-sizing: border-box;
 	margin-bottom: 25px;
 	border: 2px solid rgba(55, 59, 77, 1);
 	font-size: 14px;
@@ -570,45 +659,33 @@ margin-bottom: 45px;
 	}
 	
 .envoyer .boutonformulaire {
-		background: #bd833d;
-		padding: 10px 50px;
-		font-size: 15px;
-		text-decoration: none;
-		color: #fff;
-		text-transform: uppercase;
-		cursor: pointer;
-		border-radius: 5px;
-		font-family: 'Andika', sans-serif;
-		letter-spacing: 1px;
+	background: #bd833d;
+	padding: 10px 50px;
+	font-size: 15px;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 5px;
+	font-family: 'Andika', sans-serif;
+	letter-spacing: 1px;
 		}
 .envoyer .boutonformulaire:hover {
-		background: #c8a248;
-		padding: 10px 50px;
-		font-size: 15px;
-		text-decoration: none;
-		color: #fff;
-		text-transform: uppercase;
-		cursor: pointer;
-		border-radius: 5px;
-		font-family: 'Andika', sans-serif;
-		letter-spacing: 1px;
+	background: #c8a248;
+	padding: 10px 50px;
+	font-size: 15px;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 5px;
+	font-family: 'Andika', sans-serif;
+	letter-spacing: 1px;
 		}
 }
-	
-
 
 /* ANIMATIONS */
 
- .boostezcommerce h2   {
-	transform: scale(2);
-	opacity: 0;
-	animation: fade 0.5s forwards;
-	text-align: center;
-	text-align: center;
-	letter-spacing: 1px;
-	font-size: 45px;
-	margin-bottom: 20px;
-	}
  .center h2, .cercledevenezpartenaire,.bordercercle {
 	 transform: scale(2);
 	 opacity: 0;
