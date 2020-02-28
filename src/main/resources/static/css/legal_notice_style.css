@@ -52,6 +52,7 @@
 .legal-notice_img h3{
 	font-family: 'Andika', sans-serif;
 	font-weight:bolder;
+	font-size:2em;
 	color: #fff;	
 }
 
@@ -71,7 +72,9 @@
 }
 
 .legal-notice_text h3{
+	margin-top: 43px;
 	font-family: 'Andika', sans-serif;
+	font-size:2em;
 	font-weight:bolder;
 	color: #3f4040;	
 }
@@ -82,6 +85,11 @@
 }
 
 /* -------------------------------------------Media Section-------------------------------------------*/ 
+@media screen and (max-width: 1449px) {
+	.legal-notice_text h3{
+		margin-top: 0px;
+	}	
+}
 
 @media screen and (max-width: 600px) {
 	.legal-notice_img, .legal-notice_text{
