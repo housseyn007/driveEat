@@ -1,3 +1,8 @@
+@viewport {
+   width: device-width; /* largeur du viewport */
+   zoom: 1; /* zoom initial à 1.0 (et clin d'oeil aux fans d'IE6/7) */
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -313,9 +318,9 @@ h2 {
 
 .benefit_div img {
 	padding: 10px;
-	width: 350px;
+	max-width: 350px;
+	max-height: 350px;
 }
-
 
 .benefit_p {
 	padding: 20px;
@@ -423,6 +428,7 @@ h2 {
 
 
 /* -----------------------------------Media------------------------------------- */
+
 @media screen and (max-width: 860px) {
 	.logoHome {
 		width: 450px
@@ -546,9 +552,6 @@ h2 {
 	}
 
 	/*--------customer benefit----------- */
-	.benefit_div img {
-		width: 300px;
-	}
 	.benefit_p {
 		font-size: 17px;
 	}
