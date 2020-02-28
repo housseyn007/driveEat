@@ -180,7 +180,8 @@ a.navbar-brand {
 	justify-content: center;
 }
 .photoLogoFooter img{
-	width: 220px;
+	max-width: 220px;
+	max-height: 80px;
 }
 .photoAppFooter {
 	margin:15px 0;
@@ -223,13 +224,16 @@ a.navbar-brand {
 }
 
 /* -----------------------------------Media------------------------------------- */
-@media ( max-width : 1198px) {
-.footer{
-	padding: 5px 0;
-}
-.col-sm-12 {
-    margin-bottom: 30px;
-}
+@media ( max-width : 1199px) {
+	.footer{
+		padding: 5px 0;
+	}
+	.col-sm-12 {
+	    margin-bottom: 30px;
+	}
+	.photoLogoFooter{
+		margin-top: 15px;
+	}
 	
 }
 @media ( max-width : 1112px) {
