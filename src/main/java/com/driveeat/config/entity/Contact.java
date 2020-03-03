@@ -28,7 +28,7 @@ public class Contact {
 	private String phone;
 	
 	
-	@Pattern(regexp = "^[\\S\\s]{1,150}$", message = "Nom du restaurant entre 2 et 100 caractères")
+	@Pattern(regexp = "^[\\S\\s]{1,50}$", message = "Nom du restaurant entre 1 et 50 caractères")
 	private String restaurant;
 	
 	private String address;

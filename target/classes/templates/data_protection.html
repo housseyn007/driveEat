@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  <link rel="stylesheet" th:href="@{css/data_protection_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="fragment/layout.html :: top"></header>
+  <section class="data_protection">
+    <div class="h1-container-total">
+      <div class="h1-container">
+        <h1>Règlement général sur la protection des données</h1>
+        <p>
+          Nous accordons la plus grande importance à la confidentialité de vos informations et de vos données personnelles.
+          Cette politique de confidentialité a été fondée dans le respect des lois, règlements et normes en vigueur. Elle décrit les données personnelles qui sont collectées ou générées (traitées) lorsque vous utilisez les sites internet de Drive Eat
+          (“Sites”) et l’application mobile de Drive Eat. Elle explique également la façon dont vos données personnelles sont utilisées, partagées et protégées, les choix dont vous disposez s’agissant de vos données personnelles et comment nous
+          contacter.
+          <br> <br>La plateforme numérique Drive Eat (ci-après la <b>« Plateforme »</b>) accessible via le site internet <a href="">www.drive-eat.fr</a> (ci-après le <b>« Site »</b>)
+          ou l’application mobile « Drive Eat » (ci-après <b>« l’Application »</b>) développée par la société DRIVE EAT (dénommée ci-après <b>« DRIVE EAT »</b>) permet aux utilisateurs consommateurs (ci-après les <b>« Utilisateurs »</b>) via la
+          Plateforme de commander en ligne des plats, produits, repas, ou menu à emporter (ci-après le <b>« Service »</b>)
+          auprès de prestataires professionnels indépendants spécialisés dans le domaine du commerce de bouche (restaurateurs, boulangers, pâtissiers,… ) référencés sur la Plateforme (les <b>« Partenaires »</b>).
+          <br> <br>Dans le cadre de leur utilisation de cette Plateforme, l’Utilisateur et le Partenaire sont amenés à transmettre des données à caractère personnel les concernant.
+          <br><br>La présente Politique de Confidentialité a donc vocation à s’appliquer à toute personne ayant recours au Service. Le contenu et les données de certains de nos Services sont également disponibles aux internautes simples navigateur
+          (<b>“Visiteurs”</b>).
+        </p>
+      </div>
+    </div>
+
+    <div class="container demo">
+
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                1. Collecte des données personnelles :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <p>Une donnée personnelle est toute information qui permet d’identifier directement ou indirectement une personne physique.
+                Ainsi, un nom, une adresse postale ou électronique, un numéro de téléphone ou encore une adresse IP sont par exemple des données personnelles.
+                Les données à caractère personnel qui sont collectées via la Plateforme sont les suivantes :
+
+                <br><br><span class="title"> a) Informations que vous communiquez volontairement : </span>
+                Certaines parties de nos Services peuvent vous demander de fournir volontairement des données personnelles.
+                Par exemple :
+
+                <br> <br><span class="sub_title">- Informations d’enregistrement : </span>
+                Lorsque vous créez un compte Drive Eat, signez ou remplissez des formulaires sur les Services, nous collectons des informations vous concernant incluant vos noms, adresses,
+                numéros de téléphone, adresses électroniques et le mot de passe que vous créez.
+
+                <br><br><span class="sub_title">- Informations sur les transactions : </span>
+                Nous collectons des informations concernant vos commandes, incluant les informations de paiement (ex : votre numéro de carte de crédit) en utilisant les services sécurisés de nos processeurs de paiement.
+                Les opérations de paiement sont confiées à nos prestataires de service de paiement et nous ne stockons pas vos informations de carte de crédit dans nos systèmes.
+
+                <br><br><span class="sub_title">- Informations concernant vos préférences publicitaires : </span>
+                Nous pouvons collecter des informations concernant vos préférences pour recevoir des publicités,
+                service auquel vous pouvez vous abonner ou vous désabonner à tout moment.
+
+                <br><br><span class="sub_title">- Commentaires : </span>
+                Lorsque vous publiez des messages ou avis sur les Services ou lorsque vous nous contactez, par exemple avec une question, un problème ou commentaire, nous collectons des informations vous concernant y compris votre nom et le contenu
+                de votre demande.
+                Si vous contactez nos équipes de service client, nous pouvons enregistrer et garder une trace de votre conversation à des fins de qualité et de formation et afin d’aider à la résolution de vos demandes.
+
+                <br><br><span class="title"> b) Informations que nous collectons automatiquement : </span>
+                Lorsque vous accédez à nos Services, nous pouvons collecter certaines informations automatiquement depuis votre dispositif.
+                Dans certains pays, y compris les pays européens, ces informations peuvent être considérées comme des données personnelles en vertu du droit applicable en matière de protection des données.
+                Par exemple :
+
+                <br><br><span class="sub_title">- Information sur l’activité : </span>
+                Nous collectons des informations sur votre utilisation des Services et des informations vous concernant à partir du contenu que vous créez et des notifications ou messages que vous publiez ou envoyez,
+                tout comme de vos recherches, de ce que vous regardez et de vos discussions. 
+
+                <br><br><span class="sub_title">- Cookies et technologies similaires : </span>
+                Nous utilisons des cookies et une technologie de suivi similaire afin de collecter et utiliser les données personnelles vous concernant (ex. votre adresse de Protocole Internet (IP), l’identifiant de votre dispositif, votre type de
+                navigateur et quand,
+                à quelle fréquence et combien de temps vous interagissez avec les Services), y compris afin de faciliter la publicité basée sur vos intérêts.
+                <br>
+                Pour obtenir de plus amples informations sur les types de cookies et technologies similaires que nous utilisons, pourquoi, et comment vous pouvez contrôler ces technologies, consultez la section “9 Cookies et Balises” ci-après dans
+                cette politique de confidentialité. 
+
+                <br><br><span class="title"> c) Informations que nous obtenons de sources tierces : </span>
+                Nous pouvons recevoir, occasionnellement, des données personnelles de la part de sources tierces, y compris des réseaux publicitaires mais uniquement si nous avons vérifié que ces tiers ont obtenu votre consentement au traitement des
+                informations ou sont autrement
+                légalement autorisés ou tenus de partager vos données personnelles avec nous.
+                Ces informations peuvent inclure votre groupe démographique probable. Par exemple :
+
+                <br><br><span class="sub_title">- Rapports analytiques et études de marché : </span>
+                Nous collectons des informations auprès de nos sociétés affiliées tierces concernant la manière dont vous répondez et réagissez à nos campagnes marketing afin que nous puissions personnaliser notre marketing et nos Services en
+                conséquence.
+                <br>
+                Nous pouvons également recevoir des informations agrégées sous la forme de segments d’audience de la part de sources tierces afin d’afficher des publicités ciblées sur des biens numériques exploités par des organisations telles que
+                Facebook et Google.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                2. Utilisation des données personnelles:
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <p>ULes données personnelles collectées auprès des Utilisateurs et des Partenaires ont pour objectif la mise à disposition du Service de la Plateforme, son amélioration et le maintien d’un environnement sécurisé.
+                Plus particulièrement, les utilisations peuvent être les suivantes :
+                <br><br><span class="title"> a) Informations que vous communiquez volontairement : </span>
+
+                <br> <br><span class="sub_title">- Informations d’enregistrement : </span>
+                Les informations d’enregistrement que vous fournissez lorsque vous créez un compte Drive Eat nous permettent de vous donner accès aux Services et de vous les fournir [selon nos Conditions]. Nous utilisons également
+                ces informations pour authentifier votre accès aux Services, vous contacter pour obtenir vos points de vue et vous communiquer les modifications ou mises à jour importantes de nos Services. .
+
+                <br><br><span class="sub_title">- Informations sur les transactions : </span>
+                Les informations sur vos transactions (tels que les aliments que vous ajoutez dans votre panier) nous permettent de traiter votre Commande et de vous envoyer une facture exacte. Elles nous aident également,
+                ainsi que tout Restaurant dans lequel vous passez commande, à vous contacter si nécessaire.<br>
+
+                Drive Eat peut vous contacter par courriel, téléphone ou SMS afin de vous communiquer les mises à jour de votre statut ou autres informations ou résoudre les problèmes avec votre compte ou Commande.  
+                Un Restaurant peut vous contacter par téléphone ou SMS afin de vous fournir des mises à jour de votre statut ou autres informations concernant votre Commande. 
+                Lorsque vous payez pour votre Commande avec un fournisseur de services de paiement mobile ou de portefeuille numérique (tel que Paypal), nous vous enverrons des informations sur les transactions via des courriels de confirmation
+                ou SMS à l’adresse de courrier électronique ou au numéro de téléphone enregistré auprès de ce prestataire de services (Lorsque cela est requis par ces prestataires).<br>
+                Nous analyserons également les informations sur les transactions réalisées et les Commandes dûment délivrées sur la base de la correspondance des données ou d’une analyse statistique afin que nous puissions administrer, supporter,
+                améliorer et développer notre activité et nos Services. Nos analyses nous aident également à détecter et prévenir la fraude ou les autres activités ou actes illégaux interdits par nos Conditions ou toute politique applicable aux
+                Service
+
+                <br><br><span class="sub_title">- Informations concernant vos préférences publicitaires : </span>
+                Drive Eat peut vous envoyer des publicités, si la loi l’autorise, par la poste, par courriel, [téléphone], mobile (c’est-à-dire, SMS, messagerie d’application et notifications push) concernant nos produits ou Services.<br>
+                Si vous avez donné votre consentement, nous pouvons partager vos données personnelles avec des tiers (ex. d’autres sociétés) dans d’autres secteurs (tels que les aliments,
+                les boissons et divertissements) de sorte qu’ils peuvent vous parler de produits ou services pouvant vous intéresser. <br>
+                Si nous ne souhaitez pas utiliser vos données de cette manière ou changez généralement d’avis concernant la réception de toute forme de communications marketing, vous pouvez vous désabonner à tout moment en utilisant
+                la fonctionnalité se désabonner concernant la communication que vous recevez ou en modifiant votre profil en conséquence. Vous pouvez également opter pour les notifications push au niveau du dispositif
+                (ex : par la configuration de votre iOS). Si vous choisissez de vous désabonner de nos publicités, nous conserverons un dossier de vos préférences afin de ne pas vous déranger avec des publicités non sollicitées à l’avenir.
+
+                <br><br><span class="sub_title">- Commentaires et avis : </span>
+                Si vous nous soumettez des commentaires, nous les utiliserons pour répondre à vos questions ou demandes, pour fournir l’assistance client et résoudre tout problème avec vos Commandes et les Services. Nous publierons sur notre
+                plateforme les avis que vous nous envoyez concernant les Restaurants et nos Services en général et nous analyserons également vos commentaires pour améliorer et développer nos Services et afin d’améliorer votre expérience.
+
+                <br><br><span class="title"> b) Informations que nous collectons automatiquement : </span>
+                Lorsque vous accédez à nos Services, nous pouvons collecter certaines informations automatiquement depuis votre dispositif telles que votre adresse IP, adresse MAC ou l’identifiant du dispositif.  Dans certains pays,
+                y compris l’Europe, ces informations peuvent être considérées comme des données personnelles en vertu du droit applicable en matière de protection des données.
+
+                <br><br><span class="sub_title">- Information sur l’activité : </span>
+                Nous analysons vos habitudes d’achat et la manière dont vous interagissez avec nos Services afin de pouvoir vous suggérer des options alimentaires de nouveaux restaurants que vous aimeriez, selon nous, tester.  
+                Si vous décidez de partager votre géolocalisation avec nous, nous pouvons utiliser ces informations pour vous montrer le contenu adapté à votre localisation ; Nous pouvons également vous fournir du contenu
+                et des publicités personnalisés sur la base de vos interactions précédentes avec nos Services et nos connaissances de vos préférences sur la base de votre historique d’utilisation et d’achat concernant les Services.<br>
+                Nous vous permettons d’accéder à l’historique de vos Commandes afin que vous puissiez facilement commander de nouveau dans vos Restaurants favoris. Nous pouvons également collecter des informations sur votre interaction
+                avec nos courriels et autres formes de communication.
+
+                <br><br><span class="sub_title">- Cookies et technologies similaires : </span>
+                Nous pouvons travailler avec des sociétés affiliées publicitaires envoyant des publicités sur nos Services sur les sites et services de tiers.
+                Certains de ces réseaux utilisent des cookies nous permettant d’afficher des publicités personnalisées en fonction de vos intérêts basés sur
+                votre activité de navigation sur internet.<br>
+                Tout comme de nombreux sites internet et services en ligne, nous utilisons des cookies et autres technologies pour tenir un dossier de votre interaction avec nos Services.
+                Les cookies nous aident également à gérer un ensemble d’options et de contenu tout comme stocker les recherches et représenter vos informations au moment de la Commande.
+                Pour obtenir de plus amples informations sur les types de cookies et technologies similaires que nous utilisons, pourquoi, et comment vous pouvez contrôler ces technologies,
+                consultez la section “9 Cookies et Balises” ci-après dans cette politique de confidentialité. 
+
+                <br><br><span class="title"> c) Informations que nous obtenons de sources tierces : </span>
+                Lorsque vous accédez à nos Services, nous pouvons collecter certaines informations automatiquement depuis votre dispositif telles que votre adresse IP, adresse MAC ou l’identifiant du dispositif.  Dans certains pays,
+                y compris l’Europe, ces informations peuvent être considérées comme des données personnelles en vertu du droit applicable en matière de protection des données.
+
+                <br><br><span class="sub_title">- Rapports analytiques et études de marché : </span>
+                Nous analysons les informations que nous collectons auprès de nos prestataires de services tiers (tels que Google, Facebook, Amazon et autres sociétés affiliées) afin de comprendre comment vous réagissez à nos Services et publicités
+                (ex : si vous avez cliqué sur l’une de nos publicités).  Ceci nous aide à comprendre vos préférences et à vous recommander des Services conformes à vos intérêts.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                3. Partage des données personnelles entre Utilisateurs et Partenaires :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <p>Les données personnelles de l’Utilisateur peuvent être partagées avec les Partenaires pour les besoins de la commande.
+
+                <br><br>Le Partenaire déclare être en conformité avec les normes en vigueur en matière de RGPD.
+                Il s’engage à remettre à DRIVE EAT sa politique de confidentialité en la matière et à mettre tout en œuvre pour traiter les données personnelles transmises dans le respect des présentes conditions.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFor">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFor" aria-expanded="true" aria-controls="collapseFor">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                4. Partage des données personnelles des Utilisateurs et Partenaires avec les sous-traitants <br> DRIVE EAT et sociétés tierces :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFor">
+            <div class="panel-body">
+              <p>Les données personnelles de l’Utilisateur et du Partenaire peuvent être partagées avec les sous-traitants DRIVE EAT et les sociétés tierces, dans les cas suivants :
+
+                <br><br>Lorsque l’Utilisateur et le Partenaire, utilise les services financiers proposés par MANGOPAY <a href="https://mangopay.com/fr/privacy" target="_blank">https://mangopay.com/fr/privacy</a> via la Plateforme, MANGOPAY étant
+                également en relation avec les sociétés bancaires et financières tierces.
+                <br><br>Lorsque DRIVE EAT a recours aux services de prestataires pour fournir l’assistance, la publicité, les prestations de paiement ou l’hébergement. Ces prestataires disposent d’un accès limité aux données, dans le cadre de
+                l’exécution de ces prestations et ont une obligation contractuelle de
+                les utiliser en conformité avec les dispositions de la réglementation applicable en matière de protection de données à caractère personnel.
+                <br><br>Si la loi l’exige, DRIVE EAT peut effectuer la transmission de données pour donner suite aux réclamations présentées contre l’Application et se conformer aux procédures administratives et judiciaires.
+                <br><br>Si DRIVE EAT est impliqué dans une opération de fusion, acquisition, cession d’actifs ou procédure de redressement judiciaire, il pourra être amené à céder ou partager tout ou partie de ses actifs,
+                y compris des données à caractère personnel. Dans ce cas, les Utilisateurs et Partenaires seraient informés, avant que les données à caractère personnel ne soient transférées à une tierce partie.
+                En outre, les Utilisateurs et Partenaires reconnaissant que DRIVE EAT pourra transmettre les données à caractère personnel fournies par les Utilisateurs et Partenaire à des tiers pour la vente d’étude de marché dès lors qu’elles sont
+                anonymisées.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFive">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                5. Durée de conservation :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFor">
+            <div class="panel-body">
+              <p>Les données à caractère personnel sont conservées uniquement pendant la durée nécessaire à l’accomplissement des finalités mentionnées ci-dessus ou pour permettre à DRIVE EAT de répondre à ses obligations légales.
+                <br><br>Les données à caractère personnel utilisées à des fins de prospection commerciale peuvent être conservées pour une durée maximale de trois (3) ans à compter de la fin de la relation commerciale.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingSix">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                6. Transfert des données personnelles à l’étranger :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+            <div class="panel-body">
+              <p>DRIVE EAT informe l’Utilisateur et le Partenaire qu’aucun transfert de données personnelles n’a lieu à ce jour. Les données traitées sont hébergées en France ou dans la zone économique européenne. En tout état de cause,
+                DRIVE EAT s’engage à respecter les dispositions légales en matière de transfert de données personnelles à l’étranger et notamment toute politique de « Private Shield », et s’engage à ce titre à informer l’Utilisateur et le Partenaire.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingSeven">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                7. Transfert des données personnelles à l’étranger :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+            <div class="panel-body">
+              <p>DRIVE EAT accorde une grande importance à la protection de vos données personnelles contre tout accès non autorisé et tout traitement illégal, perte, destruction ou dommage accidentel.
+                Nous mettons en œuvre des mesures organisationnelles, techniques, logicielles et physiques en matière de sécurité du numérique pour protéger les données personnelles contre les altérations, destructions et accès non autorisés.
+                Toutefois, il est à signaler qu’internet n’est pas un environnement complètement sécurisé et la Plateforme ne peut pas garantir la sécurité de la transmission ou du stockage des informations sur internet.
+                <br><br>Le respect de la sécurité et de la protection de vos données s’impose à l’ensemble de nos collaborateurs ainsi qu’à nos prestataires et Partenaires.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingEight">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                8. Mise en œuvre des droits des Utilisateurs :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+            <div class="panel-body">
+              <p>En application de la réglementation applicable aux données à caractère personnel, les Utilisateurs et Partenaires disposent des droits suivants :
+                <br><br>Ils peuvent mettre à jour ou supprimer les données qui les concernent en écrivant à l’adresse électronique suivante  <a href="contact" target="-blank">contact@drive-eat.fr</a>
+                <br><br>Ils peuvent supprimer leur compte, en écrivant à l’adresse électronique suivante <a href="contact" target="-blank">contact@drive-eat.fr</a>. Il est à noter que les informations partagées avec d’autres Utilisateurs, comme les
+                publications sur les forums, peuvent rester visibles du public sur la Plateforme même après la suppression de leur compte.</a>
+                <br><br>Ils peuvent exercer leur droit d’accès pour connaître les données personnelles les concernant, en écrivant à l’adresse électronique : <a href="contact" target="-blank">contact@drive-eat.fr</a>. Dans ce cas, avant la mise en
+                œuvre de ce droit DRIVE EAT peut demander une preuve de l’identité de l’Utilisateur afin d’en vérifier l’exactitude.</a>
+                <br><br>Si les données à caractère personnel détenues par DRIVE EAT sont incomplètes ou inexactes, ils peuvent demander la mise à jour des informations en écrivant à l’adresse électronique <a href="contact"
+                  target="-blank">contact@drive-eat.fr</a>.
+                <br><br>Les Utilisateurs peuvent demander la suppression de leurs données à caractère personnel, conformément aux lois applicables en matière de protection des données, en écrivant à l’adresse électronique <a href="contact"
+                  target="-blank">contact@drive-eat.fr</a>.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingNine">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                9. Cookies et balises :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+            <div class="panel-body">
+              <p>Drive Eat collecte des informations, qui peuvent inclure des données personnelles, depuis votre navigateur lorsque vous utilisez nos Sites. Nous utilisons différentes méthodes, telles que les cookies et balises, pour collecter ces
+                informations, lesquelles peuvent inclure vos (I) adresse IP ; (II) cookie unique d’identification,
+                cookie d’information et informations sur les contenus de votre matériel pour accéder à certaines caractéristiques ; (III) numéro unique d’identification du matériel et type de matériel ; (IV) domaine, type de navigateur et langue ;
+                (V) système d’exploitation et paramétrage ; (VI) pays et fuseau horaire ; (VII) sites préalablement visités ;
+                (VIII) informations sur vos actions sur nos Sites telles que comportement en termes de clics, achats et préférences ; et (IX) heures d’accès et URLs de référence.
+                <br><br>Des tiers peuvent également collecter des informations depuis les Sites par l’intermédiaire de cookies, de modules tiers et widgets. Ces tiers collectent des données directement depuis votre navigateur et le traitement de ces
+                données est soumis à leurs propres politiques de protection des données personnelles.
+                <br><br>Nous utilisons des cookies et des balises pour suivre l’usage des Sites par nos clients et comprendre leurs préférences (telles que pays et langue). Cela nous permet de fournir des services à nos clients et d’améliorer leur
+                expérience en ligne. Nous utilisons également des cookies et des balises pour obtenir des informations générales sur le trafic du site et ses interactions, pour identifier des tendances et obtenir des statistiques, et ainsi améliorer
+                nos Sites.
+                <br><br>Il y a en général trois catégories de cookies utilisés sur nos Sites :
+                <br><br><span class="sub_title">- Cookies fonctionnels : </span>
+                Ces cookies sont indispensables au bon fonctionnement du site web et ne peuvent pas être désactivés de nos systèmes. Ils ne sont généralement activés qu’en réponse à des actions que vous effectuez et qui correspondent à une demande de
+                services, comme la configuration de vos préférences de confidentialité, la connexion ou le remplissage de formulaires. Vous pouvez configurer votre navigateur pour bloquer ou être alerté de l'utilisation de ces cookies.
+                Cependant, si cette catégorie de cookies - qui ne stocke aucune donnée personnelle - est bloquée, certaines parties du site ne pourront pas fonctionner.
+                <br><br><span class="sub_title">- Cookies de performance : </span>
+                Ces cookies nous permettent de déterminer le nombre de visites et les sources du trafic sur notre site web, afin d'en mesurer et d’en améliorer les performances. Ils nous aident également à identifier les pages les plus / moins
+                visitées et à évaluer comment les visiteurs naviguent sur le site. Toutes les informations, collectées par ces cookies, sont agrégées et donc anonymisées. Si vous n'acceptez pas cette catégorie de cookies,
+                nous ne pourrons pas savoir quand vous avez réalisé votre visite sur notre site web.
+                <br><br><span class="sub_title">- Cookies de fonctionnalité : </span>
+                Ces cookies permettent d'améliorer les fonctionnalités et la personnalisation de notre site. Ils peuvent être définis par nous ou par des partenaires tiers, dont nous avons ajouté les services à nos pages. Si vous n'acceptez pas ces
+                cookies, certains ou tous ces services seront susceptibles ne pas fonctionner correctement.
+                <br><br>Pour un résumé clair et à jour de chacun des tiers accédant à votre navigateur internet (via les Sites Drive Eat), nous vous recommandons d’installer un module spécifique assurant cette fonction. Vous pouvez également choisir
+                d’être alerté par votre ordinateur chaque fois qu’un cookie est envoyé, ou vous pouvez choisir de refuser tous les cookies.
+                Vous pouvez procéder à ces choix en accédant aux paramètres du navigateur internet de chacun de vos appareils. Chaque navigateur est différent. Vérifiez par conséquent le menu “Aide” de votre navigateur pour bien comprendre comment
+                modifier le paramétrage de cookies. Si vous refusez les cookies, l’accès à de nombreux contenus de nos Sites et de nos Applis peut être moins efficace et certains de nos services peuvent ne pas fonctionner correctement.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTen">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                10. Evolution de la Politique de protection des données personnelles :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+            <div class="panel-body">
+              <p>La législation et les pratiques évoluent au fil du temps. DRIVE EAT se réserve le droit d’apporter toute modification à la présente Politique de Confidentialité à tout moment. Si une modification matérielle est apportée à la présente
+                Politique de Confidentialité, DRIVE EAT s’engage à publier la nouvelle version sur son Site ou son Application.
+                Nous vous encourageons à consulter régulièrement cette page afin de voir les dernières informations sur nos pratiques de confidentialité. Si l’Utilisateur ou le Partenaire n’est pas d’accord avec les termes de la nouvelle rédaction de
+                la Politique de Confidentialité, il a la possibilité de supprimer son compte.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingEleven">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+                <i class="more-less glyphicon glyphicon-plus"></i>
+                11. Comment nous contacter :
+              </a>
+            </h4>
+          </div>
+          <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+            <div class="panel-body">
+              <p>Pour en savoir plus sur notre Politique de protection des données à caractère personnel, vous pouvez contacter le Délégué à la Protection des Données à l’adresse suivante :
+                <br><br><span class="title">Délégué à la Protection des Données, DRIVE EAT,
+                  <br>Le Lab’O, 1 avenue du Champs de Mars CS 30019
+                  <br>45074 Orléans Cedex 2
+                  <br><br>Ou via son adresse électronique : <a href="contact" target="-blank">contact@drive-eat.fr</a>.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- panel-group -->
+
+  </section>
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+
+  <script>
+//     accordion
+
+    function toggleIcon(e) {
+      $(e.target)
+        .prev(".panel-heading")
+        .find(".more-less")
+        .toggleClass("glyphicon-plus glyphicon-minus");
+    }
+    $(".panel-group").on("hidden.bs.collapse", toggleIcon);
+    $(".panel-group").on("shown.bs.collapse", toggleIcon);
+  </script>
+
+</body>
+
+</html>
