@@ -15,22 +15,24 @@ public class Contact {
 	// And receiver!
 	public static final String FRIEND_EMAIL = "chaffai13@yahoo.fr";
 
-	@NotBlank
 	@Pattern(regexp = "[\\p{L} '-]+", message = "Veuillez entrer un prénom valide")
 	private String firstName;
-	@NotBlank
+
 	@Pattern(regexp = "[\\p{L} '-]+", message = "Veuillez entrer un nom valide")
 	private String lastName;
-	@NotBlank
+
 	@Pattern(regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])", message = "Veuillez entrer un email valide")
 	private String mail;
-	@NotBlank
+
 	@Pattern(regexp = "(^((\\+)33|0)[1-9](\\d{2}){4}$)", message = "Veuillez entrer un numéro valide")
 	private String phone;
 	
+	
+	@Pattern(regexp = "^[\\S\\s]{1,150}$", message = "Nom du restaurant entre 2 et 100 caractères")
 	private String restaurant;
+	
 	private String address;
-	@NotBlank
+
 	private String message;
 
 	public Contact() {

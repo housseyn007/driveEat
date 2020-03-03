@@ -290,7 +290,7 @@ body {
 	margin-top: 30px;
 }
 
-.envoyer .boutonformulaire{
+.envoyer button{
 	background: #bd833d;
 	padding: 12px 85px;
 	font-size: 19px;
@@ -303,7 +303,7 @@ body {
 	letter-spacing: 1px;
 }
 
-.envoyer .boutonformulaire:hover{
+.envoyer button:hover{
 	background: #c8a248;
 	padding: 12px 85px;
 	font-size: 19px;
@@ -318,6 +318,10 @@ body {
 ::-webkit-input-placeholder{
 	font-family: 'oswald';
 	color: black;
+}
+
+.errorValidation{
+	color:#b90019;	
 }
 
 /* MEDIA */
@@ -655,7 +659,7 @@ body {
 	margin-bottom: 20px;
 	}
 	
-.envoyer .boutonformulaire {
+.envoyer button {
 	background: #bd833d;
 	padding: 10px 50px;
 	font-size: 15px;
@@ -667,7 +671,7 @@ body {
 	font-family: 'Andika', sans-serif;
 	letter-spacing: 1px;
 		}
-.envoyer .boutonformulaire:hover {
+.envoyer button:hover {
 	background: #c8a248;
 	padding: 10px 50px;
 	font-size: 15px;
