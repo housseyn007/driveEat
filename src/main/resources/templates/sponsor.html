@@ -172,7 +172,7 @@
     <!-- Formulaire Section -->
     <!-- ============================================================== -->
 	
-	<form class="formulaire" method="post" th:action="@{/sendSponsorEmail}" th:object="${contact}">
+	<form class="formulaire" method="post" th:action="@{/send-sponsor-email}" th:object="${contact}">
 		<h2 class="texth2">Nous Contacter</h2>
 
 		<div class="identite">
@@ -183,14 +183,15 @@
 		</div>
 
 		<div class="contact">
-			<input type="text" placeholder="E-mail" class="input" th:field="*{mail}" required>
+			<input type="email" placeholder="E-mail" class="input" th:field="*{mail}" required>
 			 <p class="errorValidation" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></p>
-			<input type="text" placeholder="Numéro" class="input" th:field="*{phone}" required>
+			<input type="tel" placeholder="Numéro" class="input" th:field="*{phone}" required>
 			<p class="errorValidation" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
 		</div>
 
 		<div class="localisation">
 			<input type="text" placeholder="Votre restaurant" class="input" th:field="*{restaurant}" required>
+			<p class="errorValidation" th:if="${#fields.hasErrors('restaurant')}" th:errors="*{restaurant}"></p>
 			<input type="text" placeholder="Adresse de votre restaurant" class="input" th:field="*{address}" required>
 		</div>
 		
@@ -199,7 +200,7 @@
 		</div>
 		
 		<div class="envoyer">
-			<button href="#" class="boutonformulaire" type="submit">Envoyer</button>
+			<button href="#" type="submit">Envoyer</button>
 		</div> 
 	</form>
 	

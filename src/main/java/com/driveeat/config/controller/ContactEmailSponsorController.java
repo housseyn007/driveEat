@@ -20,7 +20,7 @@ public class ContactEmailSponsorController {
 	@Autowired
 	public JavaMailSender emailSender;
 
-	@PostMapping("/sendSponsorEmail")
+	@PostMapping("/send-sponsor-email")
 	public String sendEmail(@Valid @ModelAttribute("contact") Contact contact, BindingResult bindingResult)
 			throws MessagingException {
 
