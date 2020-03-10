@@ -121,7 +121,7 @@
     
     <section class="device_section">
     
-    	 <h2 class="texth2">Outils fournis pour votre développement</h2>
+    	 <h2 class="texth2">Digitalisez Votre Commerce</h2>
    
     
     
@@ -174,27 +174,36 @@
 	
 	<form class="formulaire" method="post" th:action="@{/send-sponsor-email}" th:object="${contact}">
 		<h2 class="texth2">Nous Contacter</h2>
-
-		<div class="identite">
-			<input type="text"  placeholder="Nom" class="input" th:field="*{firstName}" required>
-			<p class="errorValidation" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
-			<input type="text" placeholder="Prénom" class="input" th:field="*{lastName}" required>
-			<p class="errorValidation" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+		<div class="inputs_group_div">
+			<div class="input_form">
+				<input type="text"  placeholder="Nom" class="input" th:field="*{firstName}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+			</div>
+			<div class="input_form">
+				<input type="text" placeholder="Prénom" class="input" th:field="*{lastName}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+			</div>
+		</div>
+		<div class="inputs_group_div">
+			<div class="input_form">
+				<input type="email" placeholder="E-mail" class="input" th:field="*{mail}" required>
+				 <p class="errorValidation" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></p>
+				 </div>
+				 <div class="input_form">
+				<input type="tel" placeholder="Numéro" class="input" th:field="*{phone}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+			</div>
 		</div>
 
-		<div class="contact">
-			<input type="email" placeholder="E-mail" class="input" th:field="*{mail}" required>
-			 <p class="errorValidation" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></p>
-			<input type="tel" placeholder="Numéro" class="input" th:field="*{phone}" required>
-			<p class="errorValidation" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
-		</div>
-
-		<div class="localisation">
+	<div class="inputs_group_div">
+		<div class="input_form">
 			<input type="text" placeholder="Votre restaurant" class="input" th:field="*{restaurant}" required>
 			<p class="errorValidation" th:if="${#fields.hasErrors('restaurant')}" th:errors="*{restaurant}"></p>
+			</div>
+			<div class="input_form">
 			<input type="text" placeholder="Adresse de votre restaurant" class="input" th:field="*{address}" required>
 		</div>
-		
+	</div>
 		<div class="commentaires">
 			<textarea class="area" placeholder="Laissez votre message" th:field="*{message}" required></textarea>
 		</div>
