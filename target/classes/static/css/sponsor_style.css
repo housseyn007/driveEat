@@ -252,10 +252,9 @@ body {
 	box-sizing: border-box;
 	padding: 40px;
 }
-
 .input, .commentaires .area {
 	width: 100%;
-	padding: 20px;
+	padding: 15px;
 	box-sizing: border-box;
 	margin-bottom: 25px;
 	border: 2px solid rgba(55, 59, 77, 1);
@@ -265,15 +264,17 @@ body {
 	transition: all 0.5s;
 	font-family: 'Roboto', sans-serif;
 }
+.input_form .input, .contact .input, .localisation .input {
+	width: 100%;
 
-.identite .input, .contact .input, .localisation .input {
-	width: 48%;
-	float: left;
-	margin-right: 4%;
 }
-
-.identite .input:last-child, .contact .input:last-child, .localisation .input:last-child {
-	margin-right: 0;
+.inputs_group_div{
+	display: flex;
+	justify-content: space-between;
+}
+.input_form{
+	text-align: center;
+    width: 48%;
 }
 
 .commentaires .area{
@@ -322,6 +323,7 @@ body {
 
 .errorValidation{
 	color:#b90019;	
+	margin-top: -17px;
 }
 
 /* MEDIA */
@@ -536,28 +538,23 @@ body {
 	}
 	
 	#slidercontainer{
-	
 	margin:0px;
 	}
-	
 	.imagecarousel1{
 	width: 640px;
 	height: 300px;
 	background: transparent;
  }
- 
   .imagecarousel2{
 	width: 640px;
 	height: 300px;
 	background: transparent;
  }
- 
   .imagecarousel3{
 	width: 640px;
 	height: 300px;
 	background: transparent;
  }
- 
  .imagecarousel4{
 	width: 640px;
 	height: 300px;
@@ -569,18 +566,15 @@ body {
 	height: 300px;
 	background: transparent;
  }
- 
  .imagecarousel6{
 	width: 640px;
 	height: 300px;
 	background: transparent;
  }
- 
    .uk-center{
 	max-width: 40%;
 	height: 200px;
  }
- 
   .textecarousel{
 	font-family: 'Andika', sans-serif;
 	font-weight: bolder;
@@ -588,7 +582,6 @@ body {
 	font-size: 1.2em;
 	text-align: center;
 }
-
 .sectionoutils{
 	width: 90%;
 	display: flex;
@@ -596,7 +589,6 @@ body {
 	flex-wrap: wrap;
 	margin-top: 25px;
 	}
-
 .divimgscanner{
 	padding: 15px;
 }
@@ -605,21 +597,18 @@ body {
 	margin: 5px;
 }
 .servicesoutils{
-	width: 55px;
-	
+	width: 55px;	
 }
 .textecheck{
 	font-size: 17px;
 }
-
 .texteoutils{
 	font-family: 'Andika', sans-serif;
 	font-weight: bolder;
 	color:#3f4040;
 	font-size: 18px;
 	margin: 6px;
-}
-	
+}	
 .formulaire{	
 	max-width: 800px;
 	height: auto;
@@ -628,18 +617,16 @@ body {
 	margin: -25px auto;
 	box-sizing: border-box;
 	padding: 40px;
+	display: flex;
+	flex-direction: column;
 }
-
-.identite .input, .contact .input, .localisation .input  {
-	margin-right: 10px;
+.inputs_group_div{
+	display: flex;
+	flex-direction: column;
+}
+.input_form{
 	width: 100%;
-		}
-
-.identite .input:last-child, .contact .input:last-child, .localisation .input:last-child  {
-	margin-right: 10px;
-	width: 100%;
-		}
-
+}
 .input, .commentaires .area {
 	width: 100%;
 	padding: 12px;
