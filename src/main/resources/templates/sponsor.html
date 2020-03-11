@@ -3,20 +3,228 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" th:href="@{css/layout_style.css}" />
-	<link rel="stylesheet" th:href="@{css/sponsor_style.css}" />
-	<title>DriveEat</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>DriveEat</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+<link rel="stylesheet" th:href="@{css/layout_style.css}" />
+ <link rel="stylesheet" th:href="@{css/index_style.css}" />
+<link rel="stylesheet" th:href="@{css/sponsor_style.css}" />
+
+<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+
+
+
+
 
 </head>
 <body>
-<!-- <header th:replace="layout.html :: top"></header> -->
 
-<h1>slt</h1>
+  <header th:replace="fragment/layout.html :: top"></header>
+  
+    <!-- ============================================================== -->
+    <!-- HomeSponsor Section -->
+    <!-- ============================================================== -->
+
+	<section class="homesponsor">
+		<div class="center">
+			<div class="bordercercle">
+				<div class="cercledevenezpartenaire">
+					<h1 class="alex-brush">Devenir partenaire</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================================================== -->
+    <!-- BoosterVotreCommerce Section -->
+    <!-- ============================================================== -->
+
+	<!-- ============================================================== -->
+    <!-- Carousel Section -->
+    <!-- ============================================================== -->
+
+	<section>
+			<h2 class="texth2">Avec Drive Eat Boostez Votre Commerce</h2>
+		<div uk-slider="center:true; sets:true; autoplay: true; autoplay-interval:7000;">
+			<div class="uk-position-relative">
+				<div id="slidercontainer" class="uk-slider-container uk-light">
+					<ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+						<li class="imagecarousel1">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor1.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">1.</span> Rendre votre offre accessible et visible 24/7</p>
+							</div>
+						</li>
+						<li class="imagecarousel5">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor5.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">2.</span> Accroître le chiffre d'affaires de votre commerce (Hausse du panier moyen de 25%)</p>
+							</div>
+						</li>
+						<li class="imagecarousel3">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor3.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">3.</span> Mieux connaître vos clients, leurs goûts et leurs habitudes</p>
+							</div>
+						</li>
+						<li class="imagecarousel4">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor4.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">4.</span> Attirer une nouvelle clientèle</p>
+							</div>
+						</li>
+						<li class="imagecarousel2">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor2.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">5.</span> Garantir à vos clients la disponibilité de vos produits et maîtriser vos stocks</p>
+							</div>
+						</li>
+						<li class="imagecarousel6">
+							<div class="uk-position-center uk-panel uk-center">
+								<img class="imgcarouselsponsor" alt="" src="images/logo/logo_sponsor6.png">
+								<p class="textecarousel"><span class="chiffretextecarousel">6.</span> Améliorer la fluidité et l'organisation de votre surface de vente</p>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+				<div class="uk-visible uk-dark">
+					<a class="uk-position-center-left uk-position-small uk-hidden-visible" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+					<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+				</div>
+
+				<div class="uk-visible@s">
+					<a class="uk-position-center-left-out uk-position-large" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+					<a class="uk-position-center-right-out uk-position-large" href="#" uk-slidenav-next uk-slider-item="next"></a>
+				</div>
+			</div>
+			<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+		</div>
+	</section>
+	
+	<!-- ============================================================== -->
+    <!-- Outils Section -->
+    <!-- ============================================================== -->
+    
+    <section class="device_section">
+    
+    	 <h2 class="texth2">Digitalisez Votre Commerce</h2>
+   
+    
+    
+    	<div class="divimgscanner">
+    		<img class="imgscanner" alt="" src="images/outils_driveeat.png">
+    	</div>
+    	 <div class="sectionoutils">
+    		<div class="divcheck">
+    		<div class="check1">
+	    		<p class="textecheck"><span> &#10004; </span>Tablette</p>
+	    	</div>
+	    	<div class="check2">
+	    		<p class="textecheck"><span> &#10004; </span>Imprimante 80mm</p>
+	    	</div>
+	    	<div class="check3">
+	    		<p class="textecheck"><span> &#10004; </span>Lecteur de code-barres</p>
+	    	</div>
+    	</div>
+    	
+    	
+    		
+    	<div class="divservicesoutils">
+	    	<div class="outil1">
+	    		<img class="servicesoutils" alt="" src="images/hebergement_serveur.png">
+	    		<p class="texteoutils">Hébergement sécurisé</p>
+	    	</div>
+	    	
+	    	<div class="outil2">
+	    		<img class="servicesoutils" alt="" src="images/clef_a_molette.png">
+	    		<p class="texteoutils">Maintenance</p>
+	    	</div>
+	    	
+	    	<div class="outil3">
+	    		<img class="servicesoutils" alt="" src="images/sav.png">
+	    		<p class="texteoutils">Service après-vente</p>
+	    	</div>
+     		
+    	</div>
+    	
+      </div>
+    
+    </section>
+    
 
 
-<!-- 	<footer class="footer" th:replace="layout.html :: bottom"></footer> -->
+
+	<!-- ============================================================== -->
+    <!-- Formulaire Section -->
+    <!-- ============================================================== -->
+	
+	<form class="formulaire" method="post" th:action="@{/send-sponsor-email}" th:object="${contact}">
+		<h2 class="texth2">Nous Contacter</h2>
+		<div class="inputs_group_div">
+			<div class="input_form">
+				<input type="text"  placeholder="Nom" class="input" th:field="*{firstName}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+			</div>
+			<div class="input_form">
+				<input type="text" placeholder="Prénom" class="input" th:field="*{lastName}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+			</div>
+		</div>
+		<div class="inputs_group_div">
+			<div class="input_form">
+				<input type="email" placeholder="E-mail" class="input" th:field="*{mail}" required>
+				 <p class="errorValidation" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></p>
+				 </div>
+				 <div class="input_form">
+				<input type="tel" placeholder="Numéro" class="input" th:field="*{phone}" required>
+				<p class="errorValidation" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+			</div>
+		</div>
+
+	<div class="inputs_group_div">
+		<div class="input_form">
+			<input type="text" placeholder="Votre restaurant" class="input" th:field="*{restaurant}" required>
+			<p class="errorValidation" th:if="${#fields.hasErrors('restaurant')}" th:errors="*{restaurant}"></p>
+			</div>
+			<div class="input_form">
+			<input type="text" placeholder="Adresse de votre restaurant" class="input" th:field="*{address}" required>
+		</div>
+	</div>
+		<div class="commentaires">
+			<textarea class="area" placeholder="Laissez votre message" th:field="*{message}" required></textarea>
+		</div>
+		
+		<div class="envoyer">
+			<button href="#" type="submit">Envoyer</button>
+		</div> 
+	</form>
+	
+<hr class="hrentresections3">
+
+<footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+   <script>
+    $(document).ready(function() {
+
+      $('.card').delay(1800).queue(function(next) {
+        $(this).removeClass('hover');
+        $('a.hover').removeClass('hover');
+        next();
+      });
+    });
+  </script>
 </body>
 </html>

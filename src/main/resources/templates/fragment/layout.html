@@ -3,15 +3,148 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<title>DriveEat</title>
+<meta charset="utf-8">
+<title>DriveEat</title>
 
 </head>
+
 <body>
 
-	<!-- <header th:fragment="top"></header> -->
-	
-	<!-- <footer th:fragment="bottom"></footer> -->
+	<header th:fragment="top">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container navBar">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/"><img
+						src="images/logo/logoDriveEat.png" alt="logo drive eat"
+						class="photoLogo"></a>
+				</div>
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
 
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="/">Accueil</a></li>
+<!-- 						<li><a href="#">A propos</a></li> -->
+<!-- 						<li class="dropdown"><a href="#" class="dropdown-toggle" -->
+<!-- 							data-toggle="dropdown">Services <b class="caret"></b></a> -->
+<!-- 							<ul class="dropdown-menu"> -->
+<!-- 								<li><a href="#">----</a></li> -->
+<!-- 								<li><a href="#">----</a></li> -->
+<!-- 								<li><a href="#">----</a></li> -->
+<!-- 							</ul></li> -->
+						<li><a href="sponsors">Partenaires</a></li>
+						<li><a href="contact">Contact</a></li>
+<!-- 						<li><a href="#">Connection</a></li> -->
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<footer th:fragment="bottom">
+		<div class="footer-section">
+			<div class="footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="row col-lg-3 col-xs-12">
+							<a class="photoLogoFooter"><img
+								src="/images/logo/logoDriveEatFooter.png"
+								alt="logoDriveEatFooter"></a>
+							<div class="photoAppFooter ">
+								<a><img src="/images/logo/apple_app.png"> </a> <a><img
+									src="/images/logo/google_app.png"> </a>
+							</div>
+
+						</div>
+						<div class="row col-lg-9 col-xs-12">
+							<div class=" footer-one col-lg-4 col-sm-6 col-xs-12">
+								<div class="block-footer">
+									<h5>A propos</h5>
+									<p>Drive Eat, la première plateforme de Click & Collect de la Région Centre, spécialisée dans la restauration</p>
+									<div class="social-icons">
+										<a href="https://www.facebook.com/Driv-Eat-100976321402446/"><i id="social-fb"
+											class="fa fa-facebook-square fa-3x social"></i></a> <a
+											href="https://twitter.com/"><i id="social-tw"
+											class="fa fa-twitter-square fa-3x social"></i></a> <a
+											href="https://www.instagram.com/drive.eat/"><i id="social-in"
+											class="fa fa fa-instagram fa-3x social"></i></a> <a
+											href="contact"><i id="social-em"
+											class="fa fa-envelope-square fa-3x social"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class=" footer-two col-lg-2 col-sm-6 col-xm-12 ">
+								<div class="block-footer">
+									<h5>Navigation</h5>
+									<ul>
+										<li><a href="/">Accueil</a></li>
+										<li><a href="sponsors">Partenaires</a></li>
+<!-- 										<li><a href="contact.html">A propos</a></li> -->
+<!-- 										<li><a href="contact.html">Services</a></li> -->
+										<li><a href="contact">Contact</a></li>										
+									</ul>
+								</div>
+							</div>
+
+							<div class="footer-three col-lg-4 col-sm-6 col-xm-12">
+								<div class="block-footer">
+									<h5>Coordonnées</h5>
+									<ul>
+										<li><img class="coordinate_logo" alt="logo téléphone"
+											src="/images/logo/phone.png"> +33 6 66 22 65 03</li>
+										<li><img class="coordinate_logo" alt="logo e-mail"
+											src="/images/logo/email.png"> contact@drive-eat.fr</li>
+										<li class="address"><img class="coordinate_logo"
+											alt="logo téléphone" src="/images/logo/address.png"> 1
+											Avenue du Champ de Mars-CS 30019 - 45074 Orléans Cedex 2</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class=" footer-four col-lg-2 col-sm-6 col-xm-12 ">
+								<div class="block-footer">
+									<h5>Mentions legales</h5>
+									<ul>
+										<li><a href="mentions-legales">Mentions legales</a></li>
+										<li><a href="protection-données">Protection des données</a></li>
+										<li><a href="cgu-mangopay">CGU Mangopay</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright text-center py-5">
+					© 2020 Copyright: <a
+						href="https://mdbootstrap.com/education/bootstrap/"> driveeat</a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+	<script>
+		$(function() {
+			$(".dropdown").hover(function() {
+				$('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+				$(this).toggleClass('open');
+				$('b', this).toggleClass("caret caret-up");
+			}, function() {
+				$('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+				$(this).toggleClass('open');
+				$('b', this).toggleClass("caret caret-up");
+			});
+		});
+	</script>
 </body>
+
 </html>

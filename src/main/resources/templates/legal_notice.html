@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  <link rel="stylesheet" th:href="@{css/legal_notice_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="fragment/layout.html :: top"></header>
+  
+  <section>
+    
+    <div class="h1-container-total">
+      <div class="h1-container">
+        <h1>Mentions légales</h1>
+        
+        <div class="legal-notice_total">
+        	<div class="legal-notice_img">
+        		<img src="/images/logo/logoDriveEatFooter.png" alt="logo DriveEat">
+        		<h3>Editeur du site</h3>
+        		<p>
+        		DRIVE EAT<br>
+        		SAS au capital de 60 000€<br>
+        		Siège social : 1 Avenue du Champ de Mars, 45074 Orléans Cedex 2<br>
+        		RCS Orléans 878 119 148<br>
+        		Téléphone : 07 60 13 21 84<br>
+        		Adresse E-mail : <a href="contact" target="-blank">contact@drive-eat.fr</a><br>
+        		Directeur de la publication : Khalid TALLIH
+        		</p>
+        	</div>
+        	
+        	<div class="legal-notice_text">
+        		<h3>Hébergeur du site</h3>
+        		<p>
+        		<b>SAS OVH</b><br>
+        		Siège social : 2 Rue Kellermann, 59100 Roubaix<br>
+        		Téléphone : 09 72 10 10 07<br>
+        		Site Web : <a href="https://www.ovh.com/fr" target="-blank">www.ovh.com</a><br>	
+        		</p>
+        	</div>
+        
+        </div>
+
+      </div>
+	</div>
+	
+  </section>
+  
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+
+</body>
+
+</html>
