@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import com.driveeat.entity.Contact;
+import com.driveeat.config.entity.Contact;
 
 
 @Configuration
