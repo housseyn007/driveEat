@@ -224,7 +224,7 @@ h2 {
 	opacity: 1;
 }
 
-.card-img {
+.card-img, .card-img img {
 	position: relative;
 	height: 180px;
 	width: 100%;
