@@ -1,5 +1,6 @@
 package com.driveeat.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class RestaurantSpecialities {
 	    @JoinColumn(name = "specialityId")
 	    @NotNull
 	    private Specialities specialities;
+	    @Column(name ="`rank`")
 	    @NotNull
 		private int rank;
 
