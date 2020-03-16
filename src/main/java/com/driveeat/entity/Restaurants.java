@@ -1,6 +1,6 @@
 package com.driveeat.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -82,7 +84,8 @@ public class Restaurants {
 	private String token;
 	@NotNull
 	private String refreshToken;
-	private Date tokenExpiringDatetime;
+	@Temporal(TemporalType.TIMESTAMP)
+    private Date tokenExpiringDatetime;;
 	@NotNull
 	private String contact;
 	private int mangopayUserId;
