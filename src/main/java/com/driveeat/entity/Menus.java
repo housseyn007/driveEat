@@ -1,5 +1,6 @@
 package com.driveeat.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +21,10 @@ public class Menus {
 	private String name;
 	private String description;
 	@NotNull
+	@Column(name="TVA", columnDefinition="Decimal(10,2) default '100.00'")
 	private double TVA;
 	@NotNull
+	@Column(name="price", columnDefinition="Decimal(10,2) default '100.00'")
 	private double price;
 	
     @ManyToOne    
@@ -29,6 +32,7 @@ public class Menus {
     @NotNull
 	private Restaurants restaurants;
     
+    @Column(columnDefinition="tinyint(1) default 1")
     @NotNull
 	private boolean disabled;
 	

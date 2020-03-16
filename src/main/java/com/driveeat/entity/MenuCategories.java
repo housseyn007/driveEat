@@ -1,5 +1,6 @@
 package com.driveeat.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,7 @@ public class MenuCategories {
 	private Integer menuCategoryId;
 	@NotNull
 	private String name;
+	@Column(columnDefinition="tinyint(1) default 1")
 	@NotNull
 	private boolean isVisible;
 	
