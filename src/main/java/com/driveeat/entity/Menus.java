@@ -21,23 +21,23 @@ public class Menus {
 	private String name;
 	private String description;
 	@NotNull
-	@Column(name="TVA", columnDefinition="Decimal(10,2) default '100.00'")
+	@Column(name = "TVA", columnDefinition = "Decimal(10,2) default '100.00'")
 	private double TVA;
 	@NotNull
-	@Column(name="price", columnDefinition="Decimal(10,2) default '100.00'")
+	@Column(name = "price", columnDefinition = "Decimal(10,2) default '100.00'")
 	private double price;
-	
-    @ManyToOne    
-    @JoinColumn(name="restaurantId", insertable=false, updatable=false)
-    @NotNull
+
+	@ManyToOne
+	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
+	@NotNull
 	private Restaurants restaurants;
-    
-    @Column(columnDefinition="tinyint(1) default 1")
-    @NotNull
+
+	@Column(columnDefinition = "tinyint(1) default 1")
+	@NotNull
 	private boolean disabled;
-	
-    @ManyToOne
-    @JoinColumn(name="menuCategoryId", insertable=false, updatable=false)    
+
+	@ManyToOne
+	@JoinColumn(name = "menuCategoryId", insertable = false, updatable = false)
 	private MenuCategories menuCategories;
 
 	public Menus() {
@@ -120,5 +120,4 @@ public class Menus {
 		this.menuCategories = menuCategories;
 	}
 
-	
 }

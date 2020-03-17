@@ -14,67 +14,64 @@ import javax.validation.constraints.NotNull;
 @Table(name = "RestaurantSpecialities")
 public class RestaurantSpecialities {
 
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Integer restaurantSpecialityId;
-		
-	    @ManyToOne
-	    @JoinColumn(name = "restaurantId")
-	    @NotNull
-	    private Restaurants restaurants;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer restaurantSpecialityId;
 
-	    @ManyToOne
-	    @JoinColumn(name = "specialityId")
-	    @NotNull
-	    private Specialities specialities;
-	    @Column(name ="`rank`")
-	    @NotNull
-		private int rank;
+	@ManyToOne
+	@JoinColumn(name = "restaurantId")
+	@NotNull
+	private Restaurants restaurants;
 
-		public RestaurantSpecialities() {
-			super();
-		}
+	@ManyToOne
+	@JoinColumn(name = "specialityId")
+	@NotNull
+	private Specialities specialities;
+	@Column(name = "`rank`")
+	@NotNull
+	private int rank;
 
-		public RestaurantSpecialities( Restaurants restaurants,
-				Specialities specialities, int rank) {
-			super();
-			this.restaurants = restaurants;
-			this.specialities = specialities;
-			this.rank = rank;
-		}
+	public RestaurantSpecialities() {
+		super();
+	}
 
-		public Integer getRestaurantSpecialityId() {
-			return restaurantSpecialityId;
-		}
+	public RestaurantSpecialities(Restaurants restaurants, Specialities specialities, int rank) {
+		super();
+		this.restaurants = restaurants;
+		this.specialities = specialities;
+		this.rank = rank;
+	}
 
-		public void setRestaurantSpecialityId(Integer restaurantSpecialityId) {
-			this.restaurantSpecialityId = restaurantSpecialityId;
-		}
+	public Integer getRestaurantSpecialityId() {
+		return restaurantSpecialityId;
+	}
 
-		public Restaurants getRestaurants() {
-			return restaurants;
-		}
+	public void setRestaurantSpecialityId(Integer restaurantSpecialityId) {
+		this.restaurantSpecialityId = restaurantSpecialityId;
+	}
 
-		public void setRestaurants(Restaurants restaurants) {
-			this.restaurants = restaurants;
-		}
+	public Restaurants getRestaurants() {
+		return restaurants;
+	}
 
-		public Specialities getSpecialities() {
-			return specialities;
-		}
+	public void setRestaurants(Restaurants restaurants) {
+		this.restaurants = restaurants;
+	}
 
-		public void setSpecialities(Specialities specialities) {
-			this.specialities = specialities;
-		}
+	public Specialities getSpecialities() {
+		return specialities;
+	}
 
-		public int getRank() {
-			return rank;
-		}
+	public void setSpecialities(Specialities specialities) {
+		this.specialities = specialities;
+	}
 
-		public void setRank(int rank) {
-			this.rank = rank;
-		}
-		
-		
-		
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
 }
