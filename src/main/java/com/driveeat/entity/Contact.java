@@ -1,7 +1,6 @@
 
 package com.driveeat.entity;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 public class Contact {
@@ -26,11 +25,10 @@ public class Contact {
 
 	@Pattern(regexp = "(^((\\+)33|0)[1-9](\\d{2}){4}$)", message = "Veuillez entrer un numéro valide")
 	private String phone;
-	
-	
+
 	@Pattern(regexp = "^[\\S\\s]{1,50}$", message = "Nom du restaurant entre 1 et 50 caractères")
 	private String restaurant;
-	
+
 	private String address;
 
 	private String message;
@@ -117,7 +115,5 @@ public class Contact {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
-	
 
 }

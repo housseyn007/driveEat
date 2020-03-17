@@ -49,29 +49,29 @@ public class Restaurants {
 	private String mobilePhone;
 	@NotNull
 	private String landline;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean acceptCash;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean acceptCheck;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean acceptRestaurantTicket;
 	private String website;
 	@NotNull
 	private String facebookPageUrl;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean tabletRent;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean printerRent;
-    @Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean scannerRent;
-    @Column(columnDefinition="tinyint(1) default 1")
-    @NotNull
+	@Column(columnDefinition = "tinyint(1) default 1")
+	@NotNull
 	private boolean kitchenTabletRent;
 	@NotNull
 	private String marketingFlyer;
@@ -85,7 +85,7 @@ public class Restaurants {
 	@NotNull
 	private String refreshToken;
 	@Temporal(TemporalType.TIMESTAMP)
-    private Date tokenExpiringDatetime;;
+	private Date tokenExpiringDatetime;;
 	@NotNull
 	private String contact;
 	private int mangopayUserId;
@@ -97,7 +97,7 @@ public class Restaurants {
 	private int mangopayWalletId_dev;
 	@NotNull
 	private int mangopayBankId_dev;
-	@Column(columnDefinition="tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean isActive;
 	@NotNull

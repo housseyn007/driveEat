@@ -20,39 +20,48 @@ public class Specialities {
 	private String imagePath;
 	@NotNull
 	private int ranking;
+
 	public Specialities() {
 		super();
 	}
+
 	public Specialities(@NotNull String specialityName, @NotNull String imagePath, @NotNull int ranking) {
 		super();
 		this.specialityName = specialityName;
 		this.imagePath = imagePath;
 		this.ranking = ranking;
 	}
+
 	public Integer getSpecialityId() {
 		return specialityId;
 	}
+
 	public void setSpecialityId(Integer specialityId) {
 		this.specialityId = specialityId;
 	}
+
 	public String getSpecialityName() {
 		return specialityName;
 	}
+
 	public void setSpecialityName(String specialityName) {
 		this.specialityName = specialityName;
 	}
+
 	public String getImagePath() {
 		return imagePath;
 	}
+
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
+
 	public int getRanking() {
 		return ranking;
 	}
+
 	public void setRanking(int ranking) {
 		this.ranking = ranking;
 	}
-	
 
 }

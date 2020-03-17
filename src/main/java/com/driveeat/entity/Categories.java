@@ -17,10 +17,10 @@ public class Categories {
 	private Integer categoryId;
 	@NotNull
 	private String categoryName;
-	 @Column(columnDefinition="tinyint(1) default 1")
-    @NotNull
+	@Column(columnDefinition = "tinyint(1) default 1")
+	@NotNull
 	private boolean isVisible;
-	
+
 	public Categories() {
 		super();
 	}
@@ -54,6 +54,5 @@ public class Categories {
 	public void setVisible(boolean isVisible) {
 		this.isVisible = isVisible;
 	}
-	
-	
+
 }

@@ -19,35 +19,35 @@ public class Products {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer productId;
-	
+
 	@NotNull
 	private String name;
 	private String composition;
 	private int preparationTime;
 	@NotNull
-	@Column(name="TVA", columnDefinition="Decimal(10,2) default '100.00'")
+	@Column(name = "TVA", columnDefinition = "Decimal(10,2) default '100.00'")
 	private double TVA;
 	@NotNull
-	@Column(name="price", columnDefinition="Decimal(10,2) default '100.00'")
+	@Column(name = "price", columnDefinition = "Decimal(10,2) default '100.00'")
 	private double price;
-	
-    @ManyToOne    
-    @JoinColumn(name="restaurantId", insertable=false, updatable=false)
-    @NotNull
-	private Restaurants restaurants;    
-    @Column(columnDefinition = "enum('hot','cold')")
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    private HotCold temperature;
-    @Column(columnDefinition="tinyint(1) default 1")
-    @NotNull
-    private boolean immanquable;
-    @Column(columnDefinition="tinyint(1) default 1")
-    @NotNull
-    private boolean disabled;
-    
-    @ManyToOne
-    @JoinColumn(name="CategoryId", insertable=false, updatable=false)    
+
+	@ManyToOne
+	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
+	@NotNull
+	private Restaurants restaurants;
+	@Column(columnDefinition = "enum('hot','cold')")
+	@Enumerated(EnumType.STRING)
+	@NotNull
+	private HotCold temperature;
+	@Column(columnDefinition = "tinyint(1) default 1")
+	@NotNull
+	private boolean immanquable;
+	@Column(columnDefinition = "tinyint(1) default 1")
+	@NotNull
+	private boolean disabled;
+
+	@ManyToOne
+	@JoinColumn(name = "CategoryId", insertable = false, updatable = false)
 	private Categories categories;
 
 	public Products() {
@@ -147,7 +147,5 @@ public class Products {
 	public void setCategories(Categories categories) {
 		this.categories = categories;
 	}
-    
-    
 
 }
