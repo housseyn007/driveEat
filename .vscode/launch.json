@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DriveeatApplication<jpa-spring>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.driveeat.DriveeatApplication",
+            "projectName": "jpa-spring",
+            "args": ""
+        }
+    ]
+}
