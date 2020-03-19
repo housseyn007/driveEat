@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "orderStatusHistory")
+@Table(name = "OrderStatusHistory")
 public class OrderStatusHistory {
 
 	@Id
