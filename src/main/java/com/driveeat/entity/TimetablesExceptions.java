@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,8 +22,10 @@ public class TimetablesExceptions {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer timetablesExceptionsId;
 
+	@ManyToOne
+	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
 	@NotNull
-	private int restaurantId;
+	private Restaurants restaurantId;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,7 +43,7 @@ public class TimetablesExceptions {
 		super();
 	}
 
-	public TimetablesExceptions(@NotNull int restaurantId, @NotNull Date startTime, @NotNull Date endTime,
+	public TimetablesExceptions(@NotNull Restaurants restaurantId, @NotNull Date startTime, @NotNull Date endTime,
 			@NotNull boolean disabled) {
 		super();
 		this.restaurantId = restaurantId;
@@ -56,11 +60,11 @@ public class TimetablesExceptions {
 		this.timetablesExceptionsId = timetablesExceptionsId;
 	}
 
-	public int getRestaurantId() {
+	public Restaurants getRestaurantId() {
 		return restaurantId;
 	}
 
-	public void setRestaurantId(int restaurantId) {
+	public void setRestaurantId(Restaurants restaurantId) {
 		this.restaurantId = restaurantId;
 	}
 

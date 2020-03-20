@@ -22,17 +22,16 @@ public class Cards {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cardId;
 
+	@ManyToOne
+	@JoinColumn(name = "userId", insertable = false, updatable = false)
+	@NotNull
+	private Users users;
+
 	@NotNull
 	private String token;
-
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date endOfValidity;
-
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name = "userId", insertable = false, updatable = false)
-	private Users users;
 
 	@NotNull
 	private String preRegistrationData;
@@ -44,10 +43,10 @@ public class Cards {
 	private String accessKey;
 
 	private String mangoId;
-	
+
 	@Column(nullable = true)
 	private int mangopayCardId;
-	
+
 	@Column(nullable = true)
 	private int mangopayCardId_dev;
 
@@ -149,5 +148,5 @@ public class Cards {
 	public void setMangopayCardId_dev(int mangopayCardId_dev) {
 		this.mangopayCardId_dev = mangopayCardId_dev;
 	}
-	
+
 }

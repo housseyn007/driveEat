@@ -17,7 +17,7 @@ public class MenuCategories {
 	private Integer menuCategoryId;
 	@NotNull
 	private String name;
-	@Column(columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint default 1")
 	@NotNull
 	private boolean isVisible;
 
