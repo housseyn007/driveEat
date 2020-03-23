@@ -22,10 +22,8 @@ public class TimetablesExceptions {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer timetablesExceptionsId;
 
-	@ManyToOne
-	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
 	@NotNull
-	private Restaurants restaurantId;
+	private int restaurantId;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -43,7 +41,7 @@ public class TimetablesExceptions {
 		super();
 	}
 
-	public TimetablesExceptions(@NotNull Restaurants restaurantId, @NotNull Date startTime, @NotNull Date endTime,
+	public TimetablesExceptions(@NotNull int restaurantId, @NotNull Date startTime, @NotNull Date endTime,
 			@NotNull boolean disabled) {
 		super();
 		this.restaurantId = restaurantId;
@@ -60,11 +58,11 @@ public class TimetablesExceptions {
 		this.timetablesExceptionsId = timetablesExceptionsId;
 	}
 
-	public Restaurants getRestaurantId() {
+	public int getRestaurantId() {
 		return restaurantId;
 	}
 
-	public void setRestaurantId(Restaurants restaurantId) {
+	public void setRestaurantId(int restaurantId) {
 		this.restaurantId = restaurantId;
 	}
 
