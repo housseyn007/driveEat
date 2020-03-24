@@ -38,8 +38,8 @@ public class Restaurants {
 	private String zipCode;
 	@NotNull
 	private String city;
-	private float latitude;
-	private float longitude;
+	private Float latitude;
+	private Float longitude;
 	@Column(columnDefinition = "TEXT")
 	@NotNull
 	private String description;
@@ -88,9 +88,9 @@ public class Restaurants {
 	private Date tokenExpiringDatetime;;
 	@NotNull
 	private String contact;
-	private int mangopayUserId;
-	private int mangopayWalletId;
-	private int mangopayBankId;
+	private Integer mangopayUserId;
+	private Integer mangopayWalletId;
+	private Integer mangopayBankId;
 	@NotNull
 	private int mangopayUserId_dev;
 	@NotNull
