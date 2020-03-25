@@ -40,15 +40,12 @@
               <div class="send">
                 <i class="fa fa-send fa-2x"></i>
               </div>
-              <h1 class="card-title">
+              <h1 class="card-title" th:text="${restaurantSpecialites.restaurants.name}">
                 Internet Lease line service
               </h1>
-              <h2 class="card-sub-title">
+              <h2 class="card-sub-title" th:text="${restaurantSpecialites.restaurants.city}">
                 Vijaya Comnet Private
               </h2>
-              <p class="description">
-                New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.
-              </p>
               <p>Price $62</p>
               <ul class="list-inline post-meta">
                 <li class="time-stamp">
@@ -68,16 +65,7 @@
   </div>
 
   <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
-  <script type="text/javascript">
-    $(function() {
-      $('.product-card').hover(function() {
-        $(this).find('.description').animate({
-          height: "toggle",
-          opacity: "toggle"
-        }, 300);
-      });
-    });
-  </script>
+
 </body>
 
 </html>

@@ -21,8 +21,6 @@ public class RestaurantSpecialitesController {
      
     @GetMapping("/restaurantSpecialites")
 	public String showrestaurents(Model model, @RequestParam Integer id) {
- 
-    	System.out.println(restaurantSpecialitiesRepository.findBySpecialities(specialities.getOne(id)).size());
     	model.addAttribute("RestaurantSpecialites", restaurantSpecialitiesRepository.findBySpecialities(specialities.getOne(id)));
 		return "restaurantSpecialites";
 	}
