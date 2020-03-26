@@ -27,7 +27,7 @@ body {
   justify-content: center;
   flex-wrap: wrap-reverse;
   margin-top: 130px;
-  margin-bottom: 100px
+  margin-bottom: 50px
 }
 
 .left_side {
@@ -126,8 +126,150 @@ body {
   background-size: 20px 20px;
 }
 
+/* -------------------------------------------Modal information------------------------------------------- */
+
+
+
+/* -------------------------------------------Modal payement------------------------------------------- */
+.modal-content {
+  margin-top: 50%;
+}
+
+.modal-title {
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 23px;
+}
+
+.payement_mode {
+  display: flex;
+  justify-content: space-around;
+}
+
+.payement_mode p {
+  margin-top: 10px;
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 15px;
+}
+
+.credit-card {
+  width: 90px;
+}
+
+.money {
+  width: 60px;
+  margin-left: -25px;
+}
+
+.btn-default {
+  color: #fff;
+  background: #3f4040;
+  background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  border-color: #000;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background: #1c1d1d;
+  background: -webkit-linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  background: linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  border-color: #000;
+}
+
 /* -------------------------------------------Menus Section------------------------------------------- */
+
+.formule_section{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.formule_img{
+	width: 135px;
+    padding: 8px;
+}
+
+.formule_section h2 {
+	margin:0px;
+	margin-left:20px;
+	padding-top:80px;
+	font-family: 'Mansalva', cursive;
+	font-weight: 700;
+	font-size: 50px;
+	background: #ad6f23;
+	background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+
+#myTabContent {
+  margin-top: 50px;
+}
+.menu_tab {
+  width: auto;
+  margin: 0 auto;
+}
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+.nav-item a {
+  color: #333;
+}
+.menu_tab .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: white;
+  background-color: #ff5e18;
+  border-color: #ff5e18;
+}
+.single_menu_list {
+  position: relative;
+  padding-left: 190px;
+  margin-bottom: 110px;
+}
+
+.single_menu_list img {
+  max-width: 30%;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  border: 1px solid #ddd;
+  padding: 3px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.single_menu_list:hover img {
+  border-radius: 0;
+  transition: 0.4s;
+}
+
+.single_menu_list h4 {
+  font-size: 20px;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.single_menu_list h4 span {
+  float: right;
+  font-weight: bold;
+  color: #ff5e18;
+  font-style: italic;
+}
+
 /* -------------------------------------------Media Section------------------------------------------- */
+@media only screen and (max-width: 1330px) {
+.header_section {
+  margin-bottom: 0px
+}
+}
+
 @media only screen and (max-width: 1110px) {
   .header_section {
     margin-top: 120px;
@@ -230,6 +372,14 @@ body {
     padding: 20px;
     padding-top: 0px;
   }
+  
+  .formule_section h2 {
+	font-size: 40px;
+	margin-left: 0px;
+}
+.formule_img{
+    padding: 18px;
+}
 }
 
 @media only screen and (max-width: 450px) {
@@ -280,4 +430,25 @@ body {
     font-size: 13.5px;
     font-weight: bolder;
   }
+
+  .payement_mode p {
+    font-size: 12px;
+  }
+
+  .credit-card {
+    width: 70px;
+  }
+
+  .money {
+    width: 50px;
+    margin-left: -25px;
+  }
+  
+    .formule_section h2 {
+	font-size: 30px;
+}
+
+.formule_img{
+    width: 126px;
+}
 }
