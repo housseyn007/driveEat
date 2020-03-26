@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  
+  <link rel="stylesheet" th:href="@{css/styleRestaurantSpecialites.css}" >
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+  <title></title>
+</head>
+
+<body>
+  <header th:replace="fragment/layout.html :: top"></header>
+
+  <div class="product-container">
+   
+    <div class="container-fluid">
+      <div class="row infoRes">
+      <h2>Restaurants à proximité</h2>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" th:each="restaurantSpecialites : ${RestaurantSpecialites}">
+          <div class="product-card">
+            <div class="card-thumbnail">
+              <img class="img-responsive" th:src="@{'/DriveatBackend/public/' + ${restaurantSpecialites.restaurants.frontPicture}}">
+            </div>
+            <div class="card-content">
+              <div class="send">
+                <i class="fa fa-send fa-2x"></i>
+              </div>
+              <h1 class="card-title" th:text="${restaurantSpecialites.restaurants.name}">
+                Internet Lease line service
+              </h1>
+              <h2 class="card-sub-title" th:text="${restaurantSpecialites.restaurants.city}">
+                Vijaya Comnet Private
+              </h2>
+              <p>Price $62</p>
+              <ul class="list-inline post-meta">
+                <li class="time-stamp">
+                  <i class="fa fa-clock-o"></i> 6 mins ago
+                </li>
+                <li class="card-comment">
+                  <i class="fa fa-comments"></i><a href="#"> 39 comments</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+
+</body>
+
+</html>

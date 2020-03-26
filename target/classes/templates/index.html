@@ -132,7 +132,7 @@
             <img alt="" th:src="@{'/DriveatBackend/public/' + ${specialities.imagePath}}">
               <div class="overlay">
                 <div class="overlay-content">
-                  <a href="#!">Séléctionner</a>
+                  <a th:href="|/restaurantSpecialites?id=${specialities.specialityId}|">Séléctionner</a>
                 </div>
               </div>
             </div>
