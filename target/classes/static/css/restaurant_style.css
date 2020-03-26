@@ -1,0 +1,454 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------Header Section------------------------------------------- */
+.header_main {
+  margin: 20px 10%;
+  position: relative;
+}
+
+.header_main {
+  margin: 20px 10%;
+  position: absolute;
+  top: -60px;
+  left: -250px;
+  z-index: -3;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  border: 20px solid #f5f5f5;
+}
+
+.header_section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  margin-top: 130px;
+  margin-bottom: 50px
+}
+
+.left_side {
+  max-width: 550px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.left_side h1 {
+  font-family: 'Mansalva', cursive;
+  font-weight: 700;
+  font-size: 50px;
+  background: #ad6f23;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.left_side p {
+  width: 80%;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 22px;
+  color: #3f4040;
+}
+
+.left_side button {
+  padding: 10px 15px;
+  margin: 20px 15px 0 0;
+}
+
+.info_btn, .payement_btn {
+  border: 2px solid #ad6f23;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #ad6f23;
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  border-radius: 25px;
+}
+
+.info_btn:hover, .payement_btn:hover {
+  color: white;
+  background: #EC6953;
+  background: -webkit-linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+}
+
+.opinion_star {
+  margin-top: 20px;
+}
+
+.opinion_star i {
+  font-size: 30px;
+  padding: 3px;
+  color: #f57900;
+}
+
+.right_side {
+  margin: 30px;
+  max-width: 760px;
+}
+
+.rectangle_circle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right_side_img img {
+  width: 720px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rectangle {
+  position: absolute;
+  margin-top: -80px;
+  margin-left: 50px;
+  width: 525px;
+  height: 625px;
+  z-index: -1;
+  background: #3f4040;
+  background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+}
+
+.circle {
+  position: absolute;
+  margin-top: -52px;
+  margin-left: 670px;
+  z-index: -1;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle at 3px 3px, #ec222a 3px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* -------------------------------------------Modal information------------------------------------------- */
+
+
+
+/* -------------------------------------------Modal payement------------------------------------------- */
+.modal-content {
+  margin-top: 50%;
+}
+
+.modal-title {
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 23px;
+}
+
+.payement_mode {
+  display: flex;
+  justify-content: space-around;
+}
+
+.payement_mode p {
+  margin-top: 10px;
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 15px;
+}
+
+.credit-card {
+  width: 90px;
+}
+
+.money {
+  width: 60px;
+  margin-left: -25px;
+}
+
+.btn-default {
+  color: #fff;
+  background: #3f4040;
+  background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  border-color: #000;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background: #1c1d1d;
+  background: -webkit-linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  background: linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  border-color: #000;
+}
+
+/* -------------------------------------------Menus Section------------------------------------------- */
+
+.formule_section{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.formule_img{
+	width: 135px;
+    padding: 8px;
+}
+
+.formule_section h2 {
+	margin:0px;
+	margin-left:20px;
+	padding-top:80px;
+	font-family: 'Mansalva', cursive;
+	font-weight: 700;
+	font-size: 50px;
+	background: #ad6f23;
+	background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+
+#myTabContent {
+  margin-top: 50px;
+}
+.menu_tab {
+  width: auto;
+  margin: 0 auto;
+}
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+.nav-item a {
+  color: #333;
+}
+.menu_tab .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: white;
+  background-color: #ff5e18;
+  border-color: #ff5e18;
+}
+.single_menu_list {
+  position: relative;
+  padding-left: 190px;
+  margin-bottom: 110px;
+}
+
+.single_menu_list img {
+  max-width: 30%;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  border: 1px solid #ddd;
+  padding: 3px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.single_menu_list:hover img {
+  border-radius: 0;
+  transition: 0.4s;
+}
+
+.single_menu_list h4 {
+  font-size: 20px;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.single_menu_list h4 span {
+  float: right;
+  font-weight: bold;
+  color: #ff5e18;
+  font-style: italic;
+}
+
+/* -------------------------------------------Media Section------------------------------------------- */
+@media only screen and (max-width: 1330px) {
+.header_section {
+  margin-bottom: 0px
+}
+}
+
+@media only screen and (max-width: 1110px) {
+  .header_section {
+    margin-top: 120px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .header_section {
+    margin-top: 100px;
+  }
+
+  .right_side_img img {
+    width: 500px;
+  }
+
+  .rectangle {
+    width: 327px;
+    height: 450px;
+  }
+
+  .circle {
+    margin-top: -35px;
+    margin-left: 458px;
+    width: 90px;
+    height: 90px;
+    background-size: 18px 18px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .header_section {
+    margin-top: 90px;
+  }
+
+  .left_side {
+    margin-top: 0px;
+  }
+
+  .left_side h1 {
+    font-size: 40px;
+  }
+
+  .left_side p {
+    width: 90%;
+    font-size: 1em;
+  }
+
+  .right_side {
+    max-width: 55vw;
+  }
+
+  .right_side_img img {
+    width: 400px;
+  }
+
+  .rectangle {
+    width: 255px;
+    height: 380px;
+  }
+
+  .circle {
+    margin-top: -30px;
+    margin-left: 364px;
+    width: 70px;
+    height: 70px;
+    background-size: 15px 15px;
+    background-image: radial-gradient(circle at 2.5px 2.5px, #ec222a 2.5px, transparent 0);
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .header_section {
+    margin-top: 80px;
+  }
+
+  .right_side {
+    max-width: 61vw;
+  }
+
+  .right_side_img img {
+    width: 340px;
+  }
+
+  .rectangle {
+    width: 235px;
+    height: 340px;
+    margin-left: 30px;
+  }
+
+  .circle {
+    margin-top: -21px;
+    margin-left: 315px;
+    width: 50px;
+    height: 50px;
+    background-size: 10px 10px;
+  }
+
+  .left_side {
+    max-width: 450px;
+    padding: 20px;
+    padding-top: 0px;
+  }
+  
+  .formule_section h2 {
+	font-size: 40px;
+	margin-left: 0px;
+}
+.formule_img{
+    padding: 18px;
+}
+}
+
+@media only screen and (max-width: 450px) {
+  .left_side h1 {
+    font-size: 30px;
+  }
+
+  .left_side p {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  .right_side {
+    max-width: 76vw;
+    margin-left: -10px;
+  }
+
+  .right_side_img img {
+    width: 300px;
+  }
+
+  .rectangle {
+    width: 210px;
+    height: 310px;
+    margin-left: 25px;
+  }
+
+  .circle {
+    margin-top: -20px;
+    margin-left: 273px;
+    width: 50px;
+    height: 50px;
+    background-size: 10px 10px;
+  }
+
+  .left_side {
+    max-width: 370px;
+    padding-top: 10px;
+  }
+
+  .left_side button {
+    padding: 10px 10px;
+    margin: 13px 15px 0 0;
+  }
+
+  .info_btn, .payement_btn {
+    font-size: 13.5px;
+    font-weight: bolder;
+  }
+
+  .payement_mode p {
+    font-size: 12px;
+  }
+
+  .credit-card {
+    width: 70px;
+  }
+
+  .money {
+    width: 50px;
+    margin-left: -25px;
+  }
+  
+    .formule_section h2 {
+	font-size: 30px;
+}
+
+.formule_img{
+    width: 126px;
+}
+}

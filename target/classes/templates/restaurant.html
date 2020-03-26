@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restaurant</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
+  <link rel="stylesheet" th:href="@{css/restaurant_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  
+
+</head>
+
+<body>
+
+  <header th:replace="fragment/layout.html :: top"></header>
+
+    <!-- ============================================================== -->
+    <!-- Header Section -->
+    <!-- ============================================================== -->
+    
+	  <div class="header_main"></div>
+	  <section class="header_section">
+	
+	    <div class="left_side">
+	      <h1>Le Nom du restaurant partenaire</h1>
+	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	      <button class="info_btn">Information</button>
+	      <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Mode de payement</button>
+	
+	      <div class="opinion_star">
+	        <i class="fa fa-star"></i>
+	        <i class="fa fa-star"></i>
+	        <i class="fa fa-star"></i>
+	        <i class="fa fa-star"></i>
+	        <i class="fa fa-star"></i>
+	      </div>
+	    </div>
+	
+	    <div class="right_side">
+	      <div class="right_side_img">
+	        <div class="rectangle_circle">
+	          <div class="rectangle"></div>
+	          <div class="circle"></div>
+	        </div>
+	        <img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="">
+	      </div>
+	
+	    </div>
+	
+	  </section>
+	  
+    <!-- ============================================================== -->
+    <!-- Modal information -->
+    <!-- ============================================================== -->	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    <!-- ============================================================== -->
+    <!-- Modal payement -->
+    <!-- ============================================================== -->
+
+		<div class="modal fade" id="payementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center" id="exampleModalCenterTitle">Mode de paiement</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        </button>
+		      </div>
+		      <div class="modal-body">
+			      <div class="payement_mode">
+				      <div><img class="credit-card" alt="logo carte de credit" src="images/logo/credit-card.png"></div>
+			          <div><img class="money" alt="logo argent" src="images/logo/money.png"></div>
+			          <div><img class="credit-card" alt="logo carte de credit" src="images/logo/restaurant-ticket.png"></div>
+			      </div>
+			      <div class="payement_mode">
+				      <div><p>Carte Bancaire</p></div>
+			          <div><p>Espèces</p></div>
+			          <div><p>Ticket Restaurant</p></div>
+			      </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+    <!-- ============================================================== -->
+    <!-- Menus -->
+    <!-- ============================================================== -->
+
+  <section>
+    <div class="formule_section">           
+      <img class="formule_img" alt="logo nos formule" src="images/logo/formule.png"> 
+      <h2>Nos Formules</h2>             
+    </div>
+    <div class="container">
+
+      <div class="row">
+        <ul class="nav nav-tabs menu_tab" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="breakfast-tab" data-toggle="tab" href="#breakfast" role="tab" aria-selected="true">Breakfast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="lunch-tab" data-toggle="tab" href="#lunch" role="tab" aria-selected="false">Lunch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " id="dinner-tab" data-toggle="tab" href="#dinner" role="tab" aria-selected="false">Dinner</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="tab-content col-xl-12" id="myTabContent">
+          <div class="tab-pane fade active show" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-6.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="lunch" role="tabpanel" aria-labelledby="lunch-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade " id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+                <div class="single_menu_list">
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="" />
+                  <div class="menu_content">
+                    <h4>Chicken Fried Salad <span>$45</span></h4>
+                    <p>
+                      Aperiam tempore sit,perferendis numquam repudiandae
+                      porro voluptate dicta saepe facilis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 text-center">
+          <div class="box_btn">
+            <a href="#">view more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+		
+  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
+
+ 
+
+</body>
+
+</html>
