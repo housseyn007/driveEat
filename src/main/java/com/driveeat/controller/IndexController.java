@@ -21,4 +21,5 @@ public class IndexController {
 		model.addAttribute("specialities", specialitiesRepository.findAll());
 		return "index";
 	}
+
 }
