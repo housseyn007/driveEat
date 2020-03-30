@@ -24,9 +24,11 @@ body {
  	border: 1px solid #ad6f23;
 	margin-bottom: 0px;
  }
+ 
 /* 	 ==============================================================  */
 /*      						HomeSponsor css  */
 /*   ============================================================== */
+
  .homesponsor {
  	background: linear-gradient(to bottom, rgba(0, 0, 0, .1), transparent), url(/images/background/background_sponsor.jpg) no-repeat center center;
 	background-size: cover;
@@ -82,7 +84,7 @@ body {
 	height: 450px;
 	}
 	
-	/* 	 ==============================================================  */
+/* 	 ==============================================================  */
 /*      						Carousel css  */
 /*   ============================================================== */
 	
@@ -173,6 +175,7 @@ body {
 /* 	 ==============================================================  */
 /*      						Outils css  */
 /*   ============================================================== */
+
 .device_section{
 	width: 100vw;
 	display: flex;
@@ -185,7 +188,6 @@ body {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 25px;
 	
 }
 .texteoutils{
@@ -227,22 +229,19 @@ body {
 .servicesoutils{
 	width: 55px;
 }
-
-
  
- /* 	 ==============================================================  */
+/* 	 ==============================================================  */
 /*      						Formulaire css  */
-/*   ============================================================== */
- 
+/*   ============================================================== */ 
  
  .texth2 {
 	font-family: 'Mansalva', cursive;
 	font-size: 3.5em;
 	color: #ad6f23;
 	text-align: center;
-	padding-top: 45px;
-	margin-bottom: 45px;
+	padding-top: 60px;
 	}
+	
  .formulaire{
 	max-width: 800px;
 	height: auto;
@@ -330,7 +329,7 @@ body {
 
 @media screen and (max-width: 1086px) {
 .divservicesoutils{
-	margin-top: 30px;
+	margin-top: 10px;
 	}
 }
 
@@ -513,7 +512,7 @@ body {
 	color:
 	#ad6f23;
 	text-align: center;
-	padding: 25px;
+	padding-top: 25px;	
  	}
  	
  	 .bordercercle  {
@@ -587,7 +586,6 @@ body {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 25px;
 	}
 .divimgscanner{
 	padding: 15px;
@@ -616,7 +614,7 @@ body {
 	background-size:100%;
 	margin: -25px auto;
 	box-sizing: border-box;
-	padding: 40px;
+	padding: 30px;
 	display: flex;
 	flex-direction: column;
 }
