@@ -1,133 +1,237 @@
-html,
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 body {
-    background-color: #f4f4ef;
+  font-family: 'Roboto', sans-serif;
 }
 
-a,
-a:hover,
-a:active {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.infoRes{
-	margin-top: 100px !important;
-}
-
-.product-card {
-    position: relative;
-    margin: 10px 0px;
-    z-index: 1;
-    display: block;
-    background: #FFFFFF;
-    min-width: 270px;
-    height: 470px;
-    box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
-    border-radius: 0.375rem;
-    transition: all 0.3s ease;
+.restaurant_list {
+  font-family: 'Mansalva', cursive;
+  font-size: 3.5em;
+  text-align: center;
+  margin-top: 130px;
+  background: #ad6f23;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-.product-card:hover {
-    box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2)
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.product-card .card-thumbnail {
-    background: #000000;
-    /* height: 400px; */
-    overflow: hidden;
+.href-card {
+  text-decoration: none;
 }
 
-.product-card .card-thumbnail img {
-    display: block;
-    width: 120%;
-    -webkit-transition: all .3s cubic-bezier(0, .5, .5, 1);
-    -o-transition: all .3s cubic-bezier(0, .5, .5, 1);
-    transition: all .3s cubic-bezier(0, .5, .5, 1);
+.card {
+  margin-left: 15px;
+  margin-bottom: 50px;
+  cursor: default;
+  position: relative;
+  border-radius: 10px;
+  width: 330px;
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+  transition: all 0.3s ease;
 }
 
-.product-card:hover .card-thumbnail img {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: .6;
+.card:hover {
+  box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2)
 }
 
-.fa-send:before {
-    color: #fff;
-    position: absolute;
-    top: 15px;
-    left: 13px;
+.card-header, .card-header img {
+  width: 328px;
+  height: 220px;
+  border-radius: 6px 6px 0 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.product-card .card-content {
-    position: absolute;
-    bottom: 0;
-    background: #FFFFFF;
-    width: 100%;
-    padding: 40px 30px;
-    -webkti-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
-    -moz-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
-    -ms-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
-    -o-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
-    transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+.card-body-header-category {
+  border-top-right-radius: 5px;
+  font-family: 'Andika', sans-serif;
+  background-color: #EF5A31D9;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
 }
 
-.product-card .card-content .send {
-    position: absolute;
-    top: -30px;
-    right: 10px;
-    height: 60px;
-    width: 60px;
-    background: #197;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 1s ease;
-    transition-delay: 0.3s;
-    opacity: 0;
+.card-body-header-category {
+  position: absolute;
+  font-size: 14px;
+  top: -31px;
+  left: 0;
+  padding: 9px 10px;
+  line-height: 13px;
+}
+.card-header{
+	padding:0;
 }
 
-.product-card:hover .card-content .send {
-    opacity: 1;
+.card-header-date {
+  margin: -215px -0 0 275px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  border: 3px solid #FFF;
+  background-color: rgba(250, 250, 250, .8);
+  display: block;
 }
 
-.product-card .card-content .card-title {
-    margin: 0;
-    padding: 0 0 10px;
-    color: #333333;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: capitalize;
+.fa-heart {
+  font-size: 30px;
+  margin-left: -15px;
+  margin-top: -13px;
+  position: absolute;
+  color: #90A4AE;
+  background-color: transparent;
 }
 
-.product-card .card-content .card-sub-title {
-    margin: 0;
-    padding: 0 0 20px;
-    color: #197;
-    font-size: 15px;
-    font-weight: 400;
-    text-transform: capitalize;
+.card-header-date:hover {
+  background-color: rgba(250, 250, 250, 1);
+  border: 3px solid #d32f2f;
 }
 
-.product-card .card-content .description {
-    color: #666666;
-    font-size: 12px;
-    line-height: 1.8em;
-    display: none;
-    /* height: 0px; */
+.fa-heart:hover {
+  color: #e53935;
 }
 
-.product-card .card-content .post-meta {
-    margin: 30px 0 0;
-    color: #999999;
+.card-body {
+  background-color: #FFF;
+  border-radius: 0 0 6px 6px;
+  padding: 0 21px 21px 21px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
 
-.product-card .card-content .post-meta .time-stamp {
-    margin: 0 80px 0 0;
+.card-body-header {
+  width: 328px;
+  position: absolute;
+  left: 0;
+  padding: 13px;
+  background-color: #FFF;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.product-card .card-content .post-meta a {
-    color: inherit;
-    text-decoration: none;
+.card:hover .card-body-header {
+  margin-top: -90px;
+}
+
+h3 {
+  margin-top: -8px;
+  font-family: 'Andika', sans-serif;
+  color: #3f4040;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.card-body-header-sentence {
+  font-family: 'Andika', sans-serif;
+  color: #EF5A31;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.card-body-description {
+  opacity: 0;
+  color: #757B82;
+  line-height: 25px;
+  margin-top:5px;
+  height:80px;
+  overflow: scroll;
+  font-size: 13px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.card:hover .card-body-description {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.card-body-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9FA5A8;
+}
+
+.card-body-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-map-marked-alt, .fa-comment-dots {
+  font-size: 15px;
+  font-size: 15px;
+}
+
+.comments {
+  text-decoration: none;
+  color: #9FA5A8;
+}
+
+.comments:hover {
+  color: #d32f2f;
+}
+
+/* -----------------------------------Media------------------------------------- */
+
+@media screen and (max-width: 560px) {
+  .restaurant_list {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .restaurant_list {
+    font-size: 2.0em;
+  }
+    .card-header img{
+        width: 300px;
+    }
+    .card{
+        width: 302px;
+        margin: 0 0 10px 0;
+    }
+    .card-header,.card-body-header{
+        width: 300px;
+    }
+    .card-header-date{
+      width: 35px;
+      height: 35px;
+      margin: -216px -0 0 260px;
+    }
+    .fa-heart {
+    font-size: 23px;
+    margin-left: -11.5px;
+    margin-top: -10px;
+    }
 }
