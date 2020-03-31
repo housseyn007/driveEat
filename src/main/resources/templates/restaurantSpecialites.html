@@ -30,7 +30,7 @@
 	<h1 class="restaurant_list">Restaurants à proximité</h1>
 	<div class="wrapper">
 		<a class="href-card"
-			th:each="restaurantSpecialites : ${RestaurantSpecialites}">
+			th:each="restaurantSpecialites : ${RestaurantSpecialites}" th:href="|/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
 			<div class="card">
 				<div class="card-header">
 					<div class="card-header-mask">
