@@ -1,10 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 
 /* -------------------------------------------Header Section------------------------------------------- */
+
 .header_main {
   margin: 20px 10%;
   position: relative;
@@ -46,13 +48,13 @@ body {
 }
 
 .left_side p {
-	width: 85%;
-	font-family: 'Andika', sans-serif;
-	font-size: 1.1em;
-	line-height: 25px;
-	color: #3f4040;
-	margin-top: 20px;
-	margin-bottom: .5rem;
+  width: 85%;
+  font-family: 'Andika', sans-serif;
+  font-size: 1.1em;
+  line-height: 25px;
+  color: #3f4040;
+  margin-top: 20px;
+  margin-bottom: .5rem;
 }
 
 .left_side button {
@@ -131,8 +133,8 @@ body {
 
 
 
-/* -------------------------------------------Modal payement------------------------------------------- */
 
+/* -------------------------------------------Modal payement------------------------------------------- */
 .modal-title {
   font-family: 'Andika', sans-serif;
   font-weight: bold;
@@ -180,59 +182,88 @@ body {
 
 /* -------------------------------------------Menus Section------------------------------------------- */
 
-.formule_section{
+.formule {
+  margin-bottom: 50px
+}
+
+.formule_section {
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
 }
 
-.formule_img{
-	width: 135px;
-    padding: 8px;
+.formule_img {
+  width: 135px;
+  padding: 8px;
 }
 
 .formule_section h2 {
-	margin:0px;
-	margin-left:20px;
-	padding-top:80px;
-	font-family: 'Mansalva', cursive;
-	font-size: 50px;
-	background: #ad6f23;
-	background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
-	background-clip: border-box;
-	-webkit-background-clip: text;
-	color: transparent;
+  margin: 0px;
+  margin-left: 20px;
+  padding-top: 80px;
+  font-family: 'Mansalva', cursive;
+  font-size: 50px;
+  background: #ad6f23;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-
-#myTabContent {
-  margin-top: 50px;
-}
 .menu_tab {
   width: auto;
   margin: 0 auto;
 }
-.nav-tabs .nav-item {
-  margin-bottom: -1px;
-}
+
 .nav-item a {
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
   color: #333;
+  text-decoration: none;
 }
-.menu_tab .nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active {
+
+.btn-menu {
+  background: #eeeeee;
+  background: linear-gradient(#f3f3f3, #eeeeee 50%, #f3f3f3);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 11.25px;
+  color: #ffffff;
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+}
+
+.menu_tab .nav-item.show .btn-menu,
+.btn-menu.active {
   color: white;
-  background-color: #ff5e18;
-  border-color: #ff5e18;
+  background: #ad6f23;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  border: 2px solid #9d641e;
 }
+
+#myTabContent {
+  margin-top: 50px;
+}
+
+.menu_container {
+  margin-top: 40px;
+}
+
 .single_menu_list {
-  position: relative;
-  padding-left: 190px;
-  margin-bottom: 110px;
+  display: flex;
+  margin-bottom: 70px;
+  text-decoration: none !important;
+  outline: none;
+}
+
+.menu_content {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .single_menu_list img {
-  max-width: 30%;
-  position: absolute;
+  max-width: 150px;
   left: 0px;
   top: 0;
   border: 1px solid #ddd;
@@ -246,25 +277,58 @@ body {
   transition: 0.4s;
 }
 
-.single_menu_list h4 {
+.menu_content h4 {
+  font-family: 'Andika', sans-serif;
   font-size: 20px;
-  border-bottom: 1px dashed #333;
+  font-weight: bold;
+  color: #3f4040;
+  border-bottom: 1px dashed #9b641f;
   padding-bottom: 15px;
   margin-bottom: 10px;
 }
 
-.single_menu_list h4 span {
+.menu_content h4 span {
+  font-family: 'Andika', sans-serif;
+  font-size: 20px;
   float: right;
   font-weight: bold;
-  color: #ff5e18;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
   font-style: italic;
 }
 
-/* -------------------------------------------Media Section------------------------------------------- */
-@media only screen and (max-width: 1330px) {
-.header_section {
-  margin-bottom: 0px
+.menu_content p {
+  font-size: 14px;
+  color: #585959;
 }
+
+.fa-arrow-alt-circle-up {
+  font-size: 40px;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fa-arrow-alt-circle-up:hover {
+  font-size: 45px;
+  background: linear-gradient(to right, #7f531d, #bd7f34, #7f531d);
+  background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* -------------------------------------------Media Section------------------------------------------- */
+
+@media only screen and (max-width: 1330px) {
+  .header_section {
+    margin-bottom: 0px
+  }
 }
 
 @media only screen and (max-width: 1110px) {
@@ -293,6 +357,41 @@ body {
     width: 90px;
     height: 90px;
     background-size: 18px 18px;
+  }
+}
+
+@media only screen and (max-width: 985px) {
+  .formule_section {
+    margin-bottom: 30px;
+    } 
+    
+  .menu_container {
+    margin-top: 0px;
+  }
+
+  #myTabContent {
+    margin-top: 35px;
+  }
+
+  .single_menu_list {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .menu_content {
+    margin-right: 0px;
+  }
+
+  .single_menu_list img {
+    max-width: 120px;
+  }
+
+  .menu_content h4, .menu_content h4 span {
+    font-size: 16px;
+  }
+
+  .menu_content p {
+    font-size: 13px;
   }
 }
 
@@ -369,14 +468,27 @@ body {
     padding: 20px;
     padding-top: 0px;
   }
-  
+
   .formule_section h2 {
-	font-size: 40px;
-	margin-left: 0px;
-}
-.formule_img{
+    font-size: 40px;
+    margin-left: 0px;
+  }
+
+  .formule_img {
     padding: 18px;
-}
+  }
+
+  .single_menu_list img {
+    max-width: 100px;
+  }
+
+  .nav-item a {
+    font-size: 0.9em;
+  }
+
+  .btn-menu {
+    padding: 3px 6px;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -439,12 +551,12 @@ body {
     width: 50px;
     margin-left: -25px;
   }
-  
-    .formule_section h2 {
-	font-size: 30px;
-}
 
-.formule_img{
+  .formule_section h2 {
+    font-size: 30px;
+  }
+
+  .formule_img {
     width: 126px;
-}
+  }
 }
