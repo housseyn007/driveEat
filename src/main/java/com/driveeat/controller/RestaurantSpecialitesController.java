@@ -16,13 +16,14 @@ import com.driveeat.repository.SpecialitiesRepository;
 public class RestaurantSpecialitesController {
 	@Autowired
 	private RestaurantSpecialitiesRepository restaurantSpecialitiesRepository;
-    @Autowired
-    private SpecialitiesRepository specialities ;
-     
-    @GetMapping("/restaurantSpecialites")
+	@Autowired
+	private SpecialitiesRepository specialities;
+
+	@GetMapping("/restaurantSpecialites")
 	public String showrestaurents(Model model, @RequestParam Integer id) {
-    	model.addAttribute("RestaurantSpecialites", restaurantSpecialitiesRepository.findBySpecialities(specialities.getOne(id)));
+		
+		model.addAttribute("RestaurantSpecialites", restaurantSpecialitiesRepository.findBySpecialities(specialities.getOne(id)));
 		return "restaurantSpecialites";
 	}
-	
+
 }
