@@ -132,6 +132,98 @@ body {
 /* -------------------------------------------Modal information------------------------------------------- */
 
 
+.infoText{
+  font-size: 1.2em;
+}
+
+.opning_time{
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.table_container{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Andika', sans-serif;
+  }
+  
+.table_container h2{
+  font-family: 'Andika', sans-serif;
+  font-size: 23px;
+  color: #3f4040;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.table_container i{
+  color: #ad6f23;
+  font-size: 1.4em;
+  margin-right: 1em;
+  
+}
+
+.route_link{
+  margin-bottom: 20px;
+
+}
+  .table_container div a{
+  color: #3f4040;
+  font-family: 'Andika', sans-serif;
+  font-size: 1.2em;
+  }
+
+.table_elements{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.2em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+
+}
+
+.table_elements thead tr{
+  background-color: #fff;
+  color: #ad6f23;
+  text-align: left;
+  border-bottom: 1px solid #3f4040;
+  border-top: 2px solid #3f4040;
+}
+
+.table_elements th{
+  text-align: left;
+}
+
+.table_elements th,
+.table_elements td{
+  padding: 12px 15px;
+  
+}
+
+.table_elements tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+
+.time_element:hover{
+  background: #B2DFDB;
+}
+
+.time_element_b:hover{
+  background: #B2DFDB;
+}
+
+.time_element_b{
+  background-color: #f3f3f3;
+}
+
+.table_elements tbody tr:last-of-type{
+  border-bottom: 2px solid #3f4040;
+}
+
 
 
 /* -------------------------------------------Modal payement------------------------------------------- */
@@ -434,6 +526,10 @@ body {
     background-size: 15px 15px;
     background-image: radial-gradient(circle at 2.5px 2.5px, #ec222a 2.5px, transparent 0);
   }
+  
+  .table_elements{
+    min-width: 400px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -532,6 +628,10 @@ body {
   .left_side button {
     padding: 10px 10px;
     margin: 13px 15px 0 0;
+  }
+  
+  .table_elements{
+    min-width: 300px;
   }
 
   .info_btn, .payement_btn {
