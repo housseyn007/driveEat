@@ -40,11 +40,12 @@ body {
 
 .left_side h1 {
   font-family: 'Mansalva', cursive;
-  font-size: 50px;
+  font-size: 60px;
   background: #ad6f23;
   background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
   -webkit-background-clip: text;
   color: transparent;
+  line-height: 1.7;
 }
 
 .left_side p {
@@ -103,6 +104,7 @@ body {
 
 .right_side_img img {
   width: 720px;
+  height:480px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -133,11 +135,30 @@ body {
 
 
 .infoText{
-  font-size: 1.2em;
+ font-size: 15px;
+margin-bottom: 5px;
+}
+
+.fa-map-marker, .fa-phone, .fa-clock-o{
+	font-size: 17px;
+	color: #ad6f23;
+	margin-right: 10px;
+}
+
+.time_header {
+    text-align:center;
+    padding: 0.5rem 0.5rem;
+}
+
+.time_header h3{
+	ont-family: 'Andika', sans-serif;
+	font-weight: bold;
+	color: #ad6f23;
+	font-size: 19px;
+	margin-top: 15px;
 }
 
 .opning_time{
-  margin-top: 25px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -159,27 +180,35 @@ body {
   font-weight: bold;
 }
 
-.table_container i{
-  color: #ad6f23;
-  font-size: 1.4em;
-  margin-right: 1em;
+.route_link_container{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.route_link a{
+  font-size: 1em!important;
+  font-weight:bold!important; 
+  color: #3f4040!important; 
+}
+
+.fa-map-o, .fa-car{
+	font-size: 20px;
+	color: #ad6f23;
+	margin-right: 10px;
+}
   
-}
-
-.route_link{
-  margin-bottom: 20px;
-
-}
-  .table_container div a{
+  tainer div a{
   color: #3f4040;
   font-family: 'Andika', sans-serif;
   font-size: 1.2em;
   }
 
 .table_elements{
+  text-align: center;
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 1.2em;
+  margin: 0px 0;
+  font-size: 16px;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
@@ -195,12 +224,13 @@ body {
 }
 
 .table_elements th{
-  text-align: left;
+  text-align: center;
+  font-size: 18px;
 }
 
 .table_elements th,
 .table_elements td{
-  padding: 12px 15px;
+  padding: 10px 13px;
   
 }
 
@@ -232,6 +262,7 @@ body {
   font-weight: bold;
   color: #3f4040;
   font-size: 23px;
+  width: 100vw;
 }
 
 .payement_mode {
@@ -436,6 +467,7 @@ body {
 
   .right_side_img img {
     width: 500px;
+    height:333.333px;
   }
 
   .rectangle {
@@ -450,6 +482,10 @@ body {
     height: 90px;
     background-size: 18px 18px;
   }
+  
+  .left_side {
+    margin-top: 0px;
+}
 }
 
 @media only screen and (max-width: 985px) {
@@ -505,12 +541,16 @@ body {
     font-size: 1em;
   }
 
+.opinion_star i {
+    font-size: 25px;
+}
   .right_side {
     max-width: 55vw;
   }
 
   .right_side_img img {
     width: 400px;
+    height: 266px;
   }
 
   .rectangle {
@@ -543,6 +583,7 @@ body {
 
   .right_side_img img {
     width: 340px;
+    height: 225px;
   }
 
   .rectangle {
@@ -604,6 +645,7 @@ body {
 
   .right_side_img img {
     width: 300px;
+    height: 200px;
   }
 
   .rectangle {
@@ -630,6 +672,10 @@ body {
     margin: 13px 15px 0 0;
   }
   
+  .opinion_star i {
+    font-size: 21px;
+  }
+
   .table_elements{
     min-width: 300px;
   }
@@ -659,4 +705,8 @@ body {
   .formule_img {
     width: 126px;
   }
+  
+  .route_link a{
+  font-size: 14px!important;
+}
 }

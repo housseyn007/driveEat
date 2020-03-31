@@ -35,7 +35,8 @@ public class RestaurantSpecialities {
 		super();
 	}
 
-	public RestaurantSpecialities(Restaurants restaurants, Specialities specialities, int rank) {
+	public RestaurantSpecialities(@NotNull Restaurants restaurants, @NotNull Specialities specialities,
+			@NotNull int rank) {
 		super();
 		this.restaurants = restaurants;
 		this.specialities = specialities;
@@ -73,5 +74,7 @@ public class RestaurantSpecialities {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+
+
 
 }

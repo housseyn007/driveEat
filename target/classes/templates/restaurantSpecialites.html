@@ -22,56 +22,53 @@
   
     <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
 
-    <title>restaurants specialites</title>
+    <title>restaurants specialites</title>    
 </head>
 
 <body>
-	<header th:replace="fragment/layout_v2.html :: top"></header>
-	<h1 class="restaurant_list">Restaurants à proximité</h1>
-	<div class="wrapper">
-		<a class="href-card"
-			th:each="restaurantSpecialites : ${RestaurantSpecialites}">
-			<div class="card">
-				<div class="card-header">
-					<div class="card-header-mask">
-						<img
-							th:src="@{'/DriveatBackend/public/' + ${restaurantSpecialites.restaurants.frontPicture}}">
 
-						<button class="card-header-date">
-							<i class="fas fa-heart"></i>
-						</button>
-					</div>
-				</div>
-				<div class="card-body">
-					<div class="card-body-header">
-						<div class="card-body-header-category">Nouveau</div>
-						<h3 th:text="${restaurantSpecialites.restaurants.name}">Nom
-							du restaurant</h3>
-						<p class="card-body-header-sentence"
-							th:text="${restaurantSpecialites.restaurants.city}">Ville</p>
-						<span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-					</div>
+  
+  <header th:replace="fragment/layout_v2.html :: top"></header>
+  
+  <h1 class="restaurant_list">Restaurants à proximité</h1>
+  <div class="wrapper">
+    <a class="href-card" th:each="restaurantSpecialites : ${RestaurantSpecialites}" th:href="|/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-mask">
+            <img th:src="@{'/DriveatBackend/public/' + ${restaurantSpecialites.restaurants.frontPicture}}">
+            <button class="card-header-date">
+              <i class="fas fa-heart"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-header">
+            <div class="card-body-header-category">Nouveau</div>
+            <h3 th:text="${restaurantSpecialites.restaurants.name}">Nom
+              du restaurant</h3>
+            <p class="card-body-header-sentence" th:text="${restaurantSpecialites.restaurants.city}">Ville</p>
+            <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+          </div>
 
-					<p class="card-body-description"
-						th:text="${restaurantSpecialites.restaurants.description}">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Molestias autem aliquid, recusandae maiores iste fuga, explicabo
-						dolor vitae magnam!</p>
+          <p class="card-body-description" th:text="${restaurantSpecialites.restaurants.description}">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Molestias autem aliquid, recusandae maiores iste fuga, explicabo
+            dolor vitae magnam!</p>
 
-					<div class="card-body-footer">
-						<div class="comments">
-							<i class="fas fa-map-marked-alt"></i> 100 km
-						</div>
-						<a class="comments" href="#"><i class="fas fa-comment-dots"></i>
-							39 Avis</a>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
+          <div class="card-body-footer">
+            <div class="comments">
+              <i class="fas fa-map-marked-alt"></i> 100 km
+            </div>
+            <a class="comments" href="#"><i class="fas fa-comment-dots"></i>
+              39 Avis</a>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
 
-
-	<footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
+  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
 
 </body>
 
