@@ -139,6 +139,11 @@ body {
 margin-bottom: 5px;
 }
 
+.informations_modal{
+	display: flex;
+	align-items: baseline;
+}
+
 .fa-map-marker, .fa-phone, .fa-clock-o{
 	font-size: 17px;
 	color: #ad6f23;
@@ -239,15 +244,7 @@ margin-bottom: 5px;
 }
 
 .time_element:hover{
-  background: #B2DFDB;
-}
-
-.time_element_b:hover{
-  background: #B2DFDB;
-}
-
-.time_element_b{
-  background-color: #f3f3f3;
+  background: #e9b96e;
 }
 
 .table_elements tbody tr:last-of-type{
@@ -336,13 +333,31 @@ margin-bottom: 5px;
 .menu_tab {
   width: auto;
   margin: 0 auto;
+  height: 45px;
 }
 
-.nav-item a {
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav_item a {
   font-family: 'Andika', sans-serif;
   font-weight: bold;
   color: #333;
   text-decoration: none;
+}
+
+.fa-caret-left, .fa-caret-right {
+  font-size: 35px;
+  color: #AD6F23
+;
 }
 
 .btn-menu {
