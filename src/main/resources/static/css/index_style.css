@@ -192,6 +192,13 @@ h2 {
 	padding-bottom: 30px;
 }
 
+.fa-caret-left, .fa-caret-right {
+  font-size: 35px;
+  color: #AD6F23
+;
+}
+
+
 .card {
 	width: 280px;
 	border-radius: 4px;
