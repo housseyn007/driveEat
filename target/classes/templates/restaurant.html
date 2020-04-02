@@ -103,20 +103,20 @@
 	                    <th>Soir</th>
 	                  </tr>
 	                </thead>
-	                <tbody th:each="timetablesDefinitions : ${timetablesDefinitions}">
-	                  <tr class="time_element" >
+	                <tbody>
+	                  <tr class="time_element" th:each="timetablesDefinitions : ${timetablesDefinitions}">
 						<td th:text="${timetablesDefinitions.day}">Lundi</td>
-						<td th:text="${timetablesDefinitions.startTime}">8h/14h</td>
-						<td th:text="${timetablesDefinitions.endTime}">15h/22h</td>
+						<td th:text="${#dates.format(timetablesDefinitions.startTime,'HH:mm')}">8h/14h</td>
+						<td th:text="${#dates.format(timetablesDefinitions.endTime,'HH:mm')}">15h/22h</td>
 					  </tr>
 	                </tbody>
 	              </table>
 	              <div class="route_link_container">
 		              <div class="route_link">
-		                <a href="#"><i class="fa fa-map-o"></i>Itinéraire Maps</a>
+		                <a th:href="@{|https://www.google.fr/maps/dir//${restaurant.latitude},${restaurant.longitude}}" target="_blank"><i class="fa fa-map-o"></i>Itinéraire Maps</a>
 		              </div>
 		              <div class="route_link">
-		                <a href="#"><i class="fa fa-car"></i>Itinéraire Waze</a>
+		                <a th:href="@{|https://www.waze.com/fr/livemap/directions?latlng=${restaurant.latitude},${restaurant.longitude}}" target="_blank"><i class="fa fa-car"></i>Itinéraire Waze</a>
 		              </div>
 	              </div>
 
