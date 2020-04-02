@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
-	<link rel="stylesheet" th:href="@{css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 
 <body>
 
-  <header th:replace="fragment/layout_v2.html :: top"></header>
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
 
 	<style>.embedly-embed{	margin-top: 150px;}</style>
 
@@ -35,7 +35,7 @@
 	  <embed class="" src="pdf/mangopay.pdf" type="application/pdf" width="100%" height="750px"></embed>
 	</div>
 
-  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
+  <footer class="/footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
 
 </body>
 

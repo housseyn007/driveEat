@@ -8,8 +8,8 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   
-   <link rel="stylesheet" th:href="@{css/styleRestaurantSpecialites.css}" >
-   <link rel="stylesheet" th:href="@{css/layout_style_v2.css}" />
+   <link rel="stylesheet" th:href="@{/css/styleRestaurantSpecialites.css}" >
+   <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
    
    	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -28,11 +28,11 @@
 <body>
 
   
-  <header th:replace="fragment/layout_v2.html :: top"></header>
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
   
   <h1 class="restaurant_list">Restaurants à proximité</h1>
   <div class="wrapper">
-    <a class="href-card" th:each="restaurantSpecialites : ${RestaurantSpecialites}" th:href="|/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
+    <a class="href-card" th:each="restaurantSpecialites : ${RestaurantSpecialites}" th:href="|/restaurantSpecialites/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
       <div class="card">
         <div class="card-header">
           <div class="card-header-mask">
@@ -68,7 +68,7 @@
     </a>
   </div>
 
-  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
 </body>
 
