@@ -82,22 +82,22 @@ body {
 }
 
 .card-header-date {
-  margin: -215px -0 0 275px;
+  margin: -211px -0 0 278px;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   border: 3px solid #FFF;
-  background-color: rgba(250, 250, 250, .8);
+  background-color: white;
   display: block;
 }
 
 .fa-heart {
-  font-size: 30px;
-  margin-left: -15px;
-  margin-top: -13px;
+  font-size: 24px;
+  margin-left: -12px;
+  margin-top: -10px;
   position: absolute;
-  color: #90A4AE;
+  color: #fb4646bd;;
   background-color: transparent;
 }
 
@@ -227,7 +227,7 @@ h3 {
     .card-header-date{
       width: 35px;
       height: 35px;
-      margin: -216px -0 0 260px;
+      margin: -212px -0 0 257px;
     }
     .fa-heart {
     font-size: 23px;
