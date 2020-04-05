@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DriveEat Restaurants</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" /> 
+	
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />	
+    <link rel="stylesheet" th:href="@{/css/menu_selection_style.css}" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+  
+    <!-- ============================================================== -->
+  <!-- formule-title Section -->
+  <!-- ============================================================== -->
+
+  <section class="formule">
+    <div class="title_section">
+      <img class="title_img" alt="logo nos formule" src="/images/logo/menu-selection.png">
+      <h2>Je compose mon menu</h2>
+    </div>
+    <div class="container">
+
+      <div uk-slider="autoplay: true; autoplay-interval:2000;">
+        <div class="uk-position-relative">
+          <div class="uk-slider-container uk-light">
+            <ul class="uk-slider-items img_tab">
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/sauce.png" alt="logo sauce">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/fries.png" alt="logo frite">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/drink.png" alt="logo boisson">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/salad.png" alt="logo salade">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/bread.png" alt="logo pain">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/ice-cream.png" alt="logo ice-cream">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/yogurt.png" alt="logo yaourt">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/ice-cream2.png" alt="logo ice-cream">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/dessert.png" alt="logo dessert">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/donuts.png" alt="logo donuts">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/chocolate-bar.png" alt="logo barre chocolatée">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+              <li class="img_items">
+                <img class="logo_image" src="/images/logo/cupcake.png" alt="logo cupcake">
+              </li>
+              <li class="img_items">
+                <img class="add_logo" src="/images/logo/add-sign.png" alt="logo addition">
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="uk-visible@s">
+            <a class="uk-position-center-left-out uk-position-small" href="#" uk-slider-item="previous"><i class="fas fa-caret-left"></i></a>
+            <a class="uk-position-center-right-out uk-position-small" href="#" uk-slider-item="next"><i class="fas fa-caret-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Menu description Section -->
+    <!-- ============================================================== -->
+
+    <div class="row menu_description">
+      <div class="container menu_description_container">
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image du menu" uk-cover>
+            <canvas width="600" height="400"></canvas>
+          </div>
+          <div>
+            <div class="uk-card-body">
+              <h3 class="uk-text-center">Nom Du Menu</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+              <button class="allergen_btn" type="button" data-toggle="modal" data-target="#allergen_Modal">Allergène</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Modal Allergen -->
+    <!-- ============================================================== -->
+
+    <div class="modal fade" id="allergen_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalCenterTitle">Allergène</h3>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="allergen_h5">
+              <div>
+                <h5>Vous avez des questions sur les allergènes ?</h5>
+                <p>Demandez au restaurant quels sont ces ingrédients et méthodes de préparation.</p>
+              </div>
+              <div>
+                <h5>Plus d'informations</h5>
+                <p>Tous les plats peuvent contenir un ou plusieurs des allergènes suivants: blé, gluten, cacahuètes, noisettes
+                  graines de sésame, céleri, soja, lait, oeufs, moutarde, lupin, mollusque, crustacés, poisson, dioxyde de soufre.<br>
+                  Les plats peuvent également contenir des additifs alimentaires tels que du porc, de l'alcool et/ou d'autres susbstances
+                  qui peuvent ne pas convenir pour des femmes enceintes ou des personnes ayant des besoins diététiques spécifiques.<br>
+                  Pour toutes questions concernant les allergènes ou d'autres contenus de plats spécifiques, veuillez contacter directement le restaurant.
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- Additional menu selection-->
+  <!-- ============================================================== -->
+  <section>
+
+    <div class="container">
+
+      <div uk-slider="autoplay: true; autoplay-interval:3000;">
+        <div class="uk-position-relative">
+          <div class="uk-slider-container uk-light">
+            <ul class="uk-slider-items nav menu_tab">
+
+              <li class="nav-item">
+                <a class="btn-menu active show" data-toggle="tab" href="#Extras" aria-selected="true">Choix de la Pizza</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras1" aria-selected="false">Extras 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras2" aria-selected="false">Supplément Boissons</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras3" aria-selected="false">Supplément Dessert</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras4" aria-selected="false">Supplément Goodies</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras5" aria-selected="false">Extras 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras6" aria-selected="false">Extras 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras7" aria-selected="false">Extras 7</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras8" aria-selected="false">Extras 8</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-menu" data-toggle="tab" href="#Extras9" aria-selected="false">Extras 9</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="uk-visible@s">
+            <a class="uk-position-center-left-out uk-position-small" href="#" uk-slider-item="previous"><i class="fas fa-caret-left"></i></a>
+            <a class="uk-position-center-right-out uk-position-small" href="#" uk-slider-item="next"><i class="fas fa-caret-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row menu_container">
+
+        <div class="tab-content col-xl-12" id="myTabContent">
+          <div class="tab-pane fade active show" id="Extras">
+            <h3>Obligatoire à choisir</h3>
+
+            <div class="row all_checkbox">
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check1" />
+                    <label class="label_container" for="check1">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Salade César Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+6.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check2" />
+                    <label class="label_container" for="check2">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>La box Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check3" />
+                    <label class="label_container" for="check3">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Tartes aux daims</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+2.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check4" />
+                    <label class="label_container" for="check4">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Panini Nutella</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+3.00€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check5" />
+                    <label class="label_container" for="check5">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Fanta 33cl</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+1.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check6" />
+                    <label class="label_container" for="check6">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>6 Tenders</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.00€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="tab-pane fade" id="Extras1">
+
+            <div class="row all_checkbox">
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check7" />
+                    <label class="label_container" for="check7">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Salade César Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+6.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check8" />
+                    <label class="label_container" for="check8">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>La box Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check9" />
+                    <label class="label_container" for="check9">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Tartes aux daims</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+2.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check10" />
+                    <label class="label_container" for="check10">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Panini Nutella</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+3.00€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check11" />
+                    <label class="label_container" for="check11">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Fanta 33cl</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+1.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check12" />
+                    <label class="label_container" for="check12">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>6 Tenders</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.00€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="tab-pane fade " id="Extras2">
+
+            <div class="row all_checkbox">
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check13" />
+                    <label class="label_container" for="check13">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Salade César Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+6.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check14" />
+                    <label class="label_container" for="check14">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>La box Kebab</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check15" />
+                    <label class="label_container" for="check15">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Tartes aux daims</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+2.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check16" />
+                    <label class="label_container" for="check16">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Panini Nutella</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+3.00€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check17" />
+                    <label class="label_container" for="check17">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>Fanta 33cl</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+1.50€</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="checkbox_label">
+                  <div class="">
+                    <input type="checkbox" id="check18" />
+                    <label class="label_container" for="check18">
+                      <div><i class="fa fa-check"></i></div>
+                      <h4>6 Tenders</h4>
+                    </label>
+                  </div>
+                  <div class="">
+                    <p>+4.00€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-xl-12 text-center">
+              <div class="box_btn">
+                <a href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </section>
+  
+  
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+  
+</body>
+</html>
