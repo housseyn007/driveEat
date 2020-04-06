@@ -42,18 +42,29 @@
 	  <section class="header_section">
 	
 	    <div class="left_side">
-	      <h1 th:text="${restaurant.name}">Le Nom du restaurant partenaire</h1>
+	    	
+	     
+	     <h1 th:text="${restaurant.name}">Le Nom du restaurant partenaire</h1>
 	      <p th:text="${restaurant.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	      <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Information</button>
 	      <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Mode de paiement</button>
-	
-	      <div class="opinion_star">
-	        <i class="fa fa-star"></i>
-	        <i class="fa fa-star"></i>
-	        <i class="fa fa-star"></i>
-	        <i class="fa fa-star"></i>
-	        <i class="fa fa-star"></i>
-	      </div>
+	      
+		<div class="star-favorite">
+		 	<div class="opinion_star">
+		    	<i class="fa fa-star"></i>
+		        <i class="fa fa-star"></i>
+		        <i class="fa fa-star"></i>
+		        <i class="fa fa-star"></i>
+		        <i class="fa fa-star"></i>
+		      </div>
+		      
+		      <div class="card-header-mask">
+			  	<button class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
+					<i class="heart fa fa-heart-o"></i>
+				</button>
+	    	  </div>
+	    </div>
+	       
 	    </div>
 	
 	    <div class="right_side">
@@ -68,6 +79,36 @@
 	    </div>
 	
 	  </section>
+	  
+	<!-- ============================================================== -->
+    <!-- Modal favoris -->
+	<!-- ============================================================== -->	 
+	  
+	  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été ajouté aux favoris !' ">Restaurant ajouté aux favoris !</h3>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été supprimé des favoris !' ">Restaurant supprimé des favoris !</h3>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	  
     <!-- ============================================================== -->
     <!-- Modal information -->
@@ -141,7 +182,6 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <h3 class="modal-title text-center" id="exampleModalCenterTitle">Mode de paiement</h3>
-		        </button>
 		      </div>
 		      <div class="modal-body">
 			      <div class="payement_mode">
@@ -233,7 +273,18 @@
 		
   <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
- 
+   <script>
+  $(".heart.fa").click(function() {
+	  if ($(this).hasClass("fa-heart-o")){
+		  $(this).removeClass("fa-heart-o").addClass("fa-heart");
+		  $(".card-header-date").attr('data-target','#addFavorisModal');
+	  }else if ($(this).hasClass("fa-heart")){
+		  $(this).removeClass("fa-heart").addClass("fa-heart-o");
+		  $(".card-header-date").attr('data-target','#removeFavorisModal');
+
+	  }
+	});
+  </script>
 
 </body>
 

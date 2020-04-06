@@ -11,5 +11,6 @@ import com.driveeat.entity.Specialities;
 public interface RestaurantSpecialitiesRepository extends JpaRepository<RestaurantSpecialities, Integer> {
 	
 	public List<RestaurantSpecialities> findBySpecialities(Specialities id);
+	public List<RestaurantSpecialities> findByRestaurants(Restaurants id);
 
 }

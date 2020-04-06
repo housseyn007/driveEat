@@ -106,6 +106,8 @@ body {
   width: 720px;
   height:480px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  z-index: 2;
 }
 
 .rectangle {
@@ -114,7 +116,7 @@ body {
   margin-left: 50px;
   width: 525px;
   height: 625px;
-  z-index: -1;
+  z-index: 1;
   background: #3f4040;
   background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
   background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
@@ -124,12 +126,65 @@ body {
   position: absolute;
   margin-top: -52px;
   margin-left: 670px;
-  z-index: -1;
+  z-index: 1;
   width: 120px;
   height: 120px;
   background-image: radial-gradient(circle at 3px 3px, #ec222a 3px, transparent 0);
   background-size: 20px 20px;
 }
+
+.card-header-mask{
+	
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-left: 40px;
+	
+}
+
+.star-favorite{
+	
+  display: flex;
+	
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: -32px;
+  margin-top: -15px;
+  position: absolute;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart-o {
+  font-size: 30px;
+  margin-left: -32px;
+  margin-top: -15px;
+  position: absolute;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.card-header-date {
+  margin: -211px -0 0 278px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: 3px solid #FFF;
+  background-color: white;
+  display: block;
+  z-index: 3;
+}
+button:focus
+{
+outline:0;
+} 
 
 /* -------------------------------------------Modal information------------------------------------------- */
 
@@ -559,9 +614,20 @@ margin-bottom: 5px;
 .opinion_star i {
     font-size: 25px;
 }
-  .right_side {
-    max-width: 55vw;
-  }
+
+  .fa-heart {
+  
+  font-size: 25px;
+  margin-left: -30px;
+  margin-top: -15px;
+ 
+}
+
+.fa-heart-o {
+  font-size: 25px;
+  margin-left: -30px;
+  margin-top: -15px;
+}
 
   .right_side_img img {
     width: 400px;
@@ -592,9 +658,6 @@ margin-bottom: 5px;
     margin-top: 80px;
   }
 
-  .right_side {
-    max-width: 61vw;
-  }
 
   .right_side_img img {
     width: 340px;
@@ -653,11 +716,6 @@ margin-bottom: 5px;
     font-size: 1em;
   }
 
-  .right_side {
-    max-width: 76vw;
-    margin-left: -10px;
-  }
-
   .right_side_img img {
     width: 300px;
     height: 200px;
@@ -690,6 +748,20 @@ margin-bottom: 5px;
   .opinion_star i {
     font-size: 21px;
   }
+  
+  .fa-heart {
+  
+  font-size: 21px;
+  margin-left: -30px;
+  margin-top: -12px;
+ 
+}
+
+.fa-heart-o {
+  font-size: 21px;
+  margin-left: -30px;
+  margin-top: -12px;
+}
 
   .table_elements{
     min-width: 300px;
