@@ -133,6 +133,59 @@ body {
   background-size: 20px 20px;
 }
 
+.card-header-mask{
+	
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-left: 40px;
+	
+}
+
+.star-favorite{
+	
+  display: flex;
+	
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: -32px;
+  margin-top: -15px;
+  position: absolute;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart-o {
+  font-size: 30px;
+  margin-left: -32px;
+  margin-top: -15px;
+  position: absolute;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.card-header-date {
+  margin: -211px -0 0 278px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: 3px solid #FFF;
+  background-color: white;
+  display: block;
+  z-index: 3;
+}
+button:focus
+{
+outline:0;
+} 
+
 /* -------------------------------------------Modal information------------------------------------------- */
 
 
@@ -562,6 +615,20 @@ margin-bottom: 5px;
     font-size: 25px;
 }
 
+  .fa-heart {
+  
+  font-size: 25px;
+  margin-left: -30px;
+  margin-top: -15px;
+ 
+}
+
+.fa-heart-o {
+  font-size: 25px;
+  margin-left: -30px;
+  margin-top: -15px;
+}
+
   .right_side_img img {
     width: 400px;
     height: 266px;
@@ -681,6 +748,20 @@ margin-bottom: 5px;
   .opinion_star i {
     font-size: 21px;
   }
+  
+  .fa-heart {
+  
+  font-size: 21px;
+  margin-left: -30px;
+  margin-top: -12px;
+ 
+}
+
+.fa-heart-o {
+  font-size: 21px;
+  margin-left: -30px;
+  margin-top: -12px;
+}
 
   .table_elements{
     min-width: 300px;
