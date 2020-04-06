@@ -13,8 +13,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />  
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	
-	<link rel="stylesheet" th:href="@{css/layout_style_v2.css}" />
-	<link rel="stylesheet" th:href="@{css/index_style.css}" />
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/index_style.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
 
 <body>
 
-  <header th:replace="fragment/layout_v2.html :: top"></header>
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
 
   <!-- ============================================================== -->
   <!-- Home Section -->
@@ -45,7 +45,7 @@
     <div class="center">
       <div data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="1500">
         <div class="alex-brush ">
-          <img class="logoHome" src="images/logo/logoHome.png" alt="Drive eat">
+          <img class="logoHome" src="/images/logo/logoHome.png" alt="Drive eat">
         </div>
       </div>
       <h2>La solution</h2>
@@ -79,7 +79,7 @@
           <div class="row text-center story">
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="images/logo/locationLogo.png" alt="logo d'adresse"> </div>
+              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="/images/logo/locationLogo.png" alt="logo d'adresse"> </div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Je trouve mon restaurant</h4>
                 <p class="steps_p">Sélectionner le restaurant et choisissez votre menu </p>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="images/logo/payeLogo.png" alt="logo pour reglement"> </div>
+              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="/images/logo/payeLogo.png" alt="logo pour reglement"> </div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Je régle ma commande</h4>
                 <p class="steps_p">Le payement s'éffectue via l'application ou sur place </p>
@@ -95,7 +95,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="images/logo/commandLogo.png" alt="logo de préparation de commande"> </div>
+              <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="/images/logo/commandLogo.png" alt="logo de préparation de commande"> </div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Préparation de la commande</h4>
                 <p class="steps_p">Le restaurant prépare votre commande dans les délais indiqués</p>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="images/logo/retraitLogo4.png" alt="logo de retrait de commande"></div>
+              <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="/images/logo/retraitLogo4.png" alt="logo de retrait de commande"></div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Je retire ma commande</h4>
                 <p class="steps_p">Récupérer votre commande à la borne Drive Eat "coupe-file !"</p>
@@ -203,12 +203,12 @@
       </div>
 
       <div data-aos="zoom-in-up" data-aos-duration="2000">
-        <img class="phone-gif" src="images/gif/phone-gif.gif" alt="smartphone gif">
+        <img class="phone-gif" src="/images/gif/phone-gif.gif" alt="smartphone gif">
       </div>
     </div>
   </section>
 
-  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
   <script>
     $(document).ready(function() {

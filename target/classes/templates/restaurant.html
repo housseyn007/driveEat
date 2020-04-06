@@ -12,8 +12,8 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
 	
-	<link rel="stylesheet" th:href="@{css/layout_style_v2.css}" />	
-    <link rel="stylesheet" th:href="@{css/restaurant_style.css}" />
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />	
+    <link rel="stylesheet" th:href="@{/css/restaurant_style.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 
 <body>
 
-  <header th:replace="fragment/layout_v2.html :: top"></header>
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
 
     <!-- ============================================================== -->
     <!-- Header Section -->
@@ -185,9 +185,9 @@
 		      </div>
 		      <div class="modal-body">
 			      <div class="payement_mode">
-				      <div><img class="credit-card" alt="logo carte de credit" src="images/logo/credit-card.png"></div>
-			          <div><img class="money" alt="logo argent" src="images/logo/money.png"></div>
-			          <div><img class="credit-card" alt="logo carte de credit" src="images/logo/restaurant-ticket.png"></div>
+				      <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/credit-card.png"></div>
+			          <div><img class="money" alt="logo argent" src="/images/logo/money.png"></div>
+			          <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/restaurant-ticket.png"></div>
 			      </div>
 			      <div class="payement_mode">
 				      <div><p>Carte Bancaire</p></div>
@@ -208,7 +208,7 @@
 
   <section class="formule" id="our_menus">
     <div class="formule_section">
-      <img class="formule_img" alt="logo nos formule" src="images/logo/formule.png">
+      <img class="formule_img" alt="logo nos formule" src="/images/logo/formule.png">
       <h2>Nos Formules</h2>
     </div>
     <div class="container">
@@ -240,7 +240,7 @@
               <a class="col-md-6 single_menu_list" href="#" th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
                
                 <div class="menu_img">
-                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="" />
+                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
                 </div>
 
                 <div class="menu_content" >
@@ -271,7 +271,7 @@
   </section>
 
 		
-  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
    <script>
   $(".heart.fa").click(function() {
