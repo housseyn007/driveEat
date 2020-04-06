@@ -63,7 +63,7 @@
         </div>
            <div class="card-header-mask">
 				<button class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
-				    <i class="heart fa fa-heart-o"></i>
+				    <i class="heart fa fa-heart-o" th:id="${restaurantSpecialites.restaurants.name}"></i>
 				</button>
 	    	  </div>
       </div>
@@ -78,7 +78,7 @@
 		  <div class="modal-dialog modal-dialog-centered" role="document" >
 		    <div class="modal-content" >
 		      <div class="modal-header" >
-		        <h3 class="modal-title text-center" id="exampleModalCenterTitle"  th:text="${restaurant.name} + ' a été ajouté aux favoris !' ">Restaurant ajouté aux favoris !</h3>
+		        <h3 class="modal-title text-center" id="add"  >Restaurant ajouté aux favoris !</h3>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -91,7 +91,7 @@
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été supprimé des favoris !' ">Restaurant supprimé des favoris !</h3>
+		        <h3 class="modal-title text-center" id="delete" >Restaurant supprimé des favoris !</h3>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -108,10 +108,13 @@
   
   <script>
   $(".heart.fa").click(function() {
+	  console.log($(this).attr('id'));
 	  if ($(this).hasClass("fa-heart-o")){
+		  $('#add').text($(this).attr('id')+ ' a été ajouté aux favoris !');
 		  $(this).removeClass("fa-heart-o").addClass("fa-heart");
 		  $(".card-header-date").attr('data-target','#addFavorisModal');
 	  }else if ($(this).hasClass("fa-heart")){
+		  $('#delete').text($(this).attr('id')+ ' a été supprimé des favoris !');
 		  $(this).removeClass("fa-heart").addClass("fa-heart-o");
 		  $(".card-header-date").attr('data-target','#removeFavorisModal');
 
