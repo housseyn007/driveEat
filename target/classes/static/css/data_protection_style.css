@@ -1,126 +1,116 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
 .demo {
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .h1-container-total {
-	width: 100vw;
-	display: flex;
-	justify-content: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .h1-container {
-	margin-top: 150px;
-	max-width: 80vw;
-	padding-bottom: 50px;
-	display: flex;
-	flex-direction: column;
+  margin-top: 150px;
+  max-width: 80vw;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .h1-container h1 {
-	text-align: center;
-	font-family: 'Andika', sans-serif;
-	font-weight: bold;
-	color: #3f4040;
-	font-size: 2.5em;
+  text-align: center;
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 2.5em;
 }
 
 .h1-container p {
-	font-size: 1.2em;
-	margin-top: 40px;
+  font-size: 1.2em;
+  margin-top: 40px;
 }
 
 .panel-title a {
-	font-family: 'Andika', sans-serif;
-	font-weight: bolder;
-	color: #008aef!important;
-	font-size: 1.2em;
+  font-family: 'Andika', sans-serif;
+  font-weight: bolder;
+  color: #777574 !important;
+  font-size: 1.2em;
 }
 
 .panel-title a:hover {
-	text-decoration: none;
-	color: #024d9c!important;
-
+  text-decoration: none;
+  color: #3f3e3e !important;
 }
 
 .panel-body {
-	max-height: 400px;
-	overflow: scroll;
+  max-height: 400px;
+  overflow: scroll;
 }
 
 .panel-body p {
-	font-family: 'Roboto', sans-serif;
-	color: #3f4040;
-	font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  color: #3f4040;
+  font-size: 1em;
 }
 
 .panel-body .title {
-	font-weight: bold;
-	font-size: 1.1em;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .panel-body .sub_title {
-	font-weight: bold;
-	font-size: 1em;
-	text-decoration: underline;
+  font-weight: bold;
+  font-size: 1em;
+  text-decoration: underline;
 }
 
 .panel-group .panel {
-	border-radius: 0;
-	box-shadow: none;
-	border-color: #EEEEEE;
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #EEEEEE;
 }
 
 .panel-default>.panel-heading {
-	padding: 0;
-	border-radius: 0;
-	color: #212121;
-	background-color: #FAFAFA;
-	border-color: #EEEEEE;
+  padding: 0;
+  border-radius: 0;
+  color: #212121;
+  background-color: #FAFAFA;
+  border-color: #EEEEEE;
 }
 
 .panel-title {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .more-less {
-	float: right;
-	color: #212121;
+  float: right;
+  color: #212121;
 }
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
-	border-top-color: #EEEEEE;
+  border-top-color: #EEEEEE;
 }
 
 /* ==========================================
 * CUSTOM UTIL CLASSES
 * ==========================================*/
-
 /* Horizontal line */
 .collapsible-link::before {
   content: '';
   width: 14px;
   height: 3px;
-  background: #008aef;
+  background: #777574;
   position: absolute;
   top: calc(50% - 1px);
   right: 1rem;
   display: block;
   transition: all 0.3s;
-  
 }
 
 /* Vertical line */
@@ -128,7 +118,7 @@
   content: '';
   width: 3px;
   height: 14px;
-  background: #008aef;
+  background: #777574;
   position: absolute;
   top: calc(50% - 7px);
   right: calc(1rem + 6px);
@@ -146,29 +136,29 @@
 
 /* -----------------------------------Media------------------------------------- */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 860px) {
+  .h1-container h1 {
+    font-size: 1.4em;
+  }
 
-	.h1-container h1{
-	  font-size: 1.4em;
-	}
+  .h1-container p {
+    font-size: 0.9em;
+  }
 
-	.h1-container p{
-	  font-size: 0.9em;
-	}
-	
-	.panel-title a {
-	  font-size: 1.1em;
-	  }
-	  
-	  .panel-body p {
-	font-size: 0.8em;
-}
+  .panel-title a {
+    font-size: 1.1em;
+    padding-right: 40px;
+  }
 
-.panel-body .title {
-	font-size: 1em;
-}
+  .panel-body p {
+    font-size: 0.8em;
+  }
 
-.panel-body .sub_title {
-	font-size: 1em;
-}
+  .panel-body .title {
+    font-size: 1em;
+  }
+
+  .panel-body .sub_title {
+    font-size: 1em;
+  }
 }

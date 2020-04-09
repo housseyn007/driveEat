@@ -3,123 +3,123 @@
 
 <head>
   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
 
-  
-   <link rel="stylesheet" th:href="@{/css/styleRestaurantSpecialites.css}" >
-   <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
-   
-   	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
-	
-  
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  
-    <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
 
-    <title>restaurants specialites</title>    
+  <link rel="stylesheet" th:href="@{/css/styleRestaurantSpecialites.css}">
+  <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+
+  <title>restaurants specialites</title>
 </head>
 
 <body>
 
-  
   <header th:replace="/fragment/layout_v2.html :: top"></header>
-  
+
   <h1 class="restaurant_list">Restaurants à proximité</h1>
   <div class="wrapper">
-    <a class="href-card" th:each="restaurantSpecialites : ${RestaurantSpecialites}" th:href="|/restaurantSpecialites/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-header-mask">
-            <img th:src="@{'/DriveatBackend/public/' + ${restaurantSpecialites.restaurants.frontPicture}}">
-          </div>
+
+    <div class="card" th:each="restaurantSpecialites : ${RestaurantSpecialites}">
+      <a class="href-card">
+        <div class="card-header-mask">
+          <a class="card-header-heart" type="button" data-toggle="modal" data-target="#addFavorisModal">
+            <i class="heart fa fa-heart-o" th:id="${restaurantSpecialites.restaurants.name}"></i>
+          </a>
         </div>
+
+        <a class="uk-cover-container uk-height-medium" th:href="|/restaurantSpecialites/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
+          <img th:src="@{'/DriveatBackend/public/' + ${restaurantSpecialites.restaurants.frontPicture}}" alt="image restaurant" uk-cover>
+        </a>
+
         <div class="card-body">
-          <div class="card-body-header">
-            <div class="card-body-header-category">Nouveau</div>
-            <h3 th:text="${restaurantSpecialites.restaurants.name}">Nom
-              du restaurant</h3>
-            <p class="card-body-header-sentence" th:text="${restaurantSpecialites.specialities.specialityName}">Nom specialités</p>
-            <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-          </div>
-
-          <p class="card-body-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Molestias autem aliquid, recusandae maiores iste fuga, explicabo
-            dolor vitae magnam!</p>
-
-          <div class="card-body-footer">
-            <div class="comments">
-              <i class="fas fa-map-marked-alt"></i> 100 km
+          <a th:href="|/restaurantSpecialites/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
+            <div class="card-body-header">
+              <div class="card-body-header-category">Ouvert</div>
+              <h3 th:text="${restaurantSpecialites.restaurants.name}">Nom du restaurant</h3>
+              <p th:text="${restaurantSpecialites.specialities.specialityName}">Nom specialités</p>
+              <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
             </div>
-            <a class="comments" href="#"><i class="fas fa-comment-dots"></i>
-              39 Avis</a>
-          </div>
-        </div>
-           <div class="card-header-mask">
-				<button class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
-				    <i class="heart fa fa-heart-o" th:id="${restaurantSpecialites.restaurants.name}"></i>
-				</button>
-	    	  </div>
-      </div>
-    </a>
-  </div>
-  
-    <!-- ============================================================== -->
-    <!-- Modal favoris -->
-	<!-- ============================================================== -->	 
-	  
-	  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered" role="document" >
-		    <div class="modal-content" >
-		      <div class="modal-header" >
-		        <h3 class="modal-title text-center" id="add"  >Restaurant ajouté aux favoris !</h3>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		
-		<div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="delete" >Restaurant supprimé des favoris !</h3>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
- 
-  
- 
 
+            <div class="card-body-footer">
+              <div class="comments">
+                <i class="fas fa-map-marked-alt"></i> 100 km
+              </div>
+              <!--  <a class="comments" href="#">
+		          <i class="fas fa-comment-dots"></i>39 Avis
+		        </a>
+		      -->
+            </div>
+          </a>
+
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- Modal favoris -->
+  <!-- ============================================================== -->
+
+  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="add">Restaurant ajouté aux favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="delete">Restaurant supprimé des favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
-  
-  <script>
-  $(".heart.fa").click(function() {
-	  
-	  if ($(this).hasClass("fa-heart-o")){
-		  $('#add').text($(this).attr('id')+ ' a été ajouté aux favoris !');
-		  $(this).removeClass("fa-heart-o").addClass("fa-heart");
-		  $(".card-header-date").attr('data-target','#addFavorisModal');
-	  }else if ($(this).hasClass("fa-heart")){
-		  $('#delete').text($(this).attr('id')+ ' a été supprimé des favoris !');
-		  $(this).removeClass("fa-heart").addClass("fa-heart-o");
-		  $(".card-header-date").attr('data-target','#removeFavorisModal');
 
-	  }
-	});
+  <script>
+    $(".heart.fa").click(function() {
+
+      if ($(this).hasClass("fa-heart-o")) {
+        $('#add').text($(this).attr('id') + ' a été ajouté aux favoris !');
+        $(this).removeClass("fa-heart-o").addClass("fa-heart");
+        $(".card-header-date").attr('data-target', '#addFavorisModal');
+      } else if ($(this).hasClass("fa-heart")) {
+        $('#delete').text($(this).attr('id') + ' a été supprimé des favoris !');
+        $(this).removeClass("fa-heart").addClass("fa-heart-o");
+        $(".card-header-date").attr('data-target', '#removeFavorisModal');
+
+      }
+    });
   </script>
 
 </body>
