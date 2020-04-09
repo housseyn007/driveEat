@@ -3,30 +3,29 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>DriveEat Restaurants</title>
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
-	
-	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />	
-    <link rel="stylesheet" th:href="@{/css/restaurant_style.css}" />
-	
-	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
-	
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat Restaurants</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+
+  <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+  <link rel="stylesheet" th:href="@{/css/restaurant_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
-	
-	
-	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+
+  <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -34,120 +33,121 @@
 
   <header th:replace="/fragment/layout_v2.html :: top"></header>
 
-    <!-- ============================================================== -->
-    <!-- Header Section -->
-    <!-- ============================================================== -->
-    
-	  <div class="header_main"></div>
-	  <section class="header_section">
-	
-	    <div class="left_side">
-	    	
-	     
-	     <h1 th:text="${restaurant.name}">Le Nom du restaurant partenaire</h1>
-	      <p th:text="${restaurant.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	      <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Information</button>
-	      <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Mode de paiement</button>
-	      
-		<div class="star-favorite">
-		 	<div class="opinion_star">
-		    	<i class="fa fa-star"></i>
-		        <i class="fa fa-star"></i>
-		        <i class="fa fa-star"></i>
-		        <i class="fa fa-star"></i>
-		        <i class="fa fa-star"></i>
-		      </div>
-		      
-		      <div class="card-header-mask">
-			  	<button class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
-					<i class="heart fa fa-heart-o"></i>
-				</button>
-	    	  </div>
-	    </div>
-	       
-	    </div>
-	
-	    <div class="right_side">
-	      <div class="right_side_img">
-	        <div class="rectangle_circle">
-	          <div class="rectangle"></div>
-	          <div class="circle"></div>
-	        </div>
-	        <img th:src="@{'/DriveatBackend/public/' + ${restaurant.frontPicture}}" alt="Image du restaurant">
-	      </div>
-	
-	    </div>
-	
-	  </section>
-	  
-	<!-- ============================================================== -->
-    <!-- Modal favoris -->
-	<!-- ============================================================== -->	 
-	  
-	  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été ajouté aux favoris !' ">Restaurant ajouté aux favoris !</h3>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		
-		<div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été supprimé des favoris !' ">Restaurant supprimé des favoris !</h3>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	  
-    <!-- ============================================================== -->
-    <!-- Modal information -->
-    <!-- ============================================================== -->	  
-	  
-	  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	    <div class="modal-dialog modal-dialog-centered modalTop" role="document">
-	      <div class="modal-content">
-	        <div class="modal-header">
-	          <h3 class="modal-title text-center">Informations</h3>
-	        </div>
-	        <div class="modal-body">
-	          <div class="opning_time">
-	            <div class="table_container">
-	              <div class="informations_modal">
-	                <i class="fa fa-map-marker"></i>
-	                <p class="infoText" th:text="${restaurant.address} + ', ' + ${restaurant.zipCode} + ' ' + ${restaurant.city}">9 rue des carmes, 45000 ORLEANS</p>
-	              </div>
-	              <div class="informations_modal">
-	                <i class="fa fa-phone"></i>
-	                <p class="infoText" th:text="${restaurant.landline}">02 38 54 40 20</p>
-	              </div>
-	              <div class="time_header">
-	                <h3>
-	                  <i class="fa fa-clock-o"></i>Horaires Drive Eat
-	                </h3>
-	              </div>
-	              <table class="table_elements">
-	                <thead>
-	                  <tr>
-	                    <th>Jours</th>
-	                    <th>Midi</th>
-	                    <th>Soir</th>
-	                  </tr>
-	                </thead>
-	                <tbody>
-	                  <tr class="time_element" th:each="timetablesDefinitions : ${timetablesDefinitions}">
-						<td th:text="${timetablesDefinitions.day}">Lundi</td>
-						<td th:text="${#dates.format(timetablesDefinitions.startTime,'HH:mm')}">8h/14h</td>
+  <!-- ============================================================== -->
+  <!-- Header Section -->
+  <!-- ============================================================== -->
+
+  <div class="header_main"></div>
+  <section class="header_section">
+
+    <div class="left_side">
+
+      <h1 th:text="${restaurant.name}">Le Nom du restaurant partenaire</h1>
+
+      <div class="star-favorite">
+
+        <div class="opinion_star">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+
+      </div>
+
+      <p th:text="${restaurant.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="info_payement_btn">
+        <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Informations</button>
+        <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Modes de paiements</button>
+      </div>
+
+    </div>
+
+    <div class="right_side">
+
+      <div class="right_side_img">
+        <div class="rectangle_circle">
+          <div class="rectangle"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="uk-cover-container uk-height-medium">
+          <img th:src="@{'/DriveatBackend/public/' + ${restaurant.frontPicture}}" alt="Image du restaurant" uk-cover>
+
+          <div class="card-header-mask">
+            <a class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
+              <i class="heart fa fa-heart-o"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- Modal favoris -->
+  <!-- ============================================================== -->
+
+  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été ajouté aux favoris !' ">Restaurant ajouté aux favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été supprimé des favoris !' ">Restaurant supprimé des favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- Modal information -->
+  <!-- ============================================================== -->
+
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modalTop" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center">Informations</h3>
+        </div>
+        <div class="modal-body">
+          <div class="opning_time">
+            <div class="table_container">
+              <div class="informations_modal">
+                <i class="fa fa-map-marker"></i>
+                <p class="infoText" th:text="${restaurant.address} + ', ' + ${restaurant.zipCode} + ' ' + ${restaurant.city}">9 rue des carmes, 45000 ORLEANS</p>
+              </div>
+              <div class="informations_modal">
+                <i class="fa fa-phone"></i>
+                <p class="infoText" th:text="${restaurant.landline}">02 38 54 40 20</p>
+              </div>
+              <div class="time_header">
+                <h3>
+                  <i class="fa fa-clock-o"></i>Horaires Drive Eat
+                </h3>
+              </div>
+              <table class="table_elements">
+
+                <tbody>
+                  <tr class="time_element" th:each="timetablesDefinitions : ${timetablesDefinitions}">
+                    <td th:text="${timetablesDefinitions.day}">Lundi</td>
+                    <td th:text="${#dates.format(timetablesDefinitions.startTime,'HH:mm')}">8h/14h</td>
 						<td th:text="${#dates.format(timetablesDefinitions.endTime,'HH:mm')}">15h/22h</td>
 					  </tr>
 	                </tbody>
@@ -208,7 +208,6 @@
 
   <section class="formule" id="our_menus">
     <div class="formule_section">
-      <img class="formule_img" alt="logo nos formule" src="/images/logo/formule.png">
       <h2>Nos Formules</h2>
     </div>
     <div class="container">
@@ -235,22 +234,23 @@
         <div class="tab-content col-xl-12" id="myTabContent">
 
           <div   th:each="categorie, iter: ${categories}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : ' tab-pane fade '}" th:id="|M${categorie.menuCategoryId}|">
-            <div class="row">
+            <div class="row single_menu_list">
 
-              <a class="col-md-6 single_menu_list" href="#" th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
-               
-                <div class="menu_img">
-                  <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="" />
+              <a class="col-md-6 " href="/restaurantSpecialites/restaurants/menu-selection" th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
+
+                <div class="div_card" >
+                  <div class="div_img"></div>
+                  <div class="div_body" >
+                    <div class="title_price">
+                      <h3 th:text="${menu.name}">Le Nom du menu</h3>
+                      <p th:text="${menu.price  + ' €'}">45€</p>
+                    </div>
+                    <div class="menu_description">
+                      <p th:text="${menu.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="menu_content" >
-                  <h4 th:utext="|${menu.name} <span> ${menu.price}€</span> |">Chicken Fried Salad <span th:text="${menu.price}">45€</span></h4>
-                  <p th:text="|${menu.description}"> 
-                    Aperiam tempore sit, perferendis numquam repudiandae
-                    porro voluptate dicta saepe facilis.
-                  </p>
-                </div>
-              
               </a>
            
           </div>
@@ -269,7 +269,6 @@
 
     </div>
   </section>
-
 		
   <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 

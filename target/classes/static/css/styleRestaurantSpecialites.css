@@ -2,12 +2,8 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  box-sizing: border-box;
   vertical-align: baseline;
-}
-
-body {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -30,167 +26,120 @@ body {
   flex-wrap: wrap;
 }
 
-.href-card {
+.href-card, .card-body a {
   text-decoration: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .card {
-  margin-left: 15px;
-  margin-bottom: 50px;
-  cursor: default;
   position: relative;
-  border-radius: 10px;
   width: 330px;
+  margin: 25px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(189, 183, 183, 1);
   box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
 }
 
 .card:hover {
+  transform: translateY(-6px);
   box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2)
 }
 
-.card-header, .card-header img {
-  width: 328px;
+.uk-height-medium {
+  width: 100%;
   height: 220px;
   border-radius: 6px 6px 0 0;
 }
 
+.card-header-mask {
+  position: absolute;
+  margin-left: 280px;
+  margin-top: 8px;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid red;
+  cursor: pointer;
+  display: block;
+}
+
+.fa-heart-o, .fa-heart {
+  margin-top: 7px;
+  margin-left: 6px;
+  font-size: 24px;
+  position: relative;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
 .card-body-header-category {
+  margin-top: -42px;
+  margin-left: -20px;
   border-top-right-radius: 5px;
   font-family: 'Andika', sans-serif;
   background-color: #EF5A31D9;
   color: #FFF;
   font-weight: bold;
   text-align: center;
-}
-
-.card-body-header-category {
   position: absolute;
-  font-size: 14px;
-  top: -31px;
-  left: 0;
+  font-size: 17px;
   padding: 9px 10px;
   line-height: 13px;
 }
-.card-header{
-	padding:0;
-}
-
-.card-header-date {
-  margin:-355px -0 0 281px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  border: 3px solid #FFF;
-  background-color: white;
-  display: block;
-}
-
-.fa-heart-o {
-  font-size: 24px;
-  margin-left: -12px;
-  margin-top: -10px;
-  position: absolute;
-  background-color: transparent;
-  color: red;
-  cursor: pointer;
-}
-
-.fa-heart {
-  color: red;
-  cursor: pointer;
-  font-size: 24px;
-  margin-left: -12px;
-  margin-top: -10px;
-  position: absolute;
-  background-color: transparent;
-  color: red;
-  cursor: pointer;
-}
-
-.card-header-date:hover {
-  background-color: rgba(250, 250, 250, 1);
-  border: 3px solid red;
-}
-
-button:focus
-{
-outline:0;
-} 
-
-.modal-title {
-  font-family: 'Andika', sans-serif;
-  font-weight: bold;
-  color: #3f4040;
-  font-size: 23px;
-  width: 100vw;
-}
 
 .card-body {
-  background-color: #FFF;
-  border-radius: 0 0 6px 6px;
-  padding: 0 21px 21px 21px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  border-top: 2px solid #DFE2E3;
 }
 
-.card-body-header {
-  width: 328px;
-  position: absolute;
-  left: 0;
-  padding: 13px;
-  background-color: #FFF;
-
-}
-
-h3 {
-  margin-top: -8px;
+.card-body-header h3 {
   font-family: 'Andika', sans-serif;
   color: #3f4040;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: bold;
+  margin: 0px;
+  margin-top: -10px;
 }
 
-.card-body-header-sentence {
-  font-family: 'Andika', sans-serif;
-  color: #EF5A31;
-  margin-top: 2px;
-  margin-bottom: 4px;
+.card-body-header p {
+  color: #3f4040;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bolder;
+  margin: 0px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  color: #EF5A31D9;
 }
 
-.card-body-description {
-  opacity: 0;
-  color: #757B82;
-  line-height: 25px;
-  margin-top:5px;
-  height:80px;
-  overflow: scroll;
-  font-size: 13px;
-}
-
-.card:hover .card-body-description {
-  opacity: 1;
+.card-body-header span {
+  font-size: 19px;
 }
 
 .card-body-footer {
-  position: relative;
-  z-index: 10;
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content: flex-end;
   margin-top: 15px;
   font-size: 14px;
   color: #9FA5A8;
 }
 
-.card-body-footer {
-  display: flex;
-  justify-content: space-between;
+.card-body-footer a {
+  text-decoration: none;
 }
 
-.fa-map-marked-alt, .fa-comment-dots {
-  font-size: 15px;
+.fa-map-marked-alt {
   font-size: 15px;
 }
 
+/*.fa-map-marked-alt, .fa-comment-dots {
+  font-size: 15px;
+}*/
 .comments {
   text-decoration: none;
   color: #9FA5A8;
@@ -200,11 +149,55 @@ h3 {
   color: #d32f2f;
 }
 
+.modal-title {
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 19px;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-default {
+  color: #fff;
+  background: #3f4040;
+  background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  border-color: #000;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background: #1c1d1d;
+  background: -webkit-linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  background: linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  border-color: #000;
+}
+
 /* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 760px) {
+  .card {
+    width: 310px;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+
+  .card-header-mask {
+    margin-left: 260px;
+  }
+
+  .fa-heart-o, .fa-heart {
+    margin-top: 8px;
+  }
+}
 
 @media screen and (max-width: 560px) {
   .restaurant_list {
+    margin-top: 110px;
     font-size: 2.5em;
+  }
+
+  .wrapper {
+    margin-top: 25px;
   }
 }
 
@@ -212,24 +205,4 @@ h3 {
   .restaurant_list {
     font-size: 2.0em;
   }
-    .card-header img{
-        width: 300px;
-    }
-    .card{
-        width: 302px;
-        margin: 0 0 10px 0;
-    }
-    .card-header,.card-body-header{
-        width: 300px;
-    }
-    .card-header-date{
-      width: 35px;
-      height: 35px;
-      margin: -355px -0 0 257px;
-    }
-    .fa-heart {
-    font-size: 23px;
-    margin-left: -11.5px;
-    margin-top: -10px;
-    }
 }
