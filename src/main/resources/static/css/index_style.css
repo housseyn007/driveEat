@@ -21,7 +21,7 @@ h2 {
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
-	padding: 180px 0;
+	padding: 130px 0;
 	/* CENTER HEADER TEXT */
 }
 
@@ -59,7 +59,7 @@ h2 {
 }
 
 .logo_app {
-	margin-top: 50px;
+	margin-top: 30px;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
