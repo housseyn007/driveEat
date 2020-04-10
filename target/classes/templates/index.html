@@ -15,6 +15,7 @@
 	
 	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
 	<link rel="stylesheet" th:href="@{/css/index_style.css}" />
+	<link rel="stylesheet" th:href="@{/css/searchStyle.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
 	  
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
 </head>
 
 <body>
@@ -50,7 +51,13 @@
       </div>
       <h2>La solution</h2>
       <p>coupe-file</p>
-
+        <div class="container searchClass">
+       <input type="search"  id="address-input" placeholder="Entrez votre adresse de livraison" />
+         <button class="btn btn-secondary " type="button">
+        <i class="fa fa-search"></i>
+      </button>
+        </div>
+      
       <div class="logo_app">
         <div class="apple_google">
           <a href="#" class="apple_logo"><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
@@ -228,6 +235,20 @@
     <!-- Effets JS AOS -->   
     AOS.init({    });
   </script>
+  <script>
+  const reconfigurableOptions = {
+  		  language: 'fr', // Receives results in German
+  		  countries: ['fr'], // Search in the United States of America and in the Russian Federation
+  		  type: 'address', // Search only for cities names
+  		  aroundLatLngViaIP: false // disable the extra search/boost around the source IP
+  		};
+    var placesAutocomplete = places({
+  	  appId: 'pl6V08HVHVMN',
+  	  apiKey: '74e6f64eaa696bd5faf17353321305aa',
+  	  container: document.querySelector('#address-input')
+  	}).configure(reconfigurableOptions);;
+
+</script>
 
 </body>
 
