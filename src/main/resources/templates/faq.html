@@ -47,25 +47,24 @@
     <div class="container demo">
       <div id="accordionExample" class="accordion shadow">
 
-        <div class="card">
-          <div id="headingOne" class="card-header shadow-sm border-0">
+        <div class="card" th:each="faqs,iter : ${faqs}">
+          <div th:id="'heading'+${faqs.userFaqId}"  class="card-header shadow-sm border-0">
             <h6 class="mb-0 font-weight-bold panel-title">
-              <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block position-relative collapsible-link py-2">
-               <span>1.</span>  Collecte des données personnelles :
+              <a href="#" data-toggle="collapse" th:attr="data-target='#collapse'+${faqs.userFaqId}, aria-controls='collapse'+${faqs.userFaqId}, aria-expanded=${iter.index == 0 ? 'true' : 'false'}" 
+              class="d-block position-relative collapsible-link py-2" th:utext="| <span> ${faqs.userFaqId + '. '}</span> ${faqs.question}|">
+                <span th:text="${faqs.userFaqId}">1.</span> Collecte des données personnelles :
               </a>
             </h6>
           </div>
 
-          <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
+          <div th:id="'collapse'+${faqs.userFaqId}" th:attr="aria-labelledby='heading'+${faqs.userFaqId}" data-parent="#accordionExample" th:class="${iter.index == 0 ? 'collapse show' : 'collapse'}">
             <div class="card-body p-5 panel-body">
-              <p class="font-weight-light m-0">
+              <p class="font-weight-light m-0" th:text="${faqs.answer}">
                 Une donnée personnelle est toute information qui permet d’identifier directement ou indirectement une personne physique.
-                Ainsi, un nom, une adresse postale ou électronique.
-
               </p>
             </div>
           </div>
-        </div>
+        </div>        
 
       </div>
     </div>

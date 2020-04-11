@@ -35,7 +35,7 @@
   font-family: 'Andika', sans-serif;
   font-weight: bolder;
   color: #777574 !important;
-  font-size: 1.2em;
+  font-size: 1.3em;
   outline: none;
 }
 
@@ -54,9 +54,8 @@
 }
 
 .panel-body p {
-  font-family: 'Roboto', sans-serif;
-  color: #3f4040;
-  font-size: 1em;
+  color: #7d7d7d;
+  font-size: 16px;
 }
 
 .panel-group .panel {
@@ -77,6 +76,9 @@
   border-top-color: #EEEEEE;
 }
 
+.p-5 {
+    padding: 1.5em !important;
+}
 /* ==========================================
 * CUSTOM UTIL CLASSES
 * ==========================================*/
@@ -116,6 +118,12 @@
 }
 
 /* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 1112px) {
+  .header_img {
+     margin-top:70px;
+     margin-bottom: 40px;
+  }
+}
 
 @media screen and (max-width: 860px) {
 
@@ -125,14 +133,19 @@
   }
 
   .panel-body p {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
-
 }
 
-@media screen and (max-width: 1112px) {
-  .header_img {
-     margin-top:70px;
-     margin-bottom: 40px;
+@media screen and (max-width: 460px) {
+	.card-header {
+    padding: .25em 1.25rem!important;
+   }
+    .panel-title a {
+    font-size: 1em;
   }
+  
+  .p-5 {
+    padding: 1em !important;
+}
 }
