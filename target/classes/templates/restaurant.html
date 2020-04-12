@@ -245,7 +245,7 @@
                   <div class="div_body" >
                     <div class="title_price">
                       <h3 th:text="${menu.name}">Le Nom du menu</h3>
-                      <p th:text="${menu.price  + ' €'}">45€</p>
+                      <p th:text="|${#numbers.formatDecimal(menu.price, 1, 'DEFAULT', 2, 'DEFAULT')}€|">45€</p>
                     </div>
                     <div class="menu_description">
                       <p th:text="${menu.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
