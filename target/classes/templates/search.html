@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Autocomplete Address Form</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+     <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry" type="text/javascript"></script> 
+<style type="text/css">
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+</style>
+     </head>
+<body>
+
+<input type="search" id="address-input" placeholder="Where are we going?" />
+<p id="latlng"></p>
+<div class="pos-rel unscroll p-b-large"></div>
+
+
+
+
+<script>
+
+var element = document.getElementById('latlng'); 
+const reconfigurableOptions = {
+		  language: 'fr', // Receives results in German
+		  countries: ['fr'], // Search in the United States of America and in the Russian Federation
+		  type: 'address', // Search only for cities names
+		  aroundLatLngViaIP: false // disable the extra search/boost around the source IP
+		};
+  var placesAutocomplete = places({
+	  appId: 'pl6V08HVHVMN',
+	  apiKey: '74e6f64eaa696bd5faf17353321305aa',
+	  container: document.querySelector('#address-input')
+	}).configure(reconfigurableOptions);;
+  placesAutocomplete.on('change', e => element.innerHTML = "latlng:  "+ e.suggestion.latlng.lat +','+  e.suggestion.latlng.lng );
+
+
+  var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(47.8285,1.93125), new google.maps.LatLng( 47.8571,1.90805)); 
+  console.log(distance);
+    
+  </script>
+
+
+</body>
+  
+</html>
+
