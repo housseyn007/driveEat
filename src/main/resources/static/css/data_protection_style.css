@@ -36,11 +36,16 @@
   margin-top: 40px;
 }
 
+.card-header{
+  background-color: #f7f7f7!important;
+}
+
 .panel-title a {
   font-family: 'Andika', sans-serif;
   font-weight: bolder;
   color: #777574 !important;
   font-size: 1.2em;
+  outline: none;
 }
 
 .panel-title a:hover {

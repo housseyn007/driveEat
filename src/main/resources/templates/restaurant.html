@@ -216,7 +216,9 @@
 				<div class="uk-slider-container uk-light">
           			<ul class="uk-slider-items nav nav menu_tab">
           				<li class="nav_item" th:each="categorie, iter: ${categories}" >
-            				<a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${categorie.menuCategoryId}|" th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}" th:text="${categorie.name}">>Breakfast</a>
+            				<a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${categorie.menuCategoryId}|" 
+            				th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}" th:text="${categorie.name}">>Breakfast
+            				</a>
           				</li>
       
         			</ul>
