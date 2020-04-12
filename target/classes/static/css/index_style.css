@@ -92,11 +92,11 @@ h2 {
 }
 
 .container.searchClass {
-  display: flex;
-  max-width: 390px;
-  margin-top: 50px;
-  padding: 0px;
-  border-radius: 5px;
+	display: flex;
+	max-width: 560px;
+	margin-top: 30px;
+	padding: 0px;
+	border-radius: 5px;
 }
 
 .ap-input, .btn {
@@ -474,9 +474,15 @@ h2 {
     margin-left: 50px;
     margin-right: 50px;
   }
+    .container.searchClass {
+    max-width: 433px ;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .container.searchClass {
+    max-width: 323px ;
+  }
   .logoHome {
     width: 300px
   }
@@ -508,10 +514,7 @@ h2 {
     height: 46px;
   }
 
-  .container.searchClass {
-    max-width: 280px;
-    margin-top: 30px;
-  }
+
 
   .ap-input, .ap-hint, .btn {
     height: 35px;
