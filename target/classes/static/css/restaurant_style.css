@@ -159,7 +159,7 @@ body {
 }
 
 .fa-heart-o, .fa-heart {
-  margin-top: 7px;
+  margin-top: 8px;
   margin-left: 6px;
   font-size: 24px;
   position: relative;
@@ -498,6 +498,133 @@ tainer div a {
   color: transparent;
 }
 
+/* -------------------------------------------Modal menu------------------------------------------ */
+
+.uk-modal{
+  outline: none;
+}
+.uk-modal-header {
+  padding: 15px 25px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.uk-modal-title {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.uk-modal-body{
+  padding:0px 0px 0px 5px;
+}
+
+.uk-article-meta {
+  font-size: .875rem;
+  line-height: 0;
+  color: #999;
+}
+
+dl {
+  margin-left: 15px;
+}
+
+.uk-list ul {
+  padding-left: 0px;
+}
+
+h3, label {
+  margin-bottom: 0px;
+}
+
+
+.uk-list-striped>li {
+  padding: 5px 5px 0px 5px;
+}
+
+.uk-list>li:nth-child(n+2), .uk-list>li>ul {
+  margin-top: 0px;
+}
+
+.uk-list-divider>li:nth-child(n+2){
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.product_list {
+  padding: 15px 5px 15px 5px;
+  display: flex;
+  align-content: center;
+}
+
+.product{
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 500px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.price{
+  margin-left: auto;
+}
+
+input.uk-checkbox, input.uk-radio {
+  background-color: transparent;
+}
+
+.uk-checkbox, .uk-radio{
+  margin-top: 0px;
+  border: 1px solid #ad6f23 !important;
+}
+.uk-checkbox:hover, .uk-radio:hover{
+  margin-top: 0px;
+  border: 1px solid #ad6f23 !important;
+}
+
+input.uk-checkbox:checked, input.uk-radio:checked, input.uk-checkbox:checked:focus, input.uk-radio:checked:focus  {
+  background-color: #ad6f23;
+}
+
+.panier_btn {
+  border: 2px solid #ad6f23;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #ad6f23;
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  border-radius: 25px;
+}
+
+.uk-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uk-modal-footer button {
+  padding: 10px 15px;
+  outline: none;
+}
+
+.panier_btn:hover {
+  color: white;
+  background: #EC6953;
+  background: -webkit-linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  outline: none;
+}
+
 /* -------------------------------------------Media Section------------------------------------------- */
 @media only screen and (max-width: 1330px) {
   .formule_section h2 {
@@ -637,6 +764,30 @@ tainer div a {
   }
 }
 
+@media only screen and (max-width: 600px) {
+
+  .uk-modal {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .uk-modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+  }
+
+  .uk-modal-header {
+    padding: 10px 25px;
+  }
+
+  .product{
+    width: 270px;
+  }
+}
+
 @media only screen and (max-width: 560px) {
   .header_section {
     margin-top: 80px;
@@ -764,3 +915,5 @@ tainer div a {
     margin-left: 254px;
   }
 }
+/* -------------------------------------------Modal menu------------------------------------------ */
+
