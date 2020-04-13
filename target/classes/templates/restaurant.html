@@ -181,7 +181,7 @@
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="exampleModalCenterTitle">Mode de paiements</h3>
+		        <h3 class="modal-title text-center" id="exampleModalCenterTitle">Mode de paiement</h3>
 		      </div>
 		      <div class="modal-body">
 			      <div class="payement_mode">
@@ -190,9 +190,9 @@
 			          <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/restaurant-ticket.png"></div>
 			      </div>
 			      <div class="payement_mode">
-				      <div><p>Cartes Bancaires</p></div>
+				      <div><p>Carte Bancaire</p></div>
 			          <div><p>Espèces</p></div>
-			          <div><p>Tickets Restaurants</p></div>
+			          <div><p>Ticket Restaurant</p></div>
 			      </div>
 		      </div>
 		      <div class="modal-footer">
@@ -238,7 +238,7 @@
           <div   th:each="categorie, iter: ${categories}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : ' tab-pane fade '}" th:id="|M${categorie.menuCategoryId}|">
             <div class="row single_menu_list">
 
-              <a class="col-md-6 " href="#modal-overflow" uk-toggle th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
+              <a class="col-md-6 " href="/restaurantSpecialites/restaurants/menu-selection" th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
 
                 <div class="div_card" >
                   <div class="div_img"></div>
@@ -270,130 +270,6 @@
       </div>
 
     </div>
-    
-    <!-- ============================================================== -->
-    <!-- Modal menus -->
-    <!-- ============================================================== -->
-    
-    <div id="modal-overflow" uk-modal>
-    <div class="uk-modal-dialog">
-
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-
-        <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Menu Trio</h2>
-            <dd>3 junior au choix + 1 Maxi Coca-Cola 1,5l</dd>
-        </div>
-
-	        <div class="uk-modal-body" uk-overflow-auto>
-	  <ul class="uk-list uk-list-striped">
-	    <li class="submenu">
-	      <dl class="uk-description-list">
-	        <h3>3 Pizzas junior au Choix</h3>
-	        <p class="uk-article-meta">Obligatoire - 3 à choisir</p>
-	    </dl>
-	    </li>
-	      <li class="submenu">
-	        <ul class="uk-list uk-list-divider">
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" checked><span class="product">Pizza 4 fromages</span>
-	            </label>
-	            <div class="price">2.00€</div>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza savoyarde supplement fromages</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	        </ul>
-	      </li>
-	    <li class="submenu">
-	      <dl class="uk-description-list">
-	        <h3>Boisson 1.5L</h3>
-	        <p class="uk-article-meta">Obligatoire</p>
-	    </dl>
-	    </li>
-	      <li class="submenu">
-	        <ul class="uk-list uk-list-divider">
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Coca-Cola 1.5L</span>
-	            </label>
-	            <span class="price">2.50€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Orangina 1.5L</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Oasis 1.5L</span>
-	            </label>
-	            <span class="price">2.50€</span>
-	          </li>
-	        </ul>
-	      </li>
-	      <li class="submenu">
-	        <dl class="uk-description-list">
-	          <h3>Extras Desserts</h3>
-	      </dl>
-	      </li>
-	      <li class="submenu">
-	        <ul class="uk-list uk-list-divider">
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-checkbox" type="checkbox"><span class="product">Tiramisu caramel</span>
-	            </label>
-	            <span class="price">2.50€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-checkbox" type="checkbox"><span class="product" >Ben & Jerry's Chocolate Fudge Brownie 100ml</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	          <li class="product_list">
-	            <label>
-	              <input class="uk-checkbox" type="checkbox"><span class="product">Tarte au daim</span>
-	            </label>
-	            <span class="price">2.00€</span>
-	          </li>
-	        </ul>
-	      </li>
-	  </ul>
-	  
-	</div>
-	
-	<div class="uk-modal-footer uk-text-right">
-	    <button class="panier_btn uk-modal-close" type="button">Annuler</button>
-	    <button class="panier_btn" type="button">Total <span>30.00€</span></button>
-	</div>
-	
-	</div>
-	</div>
-    
   </section>
 		
   <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>

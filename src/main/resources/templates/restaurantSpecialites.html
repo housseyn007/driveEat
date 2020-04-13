@@ -112,11 +112,11 @@
       if ($(this).hasClass("fa-heart-o")) {
         $('#add').text($(this).attr('id') + ' a été ajouté aux favoris !');
         $(this).removeClass("fa-heart-o").addClass("fa-heart");
-        $(".card-header-heart").attr('data-target', '#addFavorisModal');
+        $(".card-header-date").attr('data-target', '#addFavorisModal');
       } else if ($(this).hasClass("fa-heart")) {
         $('#delete').text($(this).attr('id') + ' a été supprimé des favoris !');
         $(this).removeClass("fa-heart").addClass("fa-heart-o");
-        $(".card-header-heart").attr('data-target', '#removeFavorisModal');
+        $(".card-header-date").attr('data-target', '#removeFavorisModal');
 
       }
     });
