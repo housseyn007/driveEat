@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------Additional menu selection------------------------------------------- */
+.sort_speciality h4 {
+  margin-top: 100px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: 'Andika', sans-serif;
+  color: #3f4040;
+  font-size: 20px;
+  font-weight: bold;
+}
+.tab-content > .active {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.menu_tab {
+  height: 150px;
+}
+
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-item a {
+  font-family: 'Andika', sans-serif;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+.fa-caret-left, .fa-caret-right {
+  font-size: 35px;
+  color: #ad6f23;
+}
+
+.btn-menu {
+  border-radius: 5px;
+  padding: 0px 0px;
+  color: #ffffff;
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+.menu_tab .nav-item.show .btn-menu,
+.btn-menu.active {
+  background: rgba(33, 33, 33, 0.3);
+  border: 1.5px solid red;
+}
+
+.card_btn {
+  width: 130px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5), 0 2px 3px 0 rgba(0, 0, 0, .2);
+  transition: all 0.2s ease;
+  background: #fff;
+  position: relative;
+  z-index: -2;
+  overflow: hidden;
+  border: 1px solid rgba(189, 183, 183, 1);
+}
+
+.card_btn_img {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+
+.img_container {
+  height: 80px;
+}
+
+.card_btn_content {
+  border-top: 1px solid rgba(189, 183, 183, 1);
+}
+
+.card_btn_content p {
+  font-family: 'Andika', sans-serif;
+  color: #3f4040;
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px;
+}
+
+/* -------------------------------------------Restaurant Search------------------------------------------- */
+.restaurant_list {
+  font-family: 'Mansalva', cursive;
+  font-size: 3.5em;
+  text-align: center;
+  margin-top: 30px;
+  background: #ad6f23;
+  background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.restaurant_search {
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.href-card, .card-body a {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.card {
+  width: 330px;
+  margin: 25px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(189, 183, 183, 1);
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2)
+}
+
+.card_search {
+  width: 100%;
+  height: 220px;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-header-mask {
+  position: absolute;
+  margin-left: 280px;
+  margin-top: 8px;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid red;
+  cursor: pointer;
+  display: block;
+}
+
+.fa-heart-o, .fa-heart {
+  margin-top: 8px;
+  margin-left: 6px;
+  font-size: 24px;
+  position: relative;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.card-body-header-category {
+  margin-top: -42px;
+  margin-left: -20px;
+  border-top-right-radius: 5px;
+  font-family: 'Andika', sans-serif;
+  background-color: #EF5A31D9;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  font-size: 17px;
+  padding: 9px 10px;
+  line-height: 13px;
+}
+
+.card-body {
+  border-top: 2px solid #DFE2E3;
+}
+
+.card-body-header h3 {
+  font-family: 'Andika', sans-serif;
+  color: #3f4040;
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: -10px;
+}
+
+.card-body-header p {
+  color: #3f4040;
+  font-size: 15px;
+  font-weight: bolder;
+  margin: 0px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  color: #EF5A31D9;
+}
+
+.card-body-header span {
+  font-size: 19px;
+}
+
+.card-body-footer {
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content: flex-end;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9FA5A8;
+}
+
+.card-body-footer a {
+  text-decoration: none;
+}
+
+.fa-map-marked-alt {
+  font-size: 15px;
+}
+
+/*.fa-map-marked-alt, .fa-comment-dots {
+  font-size: 15px;
+}*/
+.comments {
+  text-decoration: none;
+  color: #9FA5A8;
+}
+
+.comments:hover {
+  color: #d32f2f;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #3f4040;
+  font-size: 19px;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-default {
+  color: #fff;
+  background: #3f4040;
+  background: -webkit-linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  background: linear-gradient(to right top, #3f4040, #6b6c6c, #3f4040);
+  border-color: #000;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background: #1c1d1d;
+  background: -webkit-linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  background: linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
+  border-color: #000;
+}
+
+/* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 860px) {
+.card_btn {
+  width: 100px;
+}
+
+.img_container {
+  height: 60px;
+}
+
+.card_btn_content p {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.menu_tab {
+  height: 120px;
+}
+}
+@media screen and (max-width: 760px) {
+  .card {
+    width: 310px;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+
+  .card-header-mask {
+    margin-left: 260px;
+  }
+
+  .fa-heart-o, .fa-heart {
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sort_speciality h4 {
+    font-size: 18px;
+  }
+
+  .restaurant_list {
+    margin-top: 20px;
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .restaurant_list {
+    font-size: 2.0em;
+  }
+
+  .btn-menu {
+    margin: 5px;
+  }
+}

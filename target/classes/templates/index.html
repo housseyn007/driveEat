@@ -50,7 +50,15 @@
       </div>
       <h2>La solution</h2>
       <p>coupe-file</p>
-      
+
+        <form class="container searchClass" th:action = "@{cherche-restaurants}" method ="post">
+       <input type="search"  id="address-input" placeholder="Entrez votre adresse de livraison" required="required" />
+       <input type="hidden" id= "lat" name="lat" />
+       <input type="hidden" id = "lng" name ="lng"/>
+         <button class="btn btn-secondary " type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+        </form>
       <div class="container searchClass">
         <input type="search" id="address-input" placeholder="Saisissez votre adresse" />
         <button class="btn btn-secondary " type="button">
@@ -236,6 +244,8 @@
     AOS.init({    });
   </script>
   <script>
+  var lat = document.getElementById('lat');
+  var lng = document.getElementById('lng'); 
   const reconfigurableOptions = {
   		  language: 'fr', // Receives results in German
   		  countries: ['fr'], // Search in the United States of America and in the Russian Federation
@@ -247,6 +257,9 @@
   	  apiKey: '74e6f64eaa696bd5faf17353321305aa',
   	  container: document.querySelector('#address-input')
   	}).configure(reconfigurableOptions);;
+  	
+  	placesAutocomplete.on('change', e => {lat.value = e.suggestion.latlng.lat ; lng.value = e.suggestion.latlng.lng });
+  	
 
 </script>
 
