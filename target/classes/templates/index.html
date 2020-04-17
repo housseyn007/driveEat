@@ -15,7 +15,6 @@
 	
 	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
 	<link rel="stylesheet" th:href="@{/css/index_style.css}" />
-	<link rel="stylesheet" th:href="@{/css/searchStyle.css}" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
@@ -51,6 +50,7 @@
       </div>
       <h2>La solution</h2>
       <p>coupe-file</p>
+
         <form class="container searchClass" th:action = "@{cherche-restaurants}" method ="post">
        <input type="search"  id="address-input" placeholder="Entrez votre adresse de livraison" required="required" />
        <input type="hidden" id= "lat" name="lat" />
@@ -59,7 +59,13 @@
         <i class="fa fa-search"></i>
       </button>
         </form>
-      
+      <div class="container searchClass">
+        <input type="search" id="address-input" placeholder="Saisissez votre adresse" />
+        <button class="btn btn-secondary " type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+
       <div class="logo_app">
         <div class="apple_google">
           <a href="#" class="apple_logo"><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
