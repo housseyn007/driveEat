@@ -121,7 +121,8 @@
 								<div class="card-body-footer">
 									<div class="comments">
 										<i class="fas fa-map-marked-alt"
-											th:text="| ${nearRestaurant.distance} km|">100 km</i>
+											th:text="| 
+											${#numbers.formatDecimal(nearRestaurant.distance, 1, 'DEFAULT', 1, 'DEFAULT')} km|">100 km</i>
 									</div>
 									<!--  <a class="comments" href="#">
         		          <i class="fas fa-comment-dots"></i>39 Avis
