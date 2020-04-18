@@ -3,30 +3,35 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DriveEat</title>
-
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
-  <link rel="stylesheet" th:href="@{css/layout_style.css}" />
-  <link rel="stylesheet" th:href="@{css/data_protection_style.css}" />
-
-  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DriveEat Protection des données</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />	
+    <link rel="stylesheet" th:href="@{/css/data_protection_style.css}" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-  <header th:replace="fragment/layout.html :: top"></header>
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+
   <section class="data_protection">
+  
     <div class="h1-container-total">
       <div class="h1-container">
         <h1>Règlement général sur la protection des données</h1>
@@ -48,20 +53,22 @@
 
     <div class="container demo">
 
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div id="accordionExample" class="accordion shadow">
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 1 -->
+        <div class="card">
+          <div id="headingOne" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block position-relative collapsible-link py-2">
                 1. Collecte des données personnelles :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-              <p>Une donnée personnelle est toute information qui permet d’identifier directement ou indirectement une personne physique.
+
+          <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Une donnée personnelle est toute information qui permet d’identifier directement ou indirectement une personne physique.
                 Ainsi, un nom, une adresse postale ou électronique, un numéro de téléphone ou encore une adresse IP sont par exemple des données personnelles.
                 Les données à caractère personnel qui sont collectées via la Plateforme sont les suivantes :
 
@@ -121,18 +128,20 @@
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 2 -->
+        <div class="card">
+          <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative collapsed collapsible-link py-2">
                 2. Utilisation des données personnelles:
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="panel-body">
-              <p>ULes données personnelles collectées auprès des Utilisateurs et des Partenaires ont pour objectif la mise à disposition du Service de la Plateforme, son amélioration et le maintien d’un environnement sécurisé.
+
+          <div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                ULes données personnelles collectées auprès des Utilisateurs et des Partenaires ont pour objectif la mise à disposition du Service de la Plateforme, son amélioration et le maintien d’un environnement sécurisé.
                 Plus particulièrement, les utilisations peuvent être les suivantes :
                 <br><br><span class="title"> a) Informations que vous communiquez volontairement : </span>
 
@@ -191,46 +200,46 @@
                 <br><br><span class="sub_title">- Rapports analytiques et études de marché : </span>
                 Nous analysons les informations que nous collectons auprès de nos prestataires de services tiers (tels que Google, Facebook, Amazon et autres sociétés affiliées) afin de comprendre comment vous réagissez à nos Services et publicités
                 (ex : si vous avez cliqué sur l’une de nos publicités).  Ceci nous aide à comprendre vos préférences et à vous recommander des Services conformes à vos intérêts.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 3 -->
+        <div class="card">
+          <div id="headingThree" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="d-block position-relative collapsed collapsible-link py-2">
                 3. Partage des données personnelles entre Utilisateurs et Partenaires :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="panel-body">
-              <p>Les données personnelles de l’Utilisateur peuvent être partagées avec les Partenaires pour les besoins de la commande.
 
+          <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Les données personnelles de l’Utilisateur peuvent être partagées avec les Partenaires pour les besoins de la commande.
                 <br><br>Le Partenaire déclare être en conformité avec les normes en vigueur en matière de RGPD.
                 Il s’engage à remettre à DRIVE EAT sa politique de confidentialité en la matière et à mettre tout en œuvre pour traiter les données personnelles transmises dans le respect des présentes conditions.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingFor">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFor" aria-expanded="true" aria-controls="collapseFor">
-                <i class="more-less glyphicon glyphicon-plus"></i>
-                4. Partage des données personnelles des Utilisateurs et Partenaires avec les sous-traitants <br> DRIVE EAT et sociétés tierces :
+        <!-- Accordion item 4 -->
+        <div class="card">
+          <div id="headingFour" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="d-block position-relative collapsed collapsible-link py-2">
+                4. Partage des données personnelles des Utilisateurs et Partenaires avec les sous-traitants DRIVE EAT et sociétés tierces :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseFor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFor">
-            <div class="panel-body">
-              <p>Les données personnelles de l’Utilisateur et du Partenaire peuvent être partagées avec les sous-traitants DRIVE EAT et les sociétés tierces, dans les cas suivants :
 
+          <div id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Les données personnelles de l’Utilisateur et du Partenaire peuvent être partagées avec les sous-traitants DRIVE EAT et les sociétés tierces, dans les cas suivants :
                 <br><br>Lorsque l’Utilisateur et le Partenaire, utilise les services financiers proposés par MANGOPAY <a href="https://mangopay.com/fr/privacy" target="_blank">https://mangopay.com/fr/privacy</a> via la Plateforme, MANGOPAY étant
                 également en relation avec les sociétés bancaires et financières tierces.
                 <br><br>Lorsque DRIVE EAT a recours aux services de prestataires pour fournir l’assistance, la publicité, les prestations de paiement ou l’hébergement. Ces prestataires disposent d’un accès limité aux données, dans le cadre de
@@ -241,81 +250,87 @@
                 y compris des données à caractère personnel. Dans ce cas, les Utilisateurs et Partenaires seraient informés, avant que les données à caractère personnel ne soient transférées à une tierce partie.
                 En outre, les Utilisateurs et Partenaires reconnaissant que DRIVE EAT pourra transmettre les données à caractère personnel fournies par les Utilisateurs et Partenaire à des tiers pour la vente d’étude de marché dès lors qu’elles sont
                 anonymisées.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingFive">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 5 -->
+        <div class="card">
+          <div id="headingFive" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="d-block position-relative collapsed collapsible-link py-2">
                 5. Durée de conservation :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFor">
-            <div class="panel-body">
-              <p>Les données à caractère personnel sont conservées uniquement pendant la durée nécessaire à l’accomplissement des finalités mentionnées ci-dessus ou pour permettre à DRIVE EAT de répondre à ses obligations légales.
+
+          <div id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Les données à caractère personnel sont conservées uniquement pendant la durée nécessaire à l’accomplissement des finalités mentionnées ci-dessus ou pour permettre à DRIVE EAT de répondre à ses obligations légales.
                 <br><br>Les données à caractère personnel utilisées à des fins de prospection commerciale peuvent être conservées pour une durée maximale de trois (3) ans à compter de la fin de la relation commerciale.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingSix">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 6 -->
+        <div class="card">
+          <div id="headingSix" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="d-block position-relative collapsed collapsible-link py-2">
                 6. Transfert des données personnelles à l’étranger :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-            <div class="panel-body">
-              <p>DRIVE EAT informe l’Utilisateur et le Partenaire qu’aucun transfert de données personnelles n’a lieu à ce jour. Les données traitées sont hébergées en France ou dans la zone économique européenne. En tout état de cause,
+
+          <div id="collapseSix" aria-labelledby="headingSix" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                DRIVE EAT informe l’Utilisateur et le Partenaire qu’aucun transfert de données personnelles n’a lieu à ce jour. Les données traitées sont hébergées en France ou dans la zone économique européenne. En tout état de cause,
                 DRIVE EAT s’engage à respecter les dispositions légales en matière de transfert de données personnelles à l’étranger et notamment toute politique de « Private Shield », et s’engage à ce titre à informer l’Utilisateur et le Partenaire.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingSeven">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                <i class="more-less glyphicon glyphicon-plus"></i>
-                7. Transfert des données personnelles à l’étranger :
+        <!-- Accordion item 7 -->
+        <div class="card">
+          <div id="headingSeven" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="d-block position-relative collapsed collapsible-link py-2">
+                7. Sécurité et confidentialité :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-            <div class="panel-body">
-              <p>DRIVE EAT accorde une grande importance à la protection de vos données personnelles contre tout accès non autorisé et tout traitement illégal, perte, destruction ou dommage accidentel.
+
+          <div id="collapseSeven" aria-labelledby="headingSeven" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                DRIVE EAT accorde une grande importance à la protection de vos données personnelles contre tout accès non autorisé et tout traitement illégal, perte, destruction ou dommage accidentel.
                 Nous mettons en œuvre des mesures organisationnelles, techniques, logicielles et physiques en matière de sécurité du numérique pour protéger les données personnelles contre les altérations, destructions et accès non autorisés.
                 Toutefois, il est à signaler qu’internet n’est pas un environnement complètement sécurisé et la Plateforme ne peut pas garantir la sécurité de la transmission ou du stockage des informations sur internet.
                 <br><br>Le respect de la sécurité et de la protection de vos données s’impose à l’ensemble de nos collaborateurs ainsi qu’à nos prestataires et Partenaires.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingEight">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 8 -->
+        <div class="card">
+          <div id="headingEight" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="d-block position-relative collapsed collapsible-link py-2">
                 8. Mise en œuvre des droits des Utilisateurs :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-            <div class="panel-body">
-              <p>En application de la réglementation applicable aux données à caractère personnel, les Utilisateurs et Partenaires disposent des droits suivants :
+
+          <div id="collapseEight" aria-labelledby="headingEight" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                En application de la réglementation applicable aux données à caractère personnel, les Utilisateurs et Partenaires disposent des droits suivants :
                 <br><br>Ils peuvent mettre à jour ou supprimer les données qui les concernent en écrivant à l’adresse électronique suivante  <a href="contact" target="-blank">contact@drive-eat.fr</a>
                 <br><br>Ils peuvent supprimer leur compte, en écrivant à l’adresse électronique suivante <a href="contact" target="-blank">contact@drive-eat.fr</a>. Il est à noter que les informations partagées avec d’autres Utilisateurs, comme les
                 publications sur les forums, peuvent rester visibles du public sur la Plateforme même après la suppression de leur compte.</a>
@@ -325,24 +340,25 @@
                   target="-blank">contact@drive-eat.fr</a>.
                 <br><br>Les Utilisateurs peuvent demander la suppression de leurs données à caractère personnel, conformément aux lois applicables en matière de protection des données, en écrivant à l’adresse électronique <a href="contact"
                   target="-blank">contact@drive-eat.fr</a>.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingNine">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 9 -->
+        <div class="card">
+          <div id="headingNine" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine" class="d-block position-relative collapsed collapsible-link py-2">
                 9. Cookies et balises :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-            <div class="panel-body">
-              <p>Drive Eat collecte des informations, qui peuvent inclure des données personnelles, depuis votre navigateur lorsque vous utilisez nos Sites. Nous utilisons différentes méthodes, telles que les cookies et balises, pour collecter ces
+
+          <div id="collapseNine" aria-labelledby="headingNine" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Drive Eat collecte des informations, qui peuvent inclure des données personnelles, depuis votre navigateur lorsque vous utilisez nos Sites. Nous utilisons différentes méthodes, telles que les cookies et balises, pour collecter ces
                 informations, lesquelles peuvent inclure vos (I) adresse IP ; (II) cookie unique d’identification,
                 cookie d’information et informations sur les contenus de votre matériel pour accéder à certaines caractéristiques ; (III) numéro unique d’identification du matériel et type de matériel ; (IV) domaine, type de navigateur et langue ;
                 (V) système d’exploitation et paramétrage ; (VI) pays et fuseau horaire ; (VII) sites préalablement visités ;
@@ -368,24 +384,25 @@
                 d’être alerté par votre ordinateur chaque fois qu’un cookie est envoyé, ou vous pouvez choisir de refuser tous les cookies.
                 Vous pouvez procéder à ces choix en accédant aux paramètres du navigateur internet de chacun de vos appareils. Chaque navigateur est différent. Vérifiez par conséquent le menu “Aide” de votre navigateur pour bien comprendre comment
                 modifier le paramétrage de cookies. Si vous refusez les cookies, l’accès à de nombreux contenus de nos Sites et de nos Applis peut être moins efficace et certains de nos services peuvent ne pas fonctionner correctement.
-
               </p>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingTen">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 10 -->
+        <div class="card">
+          <div id="headingTen" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen" class="d-block position-relative collapsed collapsible-link py-2">
                 10. Evolution de la Politique de protection des données personnelles :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-            <div class="panel-body">
-              <p>La législation et les pratiques évoluent au fil du temps. DRIVE EAT se réserve le droit d’apporter toute modification à la présente Politique de Confidentialité à tout moment. Si une modification matérielle est apportée à la présente
+
+          <div id="collapseTen" aria-labelledby="headingTen" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                La législation et les pratiques évoluent au fil du temps. DRIVE EAT se réserve le droit d’apporter toute modification à la présente Politique de Confidentialité à tout moment. Si une modification matérielle est apportée à la présente
                 Politique de Confidentialité, DRIVE EAT s’engage à publier la nouvelle version sur son Site ou son Application.
                 Nous vous encourageons à consulter régulièrement cette page afin de voir les dernières informations sur nos pratiques de confidentialité. Si l’Utilisateur ou le Partenaire n’est pas d’accord avec les termes de la nouvelle rédaction de
                 la Politique de Confidentialité, il a la possibilité de supprimer son compte.
@@ -394,18 +411,20 @@
           </div>
         </div>
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingEleven">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
-                <i class="more-less glyphicon glyphicon-plus"></i>
+        <!-- Accordion item 11 -->
+        <div class="card">
+          <div id="headingEleven" class="card-header bg-white shadow-sm border-0">
+            <h6 class="mb-0 font-weight-bold panel-title">
+              <a href="#" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven" class="d-block position-relative collapsed collapsible-link py-2">
                 11. Comment nous contacter :
               </a>
-            </h4>
+            </h6>
           </div>
-          <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
-            <div class="panel-body">
-              <p>Pour en savoir plus sur notre Politique de protection des données à caractère personnel, vous pouvez contacter le Délégué à la Protection des Données à l’adresse suivante :
+
+          <div id="collapseEleven" aria-labelledby="headingEleven" data-parent="#accordionExample" class="collapse">
+            <div class="card-body p-5 panel-body">
+              <p class="font-weight-light m-0">
+                Pour en savoir plus sur notre Politique de protection des données à caractère personnel, vous pouvez contacter le Délégué à la Protection des Données à l’adresse suivante :
                 <br><br><span class="title">Délégué à la Protection des Données, DRIVE EAT,
                   <br>Le Lab’O, 1 avenue du Champs de Mars CS 30019
                   <br>45074 Orléans Cedex 2
@@ -415,23 +434,12 @@
           </div>
         </div>
 
-      </div><!-- panel-group -->
+      </div>
+    </div>
 
   </section>
-  <footer class="footer" th:replace="fragment/layout.html :: bottom"></footer>
-
-  <script>
-//     accordion
-
-    function toggleIcon(e) {
-      $(e.target)
-        .prev(".panel-heading")
-        .find(".more-less")
-        .toggleClass("glyphicon-plus glyphicon-minus");
-    }
-    $(".panel-group").on("hidden.bs.collapse", toggleIcon);
-    $(".panel-group").on("shown.bs.collapse", toggleIcon);
-  </script>
+  
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
 </body>
 

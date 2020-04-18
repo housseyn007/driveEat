@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------Header Img------------------------------------------- */
+
+.header_img {
+	margin-top:80px;
+	margin-bottom: 40px;
+}
+
+.header_img img{
+  width: 100%;
+}
+
+/* -------------------------------------------Header Img------------------------------------------- */
+
+.demo {
+  padding-bottom: 60px;
+}
+
+.card-header{
+  background-color: #f7f7f7;
+}
+
+.panel-title {
+  font-size: 14px;
+}
+
+.panel-title a {
+  font-family: 'Andika', sans-serif;
+  font-weight: bolder;
+  color: #777574 !important;
+  font-size: 1.3em;
+  outline: none;
+}
+
+.panel-title a:hover {
+  text-decoration: none;
+  color: #3f3e3e !important;
+}
+
+.card-body{
+  border-top: 1px solid #eaeaea;
+}
+
+.panel-body {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.panel-body p {
+  color: #7d7d7d;
+  font-size: 16px;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #EEEEEE;
+}
+
+.panel-default>.panel-heading {
+  padding: 0;
+  border-radius: 0;
+  color: #212121;
+  background-color: #FAFAFA;
+  border-color: #EEEEEE;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  border-top-color: #EEEEEE;
+}
+
+.p-5 {
+    padding: 1.5em !important;
+}
+/* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================*/
+
+/* Horizontal line */
+.collapsible-link::before {
+  content: '';
+  width: 14px;
+  height: 3px;
+  background: #777574;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 1rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+/* Vertical line */
+.collapsible-link::after {
+  content: '';
+  width: 3px;
+  height: 14px;
+  background: #777574;
+  position: absolute;
+  top: calc(50% - 7px);
+  right: calc(1rem + 6px);
+  display: block;
+  transition: all 0.3s;
+}
+
+.collapsible-link[aria-expanded='true']::after {
+  transform: rotate(90deg) translateX(-1px);
+}
+
+.collapsible-link[aria-expanded='true']::before {
+  transform: rotate(180deg);
+}
+
+/* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 1112px) {
+  .header_img {
+     margin-top:70px;
+     margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  .panel-title a {
+    font-size: 1.1em;
+    padding-right: 40px;
+  }
+
+  .panel-body p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 460px) {
+	.card-header {
+    padding: .25em 1.25rem!important;
+   }
+    .panel-title a {
+    font-size: 1em;
+  }
+  
+  .p-5 {
+    padding: 1em !important;
+}
+}

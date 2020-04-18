@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat Restaurants</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+
+  <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+  <link rel="stylesheet" th:href="@{/css/restaurant_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+
+  <!-- ============================================================== -->
+  <!-- Header Section -->
+  <!-- ============================================================== -->
+
+  <div class="header_main"></div>
+  <section class="header_section">
+
+    <div class="left_side">
+
+      <h1 th:text="${restaurant.name}">Le Nom du restaurant partenaire</h1>
+
+      <div class="star-favorite">
+
+        <div class="opinion_star">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+
+      </div>
+
+      <p th:text="${restaurant.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="info_payement_btn">
+        <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Informations</button>
+        <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Modes de paiements</button>
+      </div>
+
+    </div>
+
+    <div class="right_side">
+
+      <div class="right_side_img">
+        <div class="rectangle_circle">
+          <div class="rectangle"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="uk-cover-container uk-height-medium">
+          <img th:src="@{'/DriveatBackend/public/' + ${restaurant.frontPicture}}" alt="Image du restaurant" uk-cover>
+
+          <div class="card-header-mask">
+            <a class="card-header-date" type="button" data-toggle="modal" data-target="#addFavorisModal">
+              <i class="heart fa fa-heart-o"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- Modal favoris -->
+  <!-- ============================================================== -->
+
+  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été ajouté aux favoris !' ">Restaurant ajouté aux favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="exampleModalCenterTitle" th:text="${restaurant.name} + ' a été supprimé des favoris !' ">Restaurant supprimé des favoris !</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- Modal information -->
+  <!-- ============================================================== -->
+
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modalTop" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center">Informations</h3>
+        </div>
+        <div class="modal-body">
+          <div class="opning_time">
+            <div class="table_container">
+              <div class="informations_modal">
+                <i class="fa fa-map-marker"></i>
+                <p class="infoText" th:text="${restaurant.address} + ', ' + ${restaurant.zipCode} + ' ' + ${restaurant.city}">9 rue des carmes, 45000 ORLEANS</p>
+              </div>
+              <div class="informations_modal">
+                <i class="fa fa-phone"></i>
+                <p class="infoText" th:text="${restaurant.landline}">02 38 54 40 20</p>
+              </div>
+              <div class="time_header">
+                <h3>
+                  <i class="fa fa-clock-o"></i>Horaires Drive Eat
+                </h3>
+              </div>
+              <table class="table_elements">
+
+                <tbody>
+                  <tr class="time_element" th:each="timetablesDefinitions : ${timetablesDefinitions}">
+                    <td th:text="${timetablesDefinitions.day}">Lundi</td>
+                    <td th:text="${#dates.format(timetablesDefinitions.startTime,'HH:mm')}">8h/14h</td>
+						<td th:text="${#dates.format(timetablesDefinitions.endTime,'HH:mm')}">15h/22h</td>
+					  </tr>
+	                </tbody>
+	              </table>
+	              <div class="route_link_container">
+		              <div class="route_link">
+		                <a th:href="@{|https://www.google.fr/maps/dir//${restaurant.latitude},${restaurant.longitude}}" target="_blank"><i class="fa fa-map-o"></i>Itinéraire Maps</a>
+		              </div>
+		              <div class="route_link">
+		                <a th:href="@{|https://www.waze.com/fr/livemap/directions?latlng=${restaurant.latitude},${restaurant.longitude}}" target="_blank"><i class="fa fa-car"></i>Itinéraire Waze</a>
+		              </div>
+	              </div>
+
+	            </div>
+	
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	  
+    <!-- ============================================================== -->
+    <!-- Modal payement -->
+    <!-- ============================================================== -->
+
+		<div class="modal fade" id="payementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center" id="exampleModalCenterTitle">Mode de paiements</h3>
+		      </div>
+		      <div class="modal-body">
+			      <div class="payement_mode">
+				      <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/credit-card.png"></div>
+			          <div><img class="money" alt="logo argent" src="/images/logo/money.png"></div>
+			          <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/restaurant-ticket.png"></div>
+			      </div>
+			      <div class="payement_mode">
+				      <div><p>Cartes Bancaires</p></div>
+			          <div><p>Espèces</p></div>
+			          <div><p>Tickets Restaurants</p></div>
+			      </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+    <!-- ============================================================== -->
+    <!-- Menus -->
+    <!-- ============================================================== -->
+
+  <section class="formule" id="our_menus">
+    <div class="formule_section">
+      <h2>Nos Formules</h2>
+    </div>
+    <div class="container">
+    	<div uk-slider="autoplay: true; autoplay-interval:3000;">
+			<div class="uk-position-relative">
+				<div class="uk-slider-container uk-light">
+          			<ul class="uk-slider-items nav nav menu_tab">
+          				<li class="nav_item" th:each="categorie, iter: ${categories}" >
+            				<a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${categorie.menuCategoryId}|" 
+            				th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}" th:text="${categorie.name}">>Breakfast
+            				</a>
+          				</li>
+      
+        			</ul>
+      			</div>
+
+	        	<div class="uk-visible@s">
+	         		 <a class="uk-position-center-left-out uk-position-small" href="#"  uk-slider-item="previous"><i class="fas fa-caret-left"></i></a>
+	          		 <a class="uk-position-center-right-out uk-position-small" href="#" uk-slider-item="next"><i class="fas fa-caret-right"></i></a>
+				</div>
+      		</div>
+      
+   		</div>
+
+      <div class="row menu_container">
+        <div class="tab-content col-xl-12" id="myTabContent">
+
+          <div   th:each="categorie, iter: ${categories}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : ' tab-pane fade '}" th:id="|M${categorie.menuCategoryId}|">
+            <div class="row single_menu_list">
+
+              <a class="col-md-6 " href="#modal-overflow" uk-toggle th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
+
+                <div class="div_card" >
+                  <div class="div_img"></div>
+                  <div class="div_body" >
+                    <div class="title_price">
+                      <h3 th:text="${menu.name}">Le Nom du menu</h3>
+                      <p th:text="|${#numbers.formatDecimal(menu.price, 1, 'DEFAULT', 2, 'DEFAULT')}€|">45€</p>
+                    </div>
+                    <div class="menu_description">
+                      <p th:text="${menu.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </a>
+           
+          </div>
+         </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 text-center">
+          <div class="box_btn">
+            <a href="#our_menus"><i class="far fa-arrow-alt-circle-up"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- ============================================================== -->
+    <!-- Modal menus -->
+    <!-- ============================================================== -->
+    
+    <div id="modal-overflow" uk-modal>
+    <div class="uk-modal-dialog">
+
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Menu Trio</h2>
+            <dd>3 junior au choix + 1 Maxi Coca-Cola 1,5l</dd>
+        </div>
+
+	        <div class="uk-modal-body" uk-overflow-auto>
+	  <ul class="uk-list uk-list-striped">
+	    <li class="submenu">
+	      <dl class="uk-description-list">
+	        <h3>3 Pizzas junior au Choix</h3>
+	        <p class="uk-article-meta">Obligatoire - 3 à choisir</p>
+	    </dl>
+	    </li>
+	      <li class="submenu">
+	        <ul class="uk-list uk-list-divider">
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" checked><span class="product">Pizza 4 fromages</span>
+	            </label>
+	            <div class="price">2.00€</div>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza savoyarde supplement fromages</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" ><span class="product">Pizza mexicaine</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	        </ul>
+	      </li>
+	    <li class="submenu">
+	      <dl class="uk-description-list">
+	        <h3>Boisson 1.5L</h3>
+	        <p class="uk-article-meta">Obligatoire</p>
+	    </dl>
+	    </li>
+	      <li class="submenu">
+	        <ul class="uk-list uk-list-divider">
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Coca-Cola 1.5L</span>
+	            </label>
+	            <span class="price">2.50€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Orangina 1.5L</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-radio" type="checkbox" name="radio1"><span class="product">Oasis 1.5L</span>
+	            </label>
+	            <span class="price">2.50€</span>
+	          </li>
+	        </ul>
+	      </li>
+	      <li class="submenu">
+	        <dl class="uk-description-list">
+	          <h3>Extras Desserts</h3>
+	      </dl>
+	      </li>
+	      <li class="submenu">
+	        <ul class="uk-list uk-list-divider">
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-checkbox" type="checkbox"><span class="product">Tiramisu caramel</span>
+	            </label>
+	            <span class="price">2.50€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-checkbox" type="checkbox"><span class="product" >Ben & Jerry's Chocolate Fudge Brownie 100ml</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	          <li class="product_list">
+	            <label>
+	              <input class="uk-checkbox" type="checkbox"><span class="product">Tarte au daim</span>
+	            </label>
+	            <span class="price">2.00€</span>
+	          </li>
+	        </ul>
+	      </li>
+	  </ul>
+	  
+	</div>
+	
+	<div class="uk-modal-footer uk-text-right">
+	    <button class="panier_btn uk-modal-close" type="button">Annuler</button>
+	    <button class="panier_btn" type="button">Total <span>30.00€</span></button>
+	</div>
+	
+	</div>
+	</div>
+    
+  </section>
+		
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+
+   <script>
+  $(".heart.fa").click(function() {
+	  if ($(this).hasClass("fa-heart-o")){
+		  $(this).removeClass("fa-heart-o").addClass("fa-heart");
+		  $(".card-header-date").attr('data-target','#addFavorisModal');
+	  }else if ($(this).hasClass("fa-heart")){
+		  $(this).removeClass("fa-heart").addClass("fa-heart-o");
+		  $(".card-header-date").attr('data-target','#removeFavorisModal');
+
+	  }
+	});
+  </script>
+
+</body>
+
+</html>

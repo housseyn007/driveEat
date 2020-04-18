@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.container.searchClass {
+    display: flex;
+    width: 600px;
+    margin-top: 33px;
+}
+.ap-input, .btn{
+	border-radius: 0;
+	
+}
+
+.ap-dataset-places {
+    color: black;
+}
+@media screen and (max-width: 570px) {
+
+	.container.searchClass {
+    display: flex;
+    width: 400px;
+}
+
+  }
