@@ -15,12 +15,6 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
-.tab-content > .active {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-}
 
 .menu_tab {
   height: 150px;
@@ -38,7 +32,7 @@ body {
   list-style: none;
 }
 
-.nav-item a {
+.nav_item a {
   font-family: 'Andika', sans-serif;
   font-weight: bold;
   color: #333;
@@ -60,7 +54,7 @@ body {
   margin: 10px;
 }
 
-.menu_tab .nav-item.show .btn-menu,
+.menu_tab .nav_item.show .btn-menu,
 .btn-menu.active {
   background: rgba(33, 33, 33, 0.3);
   border: 1.5px solid red;
@@ -119,12 +113,14 @@ body {
   position: relative;
 }
 
-.wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: absolute;
+.tab-content{
+	min-height: 400px;
+}
+
+.tab-content > .active {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .href-card, .card-body a {
@@ -149,9 +145,9 @@ body {
 }
 
 .card_search {
-  width: 100%;
-  height: 220px;
-  border-radius: 6px 6px 0 0;
+  width: 100%!important;
+  height: 220px!important;
+  border-radius: 6px 6px 0 0!important;
 }
 
 .card-header-mask {
@@ -224,7 +220,6 @@ body {
   display: flex;
   /*justify-content: space-between;*/
   justify-content: flex-end;
-  margin-top: 15px;
   font-size: 14px;
   color: #9FA5A8;
 }
@@ -241,8 +236,16 @@ body {
   font-size: 15px;
 }*/
 .comments {
+  display: flex;
+  align-items:center;
   text-decoration: none;
   color: #9FA5A8;
+}
+
+.comments p{
+  margin: 10px 0 10px 10px;
+  font-size: 15px;
+  font-weight: bold
 }
 
 .comments:hover {
@@ -275,24 +278,25 @@ body {
 
 /* -----------------------------------Media------------------------------------- */
 @media screen and (max-width: 860px) {
-.card_btn {
-  width: 100px;
+  .card_btn {
+    width: 100px;
+  }
+
+  .img_container {
+    height: 60px;
+  }
+
+  .card_btn_content p {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  .menu_tab {
+    height: 120px;
+  }
 }
 
-.img_container {
-  height: 60px;
-}
-
-.card_btn_content p {
-  font-size: 13px;
-  font-weight: bold;
-  padding: 2px;
-}
-
-.menu_tab {
-  height: 120px;
-}
-}
 @media screen and (max-width: 760px) {
   .card {
     width: 310px;
