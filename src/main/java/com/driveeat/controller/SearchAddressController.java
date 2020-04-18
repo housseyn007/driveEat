@@ -29,7 +29,7 @@ public class SearchAddressController {
 	@Autowired
 	private SpecialitiesRepository specialitiesRepository;
 
-	@PostMapping("/cherche-restaurants")
+	@PostMapping("/recherche-restaurants")
 	public String showAddress(Model model,  Double lat, Double lng) {
 		Float lat_2 = (float) (lat + 0.2000);
 		Float lat_1 = (float) (lat - 0.2000);
