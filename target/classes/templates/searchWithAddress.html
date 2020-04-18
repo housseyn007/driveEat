@@ -50,7 +50,7 @@
                 <a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${specialitie.specialityId}|" th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}">
                   <div class="card_btn">
                     <div class="card_btn_img">
-                      <div class="uk-cover-container uk-height-medium img_container">
+                      <div class="uk-cover-container img_container">
                         <img th:src="@{'/DriveatBackend/public/' + ${specialitie.imagePath}}" alt="photo specialite" uk-cover>
                       </div>
                     </div>
@@ -92,8 +92,8 @@
                 <i class="heart fa fa-heart-o" th:id="${nearRestaurant.restaurantSpecialities.restaurants.name}"></i>
               </a>
             </div>
-            <a class="uk-cover-container uk-height-medium card_search" th:href="|/restaurantSpecialites/restaurants?id=${nearRestaurant.restaurantSpecialities.restaurants.restaurantId}|">
-              <img th:src="@{'/DriveatBackend/public/' + ${nearRestaurant.restaurantSpecialities.restaurants.frontPicture}}" alt="image restaurant" uk-cover>
+            <a class="card_search" th:href="|/restaurantSpecialites/restaurants?id=${nearRestaurant.restaurantSpecialities.restaurants.restaurantId}|">
+              <img th:src="@{'/DriveatBackend/public/' + ${nearRestaurant.restaurantSpecialities.restaurants.frontPicture}}" alt="image restaurant">
             </a>
             <div class="card-body">
               <a href="#">

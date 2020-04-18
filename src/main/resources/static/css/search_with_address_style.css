@@ -7,7 +7,7 @@ body {
 
 /* -------------------------------------------Additional menu selection------------------------------------------- */
 .sort_speciality h4 {
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 0px;
   text-align: center;
   font-family: 'Andika', sans-serif;
@@ -145,9 +145,21 @@ body {
 }
 
 .card_search {
-  width: 100%!important;
-  height: 220px!important;
-  border-radius: 6px 6px 0 0!important;
+  width: 100%;
+  height: 220px;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card_search img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .card-header-mask {
@@ -298,6 +310,12 @@ body {
 }
 
 @media screen and (max-width: 760px) {
+	
+  .sort_speciality h4 {
+  margin-top: 100px;
+
+  }
+  
   .card {
     width: 310px;
     margin: 10px;
