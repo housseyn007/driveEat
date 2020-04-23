@@ -56,7 +56,7 @@
 
       </div>
 
-      <p th:text="${restaurant.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p  th:text="${#strings.toLowerCase(restaurant.description)}  ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="info_payement_btn">
         <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Informations</button>
         <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Modes de paiements</button>
@@ -185,14 +185,14 @@
 		      </div>
 		      <div class="modal-body">
 			      <div class="payement_mode">
-				      <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/credit-card.png"></div>
-			          <div><img class="money" alt="logo argent" src="/images/logo/money.png"></div>
-			          <div><img class="credit-card" alt="logo carte de credit" src="/images/logo/restaurant-ticket.png"></div>
+				      <div><img class="credit-card" alt="logo carte de credit"  src="/images/logo/credit-card.png"></div>
+			          <div><img class="money" alt="logo argent" th:if="${restaurant.acceptCash}" src="/images/logo/money.png"></div>
+			          <div><img class="credit-card" alt="logo carte de credit" th:if="${restaurant.acceptRestaurantTicket}" src="/images/logo/restaurant-ticket.png"></div>
 			      </div>
 			      <div class="payement_mode">
 				      <div><p>Cartes Bancaires</p></div>
-			          <div><p>Espèces</p></div>
-			          <div><p>Tickets Restaurants</p></div>
+			          <div th:if="${restaurant.acceptCash}"><p>Espèces</p></div>
+			          <div th:if="${restaurant.acceptRestaurantTicket}"><p>Tickets Restaurants</p></div>
 			      </div>
 		      </div>
 		      <div class="modal-footer">
