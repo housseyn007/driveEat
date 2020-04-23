@@ -1,32 +1,46 @@
 package com.driveeat.entity;
 
-import com.driveeat.entity.RestaurantSpecialities;
+import java.util.ArrayList;
+import java.util.List;
 
-public class NearRestaurants{
+public class NearRestaurants {
 	private Float distance;
-	private RestaurantSpecialities restaurantSpecialities;
+	private Restaurants restaurants;
+	private List<Specialities> specialities = new ArrayList<Specialities>();
+
 	public NearRestaurants() {
 		super();
 	}
-	public NearRestaurants(Float distance, RestaurantSpecialities restaurantsSpecialities) {
+
+	public NearRestaurants(Float distance, Restaurants restaurants, List<Specialities> specialities) {
 		super();
 		this.distance = distance;
-		this.restaurantSpecialities = restaurantsSpecialities;
+		this.restaurants = restaurants;
+		this.specialities = specialities;
 	}
+
 	public Float getDistance() {
 		return distance;
 	}
+
 	public void setDistance(Float distance) {
 		this.distance = distance;
 	}
-	public RestaurantSpecialities getRestaurantSpecialities() {
-		return restaurantSpecialities;
-	}
-	public void setRestaurantSpecialities(RestaurantSpecialities restaurantsSpecialities) {
-		this.restaurantSpecialities = restaurantsSpecialities;
+
+	public Restaurants getRestaurants() {
+		return restaurants;
 	}
 
+	public void setRestaurants(Restaurants restaurants) {
+		this.restaurants = restaurants;
+	}
 
-	
+	public List<Specialities> getSpecialities() {
+		return specialities;
+	}
+
+	public void setSpecialities(List<Specialities> specialities) {
+		this.specialities = specialities;
+	}
 
 }
