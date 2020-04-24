@@ -236,24 +236,30 @@
     <!-- Effets JS AOS -->   
     AOS.init({    });
   </script>
-  <script>
-  var lat = document.getElementById('lat');
-  var lng = document.getElementById('lng'); 
-  const reconfigurableOptions = {
-  		  language: 'fr', // Receives results in German
-  		  countries: ['fr'], // Search in the United States of America and in the Russian Federation
-  		  type: 'address', // Search only for cities names
-  		  aroundLatLngViaIP: false // disable the extra search/boost around the source IP
-  		};
-    var placesAutocomplete = places({
-  	  appId: 'pl6V08HVHVMN',
-  	  apiKey: '74e6f64eaa696bd5faf17353321305aa',
-  	  container: document.querySelector('#address-input')
-  	}).configure(reconfigurableOptions);;
-  	
-  	placesAutocomplete.on('change', e => {lat.value = e.suggestion.latlng.lat ; lng.value = e.suggestion.latlng.lng });
-  	
 
+<!-- Add the this google map apis to webpage -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;key=AIzaSyCsYx16SDyTE36nfM_rGomWGR42EL88vS0&amp;libraries=places"></script>
+ 
+<script>
+		$('form').on('keyup keypress', function(e) {
+			  var keyCode = e.keyCode || e.which;
+			  if (keyCode === 13) { 
+			    e.preventDefault();
+			    return false;
+			  }
+			});
+		google.maps.event.addDomListener(window, 'load', initialize);
+		function initialize() {
+		var input = document.getElementById('address-input');
+		var autocomplete = new google.maps.places.Autocomplete(input);
+		autocomplete.addListener('place_changed', function () {
+		var place = autocomplete.getPlace();
+		// place variable will have all the information you are looking for.
+		 
+		  document.getElementById("lat").value = place.geometry['location'].lat();
+		  document.getElementById("lng").value = place.geometry['location'].lng();
+		});
+		}
 </script>
 
 </body>

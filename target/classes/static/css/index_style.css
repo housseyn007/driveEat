@@ -455,6 +455,10 @@ h2 {
   border-radius: 15px;
   border: 1px solid #000;
 }
+  #address-input {
+    width: 100%;
+    padding-left: 10px;
+} 
 
 /* -----------------------------------Media------------------------------------- */
 @media screen and (max-width: 860px) {
@@ -478,6 +482,7 @@ h2 {
     .container.searchClass {
     max-width: 433px ;
   }
+  
 }
 
 @media screen and (max-width: 500px) {
