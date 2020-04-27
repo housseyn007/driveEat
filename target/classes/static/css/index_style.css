@@ -347,9 +347,11 @@ h2 {
 }
 
 .benefit_div {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap-reverse;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;  
 }
 
 .benefit_div img {
@@ -360,10 +362,6 @@ h2 {
 
 .benefit_p {
   padding: 20px;
-  font-family: 'Andika', sans-serif;
-  font-weight: bolder;
-  color: #3f4040;
-  font-size: 19px;
 }
 
 .benefit_p h1 {
@@ -372,6 +370,13 @@ h2 {
   font-size: 3em;
   color: #ad6f23;
   margin-bottom: 30px;
+}
+
+.benefit_p p{
+  font-family: 'Andika', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3f4040;
 }
 
 .benefit_p p span {
@@ -428,9 +433,9 @@ h2 {
   padding-top: 100px;
   padding-bottom: 30px;
   font-family: 'Andika', sans-serif;
-  font-weight: bolder;
+  font-weight: bold;
   color: #3f4040;
-  font-size: 19px;
+  font-size: 18px;
   max-width: 370px;
 }
 
@@ -461,6 +466,7 @@ h2 {
 } 
 
 /* -----------------------------------Media------------------------------------- */
+
 @media screen and (max-width: 860px) {
   .logoHome {
     width: 450px
@@ -617,11 +623,12 @@ h2 {
 
   /*--------customer benefit----------- */
   .benefit_p {
-    font-size: 17px;
+    font-size: 16px;    
   }
 
-  .benefit_p p span {
-    font-size: 22px;
+  .benefit_p p{
+    font-size: 17px;
+    margin: 0 0 10px 0!important;
   }
 }
 
