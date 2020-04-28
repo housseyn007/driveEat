@@ -69,23 +69,7 @@ public class RestaurantController {
 	model.addAttribute("categories", menusRepository.findByMenuCategories(id));
 	model.addAttribute("ListMenuPartProduct", listMenuPartProduct);
 		
-//		System.out.println(listMenuPartProduct.get(1).getMenu().getName());
-//		System.out.println("-------------------------------");
-//		for(PartProduct pp : listMenuPartProduct.get(1).getPartProduct()) {
-//			System.out.println(pp.getMenuParts().getName());
-//			pp.getMenuParts().isMandatory();
-//			System.out.println("---------------------");
-//			for (Products p : pp.getProduct() ) {
-//				System.out.println(p.getName());
-//			}
-//			
-//			
-//			System.out.println("============================");
-//		}
-		
-		
-		
-		
+				
 		
 		return "restaurant";
 	}
