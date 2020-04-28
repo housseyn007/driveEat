@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.driveeat.entity.MenuPartItems;
 import com.driveeat.entity.MenuPartProducts;
 import com.driveeat.entity.MenuParts;
+import com.driveeat.entity.Menus;
 import com.driveeat.entity.PartProduct;
 import com.driveeat.entity.Products;
 import com.driveeat.repository.MenuPartItemsRepository;
@@ -39,42 +40,48 @@ public class RestaurantController {
 	private PartProduct partProduct;
 	@GetMapping("/restaurantSpecialites/restaurants")
 	public String getRestaurantPage(Model model, @RequestParam Integer id) {
-		model.addAttribute("restaurant", restaurantsRepository.getOne(id));
-		model.addAttribute("timetablesDefinitions", timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.getOne(id)));
-		model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.getOne(id)));
-		model.addAttribute("categories", menusRepository.findByMenuCategories(id));
-    
+	
+	List<Menus> menus = new ArrayList<Menus>(); 
+	menus = menusRepository.findByRestaurants(restaurantsRepository.getOne(id));		
+	List<MenuPartProducts> listMenuPartProduct = new ArrayList<MenuPartProducts>();
+	if(menus.size() > 0) {
+	for(Menus m : menus) {	
 	menuPartProducts = new MenuPartProducts();
-	
-	menuPartProducts.setMenu(menusRepository.getOne(282));
-	
-	List<MenuParts> mp = new ArrayList<MenuParts>();
-	mp = menuPartsRepository.findByMenus(menusRepository.getOne(282));
-    for (MenuParts menuParts : mp) {
+	menuPartProducts.setMenu(m);
+	List<MenuParts> menuPart = new ArrayList<MenuParts>();
+	menuPart = menuPartsRepository.findByMenus(m);
+    for (MenuParts mp : menuPart) {
     	partProduct = new PartProduct();
-         partProduct.setMenuParts(menuParts);
-         List<MenuPartItems> mpi = new ArrayList<MenuPartItems>();
-         mpi = menuPartItemsRepository.findByMenuParts(menuParts);
-         for (MenuPartItems menuPI : mpi) {
-        	 partProduct.getProduct().add(menuPI.getProducts());
+         partProduct.setMenuParts(mp);
+         List<MenuPartItems> menuPartItem = new ArrayList<MenuPartItems>();
+         menuPartItem = menuPartItemsRepository.findByMenuParts(mp);
+         for (MenuPartItems mpi : menuPartItem) {
+        	 partProduct.getProduct().add(mpi.getProducts());
 		}
          menuPartProducts.getPartProduct().add(partProduct);  
 	}
+    listMenuPartProduct.add(menuPartProducts);
+	}	
+	}	
+	model.addAttribute("restaurant", restaurantsRepository.getOne(id));
+	model.addAttribute("timetablesDefinitions", timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.getOne(id)));
+	model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.getOne(id)));
+	model.addAttribute("categories", menusRepository.findByMenuCategories(id));
+	model.addAttribute("ListMenuPartProduct", listMenuPartProduct);
 		
-		
-		
-		System.out.println(menuPartProducts.getMenu().getName());
-		System.out.println("-------------------------------");
-		for(PartProduct pp : menuPartProducts.getPartProduct()) {
-			System.out.println(pp.getMenuParts().getName());
-			System.out.println("---------------------");
-			for (Products p : pp.getProduct() ) {
-				System.out.println(p.getName());
-			}
-			
-			
-			System.out.println("============================");
-		}
+//		System.out.println(listMenuPartProduct.get(1).getMenu().getName());
+//		System.out.println("-------------------------------");
+//		for(PartProduct pp : listMenuPartProduct.get(1).getPartProduct()) {
+//			System.out.println(pp.getMenuParts().getName());
+//			pp.getMenuParts().isMandatory();
+//			System.out.println("---------------------");
+//			for (Products p : pp.getProduct() ) {
+//				System.out.println(p.getName());
+//			}
+//			
+//			
+//			System.out.println("============================");
+//		}
 		
 		
 		
