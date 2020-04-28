@@ -1,7 +1,9 @@
 package com.driveeat.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +30,7 @@ public class Menus {
 	private double price;
 
 	@ManyToOne
-	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
+	@JoinColumn(name = "restaurantId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Menus_ibfk_1"))
 	@NotNull
 	private Restaurants restaurants;
 
@@ -37,7 +39,7 @@ public class Menus {
 	private boolean disabled;
 
 	@ManyToOne
-	@JoinColumn(name = "menuCategoryId", insertable = false, updatable = false)
+	@JoinColumn(name = "menuCategoryId", insertable = false, updatable = false, nullable = false, foreignKey = @ForeignKey(name = "Menus_ibfk_2"))
 	private MenuCategories menuCategories;
 
 	public Menus() {

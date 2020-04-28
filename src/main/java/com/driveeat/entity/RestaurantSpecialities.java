@@ -2,6 +2,7 @@ package com.driveeat.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,12 +20,12 @@ public class RestaurantSpecialities {
 	private Integer restaurantSpecialityId;
 
 	@ManyToOne
-	@JoinColumn(name = "restaurantId")
+	@JoinColumn(name = "restaurantId", foreignKey = @ForeignKey(name = "RestaurantSpecialities_ibfk_1"))
 	@NotNull
 	private Restaurants restaurants;
 
 	@ManyToOne
-	@JoinColumn(name = "specialityId")
+	@JoinColumn(name = "specialityId", foreignKey = @ForeignKey(name = "RestaurantSpecialities_ibfk_2"))
 	@NotNull
 	private Specialities specialities;
 	@Column(name = "`rank`")

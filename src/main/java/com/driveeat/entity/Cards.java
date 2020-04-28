@@ -2,8 +2,10 @@ package com.driveeat.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +25,7 @@ public class Cards {
 	private Integer cardId;
 
 	@ManyToOne
-	@JoinColumn(name = "userId", insertable = false, updatable = false)
+	@JoinColumn(name = "userId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Cards_ibfk_1"))
 	@NotNull
 	private Users users;
 
