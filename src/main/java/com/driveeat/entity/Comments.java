@@ -1,14 +1,18 @@
 package com.driveeat.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,11 +23,11 @@ public class Comments {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer commentId;
 	@ManyToOne
-	@JoinColumn(name = "userId", insertable = false, updatable = false)
+	@JoinColumn(name = "userId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Comments_ibfk_1"))
 	@NotNull
 	private Users user;
 	@ManyToOne
-	@JoinColumn(name = "restaurantId", insertable = false, updatable = false)
+	@JoinColumn(name = "restaurantId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Comments_ibfk_2"))
 	@NotNull
 	private Restaurants restaurant;
 	private String commentText;

@@ -1,6 +1,7 @@
 package com.driveeat.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,11 +19,11 @@ public class OrderMenus {
 	private Integer orderMenuId;
 
 	@ManyToOne
-	@JoinColumn(name = "menuId", insertable = false, updatable = false)
+	@JoinColumn(name = "menuId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "OrderMenus_ibfk_2"))
 	private Menus menus;
 
 	@ManyToOne
-	@JoinColumn(name = "orderId", insertable = false, updatable = false)
+	@JoinColumn(name = "orderId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "OrderMenus_ibfk_3"))
 	@NotNull
 	private Orders orders;
 

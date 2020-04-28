@@ -3,6 +3,7 @@ package com.driveeat.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +23,7 @@ public class Payments {
 	private Integer paymentId;
 
 	@ManyToOne
-	@JoinColumn(name = "orderId", insertable = false, updatable = false)
+	@JoinColumn(name = "orderId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Payments_ibfk_2"))
 	private Orders orders;
 	
 	@NotNull
@@ -33,7 +34,7 @@ public class Payments {
 	private Date paymentDatetime;
 
 	@ManyToOne
-	@JoinColumn(name = "cardId", insertable = false, updatable = false)
+	@JoinColumn(name = "cardId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "Payments_ibfk_1"))
 	private Cards cards;
 
 	private String payinId;

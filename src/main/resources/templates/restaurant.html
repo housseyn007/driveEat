@@ -216,7 +216,7 @@
 				<div class="uk-slider-container uk-light">
           			<ul class="uk-slider-items nav nav menu_tab">
           				<li class="nav_item" th:each="categorie, iter: ${categories}" >
-            				<a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${categorie.menuCategoryId}|" 
+            				<a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#C${categorie.menuCategoryId}|" 
             				th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}" th:text="${categorie.name}">>Breakfast
             				</a>
           				</li>
@@ -235,10 +235,10 @@
       <div class="row menu_container">
         <div class="tab-content col-xl-12" id="myTabContent">
 
-          <div   th:each="categorie, iter: ${categories}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : ' tab-pane fade '}" th:id="|M${categorie.menuCategoryId}|">
+          <div   th:each="categorie, iter: ${categories}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : ' tab-pane fade '}" th:id="|C${categorie.menuCategoryId}|">
             <div class="row single_menu_list">
 
-              <a class="col-md-6 " href="#modal-overflow" uk-toggle th:each="menu, iter: ${menus}" th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
+              <a class="col-md-6 " uk-toggle  th:each="menu, iter: ${menus}"  th:href="|#M${menu.menuId}|"    th:if="${menu.getMenuCategories().getMenuCategoryId() == categorie.getMenuCategoryId()}">
 
                 <div class="div_card" >
                   <div class="div_img"></div>
@@ -275,105 +275,56 @@
     <!-- Modal menus -->
     <!-- ============================================================== -->
     
-	<div id="modal-overflow" uk-modal>
+	<div uk-modal th:each="listMenuPartProduct : ${ListMenuPartProduct}" th:id="|M${listMenuPartProduct.getMenu().getMenuId()}|">
 		<div class="uk-modal-dialog">
 
 			<button class="uk-modal-close-default" type="button" uk-close></button>
 
 			<div class="uk-modal-header">
-				<h2 class="uk-modal-title">Menu Trio</h2>
-				<dd>3 junior au choix + 1 Maxi Coca-Cola 1,5l</dd>
+				<h2 class="uk-modal-title" th:text= "${listMenuPartProduct.getMenu().getName()}">Menu Trio</h2>
+				<dd th:text= "${listMenuPartProduct.getMenu().getDescription()}">3 junior au choix + 1 Maxi Coca-Cola 1,5l</dd>
 			</div>
 
 			<div class="uk-modal-body" uk-overflow-auto>
-				<ul class="uk-list uk-list-striped">
-					<li class="submenu">
+				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}">
+					
+					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory()} == true">
 						<dl class="uk-description-list">
-							<h3>3 Pizzas junior au Choix</h3>
-							<p class="uk-article-meta">Obligatoire - 3 à choisir</p>
+							<h3 th:text="${partProduct.getMenuParts().getName()}">3 Pizzas junior au Choix</h3>
+							<p class="uk-article-meta" th:text="|Obligatoire - ${partProduct.getMenuParts().getItemsAllowed()} à choisir|">Obligatoire </p>
 						</dl>
 					</li>
-					<li class="submenu-list">
-						<ul class="product_list_ul">
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox" checked>
-									<span class="product">Pizza 4 fromages</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
+					<li class="submenu-list" th:if="${partProduct.getMenuParts().isMandatory() == true}">
+						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}" >
+							
+							
 							<li class="product_list">
 								<label>
 									<input class="uk-radio" type="checkbox">
-									<span class="product">Pizza savoyarde supplement fromages</span>
+									<span class="product" th:text="${product.getName()}">Pizza mexicaine</span>
 								</label>
-								<div class="price"><p>2.00€</p></div>
+								
 							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox">
-									<span class="product">Pizza mexicaine</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox">
-									<span class="product">Pizza mexicaine</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox">
-									<span class="product">Pizza mexicaine</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
+							
 						</ul>
 					</li>
-					<li class="submenu">
+					
+				</ul>
+
+				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}">
+					
+					
+					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory() == false}">
 						<dl class="uk-description-list">
-							<h3>Boisson 1.5L</h3>
-							<p class="uk-article-meta">Obligatoire</p>
+							<h3 th:text="${partProduct.getMenuParts().getName()}" >Extras Desserts</h3>
 						</dl>
 					</li>
-					<li class="submenu-list">
-						<ul class="product_list_ul">
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox" name="radio1">
-									<span class="product">Coca-Cola 1.5L</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox" name="radio1">
-									<span class="product">Orangina 1.5L</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-radio" type="checkbox" name="radio1">
-									<span class="product">Oasis	1.5L</span>
-								</label>
-								<div class="price"><p>2.00€</p></div>
-							</li>
-						</ul>
-					</li>
-					<li class="submenu">
-						<dl class="uk-description-list">
-							<h3>Extras Desserts</h3>
-						</dl>
-					</li>
-					<li class="submenu-list">
-						<ul class="product_list_ul">
+					<li class="submenu-list" th:if="${partProduct.getMenuParts().isMandatory() == false}">
+						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}">
 							<li class="product_list">
 								<label>
 									<input class="uk-checkbox" type="checkbox">
-									<span class="product">Tiramisu caramel</span>
+									<span class="product" th:text="${product.getName()}">Tiramisu caramel</span>
 								</label>
 								<div class="price">
 									<div class="btn_price_content">
@@ -381,37 +332,10 @@
 											<span id="extra_quantity">0</span>
 										<button class="btn_plus" onclick="plus_quantity()"><i class="fas fa-plus"></i></button>								
 									</div>
-									<p>2.00€</p>
+									<p  th:text="|+${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}€|">2.00€</p>
 								</div>
 							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-checkbox" type="checkbox">
-									<span class="product">Ben & Jerry's Chocolate Fudge Brownie 100ml</span>
-								</label>
-								<div class="price">
-									<div class="btn_price_content">
-										<button class="btn_minus"><i class="fas fa-minus"></i></button>
-											<span>0</span>
-										<button class="btn_plus"><i class="fas fa-plus"></i></button>								
-									</div>
-									<p>2.00€</p>
-								</div>
-							</li>
-							<li class="product_list">
-								<label>
-									<input class="uk-checkbox" type="checkbox">
-									<span class="product">Tarte au daim</span>
-								</label>
-								<div class="price">
-									<div class="btn_price_content">
-										<button class="btn_minus"><i class="fas fa-minus"></i></button>
-											<span>0</span>
-										<button class="btn_plus"><i class="fas fa-plus"></i></button>								
-									</div>
-									<p>2.00€</p>
-								</div>
-							</li>
+							
 						</ul>
 					</li>
 				</ul>

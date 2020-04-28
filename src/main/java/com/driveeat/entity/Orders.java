@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,11 +42,11 @@ public class Orders {
 	@NotNull
 	private Type type;
 	 @ManyToOne    
-	 @JoinColumn(name="userId", insertable=false, updatable=false)
+	 @JoinColumn(name="userId", insertable=false, updatable=false, foreignKey = @ForeignKey(name = "Orders_ibfk_2"))
 	 @NotNull
      private Users users;
 	 @ManyToOne    
-	 @JoinColumn(name="restaurantId", insertable=false, updatable=false)
+	 @JoinColumn(name="restaurantId", insertable=false, updatable=false, foreignKey = @ForeignKey(name = "Orders_ibfk_1"))
      private Restaurants restaurant; 
 	 @Column(columnDefinition = "TEXT")
 	 @NotNull

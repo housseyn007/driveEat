@@ -3,6 +3,7 @@ package com.driveeat.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class OrderStatusHistory {
 
 	@ManyToOne
 	@NotNull
-	@JoinColumn(name = "orderId", insertable = false, updatable = false)
+	@JoinColumn(name = "orderId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "OrderStatusHistory_ibfk_1"))
 	private Orders orders;
 
 	private String peviousStatus;
