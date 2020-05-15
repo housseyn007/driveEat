@@ -92,34 +92,36 @@ public class Restaurants {
 	private Integer mangopayWalletId;
 	private Integer mangopayBankId;
 	@NotNull
-	private int mangopayUserId_dev;
+	private Integer mangopayUserId_dev;
 	@NotNull
-	private int mangopayWalletId_dev;
+	private Integer mangopayWalletId_dev;
 	@NotNull
-	private int mangopayBankId_dev;
+	private Integer mangopayBankId_dev;
 	@Column(columnDefinition = "tinyint(1) default 1")
 	@NotNull
 	private boolean isActive;
 	@NotNull
-	private int maxOrdersAtATime;
+	private Integer maxOrdersAtATime;
 
 	public Restaurants() {
 		super();
 	}
 
-	public Restaurants(@NotNull String name, @NotNull String frontPicture, @NotNull String localisation,
-			@NotNull String password, @NotNull String email, @NotNull String corporateName, @NotNull String address,
-			@NotNull String zipCode, @NotNull String city, float latitude, float longitude, @NotNull String description,
-			@NotNull String siret, @NotNull String mobilePhone, @NotNull String landline, @NotNull boolean acceptCash,
+	public Restaurants(Integer restaurantId, @NotNull String name, @NotNull String frontPicture,
+			@NotNull String localisation, @NotNull String password, @NotNull String email,
+			@NotNull String corporateName, @NotNull String address, @NotNull String zipCode, @NotNull String city,
+			Float latitude, Float longitude, @NotNull String description, @NotNull String siret,
+			@NotNull String mobilePhone, @NotNull String landline, @NotNull boolean acceptCash,
 			@NotNull boolean acceptCheck, @NotNull boolean acceptRestaurantTicket, String website,
 			@NotNull String facebookPageUrl, @NotNull boolean tabletRent, @NotNull boolean printerRent,
 			@NotNull boolean scannerRent, @NotNull boolean kitchenTabletRent, @NotNull String marketingFlyer,
 			@NotNull String marketingWrapper, @NotNull String marketingRollUp, @NotNull String marketingShowCase,
 			String token, @NotNull String refreshToken, Date tokenExpiringDatetime, @NotNull String contact,
-			int mangopayUserId, int mangopayWalletId, int mangopayBankId, @NotNull int mangopayUserId_dev,
-			@NotNull int mangopayWalletId_dev, @NotNull int mangopayBankId_dev, @NotNull boolean isActive,
-			@NotNull int maxOrdersAtATime) {
+			Integer mangopayUserId, Integer mangopayWalletId, Integer mangopayBankId,
+			@NotNull Integer mangopayUserId_dev, @NotNull Integer mangopayWalletId_dev,
+			@NotNull Integer mangopayBankId_dev, @NotNull boolean isActive, @NotNull Integer maxOrdersAtATime) {
 		super();
+		this.restaurantId = restaurantId;
 		this.name = name;
 		this.frontPicture = frontPicture;
 		this.localisation = localisation;
@@ -242,19 +244,19 @@ public class Restaurants {
 		this.city = city;
 	}
 
-	public float getLatitude() {
+	public Float getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(Float latitude) {
 		this.latitude = latitude;
 	}
 
-	public float getLongitude() {
+	public Float getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
 
@@ -426,51 +428,51 @@ public class Restaurants {
 		this.contact = contact;
 	}
 
-	public int getMangopayUserId() {
+	public Integer getMangopayUserId() {
 		return mangopayUserId;
 	}
 
-	public void setMangopayUserId(int mangopayUserId) {
+	public void setMangopayUserId(Integer mangopayUserId) {
 		this.mangopayUserId = mangopayUserId;
 	}
 
-	public int getMangopayWalletId() {
+	public Integer getMangopayWalletId() {
 		return mangopayWalletId;
 	}
 
-	public void setMangopayWalletId(int mangopayWalletId) {
+	public void setMangopayWalletId(Integer mangopayWalletId) {
 		this.mangopayWalletId = mangopayWalletId;
 	}
 
-	public int getMangopayBankId() {
+	public Integer getMangopayBankId() {
 		return mangopayBankId;
 	}
 
-	public void setMangopayBankId(int mangopayBankId) {
+	public void setMangopayBankId(Integer mangopayBankId) {
 		this.mangopayBankId = mangopayBankId;
 	}
 
-	public int getMangopayUserId_dev() {
+	public Integer getMangopayUserId_dev() {
 		return mangopayUserId_dev;
 	}
 
-	public void setMangopayUserId_dev(int mangopayUserId_dev) {
+	public void setMangopayUserId_dev(Integer mangopayUserId_dev) {
 		this.mangopayUserId_dev = mangopayUserId_dev;
 	}
 
-	public int getMangopayWalletId_dev() {
+	public Integer getMangopayWalletId_dev() {
 		return mangopayWalletId_dev;
 	}
 
-	public void setMangopayWalletId_dev(int mangopayWalletId_dev) {
+	public void setMangopayWalletId_dev(Integer mangopayWalletId_dev) {
 		this.mangopayWalletId_dev = mangopayWalletId_dev;
 	}
 
-	public int getMangopayBankId_dev() {
+	public Integer getMangopayBankId_dev() {
 		return mangopayBankId_dev;
 	}
 
-	public void setMangopayBankId_dev(int mangopayBankId_dev) {
+	public void setMangopayBankId_dev(Integer mangopayBankId_dev) {
 		this.mangopayBankId_dev = mangopayBankId_dev;
 	}
 
@@ -482,12 +484,15 @@ public class Restaurants {
 		this.isActive = isActive;
 	}
 
-	public int getMaxOrdersAtATime() {
+	public Integer getMaxOrdersAtATime() {
 		return maxOrdersAtATime;
 	}
 
-	public void setMaxOrdersAtATime(int maxOrdersAtATime) {
+	public void setMaxOrdersAtATime(Integer maxOrdersAtATime) {
 		this.maxOrdersAtATime = maxOrdersAtATime;
 	}
-
+	
+	
+	
+	
 }

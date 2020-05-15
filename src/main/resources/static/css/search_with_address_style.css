@@ -6,8 +6,18 @@ body {
 }
 
 /* -------------------------------------------Additional menu selection------------------------------------------- */
+.date {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+
+}
+#dateAndTime {
+  padding-left: 12%;
+}
 .sort_speciality h4 {
-  margin-top: 150px;
+  margin-top: 120px;
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Andika', sans-serif;
@@ -294,6 +304,12 @@ body {
   background: -webkit-linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
   background: linear-gradient(to right top, #1c1d1d, #4a4b4b, #1c1d1d);
   border-color: #000;
+}
+
+.closeRestaurants {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* -----------------------------------Media------------------------------------- */
