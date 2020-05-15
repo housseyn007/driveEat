@@ -1,14 +1,18 @@
 package com.driveeat.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.driveeat.entity.NearRestaurants;
 import com.driveeat.entity.RestaurantSpecialities;
@@ -33,7 +37,7 @@ public class SearchAddressController {
 
 
 	@PostMapping("/recherche-restaurants")
-	public String showAddress(Model model, Double lat, Double lng) {
+	public String showAddress(Model model, Double lat, Double lng, @RequestParam(required = false) String dateChoosed)  {
 		
 		Float lat_2 = (float) (lat + 0.2000);
 		Float lat_1 = (float) (lat - 0.2000);
@@ -82,9 +86,11 @@ public class SearchAddressController {
 				return r1.getDistance().compareTo(r2.getDistance());
 			}
 		});
-	
 
-
+        
+        model.addAttribute("lat", lat);
+        model.addAttribute("lng", lng);
+        model.addAttribute("dateChoosed", dateChoosed);
 		model.addAttribute("nearRestaurantsList", nearRestaurantsList);
 		model.addAttribute("specialities", specialitiesRepository.findAll());
 		return "searchWithAddress";
