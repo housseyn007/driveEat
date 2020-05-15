@@ -14,7 +14,6 @@ import com.driveeat.entity.MenuPartProducts;
 import com.driveeat.entity.MenuParts;
 import com.driveeat.entity.Menus;
 import com.driveeat.entity.PartProduct;
-import com.driveeat.entity.Products;
 import com.driveeat.repository.MenuPartItemsRepository;
 import com.driveeat.repository.MenuPartsRepository;
 import com.driveeat.repository.MenusRepository;
