@@ -17,8 +17,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name = "TimetablesDefinitions")
 public class TimetablesDefinitions {
@@ -45,9 +43,11 @@ public class TimetablesDefinitions {
 	@Column(columnDefinition = "tinyint default 0")
 	@NotNull
 	private boolean disabled;
+
 	public TimetablesDefinitions() {
 		super();
 	}
+
 	public TimetablesDefinitions(@NotNull Week day, @NotNull Date startTime, @NotNull Date endTime,
 			@NotNull String title, @NotNull Restaurants restaurants, @NotNull boolean disabled) {
 		super();
@@ -58,49 +58,61 @@ public class TimetablesDefinitions {
 		this.restaurants = restaurants;
 		this.disabled = disabled;
 	}
+
 	public Integer getTimetablesDefinitionId() {
 		return timetablesDefinitionId;
 	}
+
 	public void setTimetablesDefinitionId(Integer timetablesDefinitionId) {
 		this.timetablesDefinitionId = timetablesDefinitionId;
 	}
+
 	public Week getDay() {
 		return day;
 	}
+
 	public void setDay(Week day) {
 		this.day = day;
 	}
+
 	public Date getStartTime() {
 		return startTime;
 	}
+
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
+
 	public Date getEndTime() {
 		return endTime;
 	}
+
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public Restaurants getRestaurants() {
 		return restaurants;
 	}
+
 	public void setRestaurants(Restaurants restaurants) {
 		this.restaurants = restaurants;
 	}
+
 	public boolean isDisabled() {
 		return disabled;
 	}
+
 	public void setDisabled(boolean disabled) {
 		this.disabled = disabled;
 	}
-	
-	
 
 }

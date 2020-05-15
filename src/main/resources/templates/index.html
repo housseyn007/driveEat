@@ -9,7 +9,6 @@
 	<title>DriveEat</title>
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />  
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	
@@ -61,12 +60,33 @@
         </form>
       <div class="logo_app">
         <div class="apple_google">
-          <a href="#" class="apple_logo"><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
-          <a href="#" class="google_logo"><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
+          <a href="#" class="apple_logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.driveat.driveatapp&gl=FR" class="google_logo " target=”_blank” ><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
         </div>
       </div>
 
     </div>
+
+  <!-- ============================================================== -->
+  <!-- Modal Video -->
+  <!-- ============================================================== -->
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="btn-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span ><i class="far fa-times-circle"></i></span>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  </div>
   </section>
 
   <!-- ============================================================== -->
@@ -90,15 +110,15 @@
               <div data-aos="flip-right" data-aos-duration="3000"> <img class="steps" src="/images/logo/locationLogo.png" alt="logo d'adresse"> </div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Je trouve mon restaurant</h4>
-                <p class="steps_p">Sélectionner le restaurant et choisissez votre menu </p>
+                <p class="steps_p">Sélectionnez le restaurant et choisissez votre menu </p>
               </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-3">
               <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="/images/logo/payeLogo.png" alt="logo pour reglement"> </div>
               <div data-aos="zoom-in">
-                <h4 class="steps_h4">Je régle ma commande</h4>
-                <p class="steps_p">Le payement s'éffectue via l'application ou sur place </p>
+                <h4 class="steps_h4">Je règle ma commande</h4>
+                <p class="steps_p">Le paiement s'éffectue via l'application ou sur place </p>
               </div>
             </div>
 
@@ -114,7 +134,7 @@
               <div data-aos="flip-left" data-aos-duration="3000"> <img class="steps" src="/images/logo/retraitLogo4.png" alt="logo de retrait de commande"></div>
               <div data-aos="zoom-in">
                 <h4 class="steps_h4">Je retire ma commande</h4>
-                <p class="steps_p">Récupérer votre commande à la borne Drive Eat "coupe-file !"</p>
+                <p class="steps_p">Récupérez votre commande à la borne Drive Eat "Evitez la file d'attente"</p>
               </div>
             </div>
 
@@ -181,8 +201,8 @@
       <div class="benefit_p">
         <div data-aos="zoom-in-up" data-aos-duration="2000">
           <h1>Nos avantages clients</h1>
-          <p><span> &#10004; </span> Eviter la file d'attente et le stress aux heures de pointe</p>
-          <p><span> &#10004; </span> Accéder à une Offre diversifiée de restaurants</p>
+          <p><span> &#10004; </span> Evitez la file d'attente et le stress aux heures de pointe</p>
+          <p><span> &#10004; </span> Accédez à une Offre diversifiée de restaurants</p>
           <p><span> &#10004; </span> Ne perdez plus votre temps : choisissez l'heure de retrait</p>
           <p><span> &#10004; </span> Commandez n'importe où dans les meilleures conditions</p>
         </div>
@@ -204,12 +224,12 @@
         </div>
       </div>
       <div class="div_text">
-        <p>+ de 40 partenaires nous font confiance, tentez l’expérience en téléchargent notre application </p>
+        <p>+ de 40 partenaires nous font confiance, tentez l’expérience en téléchargeant notre application </p>
 
 
         <div class="apple-google">
-          <a href="#" class="apple-logo"><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
-          <a href="#" class="google-logo"><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
+          <a href="#" class="apple-logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.driveat.driveatapp&gl=FR" target=”_blank” class="google-logo"><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
         </div>
 
 
@@ -233,9 +253,27 @@
       });
     });
     
-    // Effets JS AOS  
-    AOS.init({    });
+    // Effets JS AOS
+	AOS.init({    });
+	
+
+	// Modal Video
+	$(window).on('load', function () {
+		var delayMs = 500; // delay in milliseconds
+		setTimeout(function () {
+			$('#myModal').modal('show');
+		}, delayMs);
+		$('#myModal').on('shown.bs.modal', function (e) {
+			// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+			$("#video").attr('src', "https://www.youtube.com/embed/tuMPur2ouyM?mute=1&autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+		})
+		$('#myModal').on('hide.bs.modal', function (e) {
+			// a poor man's stop video
+			$("#video").attr('src', "https://www.youtube.com/embed/tuMPur2ouyM");
+		})
+	});
   </script>
+ 
 
 <!-- Add the this google map apis to webpage -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;key=AIzaSyCsYx16SDyTE36nfM_rGomWGR42EL88vS0&amp;libraries=places"></script>

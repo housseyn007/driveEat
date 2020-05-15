@@ -11,4 +11,10 @@ public class LoginController {
 
 		return "login_page";
 	}
+
+	@GetMapping("/déconnexion")
+	public String getLogoutPage() {
+
+		return "login_page";
+	}
 }

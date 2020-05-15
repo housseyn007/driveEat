@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.driveeat.entity.NearRestaurants;
 import com.driveeat.entity.RestaurantSpecialities;
-import com.driveeat.entity.Specialities;
 import com.driveeat.repository.RestaurantSpecialitiesRepository;
 import com.driveeat.repository.SpecialitiesRepository;
 import com.driveeat.service.DistanceBetween2Points;
@@ -75,7 +74,6 @@ public class SearchAddressController {
 				return r1.getDistance().compareTo(r2.getDistance());
 			}
 		});
-
 
 		model.addAttribute("nearRestaurantsList", nearRestaurantsList);
 		model.addAttribute("specialities", specialitiesRepository.findAll());

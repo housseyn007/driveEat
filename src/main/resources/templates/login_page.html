@@ -9,7 +9,6 @@
   <title>DriveEat Connexion</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
   <link rel="stylesheet" th:href="@{/css/login_page_style.css}" />
@@ -33,25 +32,35 @@
     <div class="container">
       <div class="card login-card">
         <div class="row no-gutters">
+
           <div class="col-md-5">
             <img src="/images/background/login_background.jpg"  alt="login image" class="login-card-img">
           </div>
           <div class="col-md-7">
+
             <div class="card-body">
+              <div class="success_message">  
+               <span th:utext="${message}"></span> 
+              </div>
               <div class="brand-wrapper">
                 <img src="/images/logo/logoDriveEat.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">Se connecter à DriveEat</p>
-              <form action="#!">
+              <form th:action="@{/connexion}" method="POST">
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Adresse e-mail">
+                    <input type="email" name="username" id="email" class="form-control" placeholder="Adresse e-mail">
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="***********">
                   </div>
-                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Connexion">
+
+                  <div class="error_mail" th:if="${param.error}">
+					        <p>Votre Email ou Password n'est pas valide</p>
+                  </div>
+                  
+                  <button class="btn btn-block login-btn mb-4" type="submit">Connexion</button>
                 </form>
                 <a href="#!" class="forgot-password-link">Mot de passe oublié ?</a>
                 <p class="login-card-footer-text">Vous n’avez pas de compte? <a href="/inscription" class="text-reset">Inscrivez-vous</a></p>

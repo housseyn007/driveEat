@@ -34,6 +34,7 @@
 .h1-container p {
   font-size: 1.2em;
   margin-top: 40px;
+  text-align: justify;
 }
 
 .card-header{
@@ -62,6 +63,7 @@
   font-family: 'Roboto', sans-serif;
   color: #3f4040;
   font-size: 1em;
+  text-align: justify;
 }
 
 .panel-body .title {
