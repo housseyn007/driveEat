@@ -286,7 +286,7 @@
 			</div>
 
 			<div class="uk-modal-body" uk-overflow-auto>
-				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}">
+				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}" >
 					
 					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory()} == true">
 						<dl class="uk-description-list">
@@ -300,7 +300,7 @@
 							
 							<li class="product_list">
 								<label>
-									<input class="uk-radio" type="checkbox">
+									<input class="uk-radio" type="checkbox" name="obligatoire" th:onclick="|allowed(${partProduct.getMenuParts().getItemsAllowed()})|" >
 									<span class="product" th:text="${product.getName()}">Pizza mexicaine</span>
 								</label>
 								
@@ -400,7 +400,23 @@
 	function reduce_quantity() {
 		i--;
 		var quantity = document.getElementById('quantity').innerHTML = i;
-	}
+  }
+  
+
+var maxAllowed;
+   $(".uk-modal-dialog").ready(function () {
+   $("input[name='obligatoire']").change(function () {
+      var cnt = $("input[name='obligatoire']:checked").length;
+      if (cnt > maxAllowed) 
+      {
+         $(this).prop("checked", "");
+         alert('Select maximum ' + maxAllowed + ' Levels!');
+     }
+  });
+});
+function allowed(max){
+  maxAllowed = max;
+}
   </script>
 
 </body>
