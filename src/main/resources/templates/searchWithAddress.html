@@ -254,6 +254,32 @@
 			});
 
 
+
+	$(".nav_item").click(function () {
+
+		if ($(this).hasClass("nSelect")) {
+			let speacilityClicked = document.getElementsByClassName("nav_item");
+			for (let index = 0; index < speacilityClicked.length; index++) {
+				speacilityClicked[index].classList.remove("select");
+				speacilityClicked[index].classList.add("nSelect");
+
+			}
+			$(".allRestaurants").css("display", "none");
+			$(this).children().attr("data-toggle", "tab");
+			$(this).removeClass("nSelect").addClass("select");
+
+
+		} else if ($(this).hasClass("select")) {
+			$($(this).children().attr('href')).removeClass("active")
+			$(this).children().removeClass("active");
+			$(this).removeClass("select").addClass("nSelect");
+			$(this).children().attr("data-toggle", "none");
+			$(".allRestaurants").css("display", "flex");
+
+		}
+	});
+
+
 	</script>
 <script th:inline="javascript">
 	/*<![CDATA[*/
@@ -330,7 +356,7 @@
 					&& minutesOfDay(nearResLIst[i].timeAndDate[j].endTime) > minutesOfDay(dateNow)) {
 					for (let index = 0; index < openRestaurantTime.length; index++) {
 						openRestaurantTime[index].innerHTML = "Ouvert";
-
+                
 					}
 
 				} else {
@@ -355,33 +381,6 @@
 		}
 
 	}
-
-
-	$(".nav_item").click(function () {
-
-		if ($(this).hasClass("nSelect")) {
-			let speacilityClicked = document.getElementsByClassName("nav_item");
-			for (let index = 0; index < speacilityClicked.length; index++) {
-				speacilityClicked[index].classList.remove("select");
-				speacilityClicked[index].classList.add("nSelect");
-
-			}
-			$(".allRestaurants").css("display", "none");
-			$(this).children().attr("data-toggle", "tab");
-			$(this).removeClass("nSelect").addClass("select");
-
-
-		} else if ($(this).hasClass("select")) {
-			$($(this).children().attr('href')).removeClass("active")
-			$(this).children().removeClass("active");
-			$(this).removeClass("select").addClass("nSelect");
-			$(this).children().attr("data-toggle", "none");
-			$(".allRestaurants").css("display", "flex");
-
-		}
-	});
-
-
 
 	function minutesOfDay(m) {
 		let date = new Date(m);
