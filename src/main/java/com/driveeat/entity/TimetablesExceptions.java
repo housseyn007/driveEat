@@ -20,7 +20,7 @@ public class TimetablesExceptions {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer timetablesExceptionsId;
+	private Integer timetablesExceptionId;
 
 	@NotNull
 	private int restaurantId;
@@ -41,21 +41,22 @@ public class TimetablesExceptions {
 		super();
 	}
 
-	public TimetablesExceptions(@NotNull int restaurantId, @NotNull Date startTime, @NotNull Date endTime,
-			@NotNull boolean disabled) {
+	public TimetablesExceptions(Integer timetablesExceptionId, @NotNull int restaurantId, @NotNull Date startTime,
+			@NotNull Date endTime, @NotNull boolean disabled) {
 		super();
+		this.timetablesExceptionId = timetablesExceptionId;
 		this.restaurantId = restaurantId;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.disabled = disabled;
 	}
 
-	public Integer getTimetablesExceptionsId() {
-		return timetablesExceptionsId;
+	public Integer getTimetablesExceptionId() {
+		return timetablesExceptionId;
 	}
 
-	public void setTimetablesExceptionsId(Integer timetablesExceptionsId) {
-		this.timetablesExceptionsId = timetablesExceptionsId;
+	public void setTimetablesExceptionId(Integer timetablesExceptionId) {
+		this.timetablesExceptionId = timetablesExceptionId;
 	}
 
 	public int getRestaurantId() {
@@ -89,6 +90,10 @@ public class TimetablesExceptions {
 	public void setDisabled(boolean disabled) {
 		this.disabled = disabled;
 	}
+
+	
+
+	
 	
 	
 	
