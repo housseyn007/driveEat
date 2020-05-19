@@ -27,7 +27,7 @@ public class OrderStatusHistory {
 	@JoinColumn(name = "orderId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "OrderStatusHistory_ibfk_1"))
 	private Orders orders;
 
-	private String peviousStatus;
+	private String previousStatus;
 
 	private String newStatus;
 
@@ -42,7 +42,7 @@ public class OrderStatusHistory {
 
 	public OrderStatusHistory(Orders orders, String peviousStatus, String newStatus, Date datetime) {
 		this.orders = orders;
-		this.peviousStatus = peviousStatus;
+		this.previousStatus = peviousStatus;
 		this.newStatus = newStatus;
 		this.datetime = datetime;
 	}
@@ -65,11 +65,11 @@ public class OrderStatusHistory {
 	}
 
 	public String getPeviousStatus() {
-		return this.peviousStatus;
+		return this.previousStatus;
 	}
 
 	public void setPeviousStatus(String peviousStatus) {
-		this.peviousStatus = peviousStatus;
+		this.previousStatus = peviousStatus;
 	}
 
 	public String getNewStatus() {

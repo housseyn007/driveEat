@@ -18,7 +18,7 @@ public class TimetablesExceptions {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer timetablesExceptionsId;
+	private Integer timetablesExceptionId;
 
 	@NotNull
 	private int restaurantId;
@@ -49,11 +49,11 @@ public class TimetablesExceptions {
 	}
 
 	public Integer getTimetablesExceptionsId() {
-		return timetablesExceptionsId;
+		return timetablesExceptionId;
 	}
 
 	public void setTimetablesExceptionsId(Integer timetablesExceptionsId) {
-		this.timetablesExceptionsId = timetablesExceptionsId;
+		this.timetablesExceptionId = timetablesExceptionsId;
 	}
 
 	public int getRestaurantId() {
