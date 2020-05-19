@@ -33,9 +33,6 @@ public class RegistrationController {
   
 	public String addNew(Model model, RedirectAttributes redir, @Valid Users users, BindingResult result) {
 
-          System.out.println(users.getCreationDatetime());
-          System.out.println(users.getBirthday());
-          System.out.println(result.hasErrors());
 		
 		if (result.hasErrors()) {
 			model.addAttribute("hasErrors", true);
