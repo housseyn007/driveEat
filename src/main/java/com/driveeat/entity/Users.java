@@ -35,7 +35,7 @@ public class Users {
 
 	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date creationDatetime;
 	
 	@Email

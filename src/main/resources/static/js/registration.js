@@ -21,6 +21,4 @@ $('document').ready(function(){
 	
 });
 
-
-// document.getElementById("createDate").value = new Date();
 document.getElementById("pushToken").value = $( "input[name*='_csrf']" ).val();

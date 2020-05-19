@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -34,21 +32,9 @@ public class RegistrationController {
 	@PostMapping("/addUser")
   
 	public String addNew(Model model, RedirectAttributes redir, @Valid Users users, BindingResult result) {
-		for (Object object : result.getAllErrors()) {
-			if(object instanceof FieldError) {
-			FieldError fieldError = (FieldError) object;
 
-			System.out.println(fieldError.getCode());
-			}
-
-			if(object instanceof ObjectError) {
-			ObjectError objectError = (ObjectError) object;
-
-			System.out.println(objectError.getCode());
-			}
-		}
-			System.out.println(users.getPushToken());
           System.out.println(users.getCreationDatetime());
+          System.out.println(users.getBirthday());
           System.out.println(result.hasErrors());
 		
 		if (result.hasErrors()) {
