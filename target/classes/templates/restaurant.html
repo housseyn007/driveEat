@@ -286,13 +286,14 @@
 			</div>
 
 			<div class="uk-modal-body" uk-overflow-auto>
-				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}" >
+				<ul  th:each="partProduct : ${listMenuPartProduct.getPartProduct()}" th:class=" ${partProduct.getMenuParts().isMandatory()} ? 'uk-list uk-list-striped ob' : 'uk-list uk-list-striped' ">
 					
 					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory()} == true">
-						<dl class="uk-description-list">
-							<h3 th:text="${partProduct.getMenuParts().getName()}">3 Pizzas junior au Choix</h3>
+						<dl class="uk-description-list">  
+              <h3 th:text="${partProduct.getMenuParts().getName()}">3 Pizzas junior au Choix</h3>
 							<p class="uk-article-meta" th:text="|Obligatoire - ${partProduct.getMenuParts().getItemsAllowed()} à choisir|">Obligatoire </p>
-						</dl>
+              <input type="hidden" class="allowed" th:value="${partProduct.getMenuParts().getItemsAllowed()}">
+            </dl>
 					</li>
 					<li class="submenu-list" th:if="${partProduct.getMenuParts().isMandatory() == true}">
 						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}" >
@@ -300,7 +301,7 @@
 							
 							<li class="product_list">
 								<label>
-									<input class="uk-radio" type="checkbox" name="obligatoire" th:onclick="|allowed(${partProduct.getMenuParts().getItemsAllowed()})|" >
+									<input class="uk-radio" type="checkbox" name="obligatoire"  >
 									<span class="product" th:text="${product.getName()}">Pizza mexicaine</span>
 								</label>
 								
@@ -326,7 +327,7 @@
 									<input class="uk-checkbox" type="checkbox">
 									<span class="product" th:text="${product.getName()}">Tiramisu caramel</span>
 								</label>
-								<div class="price">
+								<div class="price" th:if = "${product.getPrice() > 0 }">
 									<div class="btn_price_content">
 										<button class="btn_minus" onclick="minus_quantity()"><i class="fas fa-minus"></i></button>
 											<span id="extra_quantity">0</span>
@@ -403,21 +404,58 @@
   }
   
 
-var maxAllowed;
-   $(".uk-modal-dialog").ready(function () {
-   $("input[name='obligatoire']").change(function () {
-      var cnt = $("input[name='obligatoire']:checked").length;
-      if (cnt > maxAllowed) 
-      {
-         $(this).prop("checked", "");
-         alert('Select maximum ' + maxAllowed + ' Levels!');
-     }
-  });
-});
-function allowed(max){
-  maxAllowed = max;
-}
   </script>
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+	var listMenuPartProduct = /*[[${ListMenuPartProduct}]]*/ 'default';
+  
+
+  console.log(listMenuPartProduct);
+
+    for (let index = 0; index < listMenuPartProduct.length; index++) {
+
+      document.getElementById("M" + listMenuPartProduct[index].menu.menuId).onchange = function () {
+
+
+        var productObligatory = $(this).find(".ob");
+
+        for (let index = 0; index < productObligatory.length; index++) {
+          console.log(productObligatory[index].getElementsByClassName("allowed")[0].value);
+          var allowed = productObligatory[index].getElementsByClassName("allowed")[0].value;
+          checkboxlimit(productObligatory[index].getElementsByTagName("input"), allowed);
+        }
+      }
+
+    }
+
+  function checkboxlimit(checkgroup, limit) {
+    var checkgroup = checkgroup
+    var limit = limit
+ 
+    for (var i = 0; i < checkgroup.length; i++) {
+      checkgroup[i].onclick = function () {
+        var checkedcount = 0
+        for (var i = 0; i < checkgroup.length; i++)
+          checkedcount += (checkgroup[i].checked) ? 1 : 0
+        if (checkedcount > limit) {
+          this.checked = false;
+          alert("vous avez le droit de cocher que : " + limit);
+        }
+      }
+    }
+  }
+
+ 
+
+ /*]]>*/
+
+
+
+
+</script>
+
+    
 
 </body>
 

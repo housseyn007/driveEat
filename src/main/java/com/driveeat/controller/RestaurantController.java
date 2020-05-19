@@ -41,7 +41,7 @@ public class RestaurantController {
 	public String getRestaurantPage(Model model, @RequestParam Integer id) {
 	
 	List<Menus> menus = new ArrayList<Menus>(); 
-	menus = menusRepository.findByRestaurants(restaurantsRepository.getOne(id));		
+	menus = menusRepository.findByRestaurants(restaurantsRepository.findById(id).get());		
 	List<MenuPartProducts> listMenuPartProduct = new ArrayList<MenuPartProducts>();
 	if(menus.size() > 0) {
 	for(Menus m : menus) {	
@@ -62,9 +62,10 @@ public class RestaurantController {
     listMenuPartProduct.add(menuPartProducts);
 	}	
 	}	
-	model.addAttribute("restaurant", restaurantsRepository.getOne(id));
-	model.addAttribute("timetablesDefinitions", timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.getOne(id)));
-	model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.getOne(id)));
+
+	model.addAttribute("restaurant", restaurantsRepository.findById(id).get());
+	model.addAttribute("timetablesDefinitions", timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
+	model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
 	model.addAttribute("categories", menusRepository.findByMenuCategories(id));
 	model.addAttribute("ListMenuPartProduct", listMenuPartProduct);
 		
