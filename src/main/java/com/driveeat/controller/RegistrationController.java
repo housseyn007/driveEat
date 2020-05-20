@@ -15,39 +15,36 @@ import com.driveeat.service.UsersService;
 
 @Controller
 public class RegistrationController {
-	
 
 	@Autowired
 	private UsersService usersService;
 
 	@GetMapping("/inscription")
-	
+
 	public String getRegistrationPage(Model model) {
-		
+
 		model.addAttribute("users", new Users());
 		return "registration_form";
 	}
-	
+
 	// Modified method to Add a new user User
-	@PostMapping("/addUser")
-  
+	@PostMapping("/addNew")
+
 	public String addNew(Model model, RedirectAttributes redir, @Valid Users users, BindingResult result) {
 
-		
 		if (result.hasErrors()) {
 			model.addAttribute("hasErrors", true);
 			model.addAttribute("users", users);
 			return "registration_form";
-			
-		}else {
-		usersService.save(users);
 
-		redir.addFlashAttribute("message",
-				"L'inscription a été effectué avec succès! Vous pouvez maintenant vous connecter");
+		} else {
+			usersService.save(users);
 
-		return "redirect:/connexion";
+			redir.addFlashAttribute("message",
+					"L'inscription a été effectué avec succès! Vous pouvez maintenant vous connecter");
+
+			return "redirect:/connexion";
 		}
-		
-	
+
 	}
 }

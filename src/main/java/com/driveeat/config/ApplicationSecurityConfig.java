@@ -27,8 +27,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 		//URLs matching for access rights
 		.authorizeRequests()
 		.antMatchers("/connexion").permitAll()
-		.antMatchers("/inscription").permitAll()
-		.antMatchers("/addUser").permitAll()
+		.antMatchers("/inscription", "/addNew/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		
@@ -53,7 +52,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**", "/css/**", "/fonts/**", "/images/**", "/pdf/**", "/js/**");
+		web.ignoring().antMatchers("/DriveatBackend/public/img/specialities/**", "/resources/**", "/css/**", "/fonts/**", "/images/**", "/pdf/**", "/js/**");
 	}
 
 

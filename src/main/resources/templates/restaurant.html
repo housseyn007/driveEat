@@ -327,9 +327,9 @@
 								</label>
 								<div class="price">
 									<div class="btn_price_content">
-										<button class="btn_minus" onclick="minus_quantity()"><i class="fas fa-minus"></i></button>
-											<span id="extra_quantity">0</span>
-										<button class="btn_plus" onclick="plus_quantity()"><i class="fas fa-plus"></i></button>								
+										<button class="button btn_minus"><i class="fas fa-minus"></i></button>
+											<input class="extra_quantity" value="0">
+										<button class="button btn_plus"><i class="fas fa-plus"></i></button>								
 									</div>
 									<p  th:text="|+${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}€|">2.00€</p>
 								</div>
@@ -379,16 +379,27 @@
 	});
 
 	// Script quantity extras
-		var i = 0;
-	function plus_quantity() {
-		i++;
-		var extra_quantity = document.getElementById('extra_quantity').innerHTML = i;
-	}
-	function minus_quantity() {
-		i--;
-		var extra_quantity = document.getElementById('extra_quantity').innerHTML = i;
-	}
 
+$(".button").on("click", function() {
+
+  var $button = $(this);
+  var oldValue = $button.parent().find("input").val();
+  $button.blur();
+  if ($button.hasClass("btn_plus")) {
+	  var newVal = parseFloat(oldValue) + 1;
+	} else {
+   // Don't allow decrementing below zero
+    if (oldValue > 0) {
+      var newVal = parseFloat(oldValue) - 1;
+    } else {
+      newVal = 0;
+    }
+  }
+
+  $button.parent().find("input").val(newVal);
+
+});
+    
 	// Script quantity Menu
 	
 	var i = 0;
@@ -399,7 +410,8 @@
 	function reduce_quantity() {
 		i--;
 		var quantity = document.getElementById('quantity').innerHTML = i;
-	}
+  }
+  
   </script>
 
 </body>

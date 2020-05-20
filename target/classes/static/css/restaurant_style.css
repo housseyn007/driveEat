@@ -598,10 +598,13 @@ margin-left: 15px;
   margin-right: 20px;
 }
 
-.btn_price_content span {
+.btn_price_content input {
   margin: 0 5px 0 5px;
   font-size: 15px;
   color: #3f4040;
+  width: 30px;
+  border: none;
+  text-align: center;
 }
 
 .btn_plus, .btn_minus {
