@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------Menus Section------------------------------------------- */
+.table_section {
+	margin-top: 90px;
+	margin-bottom: 50px;
+}
+
+
+.table_section h2 {
+	text-align: center;
+	margin: 0px;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	font-family: 'Mansalva', cursive;
+	font-size: 50px;
+	background: #ad6f23;
+	background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.table {
+	text-align: center;
+}
+
+.table td,
+.table th {
+	padding: .50rem;
+	vertical-align: middle;
+	border-top: 1px solid #dee2e6;
+}
+
+.table-hover tbody tr:hover {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.pdf_logo {
+	width: 25px;
+}
+
+.fa-trash-alt {
+	font-size: 18px;
+	color: #bd0f0f;
+}
+
+/* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 550px) {
+	.table_section h2 {
+		padding-top: 10px;
+		padding-bottom: 30px;
+		font-size: 45px;
+	}
+
+	body {
+		font-size: 0.9rem!important;
+	}
+}
+
