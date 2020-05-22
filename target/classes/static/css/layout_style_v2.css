@@ -197,8 +197,12 @@
     padding: 0.25rem 15px;
 }
 
-.fa-sign-out-alt{
+.fa-address-card, .fa-inbox, .fa-gratipay, .fa-sign-out-alt{
   margin-right: 5px;
+}
+
+.connexion{
+  margin-right: 20px!important;
 }
 /* -----------------------------------Footer------------------------------------- */
 
