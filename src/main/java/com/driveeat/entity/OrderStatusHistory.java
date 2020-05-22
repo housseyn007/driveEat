@@ -35,21 +35,21 @@ public class OrderStatusHistory {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datetime;
 
-
 	public OrderStatusHistory() {
 	}
 
-
-	public OrderStatusHistory(Orders orders, String peviousStatus, String newStatus, Date datetime) {
+	public OrderStatusHistory(Integer orderStatusHistoryId, @NotNull Orders orders, String previousStatus,
+			String newStatus, @NotNull Date datetime) {
+		super();
+		this.orderStatusHistoryId = orderStatusHistoryId;
 		this.orders = orders;
-		this.previousStatus = peviousStatus;
+		this.previousStatus = previousStatus;
 		this.newStatus = newStatus;
 		this.datetime = datetime;
 	}
 
-
 	public Integer getOrderStatusHistoryId() {
-		return this.orderStatusHistoryId;
+		return orderStatusHistoryId;
 	}
 
 	public void setOrderStatusHistoryId(Integer orderStatusHistoryId) {
@@ -57,23 +57,23 @@ public class OrderStatusHistory {
 	}
 
 	public Orders getOrders() {
-		return this.orders;
+		return orders;
 	}
 
 	public void setOrders(Orders orders) {
 		this.orders = orders;
 	}
 
-	public String getPeviousStatus() {
-		return this.previousStatus;
+	public String getPreviousStatus() {
+		return previousStatus;
 	}
 
-	public void setPeviousStatus(String peviousStatus) {
-		this.previousStatus = peviousStatus;
+	public void setPreviousStatus(String previousStatus) {
+		this.previousStatus = previousStatus;
 	}
 
 	public String getNewStatus() {
-		return this.newStatus;
+		return newStatus;
 	}
 
 	public void setNewStatus(String newStatus) {
@@ -81,14 +81,11 @@ public class OrderStatusHistory {
 	}
 
 	public Date getDatetime() {
-		return this.datetime;
+		return datetime;
 	}
 
 	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
-
-
-
 
 }
