@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
-US#32_recap_commande_front
-Built-By: jason
+Built-By: housseyn007
 Build-Jdk: 11.0.7
 Implementation-Title: driveeat
 Implementation-Version: 0.0.1-SNAPSHOT
