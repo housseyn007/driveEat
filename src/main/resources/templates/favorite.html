@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DriveEat Favoris</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />  
+	
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/favorite_style.css}" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+
+  <section class="formule">
+    <div class="formule_section">
+      <h2>Mes Favoris</h2>
+    </div>
+    <div class="total_container">
+
+      <div class="">
+        <ul class="nav menu_tab">
+
+          <li class="nav_item">
+            <a class="btn-menu active show" data-toggle="tab" href="#dinner1" aria-selected="true">Restaurants</a>
+          </li>
+          <li class="nav_item">
+            <a class="btn-menu" data-toggle="tab" href="#dinner2" aria-selected="false">Menus</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+
+  <!-- ============================================================== -->
+  <!-- Restaurants favorites -->
+  <!-- ============================================================== -->
+
+        <div class="tab-pane fade active show" id="dinner1">
+          <div class="restaurant_card">
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1564851287875-fb73b71f0e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1562436261-3d97e9e237c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1567807371095-0093acabcaf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a class="href-card">
+                <div class="card-header-mask">
+                  <a class="">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+
+                <a class="uk-cover-container uk-height-medium" href="#">
+                  <img
+                    src="https://images.unsplash.com/photo-1562436261-3d97e9e237c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                    alt="image restaurant" uk-cover>
+                </a>
+
+                <div class="card-body">
+                  <a href="#">
+                    <div class="card-body-header">
+                      <h3>Nom du restaurant</h3>
+                      <p>Nom specialités</p>
+                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+  <!-- ============================================================== -->
+  <!-- Menus favorites -->
+  <!-- ============================================================== -->
+
+        <div class="tab-pane fade" id="dinner2">
+          <div class="menu_card">
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a class=" " href="#">
+              <div class="div_card">
+                <div class="div_img"></div>
+                <div class="div_body">
+                  <div class="title_price">
+                    <h3>Le Nom du menu</h3>
+                    <p>45€</p>
+                  </div>
+                  <div class="menu_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="trash-mask">
+                    <a class="trash">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+ 
+</body>
+
+</html>
