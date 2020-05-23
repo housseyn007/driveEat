@@ -190,9 +190,8 @@
 						</a>
 					</div>
 				</div>
-			   <div th:id = "|closeRestaurantsS${specialitie.specialityId}|" class="closeRestaurants"></div> 
+			    <div th:id = "|closeRestaurantsS${specialitie.specialityId}|" class="closeRestaurants"></div> 
 			</div>
-			 
     </div>
 	</section>
 
@@ -254,33 +253,6 @@
 				}
 			});
 
-				$(".nav_item").click(function () {
-
-		if ($(this).hasClass("nSelect")) {
-			let speacilityClicked = document.getElementsByClassName("nav_item");
-			for (let index = 0; index < speacilityClicked.length; index++) {
-				speacilityClicked[index].classList.remove("select");
-				speacilityClicked[index].classList.add("nSelect");
-
-			}
-			$(".allRestaurants").css("display", "none");
-			$(this).children().attr("data-toggle", "tab");
-			$(this).removeClass("nSelect").addClass("select");
-
-
-		} else if ($(this).hasClass("select")) {
-			$($(this).children().attr('href')).removeClass("active")
-			$(this).children().removeClass("active");
-			$(this).removeClass("select").addClass("nSelect");
-			$(this).children().attr("data-toggle", "none");
-			$(".allRestaurants").css("display", "flex");
-
-		}
-	});
-
-
-
-
 	$(".nav_item").click(function () {
 
 		if ($(this).hasClass("nSelect")) {
@@ -334,8 +306,10 @@
 
 
 	dateAndTime.onchange = function () {
+		let dateTime = document.getElementsByClassName(" gj-picker gj-picker-md datetimepicker gj-unselectable")[0];
 		var formatDateInitial = dateAndTime.value.split(" ").reverse();
 		let dateString = formatDateInitial[0].split("/").reverse().join("-") + ' ' + formatDateInitial[1];;
+
 
 
 		var form = document.createElement("form");
@@ -373,27 +347,27 @@
 		let card = document.getElementsByClassName('card:' + nearResLIst[i].restaurants.restaurantId);
 
 		for (let j = 0; j < nearResLIst[i].timeAndDate.length; j++) {
-			
 			if (nearResLIst[i].timeAndDate[j].day == toWeekFrench(dateNow)) {
-                   
+
 
 				if (minutesOfDay(nearResLIst[i].timeAndDate[j].startTime) < minutesOfDay(dateNow)
 					&& minutesOfDay(nearResLIst[i].timeAndDate[j].endTime) > minutesOfDay(dateNow)) {
 					for (let index = 0; index < openRestaurantTime.length; index++) {
 						openRestaurantTime[index].innerHTML = "Ouvert";
-                
+
 					}
 
-				} else {			
+				} else {
+
+
 					for (let index = 0; index < card.length; index++) {
 						openRestaurantTime[index].innerHTML = "Fermé";
 						let a = document.createElement("a");
 						a.setAttribute('class', "close");
 						a.setAttribute("href", "/restaurantSpecialites/restaurants?id=" + nearResLIst[i].restaurants.restaurantId)
-						card[index].appendChild(a)
-						if(document.getElementById('closeRestaurants' + card[index].parentNode.parentNode.getAttribute("id"))!=null)
+						card[index].appendChild(a);
 						document.getElementById('closeRestaurants' + card[index].parentNode.parentNode.getAttribute("id")).appendChild(card[index]);
-						
+
 
 					}
 
@@ -405,6 +379,10 @@
 		}
 
 	}
+
+
+
+
 
 	function minutesOfDay(m) {
 		let date = new Date(m);
