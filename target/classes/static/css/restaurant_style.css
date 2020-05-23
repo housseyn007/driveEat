@@ -598,10 +598,13 @@ margin-left: 15px;
   margin-right: 20px;
 }
 
-.btn_price_content span {
+.btn_price_content input {
   margin: 0 5px 0 5px;
   font-size: 15px;
   color: #3f4040;
+  width: 18px;
+  border: none;
+  text-align: center;
 }
 
 .btn_plus, .btn_minus {
@@ -729,7 +732,14 @@ input.uk-checkbox:checked, input.uk-radio:checked, input.uk-checkbox:checked:foc
   background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
   outline: none;
 }
+.quantityGlobal{
 
+    border: none;
+    text-align: center;
+    width: 98px;
+    margin: 20px 0;
+
+}
 /* -------------------------------------------Media Section------------------------------------------- */
 @media only screen and (max-width: 1330px) {
   .formule_section h2 {
