@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DriveEat Mes Commandes</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/order_summary_style.css}" />
+
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+
+	<section class="order_section">
+	
+		<h2>Votre Commande</h2>
+	
+		<!-- ============================================================== -->
+		<!-- Orders Table -->
+		<!-- ============================================================== -->
+	
+		<div class="container">
+	
+			<table class="table table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Menu</th>
+						<th class="text-center" scope="col">Quantité</th>
+						<th class="text-center" scope="col">Prix</th>
+						<th class="text-center" scope="col">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<thead class="table-active">
+						<tr>
+							<th colspan="4">produits inclus dans le menu</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>
+							<ul class="Menu_list">Le Double cheese :
+								<li>
+									Produit 1
+								</li>
+								<li>
+									Produit 2
+								</li>
+								<li>
+									Produit 3
+								</li>
+							</ul>
+						</td>
+						<td class="text-center">1</td>
+						<td class="text-center">45€</td>
+						<td class="text-right">45€</td>
+					</tr>
+	
+					<thead class="table-active">
+						<tr>
+							<th colspan="4">Supplements</th>
+						</tr>
+					</thead>
+	
+					<tr>
+						<td>Supplements 1</td>
+						<td class="text-center">1</td>
+						<td class="text-center">45€</td>
+						<td class="text-right">45€</td>
+					</tr>
+					<tr>
+						<td>Supplements 2</td>
+						<td class="text-center">1</td>
+						<td class="text-center">45€</td>
+						<td class="text-right">45€</td>
+					</tr>
+					<thead class="table-active">
+						<tr>
+							<th colspan="4">Extras</th>
+						</tr>
+					</thead>
+	
+					<tr>
+						<td>Extras 1</td>
+						<td class="text-center">1</td>
+						<td class="text-center">45€</td>
+						<td class="text-right">45€</td>
+					</tr>
+					<tr>
+						<td>Extras 2</td>
+						<td class="text-center">1</td>
+						<td class="text-center">45€</td>
+						<td class="text-right">45€</td>
+					</tr>
+	
+				</tbody>
+			</table>
+
+			<table class="table Total_table">
+			
+				<tbody>
+					<tr>
+						<th scope="row">Sous Total :</th>
+						<td class="text-right">25€</td>
+					</tr>
+			
+					<tr>
+						<th scope="row">Comission :</th>
+						<td class="text-right">2.50€</td>
+					</tr>
+			
+					<tr class="table-warning">
+						<th scope="row">Total :</th>
+						<td class="text-right">27€50</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="order_btn">
+				<button type="button" class="btn btn_Cancel">Annuler</button>
+				<button type="button" class="btn btn_validate">Valider</button>
+			</div>
+	
+		</div>
+
+
+	
+	</section>
+  
+
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------contain Section------------------------------------------- */
+
+.order_section {
+
+	margin-top: 90px;
+	margin-bottom: 50px;
+}
+
+
+.order_section h2 {
+	text-align: center;
+	margin: 0px;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	font-family: 'Mansalva', cursive;
+	font-size: 50px;
+	background: #ad6f23;
+	background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.container:nth-child(2) {
+	align-items: flex-end;
+}
+
+.table {
+	text-align: start;
+}
+
+.table-hover {
+	border-bottom: 2px solid #454d55;
+	margin-bottom: 0;
+}
+
+.table td,
+.table th {
+	padding: .50rem;
+	vertical-align: middle;
+	border-top: none;
+
+}
+
+.table-hover tbody tr:hover {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.Menu_list {
+	list-style: none;
+	margin: 0;
+}
+
+.Menu_list li {
+	margin-left: 20px;
+	padding: 5px;
+}
+
+.Total_table {
+	width: 30%;
+	border: 1px solid #dee2e6;
+	border-top: none;
+	border-bottom: 2px solid #454d55;
+}
+
+.text-right {
+	padding-right: 20px !important;
+}
+
+.btn_validate,
+.btn_Cancel {
+	padding: 10px 20px 10px;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 20px;
+	margin-bottom: 24px;
+	cursor: pointer;
+	outline: none;
+}
+
+.btn_validate {
+	color: #fff;
+	background-color: #454d55;
+	border: 1px solid #343a40;
+}
+
+.btn_validate:hover {
+	background-color: transparent;
+	color: #343a40;
+}
+
+.btn_Cancel {
+	color: #fff;
+	background-color: #dc3545;
+	border: 1px solid #bd2130;
+	margin-right: 10px;
+}
+
+.btn_Cancel:hover {
+	background-color: transparent;
+	color: #bd2130;
+}
+
+/* -----------------------------------Media------------------------------------- */
+@media screen and (max-width: 550px) {
+	.table_section h2 {
+		padding-top: 0;
+		padding-bottom: 30px;
+		font-size: 45px;
+	}
+
+	body {
+		font-size: 0.8rem !important;
+	}
+
+	.Total_table {
+		width: 50%;
+	}
+
+	.btn_validate,
+	.btn_Cancel {
+		padding: 5px 15px 5px;
+		border-radius: 4px;
+		font-size: 15px;
+		font-weight: bold;
+		line-height: 22px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.Total_table {
+		width: 60%;
+	}
+
+}
+
