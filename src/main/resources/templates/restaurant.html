@@ -324,7 +324,7 @@
 						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}">
 							<li  class="product_list"> 
 								<label>
-									<input   th:class=" ${product.getPrice() > 0} ? 'uk-checkbox noSauce' : 'uk-checkbox sauce' "   type="checkbox" th:value ="${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}">
+									<input   th:class=" ${product.getPrice() > 0} ? 'uk-checkbox noSauce' : 'uk-checkbox sauce' " name="uk-checkbox"  type="checkbox" th:value ="${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}">
 									<span class="product" th:text="${product.getName()}">Tiramisu caramel</span>
 								</label>
 								<div class="price" th:if = "${product.getPrice() > 0 }">
@@ -552,8 +552,9 @@
   $(".buttonCart").on("click", function () {
     let theModel =   $(this).parent().parent().parent(); 
     let productObligatory = theModel.find(".obligatory");
+    let productOptional = theModel.find(".optional");
     let summaryOrder ='';
-    summaryOrder += '{"productOblicatory":[';
+    summaryOrder += '{"summaryOrder":[{"productOblicatory":[';
     for (let i = 0; i < productObligatory.length; i++) {
        let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML; 
        summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
@@ -585,9 +586,51 @@
         summaryOrder += ",";
        }
     }
-    summaryOrder +="]}";
+    summaryOrder +="]},";
+  
+
+   summaryOrder += '{"productOptional":[';
+    for (let i = 0; i < productOptional.length; i++) {
+       let menuPartName = productOptional[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML; 
+       summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
+       
+           summaryOrder += ',"products":[';
+       let productInput  = productOptional[i].getElementsByClassName("submenu-list");
+       for (let j = 0; j < productInput.length; j++) {
+         let productCheckbox = productInput[j].getElementsByClassName("noSauce");
+         let count =0;
+            for (let k = 0; k < productCheckbox.length; k++) {
+              
+              if(productCheckbox[k].checked){
+                let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+                summaryOrder += '"' + productName +'"';
+                count++;
+                console.log(productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked'));
+                console.log(count);
+                if(count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length){
+                  summaryOrder +=",";
+                }
+                
+                
+
+              }
+              
+            }
+            summaryOrder +="]}"
+         
+       }
+       if(i != productOptional.length-1){
+        summaryOrder += ",";
+       }
+    }
+    summaryOrder +="]}]}";
+    
+    
+   console.log(summaryOrder);
     let obj = JSON.parse(summaryOrder);
-   console.log(obj);
+    console.log(obj);
+
+
 
   });
 
