@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: housseyn007
+=======
+Built-By: abcham
+>>>>>>> 2e31515cb84f05c0d448ac310c02d6b6b745965b
 Build-Jdk: 11.0.7
 Implementation-Title: driveeat
 Implementation-Version: 0.0.1-SNAPSHOT
