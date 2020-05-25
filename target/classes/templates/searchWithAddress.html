@@ -365,8 +365,9 @@
 						a.setAttribute('class', "close");
 						a.setAttribute("href", "/restaurantSpecialites/restaurants?id=" + nearResLIst[i].restaurants.restaurantId)
 						card[index].appendChild(a);
+						if(document.getElementById('closeRestaurants' + card[index].parentNode.parentNode.getAttribute("id")) != null){
 						document.getElementById('closeRestaurants' + card[index].parentNode.parentNode.getAttribute("id")).appendChild(card[index]);
-
+						}
 
 					}
 

@@ -278,7 +278,7 @@
 	<div uk-modal th:each="listMenuPartProduct : ${ListMenuPartProduct}" th:id="|M${listMenuPartProduct.getMenu().getMenuId()}|">
 		<div class="uk-modal-dialog">
 
-			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<button class="uk-modal-close-default buttonClose" type="button" uk-close></button>
 
 			<div class="uk-modal-header">
 				<h2 class="uk-modal-title" th:text= "${listMenuPartProduct.getMenu().getName()}">Menu Trio</h2>
@@ -301,7 +301,7 @@
 							
 							<li class="product_list">
 								<label>
-									<input class="uk-radio" type="checkbox"  >
+									<input class="uk-radio" type="checkbox" >
 									<span class="product" th:text="${product.getName()}">Pizza mexicaine</span>
 								</label>
 								
@@ -356,8 +356,8 @@
 				</div>
 
 				<div class="panier_btn_div">
-					<button class="panier_btn uk-modal-close" type="button">Annuler</button>
-					<button class="panier_btn" type="button">Total <span class="totalPrice">0.00€</span></button>
+					<button class="panier_btn uk-modal-close buttonCancel" type="button">Annuler</button>
+					<button class="panier_btn buttonCart" type="button">Total <span class="totalPrice">0.00€</span></button>
 				</div>
 			
 			</div>
@@ -535,6 +535,61 @@
       }
     }
   }
+
+   //Script when you leave the model
+
+  $(".buttonCancel").on("click", function () {
+ $(this).parent().parent().parent().find("input").prop('checked', false); 
+
+
+  });
+  $(".buttonClose").on("click", function () {
+ $(this).parent().find("input").prop('checked', false); 
+  });
+
+   //Script when click on Cart for going to summary Order
+
+  $(".buttonCart").on("click", function () {
+    let theModel =   $(this).parent().parent().parent(); 
+    let productObligatory = theModel.find(".obligatory");
+    let summaryOrder ='';
+    summaryOrder += '{"productOblicatory":[';
+    for (let i = 0; i < productObligatory.length; i++) {
+       let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML; 
+       summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
+       
+           summaryOrder += ',"products":[';
+       let productInput  = productObligatory[i].getElementsByClassName("submenu-list");
+       for (let j = 0; j < productInput.length; j++) {
+         let productCheckbox = productInput[j].getElementsByClassName("uk-radio");
+         let count =0;
+            for (let k = 0; k < productCheckbox.length; k++) {
+              
+              if(productCheckbox[k].checked){
+                let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+                summaryOrder += '"' + productName +'"';
+                count++;
+                if(count != productInput[j].querySelectorAll('input[class="uk-radio"]:checked').length){
+                  summaryOrder +=",";
+                }
+                
+                
+
+              }
+              
+            }
+            summaryOrder +="]}"
+         
+       }
+       if(i != productObligatory.length-1){
+        summaryOrder += ",";
+       }
+    }
+    summaryOrder +="]}";
+    let obj = JSON.parse(summaryOrder);
+   console.log(obj);
+
+  });
 
 
 
