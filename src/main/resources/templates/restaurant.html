@@ -119,7 +119,6 @@
   <!-- ============================================================== -->
   <!-- Modal information -->
   <!-- ============================================================== -->
-
   <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modalTop" role="document">
       <div class="modal-content">
@@ -447,7 +446,6 @@
     $(this).change();
   });
 
-
   var listMenuPartProduct = /*[[${ListMenuPartProduct}]]*/ 'default';
 
 
@@ -553,10 +551,13 @@
     let theModel =   $(this).parent().parent().parent(); 
     let productObligatory = theModel.find(".obligatory");
     let productOptional = theModel.find(".optional");
+      let productOptionalSauce = theModel.find(".sauce");
+    console.log(productOptionalSauce.length);
     let summaryOrder ='';
     summaryOrder += '{"summaryOrder":[{"productOblicatory":[';
     for (let i = 0; i < productObligatory.length; i++) {
-       let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML; 
+       let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML;
+      
        summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
        
            summaryOrder += ',"products":[';
@@ -587,7 +588,6 @@
        }
     }
     summaryOrder +="]},";
-  
 
    summaryOrder += '{"productOptional":[';
     for (let i = 0; i < productOptional.length; i++) {
@@ -597,16 +597,30 @@
            summaryOrder += ',"products":[';
        let productInput  = productOptional[i].getElementsByClassName("submenu-list");
        for (let j = 0; j < productInput.length; j++) {
+         let productCheckboxSauce = productInput[j].getElementsByClassName("sauce");
          let productCheckbox = productInput[j].getElementsByClassName("noSauce");
          let count =0;
-            for (let k = 0; k < productCheckbox.length; k++) {
+         if(productCheckboxSauce.length >0 ){
+            for (let k = 0; k < productCheckboxSauce.length; k++) {
               
+              if(productCheckboxSauce[k].checked){
+                let productName = productCheckboxSauce[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+                summaryOrder += '"' + productName +'"';
+                count++;
+                if(count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length){
+                  summaryOrder +=",";
+                }
+                
+                
+
+              }
+              
+            }}
+               for (let k = 0; k < productCheckbox.length; k++) {             
               if(productCheckbox[k].checked){
                 let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
                 summaryOrder += '"' + productName +'"';
                 count++;
-                console.log(productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked'));
-                console.log(count);
                 if(count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length){
                   summaryOrder +=",";
                 }
@@ -616,6 +630,9 @@
               }
               
             }
+
+
+
             summaryOrder +="]}"
          
        }
