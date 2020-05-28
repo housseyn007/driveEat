@@ -3,6 +3,7 @@ package com.driveeat.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,10 +24,10 @@ public class OrderStatusHistory {
 
 	@ManyToOne
 	@NotNull
-	@JoinColumn(name = "orderId", insertable = false, updatable = false)
+	@JoinColumn(name = "orderId", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "OrderStatusHistory_ibfk_1"))
 	private Orders orders;
 
-	private String peviousStatus;
+	private String previousStatus;
 
 	private String newStatus;
 
@@ -39,54 +40,68 @@ public class OrderStatusHistory {
 	}
 
 
-	public OrderStatusHistory(Orders orders, String peviousStatus, String newStatus, Date datetime) {
+	public OrderStatusHistory(Integer orderStatusHistoryId, @NotNull Orders orders, String previousStatus,
+			String newStatus, @NotNull Date datetime) {
+		super();
+		this.orderStatusHistoryId = orderStatusHistoryId;
 		this.orders = orders;
-		this.peviousStatus = peviousStatus;
+		this.previousStatus = previousStatus;
 		this.newStatus = newStatus;
 		this.datetime = datetime;
 	}
 
 
 	public Integer getOrderStatusHistoryId() {
-		return this.orderStatusHistoryId;
+		return orderStatusHistoryId;
 	}
+
 
 	public void setOrderStatusHistoryId(Integer orderStatusHistoryId) {
 		this.orderStatusHistoryId = orderStatusHistoryId;
 	}
 
+
 	public Orders getOrders() {
-		return this.orders;
+		return orders;
 	}
+
 
 	public void setOrders(Orders orders) {
 		this.orders = orders;
 	}
 
-	public String getPeviousStatus() {
-		return this.peviousStatus;
+
+	public String getPreviousStatus() {
+		return previousStatus;
 	}
 
-	public void setPeviousStatus(String peviousStatus) {
-		this.peviousStatus = peviousStatus;
+
+	public void setPreviousStatus(String previousStatus) {
+		this.previousStatus = previousStatus;
 	}
+
 
 	public String getNewStatus() {
-		return this.newStatus;
+		return newStatus;
 	}
+
 
 	public void setNewStatus(String newStatus) {
 		this.newStatus = newStatus;
 	}
 
+
 	public Date getDatetime() {
-		return this.datetime;
+		return datetime;
 	}
+
 
 	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
 
+
+	
 
 
 

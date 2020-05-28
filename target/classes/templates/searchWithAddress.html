@@ -3,51 +3,63 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DriveEat Restaurants</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DriveEat Restaurants</title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
 
-  <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}"/>
-  <link rel="stylesheet" th:href="@{/css/search_with_address_style.css}"/>
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/search_with_address_style.css}" />
 
-  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
 
-  <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+	 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/messages/messages.fr-fr.js" type="text/javascript"></script>
+	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment-with-locales.min.js"></script>
 
 </head>
 
 <body>
 
-  <header th:replace="/fragment/layout_v2.html :: top"></header>
-  <!-- ============================================================== -->
-  <!-- Sort by Specialities-->
-  <!-- ============================================================== -->
-  <section class="sort_speciality">
+	<header th:replace="/fragment/layout_v2.html :: top"></header>
+	
+	
+	<!-- ============================================================== -->
+	<!-- Sort by Specialities-->
+	<!-- ============================================================== -->
 
-    <h4>Filtrer par specialités</h4>
+	<section class="sort_speciality">
+		
+		<h4>Filtrer par specialités ou créneaux</h4>
+		<div class="date">
+           <input id="dateAndTime" width="200" /> 
+		</div>
     <div class="container">
 
-      <div uk-slider="autoplay: true; autoplay-interval:3000;">
-        <div class="uk-position-relative">
+      <div uk-slider="autoplay: true; autoplay-interval:5000;">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
           <div class="uk-slider-container uk-light">
             <ul class="uk-slider-items nav menu_tab">
 
-              <li class="nav_item" th:each="specialitie, iter: ${specialities}">
-                <a th:class="${iter.index == 0 ? 'btn-menu active show' : ' btn-menu '}" data-toggle="tab" th:href="|#M${specialitie.specialityId}|" th:style="${iter.index == 0 ? 'aria-selected:true' : 'aria-selected:false'}">
+              <li class="nav_item nSelect" th:each="specialitie, iter: ${specialities}">
+                <a class="btn-menu" data-toggle="tab" th:href="|#S${specialitie.specialityId}|" aria-selected=false>
                   <div class="card_btn">
                     <div class="card_btn_img">
                       <div class="uk-cover-container img_container">
@@ -74,8 +86,9 @@
 
     </div>
   </section>
+
   <!-- ============================================================== -->
-  <!-- Restaurant Search-->
+  <!-- Show all Restaurant -->
   <!-- ============================================================== -->
 
   <section class="restaurant_search">
@@ -83,92 +96,319 @@
     <h1 class="restaurant_list">Restaurants à proximité</h1>
     <div class="tab-content">
 
-      <div th:each="specialitie, iter: ${specialities}" th:class="${iter.index == 0 ? 'tab-pane fade active show' : 'tab-pane fade '}" th:id="|M${specialitie.specialityId}|">
-
-        <div class="card" th:each="nearRestaurant, iter: ${nearRestaurantsList}" th:if="${nearRestaurant.getRestaurantSpecialities().specialities.getSpecialityId() == specialitie.specialityId}">
+      <div  id="Global">
+		<!--open restaurants  -->
+		<div class="allRestaurants">
+        <div th:class="|card card:${nearRestaurant.restaurants.restaurantId}|" th:each="nearRestaurant, iter: ${nearRestaurantsList}">
+			
           <a class="href-card">
             <div class="card-header-mask">
-              <a class="card-header-heart" type="button" data-toggle="modal" data-target="#addFavorisModal">
-                <i class="heart fa fa-heart-o" th:id="${nearRestaurant.restaurantSpecialities.restaurants.name}"></i>
+              <a class="card-header-heart" data-toggle="modal" data-target="#addFavorisModal">
+                <i class="heart fa fa-heart-o" th:id="${nearRestaurant.restaurants.name}"></i>
               </a>
             </div>
-            <a class="card_search" th:href="|/restaurantSpecialites/restaurants?id=${nearRestaurant.restaurantSpecialities.restaurants.restaurantId}|">
-              <img th:src="@{'/DriveatBackend/public/' + ${nearRestaurant.restaurantSpecialities.restaurants.frontPicture}}" alt="image restaurant">
+            <a class="card_search" th:href="|/restaurantSpecialites/restaurants?id=${nearRestaurant.restaurants.restaurantId}|">
+              <img th:src="@{'/DriveatBackend/public/' + ${nearRestaurant.restaurants.frontPicture}}" alt="image restaurant">
             </a>
             <div class="card-body">
               <a href="#">
                 <div class="card-body-header">
-                  <div class="card-body-header-category">Ouvert</div>
-                  <h3 th:text="${nearRestaurant.restaurantSpecialities.restaurants.name}">Nom du restaurant</h3>
-                  <p th:text="${nearRestaurant.restaurantSpecialities.specialities.specialityName}">Nom specialités</p>
+                  <div  th:class="|card-body-header-category H${nearRestaurant.restaurants.restaurantId}|">Ouvert</div>
+                  <h3 th:text="${nearRestaurant.restaurants.name}">Nom du restaurant</h3>
+                  <p>
+                    <span th:each="speciality : ${nearRestaurant.specialities}" th:text="|${speciality.specialityName} / |">Nom specialités</span>
+                  </p>
                   <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
                 </div>
                 <div class="card-body-footer">
                   <div class="comments">
-                    <i class="fas fa-map-marked-alt" ></i>
+                    <i class="fas fa-map-marked-alt"></i>
                     <p th:text="|${#numbers.formatDecimal(nearRestaurant.distance, 1, 'DEFAULT', 1, 'DEFAULT')} km|">100Km</p>
-                  </div>
-                  <!--  <a class="comments" href="#">
-        		          <i class="fas fa-comment-dots"></i>39 Avis
-        		        </a>
-        		      -->
-                </div>
-              </a>
-            </div>
-          </a>
-        </div>
+				  </div>
+					<!--  <a class="comments" href="#">
+        		    <i class="fas fa-comment-dots"></i>39 Avis
+        		    </a> -->
+				</div>
+			  </a>
+			</div>
+		  </a>
+		</div>
+		  <!-- close restaurants-->
+       <div id = "closeRestaurantsGlobal"   class="closeRestaurants"></div>
+		</div>
+     	
+	</div>
+    <!-- ============================================================== -->
+	<!-- Open restaurants  with speciality-->
+	<!-- ============================================================== -->
+			<div th:each="specialitie, iter: ${specialities}"
+				class="tab-pane fade" th:id="|S${specialitie.specialityId}|">
+				<div th:each="nearRestaurant, iter: ${nearRestaurantsList}" >
+					<div th:class="|card card:${nearRestaurant.restaurants.restaurantId}|"
+						th:each="speciality : ${nearRestaurant.specialities}"
+						th:if="${(speciality.getSpecialityId() == specialitie.specialityId)}" >
+						<a class="href-card">
+							<div class="card-header-mask">
+								<a class="card-header-heart" data-toggle="modal"
+									data-target="#addFavorisModal"> <i
+									class="heart fa fa-heart-o"
+									th:id="${nearRestaurant.restaurants.name}"></i>
+								</a>
+							</div> <a class="card_search"
+							th:href="|/restaurantSpecialites/restaurants?id=${nearRestaurant.restaurants.restaurantId}|">
+								<img
+								th:src="@{'/DriveatBackend/public/' + ${nearRestaurant.restaurants.frontPicture}}"
+								alt="image restaurant">
+						</a>
+							<div class="card-body">
+								<a href="#">
+									<div class="card-body-header">
+										<div th:class="|card-body-header-category H${nearRestaurant.restaurants.restaurantId}|"
+											>Ouvert</div>
+										<h3 th:text="${nearRestaurant.restaurants.name}">Nom du	restaurant</h3>
+										<p>
+											<span th:each="speciality : ${nearRestaurant.specialities}"
+												th:text="|${speciality.specialityName} / |">Nom specialités</span>
+										</p>
+										<span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
+									</div>
+									<div class="card-body-footer">
+										<div class="comments">
+											<i class="fas fa-map-marked-alt"></i>
+											<p
+												th:text="|${#numbers.formatDecimal(nearRestaurant.distance, 1, 'DEFAULT', 1, 'DEFAULT')} km|">100Km</p>
+										</div>
+										<!-- <a class="comments" href="#"> -->
+										<!-- <i class="fas fa-comment-dots"></i>39 Avis -->
+										<!-- </a> -->
 
+									</div>
+								</a>
+							</div>
+							
+						</a>
+					</div>
+				</div>
+			    <div th:id = "|closeRestaurantsS${specialitie.specialityId}|" class="closeRestaurants"></div> 
+			</div>
     </div>
+	</section>
 
-  </section>
+	<!-- ============================================================== -->
+	<!-- Modal favoris -->
+	<!-- ============================================================== -->
 
-  <!-- ============================================================== -->
-  <!-- Modal favoris -->
-  <!-- ============================================================== -->
+	<div class="modal fade" id="addFavorisModal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title text-center" id="add">Restaurant ajouté aux favoris !</h3>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title text-center" id="add">Restaurant ajouté aux favoris !</h3>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="modal fade" id="removeFavorisModal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title text-center" id="delete">Restaurant supprimé des favoris !</h3>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <div class="modal fade" id="removeFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title text-center" id="delete">Restaurant supprimé des favoris !</h3>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+	<footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
-  <script>
-    $(".heart.fa").click(function() {
+	<script>
+		$(".heart.fa").click(
+			function () {
 
-      if ($(this).hasClass("fa-heart-o")) {
-        $('#add').text($(this).attr('id') + ' a été ajouté aux favoris !');
-        $(this).removeClass("fa-heart-o").addClass("fa-heart");
-        $(".card-header-heart").attr('data-target', '#addFavorisModal');
-      } else if ($(this).hasClass("fa-heart")) {
-        $('#delete').text($(this).attr('id') + ' a été supprimé des favoris !');
-        $(this).removeClass("fa-heart").addClass("fa-heart-o");
-        $(".card-header-heart").attr('data-target', '#removeFavorisModal');
+				if ($(this).hasClass("fa-heart-o")) {
+					$('#add').text(
+						$(this).attr('id')
+						+ ' a été ajouté aux favoris !');
+					$(this).removeClass("fa-heart-o").addClass("fa-heart");
+					$(".card-header-heart").attr('data-target',
+						'#addFavorisModal');
+				} else if ($(this).hasClass("fa-heart")) {
+					$('#delete').text(
+						$(this).attr('id')
+						+ ' a été supprimé des favoris !');
+					$(this).removeClass("fa-heart").addClass("fa-heart-o");
+					$(".card-header-heart").attr('data-target',
+						'#removeFavorisModal');
 
-      }
-    });
-  </script>
+				}
+			});
+
+	$(".nav_item").click(function () {
+
+		if ($(this).hasClass("nSelect")) {
+			let speacilityClicked = document.getElementsByClassName("nav_item");
+			for (let index = 0; index < speacilityClicked.length; index++) {
+				speacilityClicked[index].classList.remove("select");
+				speacilityClicked[index].classList.add("nSelect");
+
+			}
+			$(".allRestaurants").css("display", "none");
+			$(this).children().attr("data-toggle", "tab");
+			$(this).removeClass("nSelect").addClass("select");
+
+
+		} else if ($(this).hasClass("select")) {
+			$($(this).children().attr('href')).removeClass("active")
+			$(this).children().removeClass("active");
+			$(this).removeClass("select").addClass("nSelect");
+			$(this).children().attr("data-toggle", "none");
+			$(".allRestaurants").css("display", "flex");
+
+		}
+	});
+
+
+	</script>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	let dateNow;
+	$('#dateAndTime').datetimepicker({
+		locale: 'fr-fr',
+		format: 'HH:MM dd/mm/yyyy',
+		footer: true, modal: true
+	});
+
+	var newDate = /*[[${dateChoosed}]]*/ 'default';
+
+	let dateAndTime = document.getElementById("dateAndTime");
+
+	if (newDate == null) {
+		dateNow = new Date();
+		let month = dateNow.getMonth() + 1;
+		dateAndTime.value = dateNow.getHours() + ':' + (dateNow.getMinutes() < 10 ? '0' : '') + dateNow.getMinutes() + ' ' + (dateNow.getDate() < 10 ? '0' : '') + dateNow.getDate() + '/' + (month < 10 ? '0' : '') + month + '/' + dateNow.getFullYear();
+	} else {
+		dateNow = new Date(newDate);
+		let newMonth = dateNow.getMonth() + 1;
+		dateAndTime.value = dateNow.getHours() + ':' + (dateNow.getMinutes() < 10 ? '0' : '') + dateNow.getMinutes() + ' ' + (dateNow.getDate() < 10 ? '0' : '') + dateNow.getDate() + '/' + (newMonth < 10 ? '0' : '') + newMonth + '/' + dateNow.getFullYear();
+	}
+
+
+
+	dateAndTime.onchange = function () {
+		let dateTime = document.getElementsByClassName(" gj-picker gj-picker-md datetimepicker gj-unselectable")[0];
+		var formatDateInitial = dateAndTime.value.split(" ").reverse();
+		let dateString = formatDateInitial[0].split("/").reverse().join("-") + ' ' + formatDateInitial[1];;
+
+
+
+		var form = document.createElement("form");
+		var dateChoosed = document.createElement("input");
+		var latitude = document.createElement("input");
+		var longitude = document.createElement("input");
+
+		var lat = /*[[${lat}]]*/ 'default';
+		var lng = /*[[${lng}]]*/ 'default';
+
+
+		form.method = "POST";
+		form.action = "/recherche-restaurants";
+
+		dateChoosed.value = dateString;
+		dateChoosed.name = "dateChoosed";
+		form.appendChild(dateChoosed);
+
+		latitude.value = lat;
+		latitude.name = "lat";
+		form.appendChild(latitude);
+		longitude.value = lng;
+		longitude.name = "lng";
+		form.appendChild(longitude);
+
+		document.body.appendChild(form);
+		form.submit();
+
+	}
+	var nearResLIst = /*[[${nearRestaurantsList}]]*/ 'default';
+	for (let i = 0; i < nearResLIst.length; i++) {
+
+
+		let openRestaurantTime = document.getElementsByClassName('H' + nearResLIst[i].restaurants.restaurantId);
+		let card = document.getElementsByClassName('card:' + nearResLIst[i].restaurants.restaurantId);
+
+		for (let j = 0; j < nearResLIst[i].timeAndDate.length; j++) {
+			if (nearResLIst[i].timeAndDate[j].day == toWeekFrench(dateNow)) {
+
+
+				if (minutesOfDay(nearResLIst[i].timeAndDate[j].startTime) < minutesOfDay(dateNow)
+					&& minutesOfDay(nearResLIst[i].timeAndDate[j].endTime) > minutesOfDay(dateNow)) {
+					for (let index = 0; index < openRestaurantTime.length; index++) {
+						openRestaurantTime[index].innerHTML = "Ouvert";
+
+					}
+
+				} else {
+
+
+					for (let index = 0; index < card.length; index++) {
+						openRestaurantTime[index].innerHTML = "Fermé";
+						let a = document.createElement("a");
+						a.setAttribute('class', "close");
+						a.setAttribute("href", "/restaurantSpecialites/restaurants?id=" + nearResLIst[i].restaurants.restaurantId)
+						card[index].appendChild(a);
+						document.getElementById('closeRestaurants' + card[index].parentNode.parentNode.getAttribute("id")).appendChild(card[index]);
+
+
+					}
+
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+	function minutesOfDay(m) {
+		let date = new Date(m);
+		return (date.getMinutes() + (date.getHours() * 60));
+	}
+
+
+	function toWeekFrench(day) {
+
+		var d = new Date(day);
+		var weekday = new Array(7);
+		weekday[0] = "dimanche";
+		weekday[1] = "lundi";
+		weekday[2] = "mardi";
+		weekday[3] = "mercredi";
+		weekday[4] = "jeudi";
+		weekday[5] = "vendredi";
+		weekday[6] = "samedi";
+
+		var n = weekday[d.getDay()];
+		return n;
+	}
+   /*]]>*/
+
+
+
+</script>
 </body>
 
 </html>

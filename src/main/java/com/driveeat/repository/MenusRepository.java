@@ -10,7 +10,7 @@ import com.driveeat.entity.Menus;
 import com.driveeat.entity.Restaurants;
 
 public interface MenusRepository extends JpaRepository<Menus, Integer> {
-	public List<Menus> findByRestaurants(Restaurants id);
+	public List<Menus> findByRestaurants(Restaurants r);
 	@Query("SELECT m.menuCategories FROM Menus m WHERE m.restaurants.restaurantId = ?1 GROUP BY m.menuCategories ")
 	public List<MenuCategories> findByMenuCategories(Integer id);
 }

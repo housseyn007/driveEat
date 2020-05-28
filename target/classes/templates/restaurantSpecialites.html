@@ -39,7 +39,7 @@
     <div class="card" th:each="restaurantSpecialites : ${RestaurantSpecialites}">
       <a class="href-card">
         <div class="card-header-mask">
-          <a class="card-header-heart" type="button" data-toggle="modal" data-target="#addFavorisModal">
+          <a class="card-header-heart" data-toggle="modal" data-target="#addFavorisModal">
             <i class="heart fa fa-heart-o" th:id="${restaurantSpecialites.restaurants.name}"></i>
           </a>
         </div>
