@@ -15,27 +15,27 @@ public class UserPrincipal implements UserDetails {
 		this.users = users;
 	}
 
-	public Users getUsers() {
-		return users;
-	}
-
-	public void setUsers(Users users) {
-		this.users = users;
-	}
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return Collections.singleton(new SimpleGrantedAuthority("USER"));
 	}
 
+	public String getFirstName() {
+		return this.users.getFirstName();
+	}
+
+	public String getLastName() {
+		return this.users.getLastName();
+	}
+	
 	@Override
 	public String getPassword() {
-		return users.getPassword();
+		return this.users.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return users.getEmail();
+		return this.users.getEmail();
 	}
 
 	@Override
@@ -55,6 +55,7 @@ public class UserPrincipal implements UserDetails {
 
 	@Override
 	public boolean isEnabled() {
+//		return this.users.getActive() == 1;
 		return true;
 	}
 

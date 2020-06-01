@@ -3,50 +3,52 @@ package com.driveeat.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@EnableWebSecurity
+import com.driveeat.service.UserPrincipalDetailsService;
+
+
 @Configuration
+@EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	
+	@Autowired
+	UserPrincipalDetailsService userPrincipalDetailsService; 
+    
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) {
+        auth.authenticationProvider(authenticationProvider());
+    }
+    
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		
 		//URLs matching for access rights
 		.authorizeRequests()
-		.antMatchers("/connexion").permitAll()
-		.antMatchers("/inscription", "/addNew/**").permitAll()
-		.anyRequest().authenticated()
+		.antMatchers("/**").permitAll()
+		.antMatchers("/utilisateurs/**").authenticated()
 		.and()
 		
 		//From login
 		
 		.formLogin()
-		.loginPage("/connexion").permitAll()
-		.failureUrl("/connexion?error=true")
+		.loginProcessingUrl("/connexion")
+		.loginPage("/login").permitAll()
+		.usernameParameter("email")
 		.defaultSuccessUrl("/")
 		.and()
 		
 		//From logout
-		.logout().invalidateHttpSession(true)
-		.clearAuthentication(true)
-		.logoutRequestMatcher(new AntPathRequestMatcher("/déconnexion"))
-		.logoutSuccessUrl("/connexion")
-		.and()
-		.exceptionHandling()
-		.accessDeniedPage("/accès-refusé");
+		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/déconnexion")).logoutSuccessUrl("/connexion");
 	}
 
 	
@@ -55,29 +57,17 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/DriveatBackend/public/img/specialities/**", "/resources/**", "/css/**", "/fonts/**", "/images/**", "/pdf/**", "/js/**");
 	}
 
+    @Bean
+    DaoAuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        daoAuthenticationProvider.setUserDetailsService(this.userPrincipalDetailsService);
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
-	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-	
+        return daoAuthenticationProvider;
+    }
 
-	@Autowired
-	private UserDetailsService userDetailsService;
-
-	@Bean
-	public AuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-
-		provider.setUserDetailsService(userDetailsService);
-
-		provider.setPasswordEncoder(bCryptPasswordEncoder());
-
-		return provider;
-	}
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }

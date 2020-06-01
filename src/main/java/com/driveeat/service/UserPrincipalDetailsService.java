@@ -11,20 +11,17 @@ import com.driveeat.entity.Users;
 import com.driveeat.repository.UsersRepository;
 
 @Service
-public class MyUsersDetailsService implements UserDetailsService {
+public class UserPrincipalDetailsService implements UserDetailsService {
 
 	@Autowired
 	UsersRepository usersRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Users users = usersRepository.findByEmail(email);
+		Users users = this.usersRepository.findByEmailIgnoreCase(email);
+		UserPrincipal userPrincipal = new UserPrincipal(users);
 
-		if (users == null) {
-			throw new UsernameNotFoundException("L'adresse e-mail n'est pas valide!");
-		}
-
-		return new UserPrincipal(users);
+		return userPrincipal;
 	}
 
 }

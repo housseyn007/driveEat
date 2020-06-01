@@ -18,7 +18,7 @@
           <div class="col-12">
             <nav class="navbar navbar-expand-md navbar-light">
 
-              <a class="navbar-brand" href="/"><img src="/images/logo/logoDriveEat.png" alt=""></a>
+              <a class="navbar-brand" th:href="@{/}"><img src="/images/logo/logoDriveEat.png" alt=""></a>
 
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,38 +26,30 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto py-4 py-md-0">
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" href="/">Accueil</a></li>
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" href="/sponsors">Partenaires</a></li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{/}">Accueil</a></li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{/sponsors}">Partenaires</a></li>
 
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Service 1</a>
-                      <a class="dropdown-item" href="#">Service 2</a>
-                      <a class="dropdown-item" href="#">Service 3</a>
-                      <a class="dropdown-item" href="/faqs">FAQ</a>
+                      <a class="dropdown-item" th:href="@{#}">Service 1</a>
+                      <a class="dropdown-item" th:href="@{#}">Service 2</a>
+                      <a class="dropdown-item" th:href="@{#}">Service 3</a>
+                      <a class="dropdown-item" th:href="@{/faqs}">FAQ</a>
                     </div>
                   </li>
 
-<<<<<<< HEAD
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" href="/contact">Contact</a></li> 
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                    <div class="dropdown-menu" sec:authorize="isAuthenticated()">
-                      <a class="dropdown-item" href="#" ><i class="fas fa-address-card"></i>Mon Profil</a>
-                      <a class="dropdown-item" href="#" ><i class="fas fa-inbox"></i>Mes Commandes</a>
-                      <a class="dropdown-item" href="/favoris"><i class="fab fa-gratipay"></i>Mes Favoris</a>                      
-                      <a class="dropdown-item" href="/déconnexion" ><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
-=======
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{/contact}">Contact</a></li> 
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                    <div class="dropdown-menu" sec:authorize="isAuthenticated()">
-                      <a class="dropdown-item" th:href="@{/mon-profil}" ><i class="fas fa-address-card"></i>Mon Profil</a>
-                      <a class="dropdown-item" th:href="@{/Mes-Commandes}" ><i class="fas fa-inbox"></i>Mes Commandes</a>
-                      <a class="dropdown-item" th:href="@{/favoris}" ><i class="fab fa-gratipay"></i>Mes Favoris</a>                      
-                      <a class="dropdown-item" th:href="@{/déconnexion}" ><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
->>>>>>> c60430f16c8dce8e3174dbac85e67fa834e5cce1
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{~/connexion}" sec:authorize="isAnonymous()">Connexion</a></li> 
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false"><span sec:authentication="principal.firstName">Connexion</span></a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" th:href="@{/utilisateurs/mon-profil}" ><i class="fas fa-address-card"></i>Mon Profil</a>
+                      <a class="dropdown-item" th:href="@{/utilisateurs/Mes-Commandes}" ><i class="fas fa-inbox"></i>Mes Commandes</a>
+                      <a class="dropdown-item" th:href="@{/utilisateurs/favoris}" ><i class="fab fa-gratipay"></i>Mes Favoris</a>  
+                      <form th:action="@{/déconnexion}" method="POST">
+                      <button class="dropdown-item" type="submit"><i class="fas fa-sign-out-alt"></i>Déconnexion</button>
+                      </form>                    
                     </div>
                   </li>
                   
@@ -81,7 +73,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="rowFooter_1 col-xl-3 col-xs-12">
-              <a class="photoLogoFooter"><img src="/images/logo/logoDriveEatFooter.png" alt="logoDriveEatFooter"></a>
+              <a class="photoLogoFooter"  th:href="@{/}">
+             	 <img src="/images/logo/logoDriveEatFooter.png" alt="logoDriveEatFooter">
+              </a>
               <div class="photoAppFooter ">
                 <a><img src="/images/logo/apple_app.png"> </a> 
                 <a href="https://play.google.com/store/apps/details?id=com.driveat.driveatapp&gl=FR" target=”_blank” ><img src="/images/logo/google_app.png"> </a>
@@ -96,8 +90,9 @@
                     de la Région Centre, spécialisée dans la restauration</h7>
                   <div class="social-icons">
                     <a href="https://www.facebook.com/Driv-Eat-100976321402446/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                    <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a> <a href="https://www.instagram.com/drive.eat/"><i id="social-in" class="fa fa fa-instagram fa-3x social"></i></a> <a
-                      href="contact"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a> 
+                    <a href="https://www.instagram.com/drive.eat/"><i id="social-in" class="fa fa fa-instagram fa-3x social"></i></a> 
+                    <a th:href="@{/contact}"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
                   </div>
                 </div>
               </div>
@@ -105,11 +100,11 @@
                 <div class="block-footer">
                   <h5>Navigation</h5>
                   <ul>
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/sponsors">Partenaires</a></li>
+                    <li><a th:href="@{/}">Accueil</a></li>
+                    <li><a th:href="@{/sponsors}">Partenaires</a></li>
 <!--                     <li><a href="contact.html">A propos</a></li> -->
 <!--                     <li><a href="contact.html">Services</a></li> -->
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a th:href="@{/contact}">Contact</a></li>
                   </ul>
                 </div>
               </div>
@@ -130,9 +125,9 @@
                 <div class="block-footer">
                   <h5>Mentions legales</h5>
                   <ul>
-                    <li><a href="/mentions-legales">Mentions legales</a></li>
-                    <li><a href="/protection-données">Protection des données</a></li>
-                    <li><a href="/cgu-mangopay">CGU Mangopay</a></li>
+                    <li><a th:href="@{/mentions-legales}">Mentions legales</a></li>
+                    <li><a th:href="@{/protection-données}">Protection des données</a></li>
+                    <li><a th:href="@{/cgu-mangopay}">CGU Mangopay</a></li>
                   </ul>
                 </div>
               </div>
@@ -141,7 +136,7 @@
           </div>
         </div>
         <div class="footer-copyright text-center py-1 ">
-          © 2020 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/"> driveeat</a>
+          © 2020 Copyright: <a> driveeat</a>
         </div>
       </div>
 
