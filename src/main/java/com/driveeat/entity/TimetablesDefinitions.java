@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TimetablesDefinitions")
-public class TimetablesDefinitions {
+public class TimetablesDefinitions{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

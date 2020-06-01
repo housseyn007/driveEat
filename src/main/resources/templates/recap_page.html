@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DriveEat Recapitulatif</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+  <link rel="stylesheet" th:href="@{/css/recap_page_style.css}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <header th:replace="/fragment/layout_v2.html :: top"></header>
+
+   <div class="contain">
+
+    <div class="infos">
+      <h1>Commande Validée ! </h1><span>Merc 22 avril 2020</span>
+      <div class="border-cadrant">
+        <div class="cadrant">
+          <p>Numéro de commande <br>1541 <br>à présenter lors de votre retrait</p>
+        </div>
+      </div>
+      <div class="restaurant">
+        <p class="text-order-valid"><b>« Prénom »,</b>  <br> Merci d’avoir passé votre commande auprès de votre restaurant « Nom du restaurant » </p>
+        <img src="images/background/restaurant_recapitulatif.jpg" alt="">
+      </div>
+
+    </div>
+    
+      <div class="order">
+
+      <div class="table-order">
+        <hr>
+        <h2>Votre commande:</h2>
+        <table>
+
+          <tr>
+            <td>« quantité » x « nom menu »</td>
+            <td>«prix»</td>
+          </tr>
+          <tr>
+            <td>+ «produits inclus dans le menu»</td>
+          </tr>
+          <tr>
+            <td>+ «supplément»</td>
+            <td>«prix»</td>
+          </tr>
+          <tr>
+            <td>+ «extra»</td>
+            <td>«prix»</td>
+          </tr>
+          <tr>
+            <td>« quantité » x « nom produit »</td>
+          </tr>
+          <tr>
+            <td>sous total</td>
+            <td>«sous total»</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>«total»</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+    
+
+    <div class="pick-up">
+      <hr>
+      <h3>Votre commande est à retirer à la borne Drive-Eat de votre Restaurant le :</h3>
+      <div class="border-cadrant">
+        <div class="cadrant">
+          <p>«date» et «heure de retrait»</p>
+        </div>
+      </div>
+      <div class="adress">
+        <b>Au <br> «numéro et rue» <br> «code postal et ville»</b>
+      </div>
+      <div class="text-borne">
+        <p class="secondary-text">Présentez-vous à la borne Drive Eat avec de votre numéro de <br> commande. Merci de venir récupérer votre commande à l’heure de <br>retrait indiquée pour préserver la qualité de votre commande.</p>
+      </div>
+      
+    </div>
+
+
+
+    </div>
+  
+
+  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+
+</body>
+
+</html>

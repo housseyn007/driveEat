@@ -732,7 +732,14 @@ input.uk-checkbox:checked, input.uk-radio:checked, input.uk-checkbox:checked:foc
   background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
   outline: none;
 }
+.quantityGlobal{
 
+    border: none;
+    text-align: center;
+    width: 98px;
+    margin: 20px 0;
+
+}
 /* -------------------------------------------Media Section------------------------------------------- */
 @media only screen and (max-width: 1330px) {
   .formule_section h2 {

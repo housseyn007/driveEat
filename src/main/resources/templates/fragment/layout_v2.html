@@ -39,6 +39,7 @@
                     </div>
                   </li>
 
+<<<<<<< HEAD
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" href="/contact">Contact</a></li> 
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
@@ -47,6 +48,16 @@
                       <a class="dropdown-item" href="#" ><i class="fas fa-inbox"></i>Mes Commandes</a>
                       <a class="dropdown-item" href="/favoris"><i class="fab fa-gratipay"></i>Mes Favoris</a>                      
                       <a class="dropdown-item" href="/déconnexion" ><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
+=======
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{/contact}">Contact</a></li> 
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                    <div class="dropdown-menu" sec:authorize="isAuthenticated()">
+                      <a class="dropdown-item" th:href="@{/mon-profil}" ><i class="fas fa-address-card"></i>Mon Profil</a>
+                      <a class="dropdown-item" th:href="@{/Mes-Commandes}" ><i class="fas fa-inbox"></i>Mes Commandes</a>
+                      <a class="dropdown-item" th:href="@{/favoris}" ><i class="fab fa-gratipay"></i>Mes Favoris</a>                      
+                      <a class="dropdown-item" th:href="@{/déconnexion}" ><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
+>>>>>>> c60430f16c8dce8e3174dbac85e67fa834e5cce1
                     </div>
                   </li>
                   

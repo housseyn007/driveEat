@@ -9,6 +9,7 @@
   <title>DriveEat Restaurants</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
 
   <link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
@@ -55,7 +56,7 @@
 
       </div>
 
-      <p  th:text="${#strings.toLowerCase(restaurant.description)}  ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p th:text="${#strings.toLowerCase(restaurant.description)}  ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="info_payement_btn">
         <button class="info_btn" type="button" data-toggle="modal" data-target="#infoModal">Informations</button>
         <button class="payement_btn" type="button" data-toggle="modal" data-target="#payementModal">Modes de paiements</button>
@@ -285,13 +286,14 @@
 			</div>
 
 			<div class="uk-modal-body" uk-overflow-auto>
-				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}">
+				<ul  th:each="partProduct : ${listMenuPartProduct.getPartProduct()}" th:class=" ${partProduct.getMenuParts().isMandatory()} ? 'uk-list uk-list-striped obligatory' : 'uk-list uk-list-striped' ">
 					
 					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory()} == true">
-						<dl class="uk-description-list">
-							<h3 th:text="${partProduct.getMenuParts().getName()}">3 Pizzas junior au Choix</h3>
+						<dl class="uk-description-list">  
+              <h3 th:text="${partProduct.getMenuParts().getName()}">3 Pizzas junior au Choix</h3>
 							<p class="uk-article-meta" th:text="|Obligatoire - ${partProduct.getMenuParts().getItemsAllowed()} à choisir|">Obligatoire </p>
-						</dl>
+              <input type="hidden" class="allowed" th:value="${partProduct.getMenuParts().getItemsAllowed()}">
+            </dl>
 					</li>
 					<li class="submenu-list" th:if="${partProduct.getMenuParts().isMandatory() == true}">
 						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}" >
@@ -299,7 +301,7 @@
 							
 							<li class="product_list">
 								<label>
-									<input class="uk-radio" type="checkbox">
+									<input class="uk-radio" type="checkbox"  >
 									<span class="product" th:text="${product.getName()}">Pizza mexicaine</span>
 								</label>
 								
@@ -310,7 +312,7 @@
 					
 				</ul>
 
-				<ul class="uk-list uk-list-striped" th:each="partProduct : ${listMenuPartProduct.getPartProduct()}">
+				<ul th:each="partProduct : ${listMenuPartProduct.getPartProduct()}" th:class=" ${partProduct.getMenuParts().isMandatory()} ? 'uk-list uk-list-striped ' : 'uk-list uk-list-striped optional' ">
 					
 					
 					<li class="submenu" th:if="${partProduct.getMenuParts().isMandatory() == false}">
@@ -320,16 +322,16 @@
 					</li>
 					<li class="submenu-list" th:if="${partProduct.getMenuParts().isMandatory() == false}">
 						<ul class="product_list_ul" th:each="product : ${partProduct.getProduct()}">
-							<li class="product_list">
+							<li  class="product_list"> 
 								<label>
-									<input class="uk-checkbox" type="checkbox">
+									<input   th:class=" ${product.getPrice() > 0} ? 'uk-checkbox noSauce' : 'uk-checkbox sauce' "   type="checkbox" th:value ="${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}">
 									<span class="product" th:text="${product.getName()}">Tiramisu caramel</span>
 								</label>
-								<div class="price">
+								<div class="price" th:if = "${product.getPrice() > 0 }">
 									<div class="btn_price_content">
-										<button class="button btn_minus"><i class="fas fa-minus"></i></button>
-											<input class="extra_quantity" value="0">
-										<button class="button btn_plus"><i class="fas fa-plus"></i></button>								
+                    <button class="button btn_minus"><i class="fas fa-minus"></i></button>
+                    <input class="extra_quantity" value="0" onchange >
+                    <button class="button btn_plus"><i class="fas fa-plus"></i></button>
 									</div>
 									<p  th:text="|+${#numbers.formatDecimal(product.getPrice(), 1, 'DEFAULT', 2, 'DEFAULT')}€|">2.00€</p>
 								</div>
@@ -345,15 +347,17 @@
 				<div class="content">
 					<h3>Quantité</h3>
 					<div class="btn_content">
-						<button class="btn_reduce" onclick="reduce_quantity()"><i class="fas fa-minus"></i></button>
-							<span id="quantity">0</span>
-						<button class="btn_add" onclick="add_quantity()"><i class="fas fa-plus"></i></button>						
+						<button class="buttonGlobal btn_minus btn_reduce" ><i class="fas fa-minus"></i></button>
+						
+             <input class="quantityGlobal" value="1">
+
+            <button class="buttonGlobal btn_plus btn_add" ><i class="fas fa-plus"></i></button>						
 					</div>			
 				</div>
 
 				<div class="panier_btn_div">
 					<button class="panier_btn uk-modal-close" type="button">Annuler</button>
-					<button class="panier_btn" type="button">Total <span>30.00€</span></button>
+					<button class="panier_btn" type="button">Total <span class="totalPrice">0.00€</span></button>
 				</div>
 			
 			</div>
@@ -367,53 +371,180 @@
   <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
 
    <script>
-  $(".heart.fa").click(function() {
-	  if ($(this).hasClass("fa-heart-o")){
-		  $(this).removeClass("fa-heart-o").addClass("fa-heart");
-		  $(".card-header-date").attr('data-target','#addFavorisModal');
-	  }else if ($(this).hasClass("fa-heart")){
-		  $(this).removeClass("fa-heart").addClass("fa-heart-o");
-		  $(".card-header-date").attr('data-target','#removeFavorisModal');
+    $(".heart.fa").click(function () {
+      if ($(this).hasClass("fa-heart-o")) {
+        $(this).removeClass("fa-heart-o").addClass("fa-heart");
+        $(".card-header-date").attr('data-target', '#addFavorisModal');
+      } else if ($(this).hasClass("fa-heart")) {
+        $(this).removeClass("fa-heart").addClass("fa-heart-o");
+        $(".card-header-date").attr('data-target', '#removeFavorisModal');
 
-	  }
-	});
+      }
+    });
 
-	// Script quantity extras
 
-$(".button").on("click", function() {
 
-  var $button = $(this);
-  var oldValue = $button.parent().find("input").val();
-  $button.blur();
-  if ($button.hasClass("btn_plus")) {
-	  var newVal = parseFloat(oldValue) + 1;
-	} else {
-   // Don't allow decrementing below zero
-    if (oldValue > 0) {
-      var newVal = parseFloat(oldValue) - 1;
+
+
+
+
+  </script>
+<script th:inline="javascript">
+
+  /*<![CDATA[*/
+
+  //Script quantity extrat
+
+  $(".button").on("click", function () {
+    var $button = $(this);
+    let extraChecked = $(this).parent().parent().parent().find(".uk-checkbox")[0].checked;
+    if (extraChecked) {
+      var oldValue = $button.parent().find("input").val();
+      $button.blur();
+      if ($button.hasClass("btn_plus")) {
+        var newVal = parseFloat(oldValue) + 1;
+
+
+
+      } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 0) {
+          var newVal = parseFloat(oldValue) - 1;
+        } else {
+          newVal = 0;
+        }
+      } $button.parent().find("input").val(newVal);
+      $(this).change();
+
+
     } else {
-      newVal = 0;
+
+      alert("if faut cocher la case pour modifier  la quatité");
+
+    }
+
+  });
+  //Script quantity Global
+
+  $(".buttonGlobal").on("click", function () {
+    var $button = $(this);
+
+    var oldValue = $button.parent().find("input").val();
+    $button.blur();
+    if ($button.hasClass("btn_plus")) {
+      var newVal = parseFloat(oldValue) + 1;
+
+
+
+    } else {
+      // Don't allow decrementing below zero
+      if (oldValue > 0) {
+        var newVal = parseFloat(oldValue) - 1;
+      } else {
+        newVal = 0;
+      }
+    } $button.parent().find("input").val(newVal);
+    $(this).change();
+  });
+
+
+  var listMenuPartProduct = /*[[${ListMenuPartProduct}]]*/ 'default';
+
+
+  console.log(listMenuPartProduct);
+
+  for (let index = 0; index < listMenuPartProduct.length; index++) {
+
+    $("#M" + listMenuPartProduct[index].menu.menuId).on("change", function () {
+
+      let productObligatory = $(this).find(".obligatory");
+      let productOptional = $(this).find(".optional");
+      let totalPriceWithEuro = $(this).find(".totalPrice");
+      let totalPriceWithoutEuro = 0;
+      let quantityMenu = $(this).find(".quantityGlobal");
+
+      let productOptionalSauce = $(this).find(".sauce");
+      checkboxlimit(productOptionalSauce, 3);
+
+
+      for (let index = 0; index < productObligatory.length; index++) {
+        let allowed = productObligatory[index].getElementsByClassName("allowed")[0].value;
+        checkboxlimit(productObligatory[index].getElementsByTagName("input"), allowed);
+
+      }
+      countChecked = 0;
+      countAlowed = 0;
+      for (let i = 0; i < productObligatory.length; i++) {
+        let allInput = productObligatory[i].getElementsByTagName("input");
+        let allowed = productObligatory[i].getElementsByClassName("allowed")[0].value;
+        countAlowed += +allowed;
+        for (let j = 0; j < allInput.length; j++) {
+          if (allInput[j].checked) {
+            countChecked += 1;
+          }
+
+        }
+
+      }
+      if (countChecked == countAlowed) {
+        totalPriceWithoutEuro = listMenuPartProduct[index].menu.price;
+        totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2) + "€";
+      } else {
+        totalPriceWithEuro[0].innerHTML = 0.00.toFixed(2) + "€";
+      }
+
+      for (let i = 0; i < productOptional.length; i++) {
+        let allCheckbox = productOptional[i].getElementsByClassName("noSauce");
+        for (let j = 0; j < allCheckbox.length; j++) {
+          if (allCheckbox[j].checked) {
+            let quantityPriceProductExtra = +allCheckbox[j].parentElement.parentElement.getElementsByClassName("extra_quantity")[0].value;
+            let priceProductExtra = +allCheckbox[j].value;
+
+            totalPriceWithoutEuro += priceProductExtra * quantityPriceProductExtra;
+
+
+
+
+
+          }
+
+        }
+
+      }
+
+      totalPriceWithoutEuro *= +quantityMenu[0].value;
+      totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2) + "€";
+
+    });
+  }
+
+  function checkboxlimit(checkgroup, limit) {
+    var checkgroup = checkgroup
+    var limit = limit
+    for (var i = 0; i < checkgroup.length; i++) {
+      checkgroup[i].onclick = function () {
+        var checkedcount = 0
+        for (var i = 0; i < checkgroup.length; i++)
+          checkedcount += (checkgroup[i].checked) ? 1 : 0
+
+        if (checkedcount > limit) {
+          this.checked = false;
+          alert("vous avez le droit de cocher que : " + limit);
+        }
+
+      }
     }
   }
 
-  $button.parent().find("input").val(newVal);
 
-});
+
+  /*]]>*/
+
+
+
+
+</script>
     
-	// Script quantity Menu
-	
-	var i = 0;
-	function add_quantity() {
-		i++;
-		var quantity = document.getElementById('quantity').innerHTML = i;
-	}
-	function reduce_quantity() {
-		i--;
-		var quantity = document.getElementById('quantity').innerHTML = i;
-  }
-  
-  </script>
-
 </body>
 
 </html>

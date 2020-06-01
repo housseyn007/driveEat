@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* -------------------------------------------MyProfile Section------------------------------------------- */
+
+.myProfile{
+	padding-top: 120px;
+    padding-bottom: 50px;    
+    background:#f7f5f3;
+}		              
+  
+.container h1 {
+    font-family: 'Mansalva', cursive;
+    font-size: 45px;
+    background: #ad6f23;
+    background: linear-gradient(to right, #c6812d, #ad6f23, #ad6f23);
+    background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.edit_avatar img{ 
+	width: 100px;
+	margin: 10px;
+}
+
+hr {
+    border-top: 2px solid #e5e5e5!important;
+}
+
+.personal-info h3 {
+    font-family: 'Andika', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #3f4040;
+}
+
+.control-label{
+    font-size: 0.9rem;
+}
+
+.btn_edit{
+	padding: 10px 20px 10px;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 20px;
+	margin-bottom: 24px;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: #454d55;
+	border: 1px solid #343a40;
+}
+
+.btn_edit:hover {
+	background-color: transparent;
+	color: #343a40;
+}
+
+  /* -------------------------------------------Media------------------------------------------ */
+
+@media screen and (max-width: 450px) {
+    .myProfile{
+	padding-top: 100px;
+}	
+
+.container h1 {
+    font-size: 38px;
+    margin-bottom: 0px;
+    }
+
+    .edit_avatar img{ 
+	width: 80px;
+    }
+}
