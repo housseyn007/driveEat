@@ -70,16 +70,8 @@
 					</thead>
 					<tr>
 						<td>
-							<ul class="Menu_list">Le Double cheese :
-								<li>
-									Produit 1
-								</li>
-								<li>
-									Produit 2
-								</li>
-								<li>
-									Produit 3
-								</li>
+							<ul class="Menu_list">
+								
 							</ul>
 						</td>
 						<td class="text-center">1</td>
@@ -174,7 +166,37 @@
 			format: 'HH:MM dd/mm/yyyy',
 			footer: true, 
 			modal: true});
-    </script>
+	</script>
+	
+<script th:inline="javascript">
+
+  /*<![CDATA[*/
+	let restaurant = /*[[${restaurant}]]*/ 'default';
+	let summaryOrderString = /*[[${summaryOrder}]]*/ 'default';
+	let objSummaryOrder = JSON.parse(summaryOrderString);
+	console.log(restaurant);
+   console.log(objSummaryOrder);
+	let productObligatory = document.getElementsByClassName("Menu_list")[0];
+	let menuName = objSummaryOrder.menuName +" :";
+	productObligatory.innerHTML = menuName;
+
+	for (let i = 0; i < objSummaryOrder.summaryOrder[0].productObligatory.length; i++) {
+	
+		for (let j = 0; j < objSummaryOrder.summaryOrder[0].productObligatory[i].products.length; j++) {
+		let productName = objSummaryOrder.summaryOrder[0].productObligatory[i].products[j];
+		let productLi = document.createElement("li");
+		productLi.innerHTML = productName;
+		productObligatory.appendChild(productLi);	
+		}
+	}
+
+
+
+
+  
+    /*]]>*/
+ </script>
+
 
 </body>
 

@@ -356,7 +356,8 @@
 
 				<div class="panier_btn_div">
 					<button class="panier_btn uk-modal-close buttonCancel" type="button">Annuler</button>
-					<button class="panier_btn buttonCart" type="button">Total <span class="totalPrice">0.00€</span></button>
+          <button class="panier_btn buttonCart" type="button">Total <span class="totalPrice">0.00</span>€</button>
+          <input type="hidden" class="MenuPrice" value="0">
 				</div>
 			
 			</div>
@@ -449,8 +450,6 @@
   var listMenuPartProduct = /*[[${ListMenuPartProduct}]]*/ 'default';
 
 
-  console.log(listMenuPartProduct);
-
   for (let index = 0; index < listMenuPartProduct.length; index++) {
 
     $("#M" + listMenuPartProduct[index].menu.menuId).on("change", function () {
@@ -486,9 +485,12 @@
       }
       if (countChecked == countAlowed) {
         totalPriceWithoutEuro = listMenuPartProduct[index].menu.price;
-        totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2) + "€";
+        totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2);
+         totalPriceWithEuro[0].parentElement.parentElement.getElementsByClassName("MenuPrice")[0].value = totalPriceWithoutEuro.toFixed(2);
+      
+        
       } else {
-        totalPriceWithEuro[0].innerHTML = 0.00.toFixed(2) + "€";
+        totalPriceWithEuro[0].innerHTML = 0.00.toFixed(2) ;
       }
 
       for (let i = 0; i < productOptional.length; i++) {
@@ -511,7 +513,7 @@
       }
 
       totalPriceWithoutEuro *= +quantityMenu[0].value;
-      totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2) + "€";
+      totalPriceWithEuro[0].innerHTML = totalPriceWithoutEuro.toFixed(2);
 
     });
   }
@@ -534,124 +536,150 @@
     }
   }
 
-   //Script when you leave the model
+  //Script when you leave the model
 
   $(".buttonCancel").on("click", function () {
- $(this).parent().parent().parent().find("input").prop('checked', false); 
+    $(this).parent().parent().parent().find("input").prop('checked', false);
 
 
   });
   $(".buttonClose").on("click", function () {
- $(this).parent().find("input").prop('checked', false); 
+    $(this).parent().find("input").prop('checked', false);
   });
 
-   //Script when click on Cart for going to summary Order
+  //Script when click on Cart for going to summary Order
 
   $(".buttonCart").on("click", function () {
-    let theModel =   $(this).parent().parent().parent(); 
+    let theModel = $(this).parent().parent().parent();
     let productObligatory = theModel.find(".obligatory");
     let productOptional = theModel.find(".optional");
-      let productOptionalSauce = theModel.find(".sauce");
-    console.log(productOptionalSauce.length);
-    let summaryOrder ='';
-    summaryOrder += '{"summaryOrder":[{"productOblicatory":[';
+    let productOptionalSauce = theModel.find(".sauce");
+    let summaryOrder = '{';
+
+    let menuName = theModel.find(".uk-modal-header")[0].children[0].innerHTML;
+    summaryOrder += '"menuName":' + '"' + menuName+'"';
+
+    summaryOrder += ',"summaryOrder":[{"productObligatory":[';
     for (let i = 0; i < productObligatory.length; i++) {
-       let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML;
-      
-       summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
-       
-           summaryOrder += ',"products":[';
-       let productInput  = productObligatory[i].getElementsByClassName("submenu-list");
-       for (let j = 0; j < productInput.length; j++) {
-         let productCheckbox = productInput[j].getElementsByClassName("uk-radio");
-         let count =0;
-            for (let k = 0; k < productCheckbox.length; k++) {
-              
-              if(productCheckbox[k].checked){
-                let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
-                summaryOrder += '"' + productName +'"';
-                count++;
-                if(count != productInput[j].querySelectorAll('input[class="uk-radio"]:checked').length){
-                  summaryOrder +=",";
-                }
-                
-                
+      let menuPartName = productObligatory[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML;
 
-              }
-              
+      summaryOrder += '{"menuPartName":' + '"' + menuPartName + '"';
+
+      summaryOrder += ',"products":[';
+      let productInput = productObligatory[i].getElementsByClassName("submenu-list");
+      for (let j = 0; j < productInput.length; j++) {
+        let productCheckbox = productInput[j].getElementsByClassName("uk-radio");
+        let count = 0;
+        for (let k = 0; k < productCheckbox.length; k++) {
+
+          if (productCheckbox[k].checked) {
+            let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+            summaryOrder += '"' + productName + '"';
+            count++;
+            if (count != productInput[j].querySelectorAll('input[class="uk-radio"]:checked').length) {
+              summaryOrder += ",";
             }
-            summaryOrder +="]}"
-         
-       }
-       if(i != productObligatory.length-1){
-        summaryOrder += ",";
-       }
-    }
-    summaryOrder +="]},";
 
-   summaryOrder += '{"productOptional":[';
+
+
+          }
+
+        }
+        summaryOrder += "]}"
+
+      }
+      if (i != productObligatory.length - 1) {
+        summaryOrder += ",";
+      }
+    }
+    summaryOrder += "]},";
+
+    summaryOrder += '{"productOptional":[';
     for (let i = 0; i < productOptional.length; i++) {
-       let menuPartName = productOptional[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML; 
-       summaryOrder += '{"menuPartName":' +'"' + menuPartName +'"' ;
-       
-           summaryOrder += ',"products":[';
-       let productInput  = productOptional[i].getElementsByClassName("submenu-list");
-       for (let j = 0; j < productInput.length; j++) {
-         let productCheckboxSauce = productInput[j].getElementsByClassName("sauce");
-         let productCheckbox = productInput[j].getElementsByClassName("noSauce");
-         let count =0;
-         if(productCheckboxSauce.length >0 ){
-            for (let k = 0; k < productCheckboxSauce.length; k++) {
-              
-              if(productCheckboxSauce[k].checked){
-                let productName = productCheckboxSauce[k].parentElement.getElementsByClassName("product")[0].innerHTML;
-                summaryOrder += '"' + productName +'"';
-                count++;
-                if(count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length){
-                  summaryOrder +=",";
-                }
-                
-                
+      let menuPartName = productOptional[i].getElementsByClassName("uk-description-list")[0].firstElementChild.innerHTML;
+      summaryOrder += '{"menuPartName":' + '"' + menuPartName + '"';
 
-              }
-              
-            }}
-               for (let k = 0; k < productCheckbox.length; k++) {             
-              if(productCheckbox[k].checked){
-                let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
-                summaryOrder += '"' + productName +'"';
-                count++;
-                if(count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length){
-                  summaryOrder +=",";
-                }
-                
-                
+      summaryOrder += ',"products":[';
+      let productInput = productOptional[i].getElementsByClassName("submenu-list");
+      for (let j = 0; j < productInput.length; j++) {
+        let productCheckboxSauce = productInput[j].getElementsByClassName("sauce");
+        let productCheckbox = productInput[j].getElementsByClassName("noSauce");
+        let count = 0;
+        if (productCheckboxSauce.length > 0) {
+          for (let k = 0; k < productCheckboxSauce.length; k++) {
 
+            if (productCheckboxSauce[k].checked) {
+              let productName = productCheckboxSauce[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+              summaryOrder += '"' + productName + '"';
+              count++;
+              if (count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length) {
+                summaryOrder += ",";
               }
-              
+
+
+
+            }
+
+          }
+        }
+        for (let k = 0; k < productCheckbox.length; k++) {
+          if (productCheckbox[k].checked) {
+            let productName = productCheckbox[k].parentElement.getElementsByClassName("product")[0].innerHTML;
+            let quantity = productCheckbox[k].parentElement.parentElement.getElementsByClassName("extra_quantity")[0].value;
+            let price = productCheckbox[k].value;
+            summaryOrder += '{"product":"' + productName + '"' + ',' + '"quantity":' + quantity + ',' + '"price":' + price + '}';
+            count++;
+            if (count != productInput[j].querySelectorAll('input[name="uk-checkbox"]:checked').length) {
+              summaryOrder += ",";
             }
 
 
 
-            summaryOrder +="]}"
-         
-       }
-       if(i != productOptional.length-1){
-        summaryOrder += ",";
-       }
-    }
-    summaryOrder +="]}]}";
-    
-    
-   console.log(summaryOrder);
-    let obj = JSON.parse(summaryOrder);
-    console.log(obj);
+          }
 
+        }
+
+
+
+        summaryOrder += "]}"
+
+      }
+      if (i != productOptional.length - 1) {
+        summaryOrder += ",";
+      }
+    }
+
+    let quantityMenu = theModel.find(".quantityGlobal")[0].value;
+    let priceGlobal = theModel.find(".totalPrice")[0].innerHTML;
+    let priceMenu = theModel.find(".MenuPrice")[0].value;
+
+    summaryOrder += "]}],";
+    summaryOrder += '"quantityMenu":' + quantityMenu + ', "priceGlobal" : ' + priceGlobal + ', "priceMenu" : ' + priceMenu + '}';
+    console.log(summaryOrder);
+    var restaurantId = /*[[${restaurant}]]*/ 'default';
+
+    let form = document.createElement("form");
+    let restaurantIdSelected = document.createElement("input");
+    let summaryOfOrder = document.createElement("input");
+
+    form.method = "POST";
+    form.action = "/recapitulatif-commande";
+
+    restaurantIdSelected.value = restaurantId.restaurantId;
+    restaurantIdSelected.name = "restaurantId";
+    form.appendChild(restaurantIdSelected);
+
+    summaryOfOrder.value = summaryOrder;
+    summaryOfOrder.name = "summaryOrder";
+    form.appendChild(summaryOfOrder);
+
+    document.body.appendChild(form);
+    form.submit();
 
 
   });
 
-
+  
 
   /*]]>*/
 

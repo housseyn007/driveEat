@@ -344,7 +344,7 @@
 
 		let openRestaurantTime = document.getElementsByClassName('H' + nearResLIst[i].restaurants.restaurantId);
 		let card = document.getElementsByClassName('card:' + nearResLIst[i].restaurants.restaurantId);
-
+         let openRestaurant = false;
 		for (let j = 0; j < nearResLIst[i].timeAndDate.length; j++) {
 			if (nearResLIst[i].timeAndDate[j].day == toWeekFrench(dateNow)) {
 
