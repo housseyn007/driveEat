@@ -83,9 +83,12 @@ body {
   margin-left: -15px;
 }
 
+.info_payement_btn button{  
+  outline: none;
+}
+
 .info_btn, .payement_btn {
   border: 2px solid #ad6f23;
-  outline: none;
   cursor: pointer;
   background: none;
   color: #ad6f23;

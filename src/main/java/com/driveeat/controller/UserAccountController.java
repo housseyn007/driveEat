@@ -108,29 +108,29 @@ public class UserAccountController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/connexion", method = RequestMethod.POST)
-	public ModelAndView loginUser(ModelAndView modelAndView, Users users) {
-
-		Users existingUsers = usersRepository.findByEmailIgnoreCase(users.getEmail());
-		if (existingUsers != null) {
-			// use encoder.matches to compare raw password with encrypted password
-
-			if (encoder.matches(users.getPassword(), existingUsers.getPassword())) {
-				// successfully logged in
-				modelAndView.setViewName("index");
-			} else {
-				// wrong password
-				modelAndView.addObject("message", "Mot de passe incorrect. Réessayer.");
-				modelAndView.setViewName("login_page");
-			}
-		} else {
-			modelAndView.addObject("message", "Cet adresse E-mail n'existe pas !");
-			modelAndView.setViewName("login_page");
-
-		}
-
-		return modelAndView;
-	}
+//	@RequestMapping(value = "/connexion", method = RequestMethod.POST)
+//	public ModelAndView loginUser(ModelAndView modelAndView, Users users) {
+//
+//		Users existingUsers = usersRepository.findByEmailIgnoreCase(users.getEmail());
+//		if (existingUsers != null) {
+//			// use encoder.matches to compare raw password with encrypted password
+//
+//			if (encoder.matches(users.getPassword(), existingUsers.getPassword())) {
+//				// successfully logged in
+//				modelAndView.setViewName("index");
+//			} else {
+//				// wrong password
+//				modelAndView.addObject("message", "Mot de passe incorrect. Réessayer.");
+//				modelAndView.setViewName("login_page");
+//			}
+//		} else {
+//			modelAndView.addObject("message", "Cet adresse E-mail n'existe pas !");
+//			modelAndView.setViewName("login_page");
+//
+//		}
+//
+//		return modelAndView;
+//	}
 
 	/**
 	 * Display the forgot password page and form

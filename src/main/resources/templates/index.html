@@ -5,19 +5,53 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>DriveEat</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+	<link rel="shortcut icon" type="image/png" href="images/logo/favicon.png"> 
+
+<!-- referencement meta -->
+
+    <title>Drive Eat : le click & collect de votre restaurant</title>
+    <meta name="Content-Type" content="UTF-8">
+    <meta name="Content-Language" content="fr">
+    <meta name="Description"
+        content="Une petite faim et pas envie d’attendre ? Avec la nouvelle application de click&collect Drive Eat dîtes adieu aux files d’attentes en magasin.">
+    <meta name="Keywords"
+        content="Click and collect, Click&collet, A emporter, Drive, Commande, En ligne, Commander, Réserver, Restaurant, Menu, Créneau, Eat, Manger rapide, Uber eat, Livraison, Just eat, Deliveroo, Delivery, Fast food, Food, Restaurant à orléans, Burger, Tacos, Pizza, Naan, Retrait, Retrait express, Commande en ligne">
+    <meta name="Copyright" content="Drive Eat 2020">
+    <meta name="Author" content="Drive Eat">
+    <meta name="Publisher" content="Drive Eat">
+    <meta name="Identifier-Url" content="https://www.drive-eat.fr">
+    <meta name="Reply-To" content="contact@drive-eat.fr">
+    <meta name="Robots" content="index, follow">
+    <meta name="Rating" content="general">
+    <meta name="Distribution" content="global">
+    <meta name="Geography" content="France">
+
+    <meta property="og:url" content="https://www.drive-eat.fr">
+    <meta property="og:title" content="Drive Eat : le click & collect de votre restaurant">
+    <meta property="og:description" content="Une petite faim et pas envie d’attendre ? Avec la nouvelle application de click&collect Drive Eat dîtes adieu aux files d’attentes en magasin.">
+
+    <meta name="twitter:title" content="Drive Eat : le click & collect de votre restaurant">
+    <meta name="twitter:description" content="Une petite faim et pas envie d’attendre ? Avec la nouvelle application de click&collect Drive Eat dîtes adieu aux files d’attentes en magasin.">
+
+<!-- bootstrap/ font-awesome/ uikit /aos links-->	
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />  
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- CSS Resources-->	
 	
 	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
 	<link rel="stylesheet" th:href="@{/css/index_style.css}" />
+
+<!-- Google Fonts-->	
 	
 	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+
+<!-- Script-->	
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -29,12 +63,30 @@
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
 	  
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+  
+<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '318468245845689');
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=318468245845689&ev=PageView&noscript=1"
+	/></noscript>
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body>
 
-  <header th:replace="/fragment/layout_v2.html :: top"></header>
+  <header th:replace="fragment/layout_v2.html :: top"></header>
 
   <!-- ============================================================== -->
   <!-- Home Section -->
@@ -60,9 +112,15 @@
         </form>
       <div class="logo_app">
         <div class="apple_google">
-          <a href="#" class="apple_logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
+          <a href="https://apps.apple.com/fr/app/driveeatapp/id1491149009" class="apple_logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
           <a href="https://play.google.com/store/apps/details?id=com.driveat.driveatapp&gl=FR" class="google_logo " target=”_blank” ><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
         </div>
+      </div>
+      
+      <div class="social_media">
+        <a href="https://www.facebook.com/Driveeat45/" target=”_blank”  class="facebook_logo"><img alt="facebook button" src="/images/logo/facebook.png"></a>
+        <a href="https://twitter.com/Driveeat_" target=”_blank” class="Instagram_logo"><img alt="Instagram button" src="/images/logo/Instagram.png"></a>
+        <a href="https://www.instagram.com/driveeat_/" target=”_blank” class="twitter_logo"><img alt="twitter button" src="/images/logo/twitter.png"></a>
       </div>
 
     </div>
@@ -163,7 +221,7 @@
 						  <div class="card-img">
 						
 						    <div class="uk-cover-container uk-height-medium">
-						      <img th:src="@{'/DriveatBackend/public/' + ${specialities.imagePath}}" alt="" uk-cover>
+						      <img th:src="@{'/DriveatBackend/public' + ${specialities.imagePath}}" alt="" uk-cover>
 						    </div>
 						
 						    <div class="overlay">
@@ -228,7 +286,7 @@
 
 
         <div class="apple-google">
-          <a href="#" class="apple-logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
+          <a href="https://apps.apple.com/fr/app/driveeatapp/id1491149009" class="apple-logo" target=”_blank” ><img alt="apple store button" src="/images/logo/apple_app_transparent.png"></a>
           <a href="https://play.google.com/store/apps/details?id=com.driveat.driveatapp&gl=FR" target=”_blank” class="google-logo"><img alt="google play button" src="/images/logo/google_app_transparent.png"></a>
         </div>
 
@@ -241,7 +299,7 @@
     </div>
   </section>
 
-  <footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+  <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
 
   <script>
     $(document).ready(function() {
@@ -259,7 +317,7 @@
 
 	// Modal Video
 	$(window).on('load', function () {
-		var delayMs = 500; // delay in milliseconds
+		var delayMs = 1600; // delay in milliseconds
 		setTimeout(function () {
 			$('#myModal').modal('show');
 		}, delayMs);

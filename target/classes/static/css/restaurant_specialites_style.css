@@ -7,6 +7,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.restaurants_speciality{
+	height: 100%;
+}
+
 .restaurant_list {
   font-family: 'Mansalva', cursive;
   font-size: 3.5em;

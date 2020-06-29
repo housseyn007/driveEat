@@ -3,32 +3,59 @@
 
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>DriveEat Compte Activé</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+	<link rel="shortcut icon" type="image/png" href="images/logo/favicon.png"> 
+	
+<!-- referencement meta -->
+	
+	<title>Drive Eat | Compte Activé</title>
+	<meta name="Robots" content="noindex, nofollow">
+<!-- bootstrap/ font-awesome/ uikit /aos links-->	
+		
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- CSS Resources-->	
+		
+	<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
+	<link rel="stylesheet" th:href="@{/css/successfulRegisteration_style.css}" />
 
-<link rel="stylesheet" th:href="@{/css/layout_style_v2.css}" />
-<link rel="stylesheet" th:href="@{/css/successfulRegisteration_style.css}" />
+<!-- Google Fonts-->	
+		
+	<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Andika&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
-
+<!-- Script-->	
+		
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+	
+<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '318468245845689');
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=318468245845689&ev=PageView&noscript=1"
+	/></noscript>
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body>
 
-	<header th:replace="/fragment/layout_v2.html :: top"></header>
+	<header th:replace="fragment/layout_v2.html :: top"></header>
 
 	<section class="registration_form">
 
@@ -52,7 +79,7 @@
 
 	</section>
 
-	<footer class="footer" th:replace="/fragment/layout_v2.html :: bottom"></footer>
+	<footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
 
 </body>
 
