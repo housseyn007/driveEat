@@ -35,10 +35,8 @@ public class OrderStatusHistory {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datetime;
 
-
 	public OrderStatusHistory() {
 	}
-
 
 	public OrderStatusHistory(Integer orderStatusHistoryId, @NotNull Orders orders, String previousStatus,
 			String newStatus, @NotNull Date datetime) {
@@ -50,59 +48,44 @@ public class OrderStatusHistory {
 		this.datetime = datetime;
 	}
 
-
 	public Integer getOrderStatusHistoryId() {
 		return orderStatusHistoryId;
 	}
-
 
 	public void setOrderStatusHistoryId(Integer orderStatusHistoryId) {
 		this.orderStatusHistoryId = orderStatusHistoryId;
 	}
 
-
 	public Orders getOrders() {
 		return orders;
 	}
-
 
 	public void setOrders(Orders orders) {
 		this.orders = orders;
 	}
 
-
 	public String getPreviousStatus() {
 		return previousStatus;
 	}
-
 
 	public void setPreviousStatus(String previousStatus) {
 		this.previousStatus = previousStatus;
 	}
 
-
 	public String getNewStatus() {
 		return newStatus;
 	}
-
 
 	public void setNewStatus(String newStatus) {
 		this.newStatus = newStatus;
 	}
 
-
 	public Date getDatetime() {
 		return datetime;
 	}
 
-
 	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
-
-
-	
-
-
 
 }

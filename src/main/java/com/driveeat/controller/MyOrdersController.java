@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MyOrdersController {
 
-	@GetMapping("/Mes-Commandes")
+	@GetMapping("/utilisateurs/Mes-Commandes")
 	public String getFavoritePage() {
 		return "MyOrders";
 	}

@@ -290,6 +290,9 @@
   display: flex;
   justify-content: center;
 }
+.photoAppFooter a {
+    outline: none;
+}
 
 .photoAppFooter img {
   width: 150px;

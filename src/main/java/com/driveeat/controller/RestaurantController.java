@@ -29,53 +29,49 @@ public class RestaurantController {
 	private TimetablesDefinitionsRepository timetablesDefinitionsRepository;
 	@Autowired
 	private MenusRepository menusRepository;
-    
+
 	@Autowired
-	private MenuPartsRepository menuPartsRepository; 
+	private MenuPartsRepository menuPartsRepository;
 	@Autowired
 	private MenuPartItemsRepository menuPartItemsRepository;
-	
-	private MenuPartProducts menuPartProducts; 
+
+	private MenuPartProducts menuPartProducts;
 	private PartProduct partProduct;
+
 	@GetMapping("/restaurantSpecialites/restaurants")
 	public String getRestaurantPage(Model model, @RequestParam Integer id) {
-	
-	List<Menus> menus = new ArrayList<Menus>(); 
-	menus = menusRepository.findByRestaurants(restaurantsRepository.findById(id).get());		
-	List<MenuPartProducts> listMenuPartProduct = new ArrayList<MenuPartProducts>();
-	if(menus.size() > 0) {
-	for(Menus m : menus) {	
-	menuPartProducts = new MenuPartProducts();
-	menuPartProducts.setMenu(m);
-	List<MenuParts> menuPart = new ArrayList<MenuParts>();
-	menuPart = menuPartsRepository.findByMenus(m);
-    for (MenuParts mp : menuPart) {
-    	partProduct = new PartProduct();
-         partProduct.setMenuParts(mp);
-         List<MenuPartItems> menuPartItem = new ArrayList<MenuPartItems>();
-         menuPartItem = menuPartItemsRepository.findByMenuParts(mp);
-         for (MenuPartItems mpi : menuPartItem) {
-        	 partProduct.getProduct().add(mpi.getProducts());
-		}
-         menuPartProducts.getPartProduct().add(partProduct);  
-	}
-    listMenuPartProduct.add(menuPartProducts);
-	}	
-	}	
 
-	model.addAttribute("restaurant", restaurantsRepository.findById(id).get());
-	model.addAttribute("timetablesDefinitions", timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
-	model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
-	model.addAttribute("categories", menusRepository.findByMenuCategories(id));
-	model.addAttribute("ListMenuPartProduct", listMenuPartProduct);
-		
-				
-		
+		List<Menus> menus = new ArrayList<Menus>();
+		menus = menusRepository.findByRestaurants(restaurantsRepository.findById(id).get());
+		List<MenuPartProducts> listMenuPartProduct = new ArrayList<MenuPartProducts>();
+		if (menus.size() > 0) {
+			for (Menus m : menus) {
+				menuPartProducts = new MenuPartProducts();
+				menuPartProducts.setMenu(m);
+				List<MenuParts> menuPart = new ArrayList<MenuParts>();
+				menuPart = menuPartsRepository.findByMenus(m);
+				for (MenuParts mp : menuPart) {
+					partProduct = new PartProduct();
+					partProduct.setMenuParts(mp);
+					List<MenuPartItems> menuPartItem = new ArrayList<MenuPartItems>();
+					menuPartItem = menuPartItemsRepository.findByMenuParts(mp);
+					for (MenuPartItems mpi : menuPartItem) {
+						partProduct.getProduct().add(mpi.getProducts());
+					}
+					menuPartProducts.getPartProduct().add(partProduct);
+				}
+				listMenuPartProduct.add(menuPartProducts);
+			}
+		}
+
+		model.addAttribute("restaurant", restaurantsRepository.findById(id).get());
+		model.addAttribute("timetablesDefinitions",
+				timetablesDefinitionsRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
+		model.addAttribute("menus", menusRepository.findByRestaurants(restaurantsRepository.findById(id).get()));
+		model.addAttribute("categories", menusRepository.findByMenuCategories(id));
+		model.addAttribute("ListMenuPartProduct", listMenuPartProduct);
+
 		return "restaurant";
 	}
-	
-	
-	
-	
 
 }
