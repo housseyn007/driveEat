@@ -22,6 +22,10 @@ public class UserPrincipal implements UserDetails {
 		return Collections.singleton(new SimpleGrantedAuthority("USER"));
 	}
 
+	public Integer getUserId() {
+		return this.users.getUserId();
+	}
+	
 	public String getFirstName() {
 		return this.users.getFirstName();
 	}
