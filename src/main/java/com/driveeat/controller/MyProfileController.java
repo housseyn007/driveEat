@@ -20,7 +20,7 @@ public class MyProfileController {
 
 	@Autowired
 	private UsersRepository usersRepository;
-	
+
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 	@GetMapping("/utilisateurs/mon-profil")
@@ -40,16 +40,18 @@ public class MyProfileController {
 
 	@PostMapping("/utilisateurs/mise-a-jour-profile")
 	public ModelAndView updateMyProfile(ModelAndView modelAndView, @Valid Users user, BindingResult result) {
-		
+
 		if (result.hasErrors()) {
 			modelAndView.addObject("hasErrors", true);
 			modelAndView.addObject("user", user);
+			modelAndView.addObject("fail", "Une erreur a été détectée. Merci de rectifier vos informations .");
 			modelAndView.setViewName("my_profile");
-		}else {
+		} else {
 
-		user.setPassword(encoder.encode(user.getPassword()));  
-        modelAndView.addObject("user", usersRepository.save(user));
-		modelAndView.setViewName("my_profile");
+			user.setPassword(encoder.encode(user.getPassword()));
+			modelAndView.addObject("user", usersRepository.save(user));
+			modelAndView.addObject("success", " Votre profil a bien été modifié .");
+			modelAndView.setViewName("my_profile");
 		}
 		return modelAndView;
 	}

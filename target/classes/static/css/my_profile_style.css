@@ -40,8 +40,33 @@ hr {
     color: #3f4040;
 }
 
+.alert p{
+	margin: 0px !important;
+}
+
+
+.alert p span{
+	margin-left: 5px !important;
+}
+
 .control-label{
     font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+.error_div {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #FF1C19;
+}
+
+.errorValidation{
+	padding-top: 7px;
+	text-align: center;
 }
 
 .btn_edit{
