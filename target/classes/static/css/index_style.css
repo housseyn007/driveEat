@@ -68,21 +68,10 @@ h2 {
 }
 
 .home .center h2 {
-  font-family: 'Mansalva', cursive;	
-  text-transform: uppercase;
+  font-family: 'Mansalva', cursive;
   letter-spacing: 5px;
-  font-size: 3.5em;
+  font-size: 2.7em;
   text-shadow: 3px 5px 2px #272727;
-  color: #fff;
-}
-
-.home .center p {
-  font-family: 'Mansalva', cursive;	
-  text-transform: uppercase;
-  margin-top: 20px;
-  font-size: 1.7em;
-  font-weight: bold;
-  letter-spacing: 3px;
   color: #fff;
   text-shadow: 3px 5px 2px #272727;
 }
@@ -116,7 +105,7 @@ h2 {
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  border: 1px solid #000;
+  border: 1px solid #FFF;
 }
 
 .apple_logo:hover, .google_logo:hover {
@@ -165,12 +154,12 @@ h2 {
 }
 
 .social_media img{
-	width: 55px;
+	width: 50px;
 	margin: 5px;
 }
 
 .Instagram_logo img{
-	width: 59px;
+	width: 54px;
 }
 /* -------------------------------------------With Us------------------------------------------- */
 .inner {
@@ -522,11 +511,7 @@ h2 {
   }
 
   .home .center h2 {
-    font-size: 3em;
-  }
-
-  .home .center p {
-    font-size: 1.5em;
+    font-size: 2.2em;
   }
 
   /*--------sponsor section----------- */
@@ -545,11 +530,11 @@ h2 {
     max-width: 323px ;
   }
   .logoHome {
-    width: 300px
+    width: 335px
   }
 
   .home .center h2 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .home .center p {

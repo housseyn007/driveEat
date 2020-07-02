@@ -42,7 +42,7 @@
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{/contact}">Contact</a></li> 
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"><a class="nav-link" th:href="@{~/connexion}" sec:authorize="isAnonymous()">Connexion</a></li> 
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 connexion" sec:authorize="isAuthenticated()">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false"><span sec:authentication="principal.firstName">Connexion</span></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/connexion}" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i><span sec:authentication="principal.firstName">Connexion</span></a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" th:href="@{/utilisateurs/mon-profil}" ><i class="fas fa-address-card"></i>Mon Profil</a>
                       <a class="dropdown-item" th:href="@{/utilisateurs/Mes-Commandes}" ><i class="fas fa-inbox"></i>Mes Commandes</a>

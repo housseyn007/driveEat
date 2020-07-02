@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.driveeat.entity.Users;
 
 @Repository
-public interface UsersRepository extends CrudRepository<Users, String> {
+public interface UsersRepository extends CrudRepository<Users, Integer> {
 	Users findByEmailIgnoreCase(String email);
 }
