@@ -83,9 +83,8 @@
 
 <!------------------------------------- Alert Message--------------------------------------------------------->
 					
-					<div th:if="${success} != null">
+					<div th:if="${success} != null" id = "successUpdate">
 						<div class="col-md-8 alert alert-success alert-dismissible fade show  text-center" role="alert">
-						  <i class="oi oi-check"></i>
 						  <p>
 						 	<i class="fa fa-coffee"></i>
 						  	<span th:text="${success}"></span> 
@@ -112,24 +111,24 @@
 					
 <!------------------------------------- edit form column --------------------------------------------------------->
 
-					<form class="form-horizontal" role="form" th:action="@{/utilisateurs/mise-a-jour-profile}" th:object="${user}" method="POST">
+					<form class="form-horizontal" role="form" th:action="@{/utilisateurs/mise-a-jour-profile}" th:object="${users}" method="POST">
 						<div class="form-group">
 							<label class="col-lg-3 control-label">Nom :</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" th:field="*{firstName}" required>
+								<input class="form-control" type="text" th:field="*{lastName}" required>
 							</div>
 							<div class="col-lg-8 error_div">
-								<span class="errorValidation" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+								<span class="errorValidation" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="col-lg-3 control-label" >Prenom :</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" th:field="*{lastName}" required>
+								<input class="form-control" type="text" th:field="*{firstName}" required>
 							</div>
 							<div class="col-lg-8 error_div">
-							   <span class="errorValidation" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">fields.hasErrors(</span>
+							   <span class="errorValidation" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">fields.hasErrors(</span>
 							</div>
 						</div>
 
@@ -194,7 +193,16 @@
 	</section>
 
 	<footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
-    <script src="/js/registration.js"></script>
+	<script src="/js/registration.js"></script>
+	<script>
+	
+	setTimeout(function() {
+      document.querySelector('#successUpdate').remove();
+    }, 3000)
+	
+	
+	
+	</script>
 </body>
 
 </html>

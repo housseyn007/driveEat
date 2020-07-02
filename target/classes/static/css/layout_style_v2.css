@@ -5,7 +5,9 @@
 }
 
 /* -----------------------------------Navbar------------------------------------- */
-
+.fas.fa-user-alt {
+    margin-right: 10px;
+}
 .start-header {
   opacity: 1;
   transform: translateY(0);

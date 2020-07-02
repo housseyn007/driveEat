@@ -30,7 +30,7 @@ public class MyProfileController {
 		if (principal instanceof UserPrincipal) {
 			UserPrincipal userPricipal = (UserPrincipal) principal;
 			Users userConnected = usersRepository.findById(userPricipal.getUserId()).get();
-			modelAndView.addObject("user", userConnected);
+			modelAndView.addObject("users", userConnected);
 		}
 
 		modelAndView.setViewName("my_profile");
@@ -39,17 +39,17 @@ public class MyProfileController {
 	}
 
 	@PostMapping("/utilisateurs/mise-a-jour-profile")
-	public ModelAndView updateMyProfile(ModelAndView modelAndView, @Valid Users user, BindingResult result) {
+	public ModelAndView updateMyProfile(ModelAndView modelAndView, @Valid Users users, BindingResult result) {
 
 		if (result.hasErrors()) {
-			modelAndView.addObject("hasErrors", true);
-			modelAndView.addObject("user", user);
+			modelAndView.addObject("user", users);
 			modelAndView.addObject("fail", "Une erreur a été détectée. Merci de rectifier vos informations .");
 			modelAndView.setViewName("my_profile");
+
 		} else {
 
-			user.setPassword(encoder.encode(user.getPassword()));
-			modelAndView.addObject("user", usersRepository.save(user));
+			users.setPassword(encoder.encode(users.getPassword()));
+			modelAndView.addObject("user", usersRepository.save(users));
 			modelAndView.addObject("success", " Votre profil a bien été modifié .");
 			modelAndView.setViewName("my_profile");
 		}
