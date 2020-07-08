@@ -90,7 +90,7 @@
         <div class="tab-pane fade active show" id="dinner1">
           <div class="restaurant_card">
 
-            <div class="card">
+            <div class="card" th:each="restaurantFavorite : ${ListOfRestaurantFavorite}">
               <a class="href-card">
                 <div class="card-header-mask">
                   <a class="">
@@ -100,171 +100,15 @@
 
                 <a class="uk-cover-container uk-height-medium" href="#">
                   <img
-                    src="https://images.unsplash.com/photo-1564851287875-fb73b71f0e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                    th:src="@{'/DriveatBackend/public' + ${restaurantFavorite.restaurants.frontPicture}}"
                     alt="image restaurant" uk-cover>
                 </a>
 
                 <div class="card-body">
                   <a href="#">
                     <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1562436261-3d97e9e237c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1567807371095-0093acabcaf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
-                      <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
-                    </div>
-                  </a>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a class="href-card">
-                <div class="card-header-mask">
-                  <a class="">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
-                </div>
-
-                <a class="uk-cover-container uk-height-medium" href="#">
-                  <img
-                    src="https://images.unsplash.com/photo-1562436261-3d97e9e237c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-                    alt="image restaurant" uk-cover>
-                </a>
-
-                <div class="card-body">
-                  <a href="#">
-                    <div class="card-body-header">
-                      <h3>Nom du restaurant</h3>
-                      <p>Nom specialités</p>
+                      <h3 th:text = "${restaurantFavorite.restaurants.name}">Nom du restaurant</h3>
+                      <p >Nom specialités</p>
                       <span> &#11088; &#11088; &#11088; &#11088; &#11088;</span>
                     </div>
                   </a>

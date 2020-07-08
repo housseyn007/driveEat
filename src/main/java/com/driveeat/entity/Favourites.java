@@ -18,19 +18,19 @@ public class Favourites {
 	private Integer favouriteId;
 
 	@ManyToOne
-	@JoinColumn(name = "userId", insertable = false, updatable = false,  foreignKey = @ForeignKey(name = "Favourites_ibfk_1"))
+	@JoinColumn(name = "userId",  foreignKey = @ForeignKey(name = "Favourites_ibfk_1"))
 	private Users users;
 
 	@ManyToOne
-	@JoinColumn(name = "menuId", insertable = false, updatable = false,  foreignKey = @ForeignKey(name = "Favourites_ibfk_2"))
+	@JoinColumn(name = "menuId", foreignKey = @ForeignKey(name = "Favourites_ibfk_2"))
 	private Menus menus;
 
 	@ManyToOne
-	@JoinColumn(name = "productId", insertable = false, updatable = false,  foreignKey = @ForeignKey(name = "Favourites_ibfk_3"))
+	@JoinColumn(name = "productId", foreignKey = @ForeignKey(name = "Favourites_ibfk_3"))
 	private Products product;
 
 	@ManyToOne
-	@JoinColumn(name = "restaurantId", insertable = false, updatable = false,  foreignKey = @ForeignKey(name = "Favourites_ibfk_4"))
+	@JoinColumn(name = "restaurantId", foreignKey = @ForeignKey(name = "Favourites_ibfk_4"))
 	private Restaurants restaurants;
 
 	public Favourites() {
@@ -85,5 +85,4 @@ public class Favourites {
 		this.restaurants = restaurants;
 	}
 
-	
 }

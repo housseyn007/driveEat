@@ -66,10 +66,15 @@
 	
 	    <div class="card" th:each="restaurantSpecialites : ${RestaurantSpecialites}">
 	      <a class="href-card">
-	        <div class="card-header-mask">
-	          <a class="card-header-heart" data-toggle="modal" data-target="#addFavorisModal">
-	            <i class="heart fa fa-heart-o" th:id="${restaurantSpecialites.restaurants.name}"></i>
+	        <div class="card-header-mask"  sec:authorize="isAnonymous()">
+	          <a class="card-header-heart" data-toggle="modal" data-target="#FavorisModalNoConnected">
+	            <i class="heart fa fa-heart-o isNotConnected"></i>
 	          </a>
+			</div>
+			<div class="card-header-mask" sec:authorize="isAuthenticated()">
+	          <a class="card-header-heart restaurat" th:id="${restaurantSpecialites.restaurants.restaurantId}"  data-toggle="modal" data-target="#addFavorisModal">
+				<i th:class = "${#strings.contains('12 13', {restaurantSpecialites.restaurants.restaurantId})} ? 'heart fa fa-heart isConnected':'heart fa fa-heart-o isConnected'" th:id="${restaurantSpecialites.restaurants.name}"></i>		
+			</a>
 	        </div>
 	
 	        <a class="uk-cover-container uk-height-medium" th:href="|/restaurantSpecialites/restaurants?id=${restaurantSpecialites.restaurants.restaurantId}|">
@@ -105,6 +110,18 @@
 	  <!-- ============================================================== -->
 	  <!-- Modal favoris -->
 	  <!-- ============================================================== -->
+	   <div class="modal fade" id="FavorisModalNoConnected" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h3 class="modal-title text-center" >il faut vous connecter pour ajouter un element en favori !</h3>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 	
 	  <div class="modal fade" id="addFavorisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	    <div class="modal-dialog modal-dialog-centered" role="document">
@@ -133,23 +150,58 @@
 	  </div>
 	
 	</div>
+
+	<form th:action = "@{/restaurantSpecialites/ajout-favoris}" method="POST" style="display:none" id="formHeart" >
+
+	</form>
 	
   <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
 
   <script>
+
+ /*<![CDATA[*/	  
     $(".heart.fa").click(function() {
 
-      if ($(this).hasClass("fa-heart-o")) {
+      //add menu or restaurant to my favorite
+      if ($(this).hasClass("fa-heart-o isConnected")) {
         $('#add').text($(this).attr('id') + ' a été ajouté aux favoris !');
-        $(this).removeClass("fa-heart-o").addClass("fa-heart");
-        $(".card-header-heart").attr('data-target', '#addFavorisModal');
-      } else if ($(this).hasClass("fa-heart")) {
+        $(this).removeClass("fa-heart-o isConnected").addClass("fa-heart isConnected");
+		$(".card-header-heart").attr('data-target', '#addFavorisModal');
+        
+		if($(this).parent().filter(".restaurant")){
+			    
+			    let searchParams = new URLSearchParams(window.location.search);
+                let heart = $(this).parent();
+				let form = $("#formHeart");
+				console.log(form);
+				let restaurantIdInput = document.createElement("input");
+				let specialityIdInput = document.createElement("input");		
+ 				restaurantIdInput.value = heart.attr("id");
+				restaurantIdInput.name = "restaurantId";
+				specialityIdInput.value = searchParams.get('id');
+				specialityIdInput.name = "specialityId"
+				form.append(restaurantIdInput);
+				form.append(specialityIdInput);			
+				form.submit();
+			
+			
+		
+		}
+
+		//delete menu or restaurant from my favorite
+
+      } else if ($(this).hasClass("fa-heart isConnected")) {
         $('#delete').text($(this).attr('id') + ' a été supprimé des favoris !');
-        $(this).removeClass("fa-heart").addClass("fa-heart-o");
+        $(this).removeClass("fa-heart isConnected").addClass("fa-heart-o isConnected");
         $(".card-header-heart").attr('data-target', '#removeFavorisModal');
 
       }
-    });
+	});
+ 
+
+
+
+
   </script>
 
 </body>
