@@ -72,8 +72,8 @@
 	          </a>
 			</div>
 			<div class="card-header-mask" sec:authorize="isAuthenticated()">
-	          <a class="card-header-heart restaurat" th:id="${restaurantSpecialites.restaurants.restaurantId}"  data-toggle="modal" data-target="#addFavorisModal">
-				<i th:class = "${#strings.contains('12 13', {restaurantSpecialites.restaurants.restaurantId})} ? 'heart fa fa-heart isConnected':'heart fa fa-heart-o isConnected'" th:id="${restaurantSpecialites.restaurants.name}"></i>		
+	          <a class="card-header-heart restaurat" th:id="${restaurantSpecialites.restaurants.restaurantId}"   data-toggle="modal" data-target="#addFavorisModal">
+				<i th:class = "${#lists.contains(ListOfIdRestaurantChecked, restaurantSpecialites.restaurants.restaurantId)}? 'heart fa fa-heart isConnected':'heart fa fa-heart-o isConnected'" th:id="${restaurantSpecialites.restaurants.name}"></i>	
 			</a>
 	        </div>
 	
@@ -156,8 +156,9 @@
 	</form>
 	
   <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
-
   <script>
+  
+ 
 
  /*<![CDATA[*/	  
     $(".heart.fa").click(function() {
@@ -181,8 +182,12 @@
 				specialityIdInput.value = searchParams.get('id');
 				specialityIdInput.name = "specialityId"
 				form.append(restaurantIdInput);
-				form.append(specialityIdInput);			
-				form.submit();
+				form.append(specialityIdInput);	
+                setTimeout(function() {   //calls click event after a certain time
+                	form.submit();
+                	}, 1000);
+                
+				
 			
 			
 		
@@ -203,6 +208,7 @@
 
 
   </script>
+  
 
 </body>
 
