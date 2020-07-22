@@ -151,9 +151,8 @@
 	
 	</div>
 
-	<form th:action = "@{/restaurantSpecialites/ajout-favoris}" method="POST" style="display:none" id="formHeart" >
-
-	</form>
+	<form th:action = "@{/restaurantSpecialites/ajouter-favoris}" method="POST" style="display:none" id="formHeartAdd" ></form>
+	<form th:action = "@{/restaurantSpecialites/supprimer-favoris}" method="POST" style="display:none" id="formHeartDelete" ></form>
 	
   <footer class="footer" th:replace="fragment/layout_v2.html :: bottom"></footer>
   <script>
@@ -173,7 +172,7 @@
 			    
 			    let searchParams = new URLSearchParams(window.location.search);
                 let heart = $(this).parent();
-				let form = $("#formHeart");
+				let form = $("#formHeartAdd");
 				console.log(form);
 				let restaurantIdInput = document.createElement("input");
 				let specialityIdInput = document.createElement("input");		
@@ -183,6 +182,7 @@
 				specialityIdInput.name = "specialityId"
 				form.append(restaurantIdInput);
 				form.append(specialityIdInput);	
+
                 setTimeout(function() {   //calls click event after a certain time
                 	form.submit();
                 	}, 1000);
@@ -198,9 +198,33 @@
       } else if ($(this).hasClass("fa-heart isConnected")) {
         $('#delete').text($(this).attr('id') + ' a été supprimé des favoris !');
         $(this).removeClass("fa-heart isConnected").addClass("fa-heart-o isConnected");
-        $(".card-header-heart").attr('data-target', '#removeFavorisModal');
+		$(".card-header-heart").attr('data-target', '#removeFavorisModal');
+		
+				if($(this).parent().filter(".restaurant")){
+			    
+			    let searchParams = new URLSearchParams(window.location.search);
+                let heart = $(this).parent();
+				let form = $("#formHeartDelete");
+				console.log(form);
+				let restaurantIdInput = document.createElement("input");
+				let specialityIdInput = document.createElement("input");		
+ 				restaurantIdInput.value = heart.attr("id");
+				restaurantIdInput.name = "restaurantId";
+				specialityIdInput.value = searchParams.get('id');
+				specialityIdInput.name = "specialityId"
+				form.append(restaurantIdInput);
+				form.append(specialityIdInput);	
 
-      }
+                setTimeout(function() {   //calls click event after a certain time
+                	form.submit();
+                	}, 1000);    
+					
+					
+		}
+
+	  }
+	  
+
 	});
  
 

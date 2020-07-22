@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.driveeat.entity.Favourites;
 import com.driveeat.entity.UserPrincipal;
@@ -27,8 +26,6 @@ public class FavoriteController {
 
 	@Autowired
 	private RestaurantsRepository restaurantsRepository;
-	
-
 
 	@GetMapping("/utilisateurs/favoris")
 	public String getFavoritePage(Model model) {
@@ -43,9 +40,9 @@ public class FavoriteController {
 		return "favorite";
 	}
 
-	@PostMapping("/restaurantSpecialites/ajout-favoris")
-	public String addFavorite(Model model, Integer restaurantId, Integer specialityId, final RedirectAttributes redirectAttributes) {
-	 
+	@PostMapping("/restaurantSpecialites/ajouter-favoris")
+	public String addFavorite(Model model, Integer restaurantId, Integer specialityId) {
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		favourites = new Favourites();
@@ -56,9 +53,23 @@ public class FavoriteController {
 			favouritesRepository.save(favourites);
 
 		}
-		  
 
-       
+		return "redirect:/restaurantSpecialites?id=" + specialityId;
+	}
+
+	@PostMapping("/restaurantSpecialites/supprimer-favoris")
+	public String deleteFavorite(Model model, Integer restaurantId, Integer specialityId) {
+
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		favourites = new Favourites();
+		if (principal instanceof UserPrincipal) {
+			UserPrincipal userPricipal = (UserPrincipal) principal;
+
+			favouritesRepository.delete(favouritesRepository.getByRestaurantsAndUser(userPricipal.getUserId(),restaurantId));
+
+		}
+
 		return "redirect:/restaurantSpecialites?id=" + specialityId;
 	}
 }
